@@ -3,7 +3,6 @@
 namespace Miaoxing\Product\Service;
 
 use miaoxing\plugin\BaseModel;
-use Miaoxing\Product\Service\Product;
 
 class Sku extends BaseModel
 {

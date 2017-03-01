@@ -11,7 +11,7 @@
   <li class="<?= $req['sort'] == 'soldQuantity' ? 'active border-primary' : '' ?>">
     <a class="text-active-primary" href="<?= $url->query('products', ['sort' => 'soldQuantity', 'order' => ($req['order'] == 'desc' ? 'asc' : 'desc')]) ?>">
       销量
-      <?php if($req['sort'] == 'soldQuantity'): ?>
+      <?php if ($req['sort'] == 'soldQuantity') : ?>
         <i class="arrow <?= $req['order'] == 'desc' ? 'arrow-down' : 'arrow-up' ?>"></i>
       <?php endif ?>
     </a>
@@ -19,7 +19,7 @@
   <li class="<?= $req['sort'] == 'price' ? 'active border-primary' : '' ?>">
     <a class="text-active-primary" href="<?= $url->query('products', ['sort' => 'price', 'order' => ($req['order'] == 'desc' ? 'asc' : 'desc')]) ?>">
       价格
-      <?php if($req['sort'] == 'price'): ?>
+      <?php if ($req['sort'] == 'price') : ?>
         <i class="arrow <?= $req['order'] == 'desc' ? 'arrow-down' : 'arrow-up' ?>"></i>
       <?php endif ?>
     </a>

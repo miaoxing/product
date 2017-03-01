@@ -1,6 +1,6 @@
 <?= $block('css') ?>
 <link rel="stylesheet" href="<?= $asset([
-  'plugins/product/css/admin/productsPicker.css'
+  'plugins/product/css/admin/productsPicker.css',
 ]) ?>">
 <?= $block->end() ?>
 

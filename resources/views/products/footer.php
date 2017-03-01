@@ -1,1 +1,1 @@
-<?= wei()->nav->display(['displayFooter' => true]) ?>
+<?= wei()->nav->display(['displayFooter' => true]);

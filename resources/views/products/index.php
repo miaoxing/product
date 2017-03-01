@@ -11,7 +11,7 @@
   <?php require $view->getFile('product:products/slider.php') ?>
   <?php require $view->getFile('product:products/menu.php') ?>
   <?php require $view->getFile('product:products/tab.php') ?>
-  <?php require $view->getFile('product:products/'.($category['listTpl'] == 'xlg'?'xlg-':'').'list.php') ?>
+  <?php require $view->getFile('product:products/'.($category['listTpl'] == 'xlg' ? 'xlg-' : '').'list.php') ?>
 
 </div>
 

@@ -1,1 +1,3 @@
-<?php require $view->getFile('product:admin/productCategories/edit.php');
+<?php
+
+require $view->getFile('product:admin/productCategories/edit.php');
