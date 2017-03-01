@@ -5,7 +5,7 @@ namespace Miaoxing\Product\Service;
 use Miaoxing\Category\Service\Category;
 use Miaoxing\Logistics\Service\ShippingTpl;
 use miaoxing\plugin\BaseModel;
-use plugins\tag\services\Tag;
+use Miaoxing\ProductTag\Service\Tag;
 
 /**
  * 配置
@@ -36,7 +36,7 @@ class Product extends BaseModel
     protected $skus;
 
     /**
-     * @var Tag|Tag[]
+     * @var Tag|\Miaoxing\ProductTag\Service\Tag[]
      */
     protected $tags;
 

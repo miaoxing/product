@@ -63,6 +63,6 @@
       <a class="js-product-drawer-close pull-right text-muted" href="javascript:;">关闭</a>
     </h3>
 
-    <?php require $view->getFile('@tag/tag/picker.php') ?>
+    <?php require $view->getFile('@product-tag/tag/picker.php') ?>
   </div>
 </div>
