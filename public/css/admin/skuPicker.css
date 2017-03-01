@@ -1,0 +1,21 @@
+.sku-picker-modal-body {
+  padding: 0;
+}
+
+.sku-picker-well {
+  border-top: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.sku-picker-table {
+  border: 0;
+}
+
+.dataTables_wrapper input.sku-picker-quantity {
+  margin-left: 0;
+}
+
+.sku-picker-modal-body .dataTables_wrapper .row:last-child {
+  border-bottom: 0;
+}

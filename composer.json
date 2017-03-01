@@ -1,0 +1,23 @@
+{
+  "name": "miaoxing/product",
+  "description": "Miaoxing Product Plugin",
+  "keywords": [
+    "miaoxing", "product"
+  ],
+  "license": "MIT",
+  "require": {
+    "miaoxing/app": "dev-master@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Miaoxing\\Product\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MiaoxingTest\\Product\\": "tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
