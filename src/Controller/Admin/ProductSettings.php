@@ -17,7 +17,7 @@ class ProductSettings extends \miaoxing\plugin\BaseController
 
     public function updateAction($req)
     {
-        // FIXME 统一前缀
+        // TODO 统一前缀
         $this->setting->setValues((array) $req['settings'], ['product.', 'products.']);
 
         return $this->suc();

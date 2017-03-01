@@ -116,7 +116,7 @@ class Products extends \miaoxing\plugin\BaseController
         foreach ($products as $product) {
             $product['countryId'] <= 0 ? $country = '' : $country = wei()->country()->findById($product['countryId']);
 
-            // FIXME 应该是getSkus获取所有规格
+            // TODO 应该是getSkus获取所有规格
             foreach ($product['skuConfigs'] as $skuConfig) {
                 foreach ($skuConfig['attrs'] as $skuAttr) {
                     $data[] = [
