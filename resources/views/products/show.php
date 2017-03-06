@@ -1,7 +1,7 @@
 <?php $view->layout(); ?>
 
 <?= $block('css') ?>
-<link rel="stylesheet" href="<?= $asset('plugins/mall/assets/products.css') ?>">
+<link rel="stylesheet" href="<?= $asset('plugins/product/css/products.css') ?>">
 <?= $block->end() ?>
 
 <?php wei()->event->trigger('productPreShow', [$product]) ?>
@@ -92,7 +92,7 @@
 <?php require $view->getFile('product:products/picker.php') ?>
 <?= $block('js') ?>
 <script>
-  require(['plugins/mall/assets/products', 'comps/artTemplate/template.min'], function (products) {
+  require(['plugins/product/js/products', 'comps/artTemplate/template.min'], function (products) {
     template.helper('$', $);
     products.showAction(<?= json_encode($packageData, JSON_UNESCAPED_UNICODE) ?>);
   });

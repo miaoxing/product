@@ -34,7 +34,7 @@
 
 <?= $block('js') ?>
 <script>
-  require(['plugins/mall/assets/products', 'comps/snapjs/snap.min'], function (products) {
+  require(['plugins/product/js/products', 'comps/snapjs/snap.min'], function (products) {
     products.indexAction();
 
 
