@@ -155,7 +155,7 @@
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'dataTable', 'jquery-deparam', 'daterangepicker', 'plugins/excel/assets/excel'], function (form) {
+  require(['form', 'dataTable', 'jquery-deparam', 'daterangepicker', 'plugins/excel/js/excel'], function (form) {
     form.toOptions($('#categoryId'), <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>, 'id', 'name');
 
     $('#search-form').loadParams().update(function () {
