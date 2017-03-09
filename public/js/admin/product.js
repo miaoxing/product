@@ -1,4 +1,4 @@
-define(['template', 'plugins/seq/assets/seq'], function () {
+define(['template', 'plugins/seq/js/seq'], function () {
   var self = {};
 
   self.form = $('#product-form');
