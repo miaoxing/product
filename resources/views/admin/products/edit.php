@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <?php if (wei()->plugin->isInstalled('virtualProduct')) : // TODO 事件如何控制中间插入的表单
+        <?php if (wei()->plugin->isInstalled('virtual-product')) : // TODO 事件如何控制中间插入的表单
  ?>
           <div class="form-group">
             <label class="col-lg-2 control-label" for="virtual">
