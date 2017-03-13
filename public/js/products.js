@@ -265,7 +265,7 @@ define(['comps/artTemplate/template.min'], function (template) {
       var that = this;
       var selectedAttrIds = [];
       $.each(this.skus, function (i, sku) {
-        if (sku.id === that.selectedSkuId) {
+        if (parseInt(sku.id, 10) === that.selectedSkuId) {
           selectedAttrIds = sku.attrIds;
           return false;
         }
