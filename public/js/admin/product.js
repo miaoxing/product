@@ -1,4 +1,4 @@
-define(['template', 'plugins/seq/js/seq'], function () {
+define(['template', 'plugins/seq/js/seq'], function (template) {
   var self = {};
 
   self.form = $('#product-form');
@@ -9,34 +9,91 @@ define(['template', 'plugins/seq/js/seq'], function () {
   self.skus = [];
 
   self.skuNameData = [
-    {id: '', text: '规格'},
-    {id: '', text: '颜色'},
-    {id: '', text: '尺寸'},
-    {id: '', text: '地区'}
+    {
+      id: '',
+      text: '规格'
+    },
+    {
+      id: '',
+      text: '颜色'
+    },
+    {
+      id: '',
+      text: '尺寸'
+    },
+    {
+      id: '',
+      text: '地区'
+    }
   ];
 
   self.skuAttrsData = {
-    '规格': [],
-    '颜色': [
-      {id: '', text: '黑色'},
-      {id: '', text: '白色'},
-      {id: '', text: '红色'},
-      {id: '', text: '黄色'},
-      {id: '', text: '蓝色'},
-      {id: '', text: '绿色'},
-      {id: '', text: '灰色'},
-      {id: '', text: '紫色'},
-      {id: '', text: '棕色'}
+    规格: [],
+    颜色: [
+      {
+        id: '',
+        text: '黑色'
+      },
+      {
+        id: '',
+        text: '白色'
+      },
+      {
+        id: '',
+        text: '红色'
+      },
+      {
+        id: '',
+        text: '黄色'
+      },
+      {
+        id: '',
+        text: '蓝色'
+      },
+      {
+        id: '',
+        text: '绿色'
+      },
+      {
+        id: '',
+        text: '灰色'
+      },
+      {
+        id: '',
+        text: '紫色'
+      },
+      {
+        id: '',
+        text: '棕色'
+      }
     ],
-    '尺寸': [
-      {id: '', text: 'XS'},
-      {id: '', text: 'S'},
-      {id: '', text: 'M'},
-      {id: '', text: 'L'},
-      {id: '', text: 'XL'},
-      {id: '', text: 'XXL'}
+    尺寸: [
+      {
+        id: '',
+        text: 'XS'
+      },
+      {
+        id: '',
+        text: 'S'
+      },
+      {
+        id: '',
+        text: 'M'
+      },
+      {
+        id: '',
+        text: 'L'
+      },
+      {
+        id: '',
+        text: 'XL'
+      },
+      {
+        id: '',
+        text: 'XXL'
+      }
     ],
-    '地区': []
+    地区: []
   };
 
   self.init = function (options) {
@@ -48,8 +105,8 @@ define(['template', 'plugins/seq/js/seq'], function () {
       .ajaxForm({
         url: $.url('admin/products/update'),
         dataType: 'json',
-        beforeSubmit: function (arr, $form, options) {
-          if ($form.find('input[name=images\\[\\]]').length == 0) {
+        beforeSubmit: function (arr, $form) {
+          if ($form.find('input[name=images\\[\\]]').length === 0) {
             $.err('请至少选择一张图片');
             return false;
           }
@@ -57,7 +114,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
           // 如果是多规格,检查至少填写了一个规格
           if (!self.isSinglePrice()) {
             var skuConfigs = self.getSkuConfigs();
-            if (skuConfigs.length == 0 || skuConfigs[0].attrs.length == 0) {
+            if (skuConfigs.length === 0 || skuConfigs[0].attrs.length === 0) {
               $.err('请至少填写一项规格');
               return false;
             }
@@ -85,11 +142,8 @@ define(['template', 'plugins/seq/js/seq'], function () {
     // Step2 多价格商品,就初始化SKU选择器
     if (!self.isSinglePrice()) {
       self.initSku();
-    } else {
-      // 如果是通用商品,同步SKU数量到商品数量
-      if (typeof self.skus[0] != 'undefined') {
-        $('#quantity').val(self.skus[0]['quantity']);
-      }
+    } else if (typeof self.skus[0] !== 'undefined') {
+      $('#quantity').val(self.skus[0]['quantity']);
     }
   };
 
@@ -114,7 +168,9 @@ define(['template', 'plugins/seq/js/seq'], function () {
     // 加载数据
     if (self.data.skuConfigs.length > 0) {
       for (var i in self.data.skuConfigs) {
-        self.addSkuControl(self.data.skuConfigs[i], false);
+        if (Object.prototype.hasOwnProperty.call(self.data.skuConfigs, i)) {
+          self.addSkuControl(self.data.skuConfigs[i], false);
+        }
       }
     } else {
       self.addSkuControl({}, false);
@@ -130,14 +186,14 @@ define(['template', 'plugins/seq/js/seq'], function () {
 
     // 点击删除SKU选择器
     self.container.on('click', '.delete-sku', function () {
-      if (self.container.find('.sku-control').length == 1) {
+      if (self.container.find('.sku-control').length === 1) {
         $.err('商品至少包含一个规格');
-        return false;
-      } else {
-        $(this).parents('.sku-control').remove();
-        self.container.find('.add-sku').parent().show();
-        self.renderSkuTable();
+        return;
       }
+
+      $(this).parents('.sku-control').remove();
+      self.container.find('.add-sku').parent().show();
+      self.renderSkuTable();
     });
 
     // 更改商品规格的数量,同时更新总数量
@@ -162,7 +218,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
           lowestPrice = price;
         }
       });
-      if (lowestPrice != Number.MAX_VALUE) {
+      if (lowestPrice !== Number.MAX_VALUE) {
         $('#price').val(lowestPrice.toFixed(2));
       }
     });
@@ -171,11 +227,11 @@ define(['template', 'plugins/seq/js/seq'], function () {
 
   self.addSkuControl = function (data, render) {
     data = data || {};
-    render = typeof render == 'undefined' && true;
+    render = typeof render === 'undefined' && true;
     data.id = data.id || ++$.guid;
 
     // 最多两个规格
-    if (self.container.find('.sku-control').length == 1) {
+    if (self.container.find('.sku-control').length === 1) {
       self.container.find('.add-sku').parent().hide();
     }
 
@@ -188,15 +244,19 @@ define(['template', 'plugins/seq/js/seq'], function () {
         data: self.skuNameData,
         createSearchChoice: function (term, data) {
           if ($(data).filter(function () {
-              return this.text.localeCompare(term) === 0;
-            }).length === 0) {
-            return {id: term, text: term};
+            return this.text.localeCompare(term) === 0;
+          }).length === 0) {
+            return {
+              id: term,
+              text: term
+            };
           }
+          return null;
         }
       })
       .on('select2-selecting', function (e) {
         // 选择规格名称时,如果选择的是预定义的,或者是自己新建的,后台为其生成唯一ID
-        if (e.object.id == '' || e.object.id == e.object.text) {
+        if (e.object.id === '' || e.object.id === e.object.text) {
           // 只有当前ID不存在时,才向后台获取唯一ID
           e.object.id = $(this).select2('val') || $.seq();
         }
@@ -206,7 +266,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
       });
 
     // 设置默认数据
-    if (typeof data.name != 'undefined') {
+    if (typeof data.name !== 'undefined') {
       skuNameInput.select2('data', {
         id: data.id,
         text: data.name
@@ -216,47 +276,53 @@ define(['template', 'plugins/seq/js/seq'], function () {
     // 将数据表转换为select2要求的数据格式
     var skuAttrs = [];
     for (var i in data.attrs) {
-      skuAttrs.push({
-        id: data.attrs[i].id,
-        text: data.attrs[i].value
-      });
+      if (Object.prototype.hasOwnProperty.call(data.attrs, i)) {
+        skuAttrs.push({
+          id: data.attrs[i].id,
+          text: data.attrs[i].value
+        });
+      }
     }
 
     formGroup.find('.sku-attrs')
       .select2({
         tags: function () {
           var name = skuNameInput.select2('data');
-          if ($.isPlainObject(name) && typeof self.skuAttrsData[name.text] != 'undefined') {
+          if ($.isPlainObject(name) && typeof self.skuAttrsData[name.text] !== 'undefined') {
             return self.skuAttrsData[name.text];
-          } else {
-            return [];
           }
+
+          return [];
         },
         createSearchChoice: function (term, data) {
           if ($(data).filter(function () {
-              return this.text.localeCompare(term) === 0;
-            }).length === 0) {
-            return {id: term, text: term};
+            return this.text.localeCompare(term) === 0;
+          }).length === 0) {
+            return {
+              id: term,
+              text: term
+            };
           }
+          return null;
         }
       })
       .select2('data', skuAttrs)
       .on('select2-selecting', function (e) {
         // 新增规格的值,为其设置唯一ID
-        if (e.object.id == '' || e.object.id == e.object.text) {
+        if (e.object.id === '' || e.object.id === e.object.text) {
           e.object.id = $.seq();
         }
       })
       .on('select2-close', function () {
         self.renderSkuTable();
       })
-      .on('select2-removed', function (event) {
+      .on('select2-removed', function () {
         // 删除规格的值,重新渲染规格表格
         self.renderSkuTable();
       });
 
     // 按需重绘表格
-    if (render == true) {
+    if (render === true) {
       self.renderSkuTable();
     }
   };
@@ -266,7 +332,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
    */
   self.renderSkuTable = function () {
     var data = self.getSkuData();
-    if (data.skuConfigs.length == 0) {
+    if (data.skuConfigs.length === 0) {
       return;
     }
 
@@ -293,7 +359,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
         ids.push(nameToIds[item]);
       });
       var id = ids.join('-');
-      if (typeof data.skus[id] != 'undefined') {
+      if (typeof data.skus[id] !== 'undefined') {
         skus.push(data.skus[id]);
       } else {
         skus.push({
@@ -318,13 +384,13 @@ define(['template', 'plugins/seq/js/seq'], function () {
     var columns = [];
     return $.map(specs, function (row) {
       row = $.map(row, function (item, j) {
-        if (typeof columns[j] != 'undefined' && columns[j][0] == item) {
+        if (typeof columns[j] !== 'undefined' && columns[j][0] === item) {
           columns[j][1]++;
           return null;
-        } else {
-          columns[j] = [item, 1]; // [规格值, rowspan]
-          return [columns[j]];
         }
+
+        columns[j] = [item, 1]; // [规格值, rowspan]
+        return [columns[j]];
       });
       return [row];
     });
@@ -351,10 +417,12 @@ define(['template', 'plugins/seq/js/seq'], function () {
         // 获取规格的值的数据
         var skuAttrs = $(this).find('input.sku-attrs').select2('data');
         for (var i in skuAttrs) {
-          skuConfig.attrs.push({
-            id: skuAttrs[i].id,
-            value: skuAttrs[i].text
-          });
+          if (Object.prototype.hasOwnProperty.call(skuAttrs, i)) {
+            skuConfig.attrs.push({
+              id: skuAttrs[i].id,
+              value: skuAttrs[i].text
+            });
+          }
         }
 
         data.push(skuConfig);
@@ -370,7 +438,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
   self.getSkus = function () {
     // 如果.sku-table存在,从其获取,否则,从原始数据获取
     var data = [];
-    if (self.skuTable.find('thead').length == 0 || self.skuTable.find('.table-empty-tips').length == 1) {
+    if (self.skuTable.find('thead').length === 0 || self.skuTable.find('.table-empty-tips').length === 1) {
       data = self.skus;
     } else {
       data = self.skuTable.find(':input').serializeJSON().skus;
@@ -413,7 +481,7 @@ define(['template', 'plugins/seq/js/seq'], function () {
    * 检查当前商品是否为单价格
    */
   self.isSinglePrice = function () {
-    return self.data.template == 'common';
+    return self.data.template === 'common';
   };
 
   self.isNumber = function (n) {

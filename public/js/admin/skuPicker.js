@@ -1,4 +1,4 @@
-define(['jquery','form', 'dataTable', 'template'], function($, form) {
+define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) {
 
   // SKU PICKER CLASS DEFINITION
   // ===========================
@@ -19,7 +19,7 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
   };
 
   SkuPicker.prototype.init = function () {
-    var self = this;
+    var that = this;
 
     this.indexData();
     this.updateSelectedSku();
@@ -38,8 +38,8 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
         {
           data: 'specs',
           render: function (data, type, full) {
-            if (full.product.skuConfigs.length == 1
-              && full.product.skuConfigs[0].attrs.length == 1) {
+            if (full.product.skuConfigs.length === 1
+              && full.product.skuConfigs[0].attrs.length === 1) {
               return '-';
             }
 
@@ -58,27 +58,27 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
         {
           data: 'quantity',
           render: function (data, type, full) {
-            return template.render('skuPickerQuantityTpl', full)
+            return template.render('skuPickerQuantityTpl', full);
           }
         },
         {
           data: 'id',
           render: function (data, type, full) {
-            if (typeof self.options.data[data] != 'undefined') {
-              full.selectedQuantity = self.options.data[data].quantity;
+            if (typeof that.options.data[data] !== 'undefined') {
+              full.selectedQuantity = that.options.data[data].quantity;
               full.selected = true;
             } else {
               full.selectedQuantity = 1;
               full.selected = false;
             }
-            return template.render('skuPickerActionsTpl', full)
+            return template.render('skuPickerActionsTpl', full);
           }
         }
       ]
     });
 
     this.$modal.find('.js-sku-picker-form').update(function () {
-      self.$table.reload($(this).serialize(), false);
+      that.$table.reload($(this).serialize(), false);
     });
 
     // 加入或取消商品
@@ -88,14 +88,14 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
       var id = $this.data('id');
       var selected = $this.hasClass('selected');
       var $row = $this.closest('tr');
-      var rowData = self.$table.fnGetData($row[0]);
+      var rowData = that.$table.fnGetData($row[0]);
 
       // 更新sku数据
       if (selected) {
-        delete self.options.data[id];
+        delete that.options.data[id];
       } else {
         // .js-sku-item
-        self.options.data[id] = {
+        that.options.data[id] = {
           id: id,
           quantity: $row.find('.js-sku-picker-quantity').val(),
           name: rowData.product.name,
@@ -104,7 +104,7 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
       }
 
       // 重新渲染视图
-      self.updateSelectedSku();
+      that.updateSelectedSku();
       $this.parent().html(template.render('skuPickerActionsTpl', {
         id: id,
         selected: !selected
@@ -122,8 +122,8 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
       }
       $this.val(val);
 
-      if (typeof self.options.data[id] != 'undefined') {
-        self.options.data[id].quantity = val;
+      if (typeof that.options.data[id] !== 'undefined') {
+        that.options.data[id].quantity = val;
       }
     });
 
@@ -131,10 +131,12 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
     this.$modal.on('hide.bs.modal', function () {
       var e = $.Event('close');
       var data = [];
-      for (var i in self.options.data) {
-        data.push(self.options.data[i]);
+      for (var i in that.options.data) {
+        if (Object.prototype.hasOwnProperty.call(that.options.data, i)) {
+          data.push(that.options.data[i]);
+        }
       }
-      self.$element.trigger(e, [data]);
+      that.$element.trigger(e, [data]);
     });
   };
 
@@ -149,7 +151,7 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
     this.$modal.find('.js-sku-picker-selected-num').html(sum);
 
     var val = '';
-    if (ids.length == 0) {
+    if (ids.length === 0) {
       val = 'not-exists';
     } else {
       val = ids.join(',');
@@ -161,7 +163,9 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
   SkuPicker.prototype.indexData = function () {
     var data = {};
     for (var i in this.options.data) {
-      data[this.options.data[i].id] = this.options.data[i];
+      if (Object.prototype.hasOwnProperty.call(this.options.data, i)) {
+        data[this.options.data[i].id] = this.options.data[i];
+      }
     }
     this.options.data = data;
   };
@@ -177,11 +181,16 @@ define(['jquery','form', 'dataTable', 'template'], function($, form) {
     return this.each(function () {
       var $this   = $(this);
       var data    = $this.data('sku-picker');
-      var options = $.extend({}, SkuPicker.DEFAULTS, typeof option == 'object' && option);
+      var options = $.extend({}, SkuPicker.DEFAULTS, typeof option === 'object' && option);
 
-      if (!data) $this.data('sku-picker', (data = new SkuPicker(this, options)))
-      if (typeof option == 'string') data[option]();
-      else if (options.show) data.show();
+      if (!data) {
+        $this.data('sku-picker', (data = new SkuPicker(this, options)));
+      }
+      if (typeof option === 'string') {
+        data[option]();
+      } else if (options.show) {
+        data.show();
+      }
     });
   }
 

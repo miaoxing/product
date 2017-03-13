@@ -42,35 +42,7 @@ class Products extends \miaoxing\plugin\BaseController
         }
 
         // 排序
-        switch ($req['sort']) {
-            case 'price':
-                if (isset($req['order']) && $req['order'] == 'desc') {
-                    $products->desc('price');
-                } else {
-                    $products->asc('price');
-                }
-                break;
-
-            case 'soldQuantity':
-                if (isset($req['order']) && $req['order'] == 'desc') {
-                    $products->desc('soldQuantity');
-                } else {
-                    $products->asc('soldQuantity');
-                }
-                break;
-
-            case 'discount':
-                $products->asc('discount');
-                break;
-
-            case 'scores':
-                $products->asc('scores');
-                break;
-
-            default:
-                $products->desc('sort')->desc('id');
-                break;
-        }
+        $this->sort($products, $req);
 
         // 保留变量给视图
         $tags = $req['tags'] ? explode(',', $req['tags']) : [];
@@ -137,6 +109,40 @@ class Products extends \miaoxing\plugin\BaseController
                 $this->pageConfig['displayFooter'] = false;
 
                 return get_defined_vars();
+        }
+    }
+
+    protected function sort(Product $products, $req)
+    {
+        // 排序
+        switch ($req['sort']) {
+            case 'price':
+                if (isset($req['order']) && $req['order'] == 'desc') {
+                    $products->desc('price');
+                } else {
+                    $products->asc('price');
+                }
+                break;
+
+            case 'soldQuantity':
+                if (isset($req['order']) && $req['order'] == 'desc') {
+                    $products->desc('soldQuantity');
+                } else {
+                    $products->asc('soldQuantity');
+                }
+                break;
+
+            case 'discount':
+                $products->asc('discount');
+                break;
+
+            case 'scores':
+                $products->asc('scores');
+                break;
+
+            default:
+                $products->desc('sort')->desc('id');
+                break;
         }
     }
 

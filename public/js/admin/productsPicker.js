@@ -1,11 +1,13 @@
+/* global Bloodhound */
 define([
-  'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'template',
+  'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'comps/typeahead.js/dist/typeahead.bundle.min'
-], function () {
+], function (template) {
   template.helper('$', $);
 
   var ProductsPicker = function () {
+    // do nothing.
   };
 
   $.extend(ProductsPicker.prototype, {
@@ -18,17 +20,19 @@ define([
 
     init: function(options) {
       $.extend(this, options);
-      var self = this;
-      self.$el.append('<div class="clearfix"></div><ul class="list-group product-list-group list-unstyled"></ul>');
+      var that = this;
+      that.$el.append('<div class="clearfix"></div><ul class="list-group product-list-group list-unstyled"></ul>');
 
       // 屏蔽用户信息鼠标点击事件
-      self.$el.on('click', '.product-media', function (e) {
+      that.$el.on('click', '.product-media', function () {
         return false;
       });
 
       // 显示商品
-      for (var i in self.products) {
-        self.addProduct(self.products[i]);
+      for (var i in that.products) {
+        if (Object.prototype.hasOwnProperty.call(that.products, i)) {
+          that.addProduct(that.products[i]);
+        }
       }
 
       // 初始化搜索建议引擎
@@ -42,6 +46,7 @@ define([
           ajax: {
             global: false,
             success: function () {
+              // 不自动弹出头部提示
             }
           },
           filter: function (result) {
@@ -60,8 +65,8 @@ define([
           empty: '<div class="empty-product-message">没有找到相关商品</div>',
           suggestion: template.compile($('#product-tpl').html())
         }
-      }).on('typeahead:selected', function (event, suggestion, name) {
-        self.addProduct(suggestion);
+      }).on('typeahead:selected', function (event, suggestion) {
+        that.addProduct(suggestion);
         $(this).val('');
       });
 
@@ -74,8 +79,8 @@ define([
     },
 
     addProduct: function (product) {
-      if($('.product-list-group').children('.list-group-item').length >= this.maxItems) {
-        $.msg({code:-1, message:'超过限定个数'});
+      if ($('.product-list-group').children('.list-group-item').length >= this.maxItems) {
+        $.err('超过限定个数');
         return;
       }
 

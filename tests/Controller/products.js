@@ -1,4 +1,6 @@
 describe('mall/product 检查页面是否可以访问', function () {
+  var internalServerError = 500;
+
   before(function () {
     casper.start();
   });
@@ -6,7 +8,7 @@ describe('mall/product 检查页面是否可以访问', function () {
   ['index', 'show'].forEach(function (action) {
     it('可以访问' + action, function () {
       casper.thenOpen(casper.config.baseUrl + '/mall/product/' + action, function (response) {
-        response.status.should.not.equal(500);
+        response.status.should.not.equal(internalServerError);
       });
     });
   });
@@ -51,13 +53,13 @@ describe('mall/product/show?id=1 正常的商品', function () {
 
   it('点击+数量变大', function () {
     casper.thenClick('.spinner-plus', function () {
-      "$('#quantity').val()".should.evaluate.to.equal('2');
+      '$(\'#quantity\').val()'.should.evaluate.to.equal('2');
     });
   });
 
   it('点击-数量变小', function () {
     casper.thenClick('.spinner-minus', function () {
-      "$('#quantity').val()".should.evaluate.to.equal('1');
+      '$(\'#quantity\').val()'.should.evaluate.to.equal('1');
     });
   });
 });
@@ -112,7 +114,7 @@ describe('mall/product/show?id=2 未开始商品', function () {
   it('显示倒计时', function () {
     casper.then(function () {
       '.product-countdown'.should.be.inDOM.contain.text('天');
-    })
+    });
   });
 });
 
