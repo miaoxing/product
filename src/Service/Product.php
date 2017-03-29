@@ -644,11 +644,6 @@ class Product extends BaseModel
         return $html;
     }
 
-    public function getPayScoresMoney()
-    {
-        return sprintf('%0.2f', $this['maxPayScores'] / wei()->setting('mall.payScoresRate'));
-    }
-
     public function afterSave()
     {
         parent::afterSave();

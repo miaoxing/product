@@ -50,13 +50,6 @@
     </dl>
     <?php endif ?>
 
-    <?php if ($product['maxPayScores']) : ?>
-      <dl class="product-item border-top">
-        <dt><?= $scoreTitle ?>：</dt>
-        <dd>可用<?= $product['maxPayScores'], $scoreTitle ?>抵用现金<?= $product->getPayScoresMoney() ?>元</dd>
-      </dl>
-    <?php endif ?>
-
     <?php $event->trigger('productsShowItem', [$product]) ?>
   </div>
 
