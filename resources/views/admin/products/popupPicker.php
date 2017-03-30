@@ -9,9 +9,11 @@
       <% }) %>
     </div>
   <% } %>
-  <a href="javascript:;" class="js-product-popup-picker-select"><%= products.length === 0 ? selectName : changeName %></a>
+  <a href="javascript:" class="js-product-popup-picker-select">
+    <%= products.length === 0 ? selectName : changeName %>
+  </a>
   <% if (products.length !== 0) { %>
-    <a href="javascript:;" class="js-product-popup-picker-clear"><%= clearName %></a>
+    <a href="javascript:" class="js-product-popup-picker-clear"><%= clearName %></a>
   <% } %>
 </script>
 
@@ -54,7 +56,8 @@
             </form>
           </div>
 
-          <table class="js-product-popup-picker-table product-popup-picker-table table-center table table-bordered table-hover">
+          <table class="js-product-popup-picker-table product-popup-picker-table table-center table table-bordered
+          table-hover">
             <thead>
             <tr>
               <th>名称</th>
@@ -77,5 +80,6 @@
 </script>
 
 <script type="text/html" id="product-popup-picker-actions-tpl">
-  <a href="javascript:;" class="js-product-popup-picker-toggle btn <%= selected ? 'selected btn-info' : 'btn-white' %>" data-id="<%= id %>"><%= selected ? '取消' : '选择' %></a>
+  <a href="javascript:" class="js-product-popup-picker-toggle btn <%= selected ? 'selected btn-info' : 'btn-white' %>"
+    data-id="<%= id %>"><%= selected ? '取消' : '选择' %></a>
 </script>

@@ -4,7 +4,8 @@
 
 <script type="text/html" class="js-product-item-tpl">
   <div class="product-list-item border-bottom" id="p<%= id %>">
-    <a class="product-list-image" href="<%= $.url('products/%s', id, $.req('picker') ? <?= json_encode($req->getQueries()) ?> : {}) %>">
+    <a class="product-list-image"
+      href="<%= $.url('products/%s', id, $.req('picker') ? <?= json_encode($req->getQueries()) ?> : {}) %>">
       <img class="product-list-thumb" src="<?= $asset->thumb('<%= images[0] %>', 640) ?>">
       <% if (coverName) { %>
         <span class="product-list-cover"><%= coverName %></span>

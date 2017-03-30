@@ -12,7 +12,7 @@
   border: 0;
 }
 
-.dataTables_wrapper input.sku-picker-quantity {
+.dataTables_wrapper .sku-picker-quantity {
   margin-left: 0;
 }
 

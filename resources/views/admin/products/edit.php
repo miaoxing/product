@@ -20,20 +20,19 @@
       <fieldset>
         <legend class="grey bigger-130">1. 商品基本信息</legend>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="categoryId">
+          <label class="col-lg-2 control-label" for="category-id">
             <span class="text-warning">*</span>
             栏目
           </label>
 
           <div class="col-lg-4">
-            <select id="categoryId" name="categoryId" class="form-control" data-rule-required="true">
+            <select id="category-id" name="categoryId" class="form-control" data-rule-required="true">
               <option value="">请选择栏目</option>
             </select>
           </div>
         </div>
 
-        <?php if (wei()->plugin->isInstalled('virtual-product')) : // TODO 事件如何控制中间插入的表单
- ?>
+        <?php if (wei()->plugin->isInstalled('virtual-product')) : // TODO 事件如何控制中间插入的表单 ?>
           <div class="form-group">
             <label class="col-lg-2 control-label" for="virtual">
               商品类型
@@ -74,7 +73,7 @@
 
             </div>
             <div class="form-group">
-              <a href="javascript:;" class="add-sku">+增加规格</a>
+              <a href="javascript:" class="add-sku">+增加规格</a>
             </div>
             <div class="form-group sku-table-form-group">
               <table class="sku-table table table-bordered">
@@ -92,7 +91,7 @@
 
           <div class="col-lg-4">
             <input type="text" class="form-control" name="price" id="price" data-rule-required="true"
-                   data-rule-number="true" data-rule-min="0">
+              data-rule-number="true" data-rule-min="0">
           </div>
 
           <label class="col-lg-6 help-text price-tips display-none" for="price">
@@ -101,13 +100,13 @@
         </div>
 
         <div class="form-group single-price-form-group">
-          <label class="col-lg-2 control-label" for="originalPrice">
+          <label class="col-lg-2 control-label" for="original-price">
             原价
           </label>
 
           <div class="col-lg-4">
-            <input type="text" class="form-control" name="originalPrice" id="originalPrice" data-rule-number="true"
-                   data-rule-min="0">
+            <input type="text" class="form-control" name="originalPrice" id="original-price" data-rule-number="true"
+              data-rule-min="0">
           </div>
 
           <label class="col-lg-6 help-text" for="discount">
@@ -136,7 +135,7 @@
 
           <div class="col-lg-4">
             <input type="text" class="form-control" name="quantity" id="quantity" data-rule-required="true"
-                   data-rule-digits="true">
+              data-rule-digits="true">
           </div>
 
           <label class="col-lg-6 help-text quantity-tips display-none" for="quantity">
@@ -151,7 +150,7 @@
 
           <div class="col-lg-4">
             <input type="text" class="form-control" name="config[quantityName]" id="config[quantityName]"
-                   value="<?= $product['config']['quantityName'] ?>">
+              value="<?= $product['config']['quantityName'] ?>">
           </div>
 
           <label class="col-lg-6 help-text quantity-tips" for="config[quantityName]">
@@ -166,14 +165,11 @@
 
           <div class="col-lg-4">
             <input list="units" type="text" class="form-control" name="config[unit]" id="config[unit]"
-                   value="<?= $product['config']['unit'] ?>">
+              value="<?= $product['config']['unit'] ?>">
             <datalist id="units">
-              <?php foreach (wei()->product()->getUnits() as $unit) {
-     ?>
+              <?php foreach (wei()->product()->getUnits() as $unit) : ?>
               <option value="<?= $unit ?>">
-                <?php
-
- } ?>
+                <?php endforeach ?>
             </datalist>
           </div>
 
@@ -227,13 +223,13 @@
         <legend class="grey bigger-130">3. 商品物流信息</legend>
 
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="shippingTplId">
+          <label class="col-lg-2 control-label" for="shipping-tpl-id">
             <span class="text-warning">*</span>
             运费模板
           </label>
 
           <div class="col-lg-4">
-            <select class="form-control" name="shippingTplId" id="shippingTplId" data-rule-required="true">
+            <select class="form-control" name="shippingTplId" id="shipping-tpl-id" data-rule-required="true">
               <option value="">无</option>
             </select>
           </div>
@@ -286,7 +282,7 @@
           <div class="col-lg-4">
             <div>
               <input type="text" class="form-control" name="startTime" id="startTime"
-                     style="position: relative; z-index: 1000;">
+                style="position: relative; z-index: 1000;">
             </div>
           </div>
         </div>
@@ -299,7 +295,7 @@
           <div class="col-lg-4">
             <div>
               <input type="text" class="form-control" name="endTime" id="endTime"
-                     style="position: relative; z-index: 1000;">
+                style="position: relative; z-index: 1000;">
             </div>
           </div>
         </div>
@@ -339,10 +335,12 @@
 
           <div class="col-lg-4">
             <label class="radio-inline">
-              <input type="radio" name="config[noShowCart]" value="1" <?= $product['config']['noShowCart'] ? 'checked' : ''; ?>> 是
+              <input type="radio" name="config[noShowCart]"
+                value="1" <?= $product['config']['noShowCart'] ? 'checked' : ''; ?>> 是
             </label>
             <label class="radio-inline">
-              <input type="radio" name="config[noShowCart]" value="0" <?= !$product['config']['noShowCart'] ? 'checked' : ''; ?>> 否
+              <input type="radio" name="config[noShowCart]"
+                value="0" <?= !$product['config']['noShowCart'] ? 'checked' : ''; ?>> 否
             </label>
           </div>
 
@@ -358,10 +356,12 @@
 
           <div class="col-lg-4">
             <label class="radio-inline">
-              <input type="radio" name="config[buyWithSameCategory]" value="1" <?= $product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 是
+              <input type="radio" name="config[buyWithSameCategory]"
+                value="1" <?= $product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 是
             </label>
             <label class="radio-inline">
-              <input type="radio" name="config[buyWithSameCategory]" value="0" <?= !$product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 否
+              <input type="radio" name="config[buyWithSameCategory]"
+                value="0" <?= !$product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 否
             </label>
           </div>
 
@@ -440,7 +440,7 @@
     <input type="text" class="sku-attrs" placeholder="请选择或输入规格">
 
     <p class="form-control-static">
-      &nbsp;<a href="javascript:;" class="delete-sku">删除</a>
+      &nbsp;<a href="javascript:" class="delete-sku">删除</a>
     </p>
   </div>
 </script>
@@ -473,11 +473,11 @@
     <% }) %>
     <td>
       <input type="text" name="skus[<%= i %>][quantity]" class="sku-quantity"
-             value="<%= skus[i].quantity %>" data-rule-required="true" data-rule-digits="true">
+        value="<%= skus[i].quantity %>" data-rule-required="true" data-rule-digits="true">
     </td>
     <td>
       <input type="text" name="skus[<%= i %>][price]" class="sku-price"
-             value="<%= skus[i].price %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
+        value="<%= skus[i].price %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
     </td>
     <td>
       <input type="text" name="skus[<%= i %>][no]" class="sku-no" value="<%= skus[i].no %>">
@@ -506,8 +506,10 @@
     'assets/dateTimePicker',
     'comps/jquery.serializeJSON/jquery.serializejson.min'
   ], function (product, numeric, form) {
-    form.toOptions($('#categoryId'), <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>, 'id', 'name');
-    form.toOptions($('#shippingTplId'), <?= json_encode(wei()->shippingTpl()->curApp()->notDeleted()->desc('id')->fetchAll()) ?>, 'id', 'name');
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
+    var shipJson = <?= json_encode(wei()->shippingTpl()->curApp()->notDeleted()->desc('id')->fetchAll()) ?>;
+    form.toOptions($('#category-id'), categoryJson, 'id', 'name');
+    form.toOptions($('#shipping-tpl-id'), shipJson, 'id', 'name');
 
     product.init({
       data: <?= $product->toJson() ?>,

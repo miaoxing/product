@@ -285,8 +285,13 @@ class Product extends BaseModel
      */
     public function getPriceText($price = null, $scores = null)
     {
-        is_null($price) && $price = $this['price'];
-        is_null($scores) && $scores = $this['scores'];
+        if ($price == null) {
+            $price = $this['price'];
+        }
+
+        if ($scores == null) {
+            $scores = $this['scores'];
+        }
 
         $text = '';
 
@@ -627,7 +632,7 @@ class Product extends BaseModel
      */
     public function statusToOption()
     {
-        $Status = [
+        $status = [
             '' => '全部',
             '1' => '即将开始',
             '2' => '在出售',
@@ -637,7 +642,7 @@ class Product extends BaseModel
             '6' => '不上架',
         ];
         $html = '';
-        foreach ($Status as $key => $value) {
+        foreach ($status as $key => $value) {
             $html .= '<option value="' . $key . '">' . $value . '</option>';
         }
 

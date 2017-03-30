@@ -27,8 +27,9 @@
         <?php endif ?>
 
         <?php if (!$setting('product.hideBondedTax', true) && $product['bonded']) : ?>
-        <span class="product-bonded-tax">
-          (单价：<?= sprintf('%.2f', $product['price'] - $product['config']['bondedTax']); ?> + 进口税：<?= sprintf('%.2f', $product['config']['bondedTax']) ?>)
+          <span class="product-bonded-tax">
+          (单价：<?= sprintf('%.2f', $product['price'] - $product['config']['bondedTax']); ?>
+            + 进口税：<?= sprintf('%.2f', $product['config']['bondedTax']) ?>)
         </span>
         <?php endif ?>
       </div>
@@ -42,12 +43,13 @@
     <?php endif ?>
 
     <?php if (!$setting('product.hideSoldQuantity', false)) : ?>
-    <dl class="product-item border-top">
-      <dt>销量：</dt>
-      <dd>
-        <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . ($product['config']['unit'] ?: '件') : '10' . ($product['config']['unit'] ?: '件') . '以内' ?>
-      </dd>
-    </dl>
+      <dl class="product-item border-top">
+        <dt>销量：</dt>
+        <dd>
+          <?php $unit = $product['config']['unit'] ?: '件'; ?>
+          <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . $unit : '10' . $unit . '以内' ?>
+        </dd>
+      </dl>
     <?php endif ?>
 
     <?php $event->trigger('productsShowItem', [$product]) ?>

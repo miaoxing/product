@@ -24,13 +24,13 @@
 </div>
 
 <div class="form-group scope-category-form-group scope-form-group">
-  <label class="col-lg-2 control-label" for="categoryId">
+  <label class="col-lg-2 control-label" for="category-ids">
     <span class="text-warning">*</span>
     选择栏目
   </label>
 
   <div class="col-lg-4">
-    <select id="categoryIds" name="categoryIds[]" class="form-control categoryIds" multiple>
+    <select id="category-ids" name="categoryIds[]" class="form-control categoryIds" multiple>
     </select>
   </div>
 
@@ -61,7 +61,8 @@
     'comps/select2/select2.min',
     'comps/typeahead.js/dist/typeahead.bundle.min'
   ], function (form) {
-    form.toOptions($('#categoryIds'), <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>, 'id', 'name');
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
+    form.toOptions($('#category-ids'), categoryJson, 'id', 'name');
 
     $('.scope').change(function(){
       $('.scope-form-group').hide();

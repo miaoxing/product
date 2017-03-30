@@ -113,7 +113,7 @@
     border: none;
   }
 
-  .product-list-md .product-list-item:nth-child(odd):before {
+  .product-list-md .product-list-item:nth-child(odd)::before {
     content: "";
     position: absolute;
     width: 0;
@@ -262,7 +262,7 @@
   margin-bottom: 0;
 }
 
-.category-title:before {
+.category-title::before {
   content: '';
   display: inline-block;
   width: 14px;
@@ -279,7 +279,7 @@
   color: #eb5211;
 }
 
-.category-title.active:before {
+.category-title.active::before {
   -webkit-transform: rotate(180deg);
 }
 
@@ -306,14 +306,14 @@
 /* 只有一级分类 */
 .category-list-sm {
   padding-left: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .category-list-sm a {
   color: inherit;
 }
 
-.category-list-sm h4:before {
+.category-list-sm .category-title::before {
   display: none;
 }
 
@@ -451,7 +451,7 @@
   padding: 2px 3px;
   margin: 0 1px;
   background: rgba(0, 0, 0, .6);
-  color: #fff !important;
+  color: #fff;
   font-weight: normal;
   text-shadow: none;
 }
@@ -615,8 +615,8 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent !important;
-  border-right: 5px solid transparent !important;
+  border-left: 6px solid transparent;
+  border-right: 5px solid transparent;
   border-bottom: 6px solid;
 }
 

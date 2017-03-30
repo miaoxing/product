@@ -64,7 +64,8 @@
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" name="startTimeRange" id="startTimeRange" placeholder="请选择上架时间范围">
+            <input type="text" class="form-control" name="startTimeRange" id="startTimeRange"
+              placeholder="请选择上架时间范围">
           </div>
 
           <div class="form-group" style="width: 173px;">
@@ -77,15 +78,15 @@
         <thead>
         <tr>
           <th>名称</th>
-          <th style="width:80px">栏目</th>
-          <th style="width:180px">上架时间~下架时间</th>
-          <th style="width:120px">价格</th>
-          <th style="width:60px">销量</th>
-          <th style="width:100px">库存</th>
-          <th style="width:70px">是否上架<input class="ace toggle-status" name="all" type="checkbox"></th>
+          <th class="t-4">栏目</th>
+          <th class="t-12">上架时间~下架时间</th>
+          <th class="t-4">价格</th>
+          <th class="t-4">销量</th>
+          <th class="t-4">库存</th>
+          <th class="t-4">是否上架<input class="ace toggle-status" name="all" type="checkbox"></th>
           <?php $event->trigger('adminProductsList', []) ?>
-          <th style="width: 50px">顺序</th>
-          <th style="width:120px">操作</th>
+          <th class="t-4">顺序</th>
+          <th class="t-12">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -124,7 +125,7 @@
 <script id="edit-quantity" type="text/html">
   <div class="action-buttons">
     <%= stock %>
-    <a href="javascript:;" class="edit-quantity" data-href="<%= $.url('admin/products/editQuantity', {id: id}) %>"
+    <a href="javascript:" class="edit-quantity" data-href="<%= $.url('admin/products/editQuantity', {id: id}) %>"
        title="编辑">
       <i class="fa fa-pencil"></i>
     </a>
@@ -143,7 +144,7 @@
     <a href="<%= $.url('admin/products/edit', {id: id}) %>" title="编辑">
       <i class="fa fa-edit bigger-130"></i>
     </a>
-    <a class="text-danger delete-record" href="javascript:;" data-href="<%= $.url('admin/products/delete', {id: id}) %>"
+    <a class="text-danger delete-record" href="javascript:" data-href="<%= $.url('admin/products/delete', {id: id}) %>"
        title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
@@ -156,7 +157,8 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'dataTable', 'jquery-deparam', 'daterangepicker', 'plugins/excel/js/excel'], function (form) {
-    form.toOptions($('#categoryId'), <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>, 'id', 'name');
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
+    form.toOptions($('#categoryId'), categoryJson, 'id', 'name');
 
     $('#search-form').loadParams().update(function () {
       recordTable.search($(this).serializeArray(), false);
@@ -181,7 +183,8 @@
           data: 'startTime',
           sClass: 'text-center',
           render: function (data, type, full) {
-            return full.startTime.replace(/-/g, '.').substr(0, 10) + '~' + full.endTime.replace(/-/g, '.').substr(0, 10);
+            return full.startTime.replace(/-/g, '.').substr(0, 10) + '~' +
+              full.endTime.replace(/-/g, '.').substr(0, 10);
           }
         },
         {

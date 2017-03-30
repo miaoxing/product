@@ -160,30 +160,38 @@ class Products extends \miaoxing\plugin\BaseController
         switch ($req['_format']) {
             case 'json':
                 return $this->suc($packageData);
-                break;
 
             default:
-                $category = wei()->category()->findOrInitById($product['categoryId']);
-                $categoryDetail = wei()->categoryDetail()->curApp()->findOrInit(['categoryId' => $product['categoryId'], 'showed' => 1]);
-                if ($categoryDetail->isNew()) {
-                    $categories = wei()->category()->where(['id' => $product['categoryId']])->getParents();
-                    foreach ($categories as $category) {
-                        $categoryDetail = wei()->categoryDetail()->curApp()->andWhere(['showed' => 1])->findOrInit(['categoryId' => $category['id']]);
-                        if (!$categoryDetail->isNew()) {
-                            break;
-                        }
-                    }
-                }
-
-                $payable = $product->checkViewPayable();
-                $images = $product['images'];
-                $account = wei()->wechatAccount->getCurrentAccount();
-                $headerTitle = '商品详情';
-                $htmlTitle = $product['name'];
-                $scoreTitle = $this->setting('score.title', '积分');
-                $this->pageConfig['displayFooter'] = false;
-
-                return get_defined_vars();
+                break;
         }
+
+        $category = wei()->category()->findOrInitById($product['categoryId']);
+        $categoryDetail = wei()->categoryDetail()->curApp()->findOrInit([
+            'categoryId' => $product['categoryId'],
+            'showed' => 1
+        ]);
+        if ($categoryDetail->isNew()) {
+            $categories = wei()->category()->where(['id' => $product['categoryId']])->getParents();
+            foreach ($categories as $category) {
+                $categoryDetail = wei()->categoryDetail()
+                    ->curApp()
+                    ->andWhere(['showed' => 1])
+                    ->findOrInit(['categoryId' => $category['id']]);
+
+                if (!$categoryDetail->isNew()) {
+                    break;
+                }
+            }
+        }
+
+        $payable = $product->checkViewPayable();
+        $images = $product['images'];
+        $account = wei()->wechatAccount->getCurrentAccount();
+        $headerTitle = '商品详情';
+        $htmlTitle = $product['name'];
+        $scoreTitle = $this->setting('score.title', '积分');
+        $this->pageConfig['displayFooter'] = false;
+
+        return get_defined_vars();
     }
 }

@@ -1,15 +1,16 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <?php if (isset($category) && $category['id']) {
-    ?>
+  <?php if (isset($category) && $category['id']) : ?>
     <div class="pull-right">
-      <a class="btn btn-success" href="<?= $url('admin/products/editCategoryDetail?categoryId='.$category['id'])?>">添加栏目详情</a>
-      <a class="btn btn-success " href="<?= $url('admin/albumCategory/edit?binding='.$category['id'])?>">添加栏目图片</a>
+      <a class="btn btn-success" href="<?= $url('admin/products/editCategoryDetail?categoryId=' . $category['id']) ?>">
+        添加栏目详情
+      </a>
+      <a class="btn btn-success" href="<?= $url('admin/albumCategory/edit?binding=' . $category['id']) ?>">
+        添加栏目图片
+      </a>
     </div>
-  <?php
-
-} ?>
+  <?php endif ?>
   <h1>
     微商城
     <small>
@@ -26,12 +27,12 @@
     <form id="category-form" class="form-horizontal" method="post" role="form">
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="parentId">
+        <label class="col-lg-2 control-label" for="parent-id">
           所属栏目
         </label>
 
         <div class="col-lg-4">
-          <select name="parentId" id="parentId" class="form-control">
+          <select name="parentId" id="parent-id" class="form-control">
             <option value="mall">根栏目</option>
           </select>
         </div>
@@ -53,12 +54,12 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="listTpl">
+        <label class="col-lg-2 control-label" for="list-tpl">
           列表模版
         </label>
 
         <div class="col-lg-4">
-          <select name="listTpl" id="listTpl" class="form-control">
+          <select name="listTpl" id="list-tpl" class="form-control">
             <?= $wei->html->options($wei->product->getListTpls()) ?>
           </select>
         </div>
@@ -113,7 +114,8 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'ueditor', 'jquery-deparam', 'dataTable', 'validator'], function (form) {
-    form.toOptions($('#parentId'), <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>, 'id', 'name');
+    var mallJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
+    form.toOptions($('#parent-id'), mallJson, 'id', 'name');
 
     var category = <?= $category->toJson() ?>;
 

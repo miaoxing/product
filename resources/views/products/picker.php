@@ -1,9 +1,11 @@
 <script type="text/html" id="productModalTpl">
-  <div class="js-product-picker product-picker modal-bottom modal fade" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="js-product-picker product-picker modal-bottom modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header border-bottom">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
           <div class="modal-title flex" id="productModalLabel">
             <div class="product-picker-thumb">
               <img src="<%= data.images[0] %>">
@@ -13,13 +15,13 @@
               <?php if (!$setting('product.hidePrice')) : ?>
                 <strong class="product-price text-primary">
                   <% if (data.price != '0.00' || data.scores == '0') { %>
-                    ￥<span class="js-product-price"><%= data.price %></span>
+                  ￥<span class="js-product-price"><%= data.price %></span>
                   <% } %>
                   <% if (data.price != '0.00' && data.scores != '0') { %>
-                    +
+                  +
                   <% } %>
                   <% if (data.scores != '0') { %>
-                    <%= data.scores %><?= $setting('score.title', '积分') ?>
+                  <%= data.scores %><?= $setting('score.title', '积分') ?>
                   <% } %>
                 </strong>
               <?php endif ?>
@@ -28,24 +30,25 @@
         </div>
         <div class="modal-body">
           <% if (skus.length > 1) { %>
-            <div class="sku-item-list border-bottom">
-              <% $.each(data.skuConfigs, function (i, skuConfig) { %>
-                <dl class="sku-item clearfix">
-                  <dt class="sku-name"><%= skuConfig.name %></dt>
-                  <dd>
-                    <%
-                      var extraClass;
-                      $.each(skuConfig.attrs, function (j, attr) {
-                        extraClass = $.inArray(attr.id, selectedAttrIds) == -1 ? '' : 'active';
-                    %>
-                      <label class="js-sku-attr sku-attr text-active-primary border-active-primary after-active-primary <%= extraClass %>" data-id="<%= attr.id %>">
-                        <%= attr.value %>
-                      </label>
-                    <% }) %>
-                  </dd>
-                </dl>
-              <% }) %>
-            </div>
+          <div class="sku-item-list border-bottom">
+            <% $.each(data.skuConfigs, function (i, skuConfig) { %>
+            <dl class="sku-item clearfix">
+              <dt class="sku-name"><%= skuConfig.name %></dt>
+              <dd>
+                <%
+                var extraClass;
+                $.each(skuConfig.attrs, function (j, attr) {
+                extraClass = $.inArray(attr.id, selectedAttrIds) == -1 ? '' : 'active';
+                %>
+                <label class="js-sku-attr sku-attr text-active-primary border-active-primary
+                after-active-primary <%= extraClass %>" data-id="<%= attr.id %>">
+                  <%= attr.value %>
+                </label>
+                <% }) %>
+              </dd>
+            </dl>
+            <% }) %>
+          </div>
           <% } %>
 
           <dl class="js-quantity-item quantity-item flex flex-center">
@@ -74,13 +77,16 @@
 
         <div class="js-product-actions modal-footer flex">
           <% if (action == 'updateCart') { %>
-            <input type="hidden" class="js-cart-id" name="id" value="<%= cartId %>">
-            <button class="js-cart-update product-picker-btn btn btn-primary flex-grow-1" type="button">确定</button>
+          <input type="hidden" class="js-cart-id" name="id" value="<%= cartId %>">
+          <button class="js-cart-update product-picker-btn btn btn-primary flex-grow-1" type="button">确定</button>
           <% } else { %>
-            <% if (data.virtual == '0' && (typeof data.config.noShowCart == 'undefined' || data.config.noShowCart == '0')) { %>
-              <button class="js-cart-create product-picker-btn btn btn-primary flex-grow-1" type="button"><?= $setting('product.titleAddToCart') ?: '加入购物车' ?></button>
-            <% } %>
-            <button class="js-order-create product-picker-btn btn btn-danger flex-grow-1" type="button"><?= $setting('product.titleBuyNow') ?: '立即购买' ?></button>
+          <% if (data.virtual == '0' && (typeof data.config.noShowCart == 'undefined' || data.config.noShowCart == '0'))
+          { %>
+          <button class="js-cart-create product-picker-btn btn btn-primary flex-grow-1"
+            type="button"><?= $setting('product.titleAddToCart') ?: '加入购物车' ?></button>
+          <% } %>
+          <button class="js-order-create product-picker-btn btn btn-danger flex-grow-1"
+            type="button"><?= $setting('product.titleBuyNow') ?: '立即购买' ?></button>
           <% } %>
         </div>
       </div>
