@@ -67,7 +67,12 @@ class Product extends BaseModel
     ];
 
     protected $units = [
-        '件', '只', '罐', '盒', '人', '个',
+        '件',
+        '只',
+        '罐',
+        '盒',
+        '人',
+        '个',
     ];
 
     protected $listTpls = [
@@ -515,20 +520,26 @@ class Product extends BaseModel
 
         $data = [];
 
-        $data['skus'] = [[
-            'price' => $price,
-            'quantity' => $quantity,
-            'attrIds' => [$attrId],
-        ]];
+        $data['skus'] = [
+            [
+                'price' => $price,
+                'quantity' => $quantity,
+                'attrIds' => [$attrId],
+            ],
+        ];
 
-        $data['skuConfigs'] = [[
-            'id' => wei()->seq(),
-            'name' => '规格',
-            'attrs' => [[
-                'id' => $attrId,
-                'value' => $price,
-            ]],
-        ]];
+        $data['skuConfigs'] = [
+            [
+                'id' => wei()->seq(),
+                'name' => '规格',
+                'attrs' => [
+                    [
+                        'id' => $attrId,
+                        'value' => $price,
+                    ],
+                ],
+            ],
+        ];
 
         return $data;
     }
@@ -694,12 +705,24 @@ class Product extends BaseModel
     {
         return [
             'data' => $this->toArray([
-                'id', 'name', 'price', 'scores', 'images', 'quantity', 'config', 'limitation',
-                'virtual', 'quantity', 'skuConfigs',
+                'id',
+                'name',
+                'price',
+                'scores',
+                'images',
+                'quantity',
+                'config',
+                'limitation',
+                'virtual',
+                'quantity',
+                'skuConfigs',
 
             ]),
             'skus' => $this->getSkus()->toArray([
-                'id', 'quantity', 'price', 'attrIds',
+                'id',
+                'quantity',
+                'price',
+                'attrIds',
             ]),
         ];
     }
@@ -707,6 +730,16 @@ class Product extends BaseModel
     public function getListTpls()
     {
         return $this->listTpls;
+    }
+
+    public function getListTplsOptions()
+    {
+        $data = [];
+        foreach ($this->listTpls as $name => $value) {
+            $data[] = ['name' => $name, 'value' => $value];
+        }
+
+        return $data;
     }
 
     /**

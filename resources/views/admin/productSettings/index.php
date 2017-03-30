@@ -41,7 +41,6 @@
         <div class="col-lg-4">
           <select class="js-product-default-list-tpl form-control" name="settings[product.defaultListTpl]"
             id="default-list-tpl">
-            <?= $wei->html->options($wei->product->getListTpls()) ?>
           </select>
         </div>
       </div>
@@ -62,7 +61,10 @@
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'ueditor', 'validator'], function () {
+  require(['form', 'ueditor', 'validator'], function (form) {
+    var listJson = <?= json_encode($wei->product->getListTplsOptions()) ?>;
+    form.toOptions($('.js-product-default-list-tpl'), listJson, 'name', 'value');
+
     $('.js-setting-form')
       .loadJSON(<?= $setting->getFormJson(['products.showTag' => '0', 'product.defaultListTpl' => 'md']) ?>)
       .ajaxForm({

@@ -59,8 +59,7 @@
         </label>
 
         <div class="col-lg-4">
-          <select name="listTpl" id="list-tpl" class="form-control">
-            <?= $wei->html->options($wei->product->getListTpls()) ?>
+          <select name="listTpl" id="list-tpl" class="js-list-tpl form-control">
           </select>
         </div>
       </div>
@@ -116,6 +115,7 @@
   require(['form', 'ueditor', 'jquery-deparam', 'dataTable', 'validator'], function (form) {
     var mallJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
     form.toOptions($('#parent-id'), mallJson, 'id', 'name');
+    form.toOptions($('.js-list-tpl'), <?= json_encode($wei->product->getListTplsOptions()) ?>, 'name', 'value');
 
     var category = <?= $category->toJson() ?>;
 
