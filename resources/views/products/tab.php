@@ -13,7 +13,7 @@ tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
     <a class="text-active-primary"
       href="<?= $url->query('products', [
         'sort' => 'soldQuantity',
-        'order' => ($req['order'] == 'desc' ? 'asc' : 'desc')
+        'order' => ($req['order'] == 'desc' ? 'asc' : 'desc'),
       ]) ?>">
       销量
       <?php if ($req['sort'] == 'soldQuantity') : ?>

@@ -64,7 +64,7 @@
 <script>
   require(['form', 'ueditor', 'validator'], function () {
     $('.js-setting-form')
-      .loadJSON(<?= $setting->getFormJson(['products.showTag' => '0','product.defaultListTpl' => 'md']) ?>)
+      .loadJSON(<?= $setting->getFormJson(['products.showTag' => '0', 'product.defaultListTpl' => 'md']) ?>)
       .ajaxForm({
         dataType: 'json',
         beforeSubmit: function (arr, $form, options) {

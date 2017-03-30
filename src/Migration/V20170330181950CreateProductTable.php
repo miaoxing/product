@@ -11,7 +11,7 @@ class V20170330181950CreateProductTable extends BaseMigration
      */
     public function up()
     {
-//        $this->schema->table('product')
+        //        $this->schema->table('product')
 //            ->id()
 //            ->int('categoryId')
 //            ->string('name', 255)

@@ -168,7 +168,7 @@ class Products extends \miaoxing\plugin\BaseController
         $category = wei()->category()->findOrInitById($product['categoryId']);
         $categoryDetail = wei()->categoryDetail()->curApp()->findOrInit([
             'categoryId' => $product['categoryId'],
-            'showed' => 1
+            'showed' => 1,
         ]);
         if ($categoryDetail->isNew()) {
             $categories = wei()->category()->where(['id' => $product['categoryId']])->getParents();

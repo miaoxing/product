@@ -11,7 +11,7 @@ class V20170330182426CreateSkuTable extends BaseMigration
      */
     public function up()
     {
-//        $this->schema->table('sku')
+        //        $this->schema->table('sku')
 //            ->id()
 //            ->int('productId')
 //            ->decimal('price', 10)
