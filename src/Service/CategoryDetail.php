@@ -7,6 +7,6 @@ class CategoryDetail extends \miaoxing\plugin\BaseModel
     protected $table = 'categoryDetails';
 
     protected $providers = [
-        'db' => 'app.db'
+        'db' => 'app.db',
     ];
 }
