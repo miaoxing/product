@@ -64,6 +64,7 @@ class Product extends BaseModel
         'shippingTplId' => 0,
         'skuConfigs' => [],
         'config' => [],
+        'detail' => '',
     ];
 
     protected $units = [
