@@ -21,9 +21,9 @@
           <?= $product->getPriceText($product->getPriceRange()) ?>
         </strong>
         <?php if ($product['originalPrice'] != '0.00') : ?>
-          <del class="product-original-price text-muted small">
-            原价:￥<?= $product['originalPrice'] ?>
-          </del>
+          <span class="product-original-price text-muted small">
+            原价:￥<del><?= $product['originalPrice'] ?></del>
+          </span>
         <?php endif ?>
 
         <?php if (!$setting('product.hideBondedTax', true) && $product['bonded']) : ?>
