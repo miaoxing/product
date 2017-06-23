@@ -64,7 +64,9 @@
   <?php if ($product->getTags()->length() && $setting('products.showTag')) : ?>
     <div class="product-item">
       <?php foreach ($product->getTags() as $tag) : ?>
-        <span class="product-tag" style="background-color: <?= $tag['color'] ?>"><?= $tag['name'] ?></span>
+        <?php if ($tag['enable']) : ?>
+          <span class="product-tag" style="background-color: <?= $tag['color'] ?>"><?= $tag['name'] ?></span>
+        <?php endif ?>
       <?php endforeach ?>
     </div>
   <?php endif ?>
