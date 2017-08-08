@@ -294,7 +294,8 @@
 
     // 商品批量导出
     $('#export-csv').click(function () {
-      window.location = $.appendUrl(recordTable.fnSettings().ajax.url, {page: 1, rows: 99999, format: 'csv'});
+      var url = recordTable.fnSettings().ajax.url.replace('.json', '.csv');
+      window.location = $.appendUrl(url, {page: 1, rows: 99999});
     });
   });
 </script>
