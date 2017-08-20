@@ -47,6 +47,7 @@ class V20170330181950CreateProductTable extends BaseMigration
             ->int('sort')
             ->tinyInt('visible', 1)->defaults(1)->comment('是否在前后台列表可见')
             ->text('skuConfigs')->comment('规格配置')
+            ->int('weight')->comment('商品重量，单位为克数')
             ->tinyInt('deleted', 4)
             ->tinyInt('virtual', 1)
             ->timestampsV1()
