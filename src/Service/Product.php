@@ -704,6 +704,8 @@ class Product extends BaseModel
      */
     public function getPackageData()
     {
+        wei()->event->trigger('preProductGetPackageData', [$this]);
+
         return [
             'data' => $this->toArray([
                 'id',
