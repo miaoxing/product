@@ -33,7 +33,11 @@ class Products extends \miaoxing\plugin\BaseController
                 $products->desc('sort')->desc('id');
 
                 // 排除删除
-                $products->notDeleted()->andWhere(['visible' => 1]);
+                $products->notDeleted();
+
+                if (!isset($req['with_invisible'])) {
+                    $products->andWhere(['visible' => 1]);
+                }
 
                 // 搜索
                 if ($req['search']) {

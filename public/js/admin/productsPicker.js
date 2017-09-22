@@ -13,6 +13,8 @@ define([
   $.extend(ProductsPicker.prototype, {
     $el: $('body'),
     products:[],
+    url: 'admin/products.json',
+    searchKey: 'search',
     maxItems: 100,
     $: function (selector) {
       return this.$el.find(selector);
@@ -42,7 +44,7 @@ define([
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {
-          url: $.url('admin/products.json?search=%QUERY', {rows: 10}),
+          url: $.url($.appendUrl(that.url, that.searchKey + '=%QUERY'), {rows: that.rows}),
           ajax: {
             global: false,
             success: function () {
