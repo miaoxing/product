@@ -226,7 +226,7 @@ class Products extends \miaoxing\plugin\BaseController
                 'price' => $product[7],
                 'originalPrice' => $product[8],
                 'quantity' => $product[10],
-                'supplierId' => wei()->supplier->getSupplierIdByName($product[12]),
+//                'supplierId' => wei()->supplier->getSupplierIdByName($product[12]),
                 'startTime' => date('Y-m-d H:i:s', time() + 8640000),
                 'endTime' => date('Y-m-d H:i:s', time() + 86400000),
                 'images' => $isUpdate ? $pro['images'] : [],
