@@ -16,6 +16,7 @@ define([
     url: 'admin/products.json',
     searchKey: 'search',
     maxItems: 100,
+    rows: 10,
     $: function (selector) {
       return this.$el.find(selector);
     },
