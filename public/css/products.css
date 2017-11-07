@@ -621,9 +621,14 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 5px solid transparent;
+  border-left: 6px solid transparent !important; /* stylelint-disable-line declaration-no-important */
+  border-right: 5px solid transparent !important; /* stylelint-disable-line declaration-no-important */
   border-bottom: 6px solid;
+}
+
+.sku-attr-sold-out {
+  color: #ccc;
+  border-color: #ccc;
 }
 
 .quantity-item {

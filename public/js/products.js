@@ -214,13 +214,11 @@ define(['comps/artTemplate/template.min'], function (template) {
      * 渲染选择器
      */
     renderPicker: function () {
-      var selectedAttrIds = this.getSelectedAttrIds();
       var $modal = $(template.render('productModalTpl', {
         data: this.data,
         action: this.action,
         cartId: this.cartId,
         quantity: this.quantity,
-        selectedAttrIds: selectedAttrIds,
         skus: this.skus
       }));
 
@@ -242,6 +240,8 @@ define(['comps/artTemplate/template.min'], function (template) {
       this.initCart();
       this.initSkuSelector();
       this.initSpinner();
+      this.updateNoQuantity();
+      this.initSelectedAttrs();
     },
 
     /**
@@ -251,6 +251,13 @@ define(['comps/artTemplate/template.min'], function (template) {
       var $el = this.$el;
       $el.on('hidden.bs.modal', function () {
         $el.remove();
+      });
+    },
+
+    initSelectedAttrs: function () {
+      var attrIds = this.getSelectedAttrIds();
+      $.each(attrIds, function (i, attrId) {
+        $('.js-sku-attr[data-id=' + attrId + ']').click();
       });
     },
 
@@ -338,6 +345,12 @@ define(['comps/artTemplate/template.min'], function (template) {
 
       this.$el.on('click', '.sku-attr', function () {
         var sku = $(this);
+
+        // 买完的不能选择
+        if (sku.hasClass('sku-attr-sold-out')) {
+          return;
+        }
+
         if (sku.hasClass('active')) {
           $(this).removeClass('active');
         } else {
@@ -492,40 +505,88 @@ define(['comps/artTemplate/template.min'], function (template) {
         $quantity.val(quantity);
       }
 
-      // 更新价格范围
-      var $displayPrice = $('.js-product-price');
+      // 将库存为0的规格禁用
+      this.updateNoQuantity();
 
       // 一个都没有选中,说明取消了选择
       if (validSkus.length === 0) {
         validSkus = this.skus;
       }
 
-      if (validSkus.length === 1) {
-        $displayPrice.html(validSkus[0].price);
-      } else {
-        var min = parseFloat(validSkus[0].price);
-        var max = min;
-        for (var i in validSkus) {
-          if (Object.prototype.hasOwnProperty.call(validSkus, i)) {
-            var price = parseFloat(validSkus[i].price);
-            if (price < min) {
-              min = price;
-            }
-            if (price > max) {
-              max = price;
-            }
-          }
-        }
-
-        if (min === max) {
-          $displayPrice.html(min.toFixed(2));
-        } else {
-          $displayPrice.html(min.toFixed(2) + '~' + max.toFixed(2));
-        }
-      }
+      // 更新价格范围
+      $('.js-product-price').html(this.getPriceRange(validSkus));
 
       // 如果只剩下一个规格,说明已经选完了
       this.$('.js-sku-id').val(validSkus[0].id);
+    },
+
+    getPriceRange: function (validSkus) {
+      if (validSkus.length === 1) {
+        return validSkus[0].price;
+      }
+
+      var min = parseFloat(validSkus[0].price);
+      var max = min;
+      for (var i in validSkus) {
+        if (Object.prototype.hasOwnProperty.call(validSkus, i)) {
+          var price = parseFloat(validSkus[i].price);
+          if (price < min) {
+            min = price;
+          }
+          if (price > max) {
+            max = price;
+          }
+        }
+      }
+
+      if (min === max) {
+        return min.toFixed(2);
+      } else {
+        return min.toFixed(2) + '~' + max.toFixed(2);
+      }
+    },
+
+    updateNoQuantity: function () {
+      $('.js-sku-attr').removeClass('sku-attr-sold-out');
+
+      // 如果某个属性没有库存,禁用该属性
+      var attrQuantities = {};
+      $.each(this.skus, function (i, sku) {
+        $.each(sku.attrIds, function (i, attrId) {
+          if (!attrQuantities[attrId]) {
+            attrQuantities[attrId] = 0;
+          }
+          attrQuantities[attrId] += parseInt(sku.quantity, 10);
+        });
+      });
+
+      $.each(attrQuantities, function (attrId, quantity) {
+        if (quantity === 0) {
+          $('.js-sku-attr[data-id=' + attrId + ']').addClass('sku-attr-sold-out');
+        }
+      });
+
+      // 找到选择的
+      var selectedAttrIds = [];
+      this.$('.js-sku-attr.active').each(function () {
+        selectedAttrIds.push($(this).data('id').toString());
+      });
+
+      $.each(this.skus, function (i, sku) {
+        if (sku.quantity != '0') {
+          return;
+        }
+        $.each(selectedAttrIds, function (i, selectedAttrId) {
+          if ($.inArray(selectedAttrId, sku.attrIds) !== -1) {
+            $.each(sku.attrIds, function (i, attrId) {
+              if (attrId == selectedAttrId) {
+                return;
+              }
+              $('.js-sku-attr[data-id=' + attrId  + ']').addClass('sku-attr-sold-out');
+            });
+          }
+        });
+      });
     },
 
     /**

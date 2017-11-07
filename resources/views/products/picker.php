@@ -35,15 +35,11 @@
             <dl class="sku-item clearfix">
               <dt class="sku-name"><%= skuConfig.name %></dt>
               <dd>
-                <%
-                var extraClass;
-                $.each(skuConfig.attrs, function (j, attr) {
-                extraClass = $.inArray(attr.id, selectedAttrIds) == -1 ? '' : 'active';
-                %>
-                <label class="js-sku-attr sku-attr text-active-primary border-active-primary
-                after-active-primary <%= extraClass %>" data-id="<%= attr.id %>">
-                  <%= attr.value %>
-                </label>
+                <% $.each(skuConfig.attrs, function (j, attr) { %>
+                  <label class="js-sku-attr sku-attr text-active-primary border-active-primary after-active-primary"
+                    data-id="<%= attr.id %>">
+                    <%= attr.value %>
+                  </label>
                 <% }) %>
               </dd>
             </dl>
