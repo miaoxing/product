@@ -5,7 +5,7 @@
 <?= $block->end() ?>
 
 <div class="page-header">
-  <a class="btn pull-right" href="<?= $url('admin/products') ?>">返回列表</a>
+  <a class="btn btn-default pull-right" href="<?= $url('admin/products') ?>">返回列表</a>
 
   <h1>
     商品管理
