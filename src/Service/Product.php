@@ -718,8 +718,10 @@ class Product extends BaseModel
                 'limitation',
                 'virtual',
                 'quantity',
+                'reserveStartTime',
+                'reserveEndTime',
+                'dailyReserveCount',
                 'skuConfigs',
-
             ]),
             'skus' => $this->getSkus()->toArray([
                 'id',
