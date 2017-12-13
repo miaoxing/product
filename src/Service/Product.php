@@ -720,7 +720,6 @@ class Product extends BaseModel
                 'quantity',
                 'reserveStartTime',
                 'reserveEndTime',
-                'dailyReserveCount',
                 'skuConfigs',
             ]),
             'skus' => $this->getSkus()->toArray([
