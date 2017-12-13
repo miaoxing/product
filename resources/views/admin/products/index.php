@@ -68,31 +68,14 @@
               placeholder="请选择上架时间范围">
           </div>
 
-          <div class="form-group" style="width: 173px;">
+          <div class="form-group">
             <input type="text" class="form-control" name="search" placeholder="请输入名称或货号搜索">
           </div>
 
+          <?php $event->trigger('adminProductsSearchRender', [$req]) ?>
         </form>
       </div>
-      <table id="record-table" class="record-table table table-bordered table-hover">
-        <thead>
-        <tr>
-          <th>名称</th>
-          <th class="t-4">栏目</th>
-          <th class="t-12">上架时间~下架时间</th>
-          <th class="t-4">价格</th>
-          <th class="t-4">销量</th>
-          <th class="t-4">库存</th>
-          <th class="t-4">是否上架<input class="ace toggle-status" name="all" type="checkbox"></th>
-          <?php $event->trigger('adminProductsList', []) ?>
-          <th class="t-4">顺序</th>
-          <th class="t-12">操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+      <table id="record-table" class="record-table table table-bordered table-hover"></div>
     <!-- /.table-responsive -->
     <!-- PAGE CONTENT ENDS -->
   </div>
@@ -171,17 +154,20 @@
       columns: [
         {
           data: 'id',
+          title: '名称',
           render: function (data, type, full) {
             return template.render('product-tpl', full);
           }
         },
         {
           data: 'categoryName',
-          sClass: 'text-center'
+          title: '栏目',
+          sClass: 't-4 text-center'
         },
         {
           data: 'startTime',
-          sClass: 'text-center',
+          title: '上架时间~下架时间',
+          sClass: 't-12 text-center',
           render: function (data, type, full) {
             return full.startTime.replace(/-/g, '.').substr(0, 10) + '~' +
               full.endTime.replace(/-/g, '.').substr(0, 10);
@@ -189,22 +175,29 @@
         },
         {
           data: 'price',
-          sClass: 'text-center',
+          title: '价格',
+          sClass: 't-4 text-center',
           render: function (data, type, full) {
             return '￥' + data + (full.scores != '0' ? '+' + full.scores + '积分' : '');
           }
         },
         {
-          data: 'soldQuantity'
+          data: 'soldQuantity',
+          title: '销量',
+          sClass: 't-4'
         },
         {
           data: 'stock',
+          title: '库存',
+          sClass: 't-4',
           render: function (data, type, full) {
             return template.render('edit-quantity', full);
           }
         },
         {
           data: 'listing',
+          title: '上架',
+          sClass: 't-4',
           render: function (data, type, full) {
             return template.render('checkbox-col-tpl', {
               id: full.id + "_" + full.template,
@@ -214,13 +207,17 @@
           }
         },
 
-        <?php $event->trigger('adminProductsListContent', []) ?>
+        <?php $event->trigger('adminProductListColumnRender', [$req]) ?>
 
         {
-          data: 'sort'
+          data: 'sort',
+          title: '顺序',
+          sClass: 't-4',
         },
         {
           data: 'id',
+          title: '操作',
+          sClass: 't-12',
           render: function (data, type, full) {
             return template.render('table-actions', full)
           }

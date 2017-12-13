@@ -71,6 +71,8 @@ class Products extends \miaoxing\plugin\BaseController
                     $products->andWhere(['id' => explode(',', $req['id'])]);
                 }
 
+                $this->event->trigger('preAdminProductListFind', [$products, $req]);
+
                 $data = [];
                 foreach ($products as $product) {
                     $data[] = $product->toArray() + [
@@ -79,6 +81,8 @@ class Products extends \miaoxing\plugin\BaseController
                             'categoryName' => $product->getCategory()->get('name'),
                         ];
                 }
+
+                $this->event->trigger('postAdminProductListFind', [&$data, $req]);
 
                 wei()->statsD->endTiming('admin.product.index');
 
