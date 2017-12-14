@@ -456,6 +456,14 @@ define(['comps/artTemplate/template.min'], function (template) {
      * 加入购物车并进入下单页面
      */
     createAndPay: function (cart) {
+      if ($.isArray(cart)) {
+        cart.push({
+          name: 'temp',
+          value: 1
+        });
+      } else {
+        cart.temp = 1;
+      }
       this.create(cart, function (ret) {
         if (ret.code > 0) {
           window.location = $.url('orders/new', {
