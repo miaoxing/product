@@ -127,7 +127,7 @@
           </div>
         <?php endif ?>
 
-        <div class="form-group">
+        <div class="form-group form-group-quantity">
           <label class="col-lg-2 control-label" for="quantity">
             <span class="text-warning">*</span>
             总库存
