@@ -13,11 +13,11 @@
       </button>
 
       <ul class="dropdown-menu">
-        <li>
+        <li class="product-new-single-price">
           <a href="<?= $url('admin/products/new') ?>">单价格</a>
         </li>
 
-        <li>
+        <li class="product-new-multi-price">
           <a href="<?= $url('admin/products/new', ['template' => 'advanced']) ?>">多价格</a>
         </li>
       </ul>
@@ -51,7 +51,7 @@
       <div class="well form-well">
         <form class="form-inline" id="search-form" role="form">
 
-          <div class="form-group">
+          <div class="form-group form-group-category-id">
             <select class="form-control" name="categoryId" id="categoryId">
               <option value="">全部栏目</option>
             </select>
