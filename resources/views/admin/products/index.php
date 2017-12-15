@@ -106,13 +106,15 @@
 </div><!-- /.modal -->
 
 <script id="edit-quantity" type="text/html">
-  <div class="action-buttons">
+  <% if (config.dailyReserveCount) { %>
+    每天 <%= config.dailyReserveCount %>
+  <% } else { %>
     <%= stock %>
     <a href="javascript:" class="edit-quantity" data-href="<%= $.url('admin/products/editQuantity', {id: id}) %>"
        title="编辑">
       <i class="fa fa-pencil"></i>
     </a>
-  </div>
+  <% } %>
 </script>
 <script id="table-actions" type="text/html">
   <div class="action-buttons">

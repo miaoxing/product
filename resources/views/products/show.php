@@ -1,4 +1,8 @@
-<?php $view->layout(); ?>
+<?php
+
+$view->layout();
+$unit = $product['config']['unit'] ?: '件';
+?>
 
 <?= $block('css') ?>
 <link rel="stylesheet" href="<?= $asset('plugins/product/css/products.css') ?>">
@@ -38,7 +42,13 @@
     <?php if (!$setting('product.hideQuantity', false)) : ?>
       <dl class="product-item border-top">
         <dt>库存：</dt>
-        <dd><?= $product['quantity'] ?></dd>
+        <dd>
+          <?php if ($product['config']['dailyReserveCount']) : ?>
+            每天 <?= $product['config']['dailyReserveCount'], ' ', $unit ?>
+          <?php else : ?>
+            <?= $product['quantity'] ?>
+          <?php endif ?>
+        </dd>
       </dl>
     <?php endif ?>
 
@@ -46,8 +56,7 @@
       <dl class="product-item border-top">
         <dt>销量：</dt>
         <dd>
-          <?php $unit = $product['config']['unit'] ?: '件'; ?>
-          <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . $unit : '10' . $unit . '以内' ?>
+          <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . $unit : ' 10 ' . $unit . '以内' ?>
         </dd>
       </dl>
     <?php endif ?>
