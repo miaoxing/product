@@ -384,11 +384,22 @@ define(['comps/artTemplate/template.min'], function (template) {
         }
         input.val(newVal).change();
       });
+
       this.$('.spinner-input').change(function () {
-        var val = parseInt($(this).val(), 10);
+        var $input = $(this);
+        var val = parseInt($input.val(), 10);
         if (isNaN(val) || val < 1) {
           val = 1;
         }
+
+        var maxTarget = $input.data('max-target');
+        if (maxTarget) {
+          var max = parseInt($(maxTarget).html(), 10);
+          if (val > max) {
+            val = max;
+          }
+        }
+
         $(this).val(val);
       });
     },

@@ -62,7 +62,8 @@
 
               <div class="spinner">
                 <button class="spinner-button spinner-minus" type="button"></button>
-                <input type="text" class="spinner-input js-quantity" name="quantity" value="<%= quantity %>">
+                <input type="text" class="spinner-input js-quantity" name="quantity" value="<%= quantity %>"
+                  data-max-target=".js-quantity-left">
                 <button class="spinner-button spinner-plus" type="button"></button>
               </div>
 
