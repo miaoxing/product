@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Controller\Admin;
 
-class Products extends \miaoxing\plugin\BaseController
+class Products extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '商品管理';
 

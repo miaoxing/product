@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Controller\Admin;
 
-class Skus extends \miaoxing\plugin\BaseController
+class Skus extends \Miaoxing\Plugin\BaseController
 {
     public function indexAction($req)
     {

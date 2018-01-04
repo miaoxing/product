@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Controller\Admin;
 
-class ProductSettings extends \miaoxing\plugin\BaseController
+class ProductSettings extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '商品功能设置';
 

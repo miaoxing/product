@@ -4,7 +4,7 @@ namespace Miaoxing\Product\Controller;
 
 use Miaoxing\Product\Service\Product;
 
-class Products extends \miaoxing\plugin\BaseController
+class Products extends \Miaoxing\Plugin\BaseController
 {
     protected $guestPages = ['products'];
 
