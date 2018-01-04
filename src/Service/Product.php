@@ -4,7 +4,7 @@ namespace Miaoxing\Product\Service;
 
 use Miaoxing\Category\Service\Category;
 use Miaoxing\Logistics\Service\ShippingTpl;
-use miaoxing\plugin\BaseModel;
+use Miaoxing\Plugin\BaseModel;
 use Miaoxing\ProductTag\Service\Tag;
 
 /**

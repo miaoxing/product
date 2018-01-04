@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Service;
 
-class CategoryDetail extends \miaoxing\plugin\BaseModel
+class CategoryDetail extends \Miaoxing\Plugin\BaseModel
 {
     protected $table = 'categoryDetails';
 
