@@ -115,7 +115,7 @@
           </label>
         </div>
 
-        <?php if ($plugin->isInstalled('product-score')) : ?>
+        <?php if ($wei->plugin->isInstalled('product-score')) : ?>
           <div class="form-group">
             <label class="col-lg-2 control-label" for="scores">
               所需积分

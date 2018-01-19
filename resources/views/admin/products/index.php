@@ -118,7 +118,7 @@
 </script>
 <script id="table-actions" type="text/html">
   <div class="action-buttons">
-    <?php if ($plugin->isInstalled('wechat-qrcode-product')) : ?>
+    <?php if ($wei->plugin->isInstalled('wechat-qrcode-product')) : ?>
       <a href="<%= $.url('admin/wechat-qrcode-products/new', {productIds: id}) %>" title="生成原生支付二维码">
         <i class="fa fa-qrcode bigger-130"></i>
       </a>
