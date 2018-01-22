@@ -1,4 +1,5 @@
 <?php
+
 namespace Miaoxing\Product\Migration;
 
 use Miaoxing\Plugin\BaseMigration;
