@@ -1,4 +1,4 @@
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/product/css/admin/skuPicker.css') ?>">
 <?= $block->end() ?>
 

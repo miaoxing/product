@@ -17,7 +17,7 @@
   </div>
 <?php endif ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   // 幻灯片
   (function () {

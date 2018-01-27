@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('comps/snapjs/snap.css') ?>">
 <link rel="stylesheet" href="<?= $asset('plugins/product/css/products.css') ?>">
 <?= $block->end() ?>

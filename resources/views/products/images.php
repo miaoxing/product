@@ -18,7 +18,7 @@ $event->trigger('preProductImagesRender', [&$images])
   </ol>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   $('.js-image-slider')
     .Swipe({

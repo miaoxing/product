@@ -38,7 +38,7 @@ tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
   </li>
 </ul>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['plugins/product/js/products', 'comps/snapjs/snap.min'], function (products) {
     products.indexAction();

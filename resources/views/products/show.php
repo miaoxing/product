@@ -4,7 +4,7 @@ $view->layout();
 $unit = $product['config']['unit'] ?: '件';
 ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/product/css/products.css') ?>">
 <?= $block->end() ?>
 
@@ -96,7 +96,7 @@ $unit = $product['config']['unit'] ?: '件';
 </form>
 
 <?php require $view->getFile('product:products/picker.php') ?>
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['plugins/product/js/products', 'comps/artTemplate/template.min'], function (products) {
     template.helper('$', $);

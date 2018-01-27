@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('assets/admin/mall/product.css') ?>"/>
 <?= $block->end() ?>
 
@@ -507,7 +507,7 @@
   </tbody>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require([
     'plugins/product/js/admin/product',

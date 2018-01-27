@@ -2,7 +2,7 @@
   即将开始 <span class="js-product-countdown product-countdown"></span>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['comps/jQuery.countdown/dist/jquery.countdown.min'], function () {
     var leftTime = <?= strtotime($product['startTime']) - time() ?>;

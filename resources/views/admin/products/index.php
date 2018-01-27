@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('assets/admin/mall/product.css') ?>"/>
 <?= $block->end() ?>
 
@@ -139,7 +139,7 @@
 <?php require $this->getFile('product:admin/products/richInfo.php') ?>
 <?php require $view->getFile('admin:admin/checkboxCol.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'dataTable', 'jquery-deparam', 'daterangepicker', 'plugins/excel/js/excel'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;

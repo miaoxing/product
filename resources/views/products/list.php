@@ -30,7 +30,7 @@
   </div>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['comps/artTemplate/template.min'], function () {
     template.helper('$', $);

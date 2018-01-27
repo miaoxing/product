@@ -1,4 +1,4 @@
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset([
   'comps/select2/select2.css',
   'comps/select2-bootstrap-css/select2-bootstrap.css',
@@ -53,7 +53,7 @@
   </label>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require([
     'form',

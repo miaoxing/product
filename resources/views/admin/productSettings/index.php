@@ -59,7 +59,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'ueditor', 'validator'], function (form) {
     var listJson = <?= json_encode($wei->product->getListTplsOptions()) ?>;
