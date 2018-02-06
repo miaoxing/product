@@ -1,4 +1,8 @@
-define(['template', 'plugins/seq/js/seq'], function (template) {
+define([
+  'template',
+  'plugins/seq/js/seq',
+  'plugins/admin/js/image-upload'
+], function (template) {
   var self = {};
 
   self.form = $('#product-form');
@@ -106,11 +110,6 @@ define(['template', 'plugins/seq/js/seq'], function (template) {
         url: $.url('admin/products/update'),
         dataType: 'json',
         beforeSubmit: function (arr, $form) {
-          if ($form.find('input[name=images\\[\\]]').length === 0) {
-            $.err('请至少选择一张图片');
-            return false;
-          }
-
           // 如果是多规格,检查至少填写了一个规格
           if (!self.isSinglePrice()) {
             var skuConfigs = self.getSkuConfigs();
@@ -137,7 +136,9 @@ define(['template', 'plugins/seq/js/seq'], function (template) {
       })
       .validate();
 
-    $('.image-picker').imagePicker(self.data.images);
+    $('.js-images').imageUpload({
+      images: self.data.images
+    });
 
     // Step2 多价格商品,就初始化SKU选择器
     if (!self.isSinglePrice()) {

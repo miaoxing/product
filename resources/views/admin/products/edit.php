@@ -192,19 +192,14 @@
         </div>
 
         <div class="form-group">
-          <label class="col-sm-2 control-label">
+          <label class="col-sm-2 control-label" for="images">
             <span class="text-warning">*</span>
             图片
           </label>
 
           <div class="col-sm-10">
-            <ul class="ace-thumbnails image-picker">
-              <li class="select-image text-center">
-                <h5>选择图片</h5>
-                <i class="fa fa-picture-o"></i>
-              </li>
-            </ul>
-            <label class="help-text">图片长宽比1:1<br>建议宽度大于等于640像素</label>
+            <input id="images" class="js-images" name="images[]" type="text" required>
+            <label class="help-text" for="images">图片长宽比1:1<br>建议宽度大于等于640像素</label>
           </div>
         </div>
 
