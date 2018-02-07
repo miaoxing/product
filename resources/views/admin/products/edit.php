@@ -169,7 +169,7 @@
             <datalist id="units">
               <?php foreach (wei()->product()->getUnits() as $unit) : ?>
               <option value="<?= $unit ?>">
-                <?php endforeach ?>
+              <?php endforeach ?>
             </datalist>
           </div>
 
@@ -192,14 +192,14 @@
         </div>
 
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="images">
+          <label class="col-sm-2 control-label" for="product-images">
             <span class="text-warning">*</span>
             图片
           </label>
 
           <div class="col-sm-10">
-            <input id="images" class="js-images" name="images[]" type="text" required>
-            <label class="help-text" for="images">图片长宽比1:1<br>建议宽度大于等于640像素</label>
+            <input id="product-images" class="js-images" name="images[]" type="text" required>
+            <label class="help-text" for="product-images">图片长宽比1:1<br>建议宽度大于等于640像素</label>
           </div>
         </div>
 
