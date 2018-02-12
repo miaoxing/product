@@ -2,9 +2,8 @@
 
 namespace Miaoxing\Product\Service;
 
-use Miaoxing\Category\Service\Category;
-use Miaoxing\Logistics\Service\ShippingTpl;
 use Miaoxing\Plugin\BaseModel;
+use Miaoxing\Product\Job\ProductSave;
 use Miaoxing\ProductTag\Service\Tag;
 
 /**
@@ -499,6 +498,7 @@ class Product extends BaseModel
         }
 
         $ret = wei()->event->until('postProductsUpdate', [$this, $req]);
+        $ret = wei()->queue->push(ProductSave::class, ['id' => $this['id']], wei()->app->getNamespace());
         if ($ret) {
             return $ret;
         }
