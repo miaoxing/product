@@ -187,10 +187,11 @@ class Products extends \Miaoxing\Plugin\BaseController
         $payable = $product->checkViewPayable();
         $images = $product['images'];
         $account = wei()->wechatAccount->getCurrentAccount();
-        $headerTitle = '商品详情';
-        $htmlTitle = $product['name'];
+        $this->page
+            ->setTitle($product['name'])
+            ->setHeaderTitle('商品详情')
+            ->hideFooter();
         $scoreTitle = $this->setting('score.title', '积分');
-        $this->page->hideFooter();
 
         return get_defined_vars();
     }
