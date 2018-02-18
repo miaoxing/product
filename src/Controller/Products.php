@@ -105,8 +105,8 @@ class Products extends \Miaoxing\Plugin\BaseController
                     $headerTitle = $category['name'];
                 }
 
-                $this->pageConfig['displayHeader'] = false;
-                $this->pageConfig['displayFooter'] = false;
+                $this->layout->hideHeader();
+                $this->layout->hideFooter();
 
                 return get_defined_vars();
         }
@@ -190,7 +190,7 @@ class Products extends \Miaoxing\Plugin\BaseController
         $headerTitle = '商品详情';
         $htmlTitle = $product['name'];
         $scoreTitle = $this->setting('score.title', '积分');
-        $this->pageConfig['displayFooter'] = false;
+        $this->layout->hideFooter();
 
         return get_defined_vars();
     }
