@@ -78,21 +78,6 @@ class Products extends \Miaoxing\Plugin\BaseController
             'records' => $products->count(),
         ];
 
-        //商品栏目轮转图
-        $albums = null;
-        if ($req['categoryId']) {
-            $albumCategory = wei()->category()
-                ->where(['binding' => $req['categoryId']])
-                ->andWhere(['type' => 'photo'])
-                ->notDeleted()
-                ->desc('sort')
-                ->find();
-
-            if ($albumCategory) {
-                $albums = wei()->album()->byClass($albumCategory['id'])->desc('sort')->enable()->findAll();
-            }
-        }
-
         switch ($req['_format']) {
             case 'json':
                 return $this->ret($ret);
