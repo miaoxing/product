@@ -98,9 +98,14 @@ $unit = $product['config']['unit'] ?: '件';
 <?php require $view->getFile('product:products/picker.php') ?>
 <?= $block->js() ?>
 <script>
-  require(['plugins/product/js/products', 'comps/artTemplate/template.min'], function (products) {
+  require([
+    'plugins/product/js/products',
+    'comps/artTemplate/template.min',
+    'comps/jquery_lazyload/jquery.lazyload.min'
+  ], function (products) {
     template.helper('$', $);
     products.showAction(<?= json_encode($packageData, JSON_UNESCAPED_UNICODE) ?>);
+    $('.js-lazy').lazyload();
   });
 
   require(['plugins/wechat/js/wx'], function (wx) {

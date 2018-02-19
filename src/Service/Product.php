@@ -694,7 +694,7 @@ class Product extends BaseModel
      */
     public function getProcessedDetail()
     {
-        return strtr($this['detail'], ['<img src="' => '<img class="lazy" data-src="']);
+        return strtr($this['detail'], ['<img src="' => '<img class="js-lazy" data-original="']);
     }
 
     /**
