@@ -1,16 +1,6 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <?php if (isset($category) && $category['id']) : ?>
-    <div class="pull-right">
-      <a class="btn btn-success" href="<?= $url('admin/products/editCategoryDetail?categoryId=' . $category['id']) ?>">
-        添加栏目详情
-      </a>
-      <a class="btn btn-success" href="<?= $url('admin/albumCategory/edit?binding=' . $category['id']) ?>">
-        添加栏目图片
-      </a>
-    </div>
-  <?php endif ?>
   <h1>
     微商城
     <small>
