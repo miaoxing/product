@@ -405,6 +405,11 @@ class Product extends BaseModel
         return count($this->getSkus()) == 1;
     }
 
+    public function isSingle()
+    {
+        return count($this['skuConfigs']) === 1 && count($this['skuConfigs']['attrs']) === 1;
+    }
+
     /**
      * 获取当前商品第一个规格
      *
