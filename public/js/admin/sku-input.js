@@ -305,6 +305,7 @@ define([
   SkuInput.prototype.getSkuConfigs = function () {
     var self = this;
     var data = [];
+    var ids = {};
 
     self.container.find('.sku-control').each(function () {
       var skuConfig = {};
@@ -315,6 +316,13 @@ define([
 
       // 如果未选择规格,直接跳过
       if (skuConfigData !== null) {
+        // FIXME 选择相同的规格名称会导致id重复
+        if (typeof ids[skuConfigData.id] === 'undefined') {
+          ids[skuConfigData.id] = true;
+        } else {
+          skuConfigData.id = $.seq();
+        }
+
         skuConfig.id = skuConfigData.id;
         skuConfig.name = skuConfigData.text;
 
