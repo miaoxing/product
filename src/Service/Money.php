@@ -27,7 +27,7 @@ class Money extends BaseService
         }
 
         // for '0', 0
-        return (bool) $money;
+        return !$money;
     }
 
     /**
