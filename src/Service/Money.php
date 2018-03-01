@@ -21,7 +21,7 @@ class Money extends BaseService
      */
     public function isZero($money)
     {
-        // for '0.00'
+        // for '0.00', '0.0'
         if (!(float) $money) {
             return true;
         }
@@ -34,10 +34,10 @@ class Money extends BaseService
      * Convert cents to money string
      *
      * @param int $cents
-     * @param int $precision
+     * @param null|int $precision
      * @return string
      */
-    public function fromCents($cents, $precision)
+    public function fromCents($cents, $precision = null)
     {
         return $this->format($cents / pow(10, $precision ?: $this->precision));
     }
@@ -46,10 +46,11 @@ class Money extends BaseService
      * Format money to string
      *
      * @param mixed $money
+     * @param null|int $precision
      * @return string
      */
-    public function format($money)
+    public function format($money, $precision = null)
     {
-        return sprintf('%.' . $this->precision . 'F', $money);
+        return sprintf('%.' . ($precision ?: $this->precision) . 'F', $money);
     }
 }
