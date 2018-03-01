@@ -53,4 +53,15 @@ class Money extends BaseService
     {
         return sprintf('%.' . ($precision ?: $this->precision) . 'F', $money);
     }
+
+    /**
+     * Remove extra zero at the end of money string
+     *
+     * @param string $money
+     * @return string
+     */
+    public function trim($money)
+    {
+        return rtrim(rtrim($money, '0'), '.');
+    }
 }
