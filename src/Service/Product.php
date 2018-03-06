@@ -407,7 +407,7 @@ class Product extends BaseModel
 
     public function isSingle()
     {
-        return count($this['skuConfigs']) === 1 && count($this['skuConfigs']['attrs']) === 1;
+        return count($this['skuConfigs']) === 1 && count($this['skuConfigs'][0]['attrs']) === 1;
     }
 
     /**
