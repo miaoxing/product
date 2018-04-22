@@ -387,15 +387,6 @@ class Product extends BaseModel
     }
 
     /**
-     * 是否同类别商品才能一起下订单
-     * @return bool
-     */
-    public function isBuyWithSameCategory()
-    {
-        return isset($this['config']['buyWithSameCategory']) && $this['config']['buyWithSameCategory'];
-    }
-
-    /**
      * 判断当前商品是否为单规格(单价格)
      *
      * @return bool

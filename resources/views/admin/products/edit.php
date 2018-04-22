@@ -345,27 +345,6 @@
         </div>
 
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="config[buyWithSameCategory]">
-            同类下单
-          </label>
-
-          <div class="col-lg-4">
-            <label class="radio-inline">
-              <input type="radio" name="config[buyWithSameCategory]"
-                value="1" <?= $product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 是
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="config[buyWithSameCategory]"
-                value="0" <?= !$product['config']['buyWithSameCategory'] ? 'checked' : ''; ?>> 否
-            </label>
-          </div>
-
-          <label class="col-lg-6 help-text" for="config[buyWithSameCategory]">
-            同类别的产品才可以一起下单支付
-          </label>
-        </div>
-
-        <div class="form-group">
           <label class="col-lg-2 control-label" for="allowCoupon">
             优惠券
           </label>
