@@ -171,8 +171,8 @@
           title: '上架时间~下架时间',
           sClass: 't-12 text-center',
           render: function (data, type, full) {
-            return full.startTime.replace(/-/g, '.').substr(0, 10) + '~' +
-              full.endTime.replace(/-/g, '.').substr(0, 10);
+            return full.startTime.substr(0, 10) + ' ~ ' +
+              full.endTime.substr(0, 10);
           }
         },
         {
