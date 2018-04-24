@@ -26,10 +26,6 @@
             <option value="mall">根栏目</option>
           </select>
         </div>
-
-        <label class="col-lg-6 help-text" for="sort">
-          三级栏目别超过3个.
-        </label>
       </div>
 
       <div class="form-group">
