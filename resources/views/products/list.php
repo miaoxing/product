@@ -3,7 +3,7 @@
 </div>
 
 <script type="text/html" class="js-product-item-tpl">
-  <div class="product-list-item border-bottom" id="p<%= id %>">
+  <div class="js-product-list-item product-list-item border-bottom" id="p<%= id %>">
     <a class="product-list-image"
       href="<%= $.url('products/%s', id, $.req('picker') ? <?= json_encode($req->getQueries()) ?> : {}) %>">
       <img class="product-list-thumb" src="<?= $asset->thumb('<%= images[0] %>', 640) ?>">
@@ -35,7 +35,7 @@
   require(['comps/artTemplate/template.min'], function () {
     template.helper('$', $);
     var $list = $('.js-product-list');
-    var list = $list.list({
+    $list.list({
       url: '<?= $url->query('products.json') ?>',
       template: template.compile($('.js-product-item-tpl').html()),
       localData: <?= json_encode($ret, JSON_UNESCAPED_UNICODE) ?>,
@@ -49,6 +49,10 @@
           this.updateLoading('加载中,您已经在第一页^_^');
         }
       }
+    });
+
+    $list.on('click', '.js-product-list-item', function () {
+      window.location = $(this).find('a:first').attr('href');
     });
   });
 </script>
