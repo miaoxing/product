@@ -68,6 +68,7 @@ class Product extends BaseModel
 
     protected $units = [
         '件',
+        '杯',
         '只',
         '罐',
         '盒',
