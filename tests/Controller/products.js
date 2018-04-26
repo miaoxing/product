@@ -14,9 +14,9 @@ describe('mall/product 检查页面是否可以访问', function () {
   });
 });
 
-describe('mall/product/index 查看商品列表', function () {
+describe('products 查看商品列表', function () {
   before(function () {
-    casper.start(casper.config.baseUrl + '/mall/product/index');
+    casper.start(casper.config.baseUrl + '/products');
   });
 
   it('显示"所有商品"', function () {

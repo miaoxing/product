@@ -64,7 +64,7 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             $links[] = [
                 'typeId' => 'mall',
                 'name' => '商品栏目：' . $category['name'],
-                'url' => 'mall/product/index?categoryId=' . $category['id'],
+                'url' => 'products?categoryId=' . $category['id'],
             ];
         }
     }
