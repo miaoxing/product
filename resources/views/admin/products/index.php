@@ -22,12 +22,15 @@
         </li>
       </ul>
 
-      <?php if (wei()->setting('product.enableExport')) { ?>
+      <?php if (wei()->setting('product.enableExport')) {
+    ?>
         <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
-      <?php } ?>
+      <?php 
+} ?>
     </div>
 
-    <?php if (wei()->setting('product.enableImport')) { ?>
+    <?php if (wei()->setting('product.enableImport')) {
+    ?>
       <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
         <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
           <span class="btn btn-white btn-file">
@@ -38,7 +41,8 @@
           <a href="<?= $asset('assets/admin/mall/product/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
         </div>
       </form>
-    <?php } ?>
+    <?php 
+} ?>
   </div>
 
   <h1>
