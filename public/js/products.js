@@ -457,8 +457,12 @@ define(['comps/artTemplate/template.min'], function (template) {
 
         // 购物车数量更新
         if (ret.code === 1 && ret.found === false) {
-          var num = $('.product-cart-num');
-          num.html(parseInt(num.html(), 10) + 1);
+          var $num = $('.js-product-cart-num');
+          var num = parseInt($num.html(), 10);
+          if (isNaN(num)) {
+            num = 0
+          }
+          $num.html(num + 1);
         }
       });
     },
