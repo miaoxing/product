@@ -377,20 +377,6 @@
 
           </div>
         </div>
-
-        <div class="form-group">
-          <label class="col-lg-2 control-label" for="weight">
-            重量
-          </label>
-
-          <div class="col-lg-4">
-            <div class="input-group">
-              <input type="text" class="form-control" name="weight" id="weight">
-              <span class="input-group-addon">克</span>
-            </div>
-          </div>
-        </div>
-
         <?php $event->trigger('adminProductsEdit', [$product]) ?>
       </fieldset>
 
