@@ -22,19 +22,23 @@
         </li>
       </ul>
 
-      <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
+      <?php if (wei()->setting('product.enableExport')) { ?>
+        <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
+      <?php } ?>
     </div>
 
-    <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
-      <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
-        <span class="btn btn-white btn-file">
-          <span class="fileinput-new">从Excel导入</span>
-          <span class="fileinput-exists">重新上传Excel</span>
-            <input type="file" name="file">
-        </span>
-        <a href="<?= $asset('assets/admin/mall/product/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
-      </div>
-    </form>
+    <?php if (wei()->setting('product.enableImport')) { ?>
+      <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
+        <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
+          <span class="btn btn-white btn-file">
+            <span class="fileinput-new">从Excel导入</span>
+            <span class="fileinput-exists">重新上传Excel</span>
+              <input type="file" name="file">
+          </span>
+          <a href="<?= $asset('assets/admin/mall/product/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
+        </div>
+      </form>
+    <?php } ?>
   </div>
 
   <h1>
