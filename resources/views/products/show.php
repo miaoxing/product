@@ -108,20 +108,6 @@ $unit = $product['config']['unit'] ?: '件';
     $('.js-lazy').lazyload();
   });
 
-  require(['plugins/wechat/js/wx'], function (wx) {
-    wx.load(function () {
-      $('.js-images-preview img').click(function () {
-        var urls = $(this).closest('.js-images-preview').find('img').map(function () {
-          return this.src;
-        }).get();
-        wx.previewImage({
-          current: $(this).attr('src'),
-          urls: urls
-        });
-      });
-    });
-  });
-
   var cartNum = $('.product-cart-num');
   if (cartNum.length) {
     $.getJSON($.url('carts/count'), function (ret) {
@@ -132,3 +118,4 @@ $unit = $product['config']['unit'] ?: '件';
   }
 </script>
 <?= $block->end() ?>
+<?php require $view->getFile('@wechat/wechat/_images-preview.php') ?>
