@@ -661,6 +661,11 @@ class Product extends BaseModel
     public function afterSave()
     {
         parent::afterSave();
+
+        $this['images'] = (array) json_decode($this['images'], true);
+        $this['config'] = (array) json_decode($this['config'], true);
+        $this['skuConfigs'] = (array) json_decode($this['skuConfigs'], true);
+
         $this->clearTagCache();
         $this->clearRecordCache();
         $this->clearSkuSpecsCache();
