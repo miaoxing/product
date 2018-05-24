@@ -45,7 +45,6 @@
               </label>
               <label class="radio-inline">
                 <input class="virtual" type="radio" name="virtual" value="1"> 虚拟商品
-                <a href="http://miaoxing.mydoc.io/?t=163026" target="_blank">《虚拟商品使用文档》</a>
               </label>
 
             </div>
@@ -377,6 +376,41 @@
 
           </div>
         </div>
+
+        <div class="form-group">
+          <label class="col-lg-2 control-label">
+            填写地址
+          </label>
+
+          <div class="col-lg-4">
+            <label class="radio-inline">
+              <input type="radio" name="config[requireAddress]" value="1"
+                <?= $product['config']['requireAddress'] !== '0' ? 'checked' : '' ?>> 是
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="config[requireAddress]" value="0"
+                <?= $product['config']['requireAddress'] === '0' ? 'checked' : '' ?>> 否
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-2 control-label">
+            允许留言
+          </label>
+
+          <div class="col-lg-4">
+            <label class="radio-inline">
+              <input type="radio" name="config[allowComment]" value="1"
+                <?= $product['config']['allowComment'] !== '0' ? 'checked' : '' ?>> 是
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="config[allowComment]" value="0"
+                <?= $product['config']['allowComment'] === '0' ? 'checked' : '' ?>> 否
+            </label>
+          </div>
+        </div>
+
         <?php $event->trigger('adminProductsEdit', [$product]) ?>
       </fieldset>
 
