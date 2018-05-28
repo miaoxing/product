@@ -177,6 +177,7 @@ class Products extends \Miaoxing\Plugin\BaseController
             ->setHeaderTitle('商品详情')
             ->hideFooter();
         $scoreTitle = $this->setting('score.title', '积分');
+        wei()->share->setTitle($product['name']);
 
         return get_defined_vars();
     }
