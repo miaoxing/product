@@ -12,7 +12,7 @@
         <span class="fa fa-caret-down icon-on-right"></span>
       </button>
 
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pull-right">
         <li class="product-new-single-price">
           <a href="<?= $url('admin/products/new') ?>">单价格</a>
         </li>
@@ -25,7 +25,7 @@
       <?php if (wei()->setting('product.enableExport')) {
     ?>
         <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
-      <?php 
+      <?php
 } ?>
     </div>
 
@@ -41,7 +41,7 @@
           <a href="<?= $asset('assets/admin/mall/product/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
         </div>
       </form>
-    <?php 
+    <?php
 } ?>
   </div>
 
