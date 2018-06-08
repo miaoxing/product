@@ -81,7 +81,6 @@ class Product extends BaseModel
         'sm' => '小图,1个1行',
         'lg' => '大图,1个1行',
         'xs' => '小图,3个1行',
-        'xlg' => '大图,全横屏,1个1行',
     ];
 
     /**

@@ -9,7 +9,7 @@
   <?php require $view->getFile('product:products/nav.php') ?>
   <?php require $view->getFile('product:products/menu.php') ?>
   <?php require $view->getFile('product:products/tab.php') ?>
-  <?php require $view->getFile('product:products/' . ($category['listTpl'] == 'xlg' ? 'xlg-' : '') . 'list.php') ?>
+  <?php require $view->getFile('product:products/list.php') ?>
 </div>
 
 <?php require $view->getFile('product:products/footer.php') ?>

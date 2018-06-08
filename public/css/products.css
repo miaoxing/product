@@ -126,15 +126,6 @@
   }
 }
 
-/* 大图,全横屏,1个1行 */
-.product-list-xlg .product-list-item {
-  width: 100%;
-}
-
-.product-list-xlg .product-list-name {
-  height: auto; /* 避免空出1行 */
-}
-
 /* 大图,1个1行 */
 .product-list-lg .product-list-item {
   width: 100%;
@@ -183,66 +174,6 @@
 /* 小图,3个1行 */
 .product-list-xs > .product-list-item {
   width: 33.33333333%;
-}
-
-/* 旅游板块 */
-.xlg-item {
-  padding: 0;
-  margin-bottom: 5px;
-}
-
-.xlg-list-cover {
-  left: 37.5%;
-  width: 25%;
-}
-
-.xlg-image {
-  padding-top: 50%;
-}
-
-.xlg-price {
-  position: absolute;
-  left: 72%;
-  top: 55%;
-  width: 25%;
-  height: 40%;
-  background: #fc896d;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  color: #fff;
-  overflow: hidden;
-}
-
-.xlg-price-new {
-  width: 90%;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.xlg-price-new-border {
-  border-top: 1px solid #fff;
-}
-
-.xlg-price-old {
-  width: 100%;
-  font-size: 12px;
-  color: #ededed;
-}
-
-.xlg-price-differ {
-  width: 100%;
-  font-size: 12px;
-  color: #fff;
-}
-
-.xlg-name {
-  width: 72%;
-  padding: 10px;
-  height: 40px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* 商品列表的左右抽屉 */
