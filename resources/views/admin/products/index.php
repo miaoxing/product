@@ -22,12 +22,9 @@
         </li>
       </ul>
 
-      <?php if (wei()->setting('product.enableExport')) {
-    ?>
+      <?php if (wei()->setting('product.enableExport')) { ?>
         <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
-      <?php
-
-} ?>
+      <?php } ?>
     </div>
 
     <?php if (wei()->setting('product.enableImport')) {
