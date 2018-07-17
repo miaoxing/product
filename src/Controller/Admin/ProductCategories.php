@@ -6,7 +6,9 @@ class ProductCategories extends \Miaoxing\Category\Controller\Admin\Category
 {
     protected $adminNavId = 'products';
 
-    protected $controllerName = '商品栏目管理';
+    protected $controllerName = '栏目管理';
+
+    protected $controllerPermissionName = '商品栏目管理';
 
     protected $actionPermissions = [
         'index' => '列表',

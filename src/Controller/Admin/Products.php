@@ -12,7 +12,6 @@ class Products extends \Miaoxing\Plugin\BaseController
         'edit,update' => '编辑',
         'destroy' => '删除',
         'editQuantity' => '编辑库存',
-        'editCategoryDetail,updateCategoryDetail' => '编辑栏目详情',
     ];
 
     public function indexAction($req)
