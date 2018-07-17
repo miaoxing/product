@@ -1,17 +1,8 @@
 <?php $view->layout() ?>
 
-<div class="page-header">
-  <a class="btn pull-right btn-success" href="<?= $url('admin/product-categories/new') ?>">添加栏目</a>
-
-  <h1>
-    微商城
-    <small>
-      <i class="fa fa-angle-double-right"></i>
-      商品栏目管理
-    </small>
-  </h1>
-</div>
-<!-- /.page-header -->
+<?= $block('header-actions') ?>
+<a class="btn pull-right btn-success" href="<?= $url('admin/product-categories/new') ?>">添加栏目</a>
+<?= $block->end() ?>
 
 <div class="row">
   <div class="col-xs-12">

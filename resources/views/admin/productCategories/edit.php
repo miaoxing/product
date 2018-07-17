@@ -1,16 +1,5 @@
 <?php $view->layout() ?>
 
-<div class="page-header">
-  <h1>
-    微商城
-    <small>
-      <i class="fa fa-angle-double-right"></i>
-      商城栏目管理
-    </small>
-  </h1>
-</div>
-<!-- /.page-header -->
-
 <div class="row">
   <div class="col-xs-12">
     <!-- PAGE CONTENT BEGINS -->

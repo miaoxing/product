@@ -14,4 +14,6 @@ class ProductCategories extends \Miaoxing\Category\Controller\Admin\Category
         'edit,update' => '编辑',
         'destroy' => '删除',
     ];
+
+    protected $displayPageHeader = true;
 }
