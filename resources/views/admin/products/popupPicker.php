@@ -1,4 +1,4 @@
-<?php require_once $this->getFile('product:admin/products/richInfo.php') ?>
+<?php require_once $this->getFile('@product/admin/products/richInfo.php') ?>
 
 <script type="text/html" id="product-popup-picker-tpl">
   <% if (products.length !== 0) { %>

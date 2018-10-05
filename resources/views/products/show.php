@@ -13,7 +13,7 @@ $unit = $product['config']['unit'] ?: '件';
 <form id="productForm" class="product-container">
   <?php $event->trigger('preProductsShow', [$product]) ?>
 
-  <?php require $view->getFile('product:products/images.php') ?>
+  <?php require $view->getFile('@product/products/images.php') ?>
 
   <div class="product-info border-top-bottom">
 
@@ -92,10 +92,10 @@ $unit = $product['config']['unit'] ?: '件';
     <?php endif ?>
   </div>
 
-  <?php require $view->getFile('product:products/show-footer-bar.php') ?>
+  <?php require $view->getFile('@product/products/show-footer-bar.php') ?>
 </form>
 
-<?php require $view->getFile('product:products/picker.php') ?>
+<?php require $view->getFile('@product/products/picker.php') ?>
 <?= $block->js() ?>
 <script>
   require([

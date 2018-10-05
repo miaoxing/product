@@ -85,4 +85,4 @@
   });
 </script>
 <?= $block->end() ?>
-<?php require $this->getFile('product:admin/products/productsPicker.php') ?>
+<?php require $this->getFile('@product/admin/products/productsPicker.php') ?>

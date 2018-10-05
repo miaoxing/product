@@ -143,8 +143,8 @@
   </div>
 </script>
 
-<?php require $this->getFile('product:admin/products/richInfo.php') ?>
-<?php require $view->getFile('admin:admin/checkboxCol.php') ?>
+<?php require $this->getFile('@product/admin/products/richInfo.php') ?>
+<?php require $view->getFile('@admin/admin/checkboxCol.php') ?>
 
 <?= $block->js() ?>
 <script>
