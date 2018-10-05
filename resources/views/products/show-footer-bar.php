@@ -4,5 +4,5 @@
 </div>
 
 <?php if ($product['quantity'] > 0 && $product->isWillStart()) : ?>
-  <?php require $view->getFile('product:products/show-countdown.php') ?>
+  <?php require $view->getFile('@product/products/show-countdown.php') ?>
 <?php endif ?>
