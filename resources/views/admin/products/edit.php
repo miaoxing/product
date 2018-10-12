@@ -2,6 +2,7 @@
 
 $view->layout();
 $wei->page->addAsset('plugins/product/css/admin/products.css');
+$hasScore = $wei->plugin->isInstalled('product-score');
 ?>
 
 <div class="page-header">
@@ -114,7 +115,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
           </label>
         </div>
 
-        <?php if ($wei->plugin->isInstalled('product-score')) : ?>
+        <?php if ($hasScore) { ?>
           <div class="form-group">
             <label class="col-lg-2 control-label" for="scores">
               所需积分
@@ -124,7 +125,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
               <input type="text" class="form-control" name="scores" id="scores">
             </div>
           </div>
-        <?php endif ?>
+        <?php } ?>
 
         <div class="form-group form-group-quantity">
           <label class="col-lg-2 control-label" for="quantity">
@@ -461,6 +462,9 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
     <% }) %>
     <th>库存</th>
     <th>价格</th>
+    <?php if ($hasScore) { ?>
+    <th>积分</th>
+    <?php } ?>
     <th>货号</th>
     <th>销量</th>
   </tr>
@@ -486,6 +490,12 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
       <input type="text" name="skus[<%= i %>][price]" class="sku-price"
         value="<%= skus[i].price %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
     </td>
+    <?php if ($hasScore) { ?>
+    <td>
+      <input type="text" name="skus[<%= i %>][score]" class="sku-score"
+        value="<%= skus[i].score || 0 %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
+    </td>
+    <?php } ?>
     <td>
       <input type="text" name="skus[<%= i %>][no]" class="sku-no" value="<%= skus[i].no %>">
       <input type="hidden" name="skus[<%= i %>][id]" class="sku-id" value="<%= skus[i].id %>">

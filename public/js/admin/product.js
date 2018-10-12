@@ -156,7 +156,7 @@ define([
     self.form.find('.price-tips, .quantity-tips, .sku-form-group').show();
 
     // 1. 隐藏单价格商品所需的字段
-    $('#quantity, #price').prop('readonly', true);
+    $('#quantity, #price, #scores').prop('readonly', true);
     $('.single-price-form-group').hide();
 
     // 2. 初始化select2的文案提示
@@ -224,6 +224,21 @@ define([
       }
     });
     self.skuTable.find('.sku-price:first').trigger('change');
+
+    // 更新商品规格的积分,同时更新最低积分
+    self.skuTable.on('change', '.sku-score', function () {
+      var lowestScore = Number.MAX_VALUE;
+      self.skuTable.find('.sku-score').each(function () {
+        var price = parseInt(this.value, 10);
+        if (self.isNumber(price) && price < lowestScore) {
+          lowestScore = price;
+        }
+      });
+      if (lowestScore !== Number.MAX_VALUE) {
+        $('#scores').val(lowestScore);
+      }
+    });
+    self.skuTable.find('.sku-score:first').trigger('change');
   };
 
   self.addSkuControl = function (data, render) {

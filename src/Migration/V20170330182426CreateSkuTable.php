@@ -15,6 +15,7 @@ class V20170330182426CreateSkuTable extends BaseMigration
             ->id()
             ->int('productId')
             ->decimal('price', 10)
+            ->mediumInt('score')
             ->int('quantity')
             ->int('soldQuantity')
             ->string('no', 32)
