@@ -1,8 +1,8 @@
-<?php $view->layout() ?>
+<?php
 
-<?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset('assets/admin/mall/product.css') ?>"/>
-<?= $block->end() ?>
+$view->layout();
+$wei->page->addAsset('plugins/product/css/admin/products.css');
+?>
 
 <div class="page-header">
   <a class="btn btn-default pull-right" href="<?= $url('admin/products') ?>">返回列表</a>
