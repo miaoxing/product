@@ -219,7 +219,8 @@ define(['comps/artTemplate/template.min'], function (template) {
         action: this.action,
         cartId: this.cartId,
         quantity: this.quantity,
-        skus: this.skus
+        skus: this.skus,
+        priceText: this.getPriceText(this.skus)
       }));
 
       var e = $.Event('productPicker:show', {
@@ -537,10 +538,30 @@ define(['comps/artTemplate/template.min'], function (template) {
       }
 
       // 更新价格范围
-      $('.js-product-price').html(this.getPriceRange(validSkus));
+      $('.js-product-price').html(this.getPriceText(validSkus));
 
       // 如果只剩下一个规格,说明已经选完了
       this.$('.js-sku-id').val(validSkus[0].id);
+    },
+
+    getPriceText: function (validSkus) {
+      var text = '';
+      var price = this.getPriceRange(validSkus);
+      var score = this.getScoreRange(validSkus);
+
+      if (price !== '0.00') {
+        text += '￥' + price;
+      }
+
+      if (price !== '0.00' && score !== 0) {
+        text += ' + ';
+      }
+
+      if (score !== 0) {
+        text += score + '积分';
+      }
+
+      return text;
     },
 
     getPriceRange: function (validSkus) {
@@ -566,6 +587,32 @@ define(['comps/artTemplate/template.min'], function (template) {
         return min.toFixed(2);
       } else {
         return min.toFixed(2) + '~' + max.toFixed(2);
+      }
+    },
+
+    getScoreRange: function (validSkus) {
+      if (validSkus.length === 1) {
+        return parseInt(validSkus[0].score, 10);
+      }
+
+      var min = parseInt(validSkus[0].score, 10);
+      var max = min;
+      for (var i in validSkus) {
+        if (Object.prototype.hasOwnProperty.call(validSkus, i)) {
+          var score = parseInt(validSkus[i].score, 10);
+          if (score < min) {
+            min = score;
+          }
+          if (score > max) {
+            max = score;
+          }
+        }
+      }
+
+      if (min === max) {
+        return min;
+      } else {
+        return min + '~' + max;
       }
     },
 

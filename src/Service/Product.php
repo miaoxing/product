@@ -281,6 +281,22 @@ class Product extends BaseModel
         }
     }
 
+    public function getScoreRange()
+    {
+        $max = '0';
+        foreach ($this->getSkus() as $sku) {
+            if ($sku['score'] > $max) {
+                $max = $sku['score'];
+            }
+        }
+
+        if ($max == $this['scores']) {
+            return $max;
+        } else {
+            return $this['scores'] . '~' . $max;
+        }
+    }
+
     /**
      * Record|Repo 生成价格文案
      *
@@ -727,6 +743,7 @@ class Product extends BaseModel
                 'id',
                 'quantity',
                 'price',
+                'score',
                 'attrIds',
             ]),
         ];

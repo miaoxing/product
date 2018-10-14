@@ -22,7 +22,7 @@ $unit = $product['config']['unit'] ?: '件';
     <?php if (!$hidePrice) : ?>
       <div class="product-item product-item-price">
         <strong class="product-price text-primary">
-          <?= $product->getPriceText($product->getPriceRange()) ?>
+          <?= $product->getPriceText($product->getPriceRange(), $product->getScoreRange()) ?>
         </strong>
         <?php if ($product['originalPrice'] != '0.00') : ?>
           <span class="product-original-price text-muted small">

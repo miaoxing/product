@@ -13,16 +13,8 @@
             <div class="product-picker-base-info flex-grow-1">
               <h4 class="product-picker-title truncate-2"><%= data.name %></h4>
               <?php if (!$setting('product.hidePrice')) : ?>
-                <strong class="product-price text-primary">
-                  <% if (data.price != '0.00' || data.scores == '0') { %>
-                  ￥<span class="js-product-price"><%= data.price %></span>
-                  <% } %>
-                  <% if (data.price != '0.00' && data.scores != '0') { %>
-                  +
-                  <% } %>
-                  <% if (data.scores != '0') { %>
-                  <%= data.scores %><?= $setting('score.title', '积分') ?>
-                  <% } %>
+                <strong class="js-product-price product-price text-primary">
+                  <%= priceText %>
                 </strong>
               <?php endif ?>
             </div>
