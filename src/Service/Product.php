@@ -246,6 +246,23 @@ class Product extends BaseModel
     }
 
     /**
+     * 获取商品中,所有规格中积分最高的商品
+     *
+     * @return int
+     */
+    public function getMaxScore()
+    {
+        $max = '0';
+        foreach ($this->getSkus() as $sku) {
+            if ($sku['score'] > $max) {
+                $max = $sku['score'];
+            }
+        }
+
+        return $max;
+    }
+
+    /**
      * Record: 获取商品相关的标签
      */
     public function getTags()
@@ -283,17 +300,13 @@ class Product extends BaseModel
 
     public function getScoreRange()
     {
-        $max = '0';
-        foreach ($this->getSkus() as $sku) {
-            if ($sku['score'] > $max) {
-                $max = $sku['score'];
-            }
-        }
+        $max = $this->getMaxScore();
+        $min = $this['scores'];
 
-        if ($max == $this['scores']) {
+        if ($max == $min) {
             return $max;
         } else {
-            return $this['scores'] . '~' . $max;
+            return $min . '~' . $max;
         }
     }
 
@@ -466,7 +479,7 @@ class Product extends BaseModel
     {
         // 1. 为单价格商品增加一个SKU
         if ($this->isNew() && !isset($req['skus'])) {
-            $skuData = $this->initOneSkuData($req['price'], $req['quantity']);
+            $skuData = $this->initOneSkuData($req['price'], $req['quantity'], $req['scores']);
             $req['skus'] = $skuData['skus'];
             $req['skuConfigs'] = $skuData['skuConfigs'];
         }
@@ -486,6 +499,7 @@ class Product extends BaseModel
             $skus[0]->save([
                 'price' => $this['price'],
                 'quantity' => $this['quantity'],
+                'score' => $this['scores'],
             ]);
         }
 
@@ -523,9 +537,10 @@ class Product extends BaseModel
      *
      * @param float $price
      * @param int $quantity
+     * @param int $score
      * @return array
      */
-    protected function initOneSkuData($price, $quantity)
+    protected function initOneSkuData($price, $quantity, $score = 0)
     {
         $attrId = wei()->seq();
         $price = (float) $price;
@@ -537,6 +552,7 @@ class Product extends BaseModel
             [
                 'price' => $price,
                 'quantity' => $quantity,
+                'score' => $score,
                 'attrIds' => [$attrId],
             ],
         ];
