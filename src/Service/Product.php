@@ -479,7 +479,7 @@ class Product extends BaseModel
     {
         // 1. 为单价格商品增加一个SKU
         if ($this->isNew() && !isset($req['skus'])) {
-            $skuData = $this->initOneSkuData($req['price'], $req['quantity'], $req['scores']);
+            $skuData = $this->initOneSkuData($req['price'], $req['quantity'], (int) $req['scores']);
             $req['skus'] = $skuData['skus'];
             $req['skuConfigs'] = $skuData['skuConfigs'];
         }
@@ -499,7 +499,7 @@ class Product extends BaseModel
             $skus[0]->save([
                 'price' => $this['price'],
                 'quantity' => $this['quantity'],
-                'score' => $this['scores'],
+                'score' => (int) $this['scores'],
             ]);
         }
 
