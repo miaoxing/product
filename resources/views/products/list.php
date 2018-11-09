@@ -1,9 +1,43 @@
-<div class="js-product-list product-container product-list product-list-<?= $category['listTpl'] ?: 'md' ?> bg-light">
+<style>
+  .ui-border:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e9e9e9;
+    -webkit-transform-origin: 0 0;
+    padding: 1px;
+    -webkit-box-sizing: border-box;
+    pointer-events: none;
+    z-index: 10;
+    pointer-events: none
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .ui-border:before {
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0.5)
+    }
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 3) {
+    .ui-border:before {
+      width: 300%;
+      height: 300%;
+      -webkit-transform: scale(0.3333)
+    }
+  }
+</style>
+
+<div class="js-product-list product-container product-list product-list3-<?= $category['listTpl'] ?: 'md' ?> bg-light">
 
 </div>
 
 <script type="text/html" class="js-product-item-tpl">
-  <div class="js-product-list-item product-list-item border-bottom" id="p<%= id %>">
+  <div class="js-product-list-item product-list-item ui-border" id="p<%= id %>">
     <a class="product-list-image"
       href="<%= $.url('products/%s', id, $.req('picker') ? <?= json_encode($req->getQueries()) ?> : {}) %>">
       <img class="product-list-thumb" src="<?= $asset->thumb('<%= images[0] %>', 750) ?>">
