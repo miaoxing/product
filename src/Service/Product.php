@@ -50,7 +50,7 @@ class Product extends BaseModel
     protected $table = 'product';
 
     protected $data = [
-        'virtual' => 0,
+        'isVirtual' => 0,
         'sort' => 50,
         'scores' => 0,
         'visible' => 1,
@@ -412,7 +412,7 @@ class Product extends BaseModel
      */
     public function isShowCart()
     {
-        return !$this['virtual'] && !$this['config']['noShowCart'];
+        return !$this['isVirtual'] && !$this['config']['noShowCart'];
     }
 
     /**
@@ -749,7 +749,7 @@ class Product extends BaseModel
                 'quantity',
                 'config',
                 'limitation',
-                'virtual',
+                'isVirtual',
                 'quantity',
                 'reserveStartTime',
                 'reserveEndTime',

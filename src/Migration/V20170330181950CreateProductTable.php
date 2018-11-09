@@ -49,7 +49,7 @@ class V20170330181950CreateProductTable extends BaseMigration
             ->text('skuConfigs')->comment('规格配置')
             ->int('weight')->comment('商品重量，单位为克数')
             ->tinyInt('deleted', 4)
-            ->tinyInt('virtual', 1)
+            ->tinyInt('isVirtual', 1)
             ->timestampsV1()
             ->userstampsV1()
             ->softDeletableV1()

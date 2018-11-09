@@ -69,7 +69,7 @@
           <input type="hidden" class="js-cart-id" name="id" value="<%= cartId %>">
           <button class="js-cart-update product-picker-btn btn btn-primary flex-grow-1" type="button">确定</button>
           <% } else { %>
-          <% if (data.virtual == '0' && (typeof data.config.noShowCart == 'undefined' || data.config.noShowCart == '0'))
+          <% if (data.isVirtual == '0' && (typeof data.config.noShowCart == 'undefined' || data.config.noShowCart == '0'))
           { %>
           <button class="js-cart-create product-picker-btn btn btn-primary flex-grow-1"
             type="button"><?= $setting('product.titleAddToCart') ?: '加入购物车' ?></button>

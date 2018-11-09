@@ -35,17 +35,17 @@ $hasScore = $wei->plugin->isInstalled('product-score');
 
         <?php if (wei()->plugin->isInstalled('virtual-product')) : // TODO 事件如何控制中间插入的表单?>
           <div class="form-group">
-            <label class="col-lg-2 control-label" for="virtual">
+            <label class="col-lg-2 control-label" for="isVirtual">
               商品类型
             </label>
 
             <div class="col-lg-5">
 
               <label class="radio-inline">
-                <input class="virtual" type="radio" name="virtual" value="0"> 实物商品
+                <input class="virtual" type="radio" name="isVirtual" value="0"> 实物商品
               </label>
               <label class="radio-inline">
-                <input class="virtual" type="radio" name="virtual" value="1"> 虚拟商品
+                <input class="virtual" type="radio" name="isVirtual" value="1"> 虚拟商品
               </label>
 
             </div>
