@@ -6,7 +6,7 @@
   <div class="js-product-list-item product-list-item border-bottom" id="p<%= id %>">
     <a class="product-list-image"
       href="<%= $.url('products/%s', id, $.req('picker') ? <?= json_encode($req->getQueries()) ?> : {}) %>">
-      <img class="product-list-thumb" src="<?= $asset->thumb('<%= images[0] %>', 640) ?>">
+      <img class="product-list-thumb" src="<?= $asset->thumb('<%= images[0] %>', 750) ?>">
       <% if (coverName) { %>
         <span class="product-list-cover"><%= coverName %></span>
       <% } %>
