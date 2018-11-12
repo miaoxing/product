@@ -1,7 +1,5 @@
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset([
-  'plugins/product/css/admin/productsPicker.css',
-]) ?>">
+<link rel="stylesheet" href="<?= $asset('plugins/product/css/admin/productsPicker.css') ?>">
 <?= $block->end() ?>
 
 <script id="product-list-item-tpl" type="text/html">

@@ -1,8 +1,6 @@
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset([
-  'comps/select2/select2.css',
-  'comps/select2-bootstrap-css/select2-bootstrap.css',
-]) ?>">
+<link rel="stylesheet" href="<?= $asset('comps/select2/select2.css') ?>">
+<link rel="stylesheet" href="<?= $asset('comps/select2-bootstrap-css/select2-bootstrap.css') ?>">
 <?= $block->end() ?>
 
 <div class="form-group">
@@ -64,7 +62,7 @@
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
     form.toOptions($('#category-ids'), categoryJson, 'id', 'name');
 
-    $('.scope').change(function(){
+    $('.scope').change(function () {
       $('.scope-form-group').hide();
       $('.scope-' + $(this).val() + '-form-group').show();
     });
