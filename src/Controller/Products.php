@@ -85,11 +85,12 @@ class Products extends \Miaoxing\Plugin\BaseController
             default:
                 // 设置视图标题
                 if ($req['q']) {
-                    $headerTitle = '搜索：' . wei()->e($req['q']);
+                    $this->page->setTitle('搜索：' . wei()->e($req['q']));
                 } else {
-                    $headerTitle = $category['name'];
+                    $this->page->setTitle($category['name']);
                 }
 
+                $this->page->setTitle(wei()->setting('product.title'));
                 $this->page->hideHeader();
                 $this->page->hideFooter();
 
