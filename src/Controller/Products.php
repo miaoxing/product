@@ -90,7 +90,7 @@ class Products extends \Miaoxing\Plugin\BaseController
                     $this->page->setTitle($category['name']);
                 }
 
-                $this->page->setTitle(wei()->setting('product.title'));
+                $this->page->setTitle(wei()->setting('product.title') ?: '商品列表');
                 $this->page->hideHeader();
                 $this->page->hideFooter();
 
