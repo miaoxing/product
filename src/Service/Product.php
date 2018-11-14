@@ -387,7 +387,8 @@ class Product extends BaseModel
      */
     public function getStock()
     {
-        return $this->db->sum('sku', 'quantity', ['productId' => $this['id'], 'deleteTime' => '0000-00-00 00:00:00']);
+        $stock = $this->db->sum('sku', 'quantity', ['productId' => $this['id'], 'deleteTime' => '0000-00-00 00:00:00']);
+        return $stock < 0 ? 0 : $stock;
     }
 
     public function isSoldOut()

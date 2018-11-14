@@ -68,6 +68,7 @@ class Products extends \Miaoxing\Plugin\BaseController
                 'images' => $product['images'],
                 'scores' => $product['scores'],
                 'priceText' => $product->getPriceText($price),
+                'stock' => $product->getStock(),
             ];
         }
 
