@@ -15,6 +15,7 @@ class V20170330181950CreateProductTable extends BaseMigration
             ->id()
             ->int('categoryId')
             ->string('name', 255)
+            ->string('intro')
             ->string('type', 32)->comment('商品类型,如桶装水,水票')
             ->string('template', 32)->comment('商品模板,如common,ticket')
             ->tinyInt('listing', 1)->defaults(1)->comment('是否上架(1:上架,0:下架)')

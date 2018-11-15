@@ -63,6 +63,18 @@ $hasScore = $wei->plugin->isInstalled('product-score');
           </div>
         </div>
 
+        <?php if (wei()->setting('product.enableIntro')) { ?>
+          <div class="form-group">
+            <label class="col-lg-2 control-label" for="intro">
+              简介
+            </label>
+
+            <div class="col-lg-4">
+              <input type="text" class="form-control" name="intro" id="intro">
+            </div>
+          </div>
+        <?php } ?>
+
         <div class="form-group sku-form-group display-none">
           <label class="col-sm-2 control-label">
             商品规格
@@ -169,7 +181,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
             <datalist id="units">
               <?php foreach (wei()->product()->getUnits() as $unit) : ?>
               <option value="<?= $unit ?>">
-              <?php endforeach ?>
+                <?php endforeach ?>
             </datalist>
           </div>
 
@@ -463,7 +475,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
     <th>库存</th>
     <th>价格</th>
     <?php if ($hasScore) { ?>
-    <th>积分</th>
+      <th>积分</th>
     <?php } ?>
     <th>货号</th>
     <th>销量</th>
@@ -491,10 +503,10 @@ $hasScore = $wei->plugin->isInstalled('product-score');
         value="<%= skus[i].price %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
     </td>
     <?php if ($hasScore) { ?>
-    <td>
-      <input type="text" name="skus[<%= i %>][score]" class="sku-score"
-        value="<%= skus[i].score || 0 %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
-    </td>
+      <td>
+        <input type="text" name="skus[<%= i %>][score]" class="sku-score"
+          value="<%= skus[i].score || 0 %>" data-rule-required="true" data-rule-number="true" data-rule-min="0">
+      </td>
     <?php } ?>
     <td>
       <input type="text" name="skus[<%= i %>][no]" class="sku-no" value="<%= skus[i].no %>">

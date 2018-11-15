@@ -62,6 +62,7 @@ class Products extends \Miaoxing\Plugin\BaseController
             $data[] = [
                 'id' => $product['id'],
                 'name' => $product['name'],
+                'intro' => $product['intro'],
                 'price' => $price,
                 'originalPrice' => rtrim(rtrim($product['originalPrice'], '0'), '.'),
                 'coverName' => $product->getCoverName(),
