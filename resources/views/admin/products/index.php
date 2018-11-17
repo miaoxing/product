@@ -23,7 +23,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
       </ul>
 
       <?php if (wei()->setting('product.enableExport')) { ?>
-        <a id="export-csv" class="btn btn-white pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
+        <a id="export-csv" class="btn btn-default pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
       <?php } ?>
     </div>
 
@@ -31,7 +31,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
     ?>
       <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
         <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
-          <span class="btn btn-white btn-file">
+          <span class="btn btn-default btn-file">
             <span class="fileinput-new">从Excel导入</span>
             <span class="fileinput-exists">重新上传Excel</span>
               <input type="file" name="file">
