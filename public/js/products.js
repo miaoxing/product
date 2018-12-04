@@ -78,6 +78,7 @@ define(['comps/artTemplate/template.min'], function (template) {
       var $showPicker = this.$('.js-picker-show');
       $showPicker.click(function (e) {
         options.e = e;
+        options.action = 'confirm';
         that.showPicker(options);
       });
 
@@ -217,6 +218,7 @@ define(['comps/artTemplate/template.min'], function (template) {
       var $modal = $(template.render('productModalTpl', {
         data: this.data,
         action: this.action,
+        actionType: $(this.e.target).data('type'),
         cartId: this.cartId,
         quantity: this.quantity,
         skus: this.skus,

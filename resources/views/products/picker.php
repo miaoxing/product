@@ -68,6 +68,9 @@
           <% if (action == 'updateCart') { %>
           <input type="hidden" class="js-cart-id" name="id" value="<%= cartId %>">
           <button class="js-cart-update product-picker-btn btn btn-primary flex-grow-1" type="button">确定</button>
+          <% } else if (action == 'confirm') { %>
+            <button class="js-<%= actionType %>-create product-picker-btn btn btn-primary flex-grow-1" type="button"
+              data-type="<%= actionType %>">确定</button>
           <% } else { %>
           <% if (data.isVirtual == '0' && (typeof data.config.noShowCart == 'undefined' || data.config.noShowCart == '0'))
           { %>
