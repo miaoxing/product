@@ -39,27 +39,29 @@ $unit = $product['config']['unit'] ?: '件';
       </div>
     <?php endif ?>
 
-    <?php if (!$setting('product.hideQuantity', false)) : ?>
-      <dl class="product-item border-top">
-        <dt>库存：</dt>
-        <dd>
-          <?php if ($product['config']['dailyReserveCount']) : ?>
-            每天 <?= $product['config']['dailyReserveCount'], ' ', $unit ?>
-          <?php else : ?>
-            <?= $product['quantity'] ?>
-          <?php endif ?>
-        </dd>
-      </dl>
-    <?php endif ?>
-
-    <?php if (!$setting('product.hideSoldQuantity', false)) : ?>
-      <dl class="product-item border-top">
-        <dt>销量：</dt>
-        <dd>
-          <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . $unit : ' 10 ' . $unit . '以内' ?>
-        </dd>
-      </dl>
-    <?php endif ?>
+    <div class="product-item border-top product-item-min">
+      <?php if (!$setting('product.hideQuantity', false)) : ?>
+        <dl>
+          <dt>库存：</dt>
+          <dd>
+            <?php if ($product['config']['dailyReserveCount']) : ?>
+              每天 <?= $product['config']['dailyReserveCount'], ' ', $unit ?>
+            <?php else : ?>
+              <?= $product['quantity'] ?>
+            <?php endif ?>
+          </dd>
+        </dl>
+      <?php endif ?>
+      <?php if (!$setting('product.hideSoldQuantity', false)) : ?>
+        <dl>
+          <dt>销量：</dt>
+          <dd>
+            <?= $product['soldQuantity'] > 10 ? $product['soldQuantity'] . $unit : ' 10 ' . $unit . '以内' ?>
+          </dd>
+        </dl>
+      <?php endif ?>
+      <?php $event->trigger('productsShowItemMin', [$product]) ?>
+    </div>
 
     <?php $event->trigger('productsShowItem', [$product]) ?>
   </div>

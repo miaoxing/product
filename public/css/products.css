@@ -315,6 +315,15 @@
   vertical-align: middle;
 }
 
+.product-item dl {
+  margin: 0;
+}
+
+.product-item-min {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* 某项属性,包含头部和内容,如评论 */
 .product-item-container {
   overflow: hidden;
