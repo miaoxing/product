@@ -512,16 +512,18 @@ class Product extends BaseModel
 
         // 5. 更新标签
         if (isset($req['tags'])) {
-            // 删除已有的标签
-            $this->db('recordTag')->destroy(['recordTable' => 'product', 'recordId' => $this['id']]);
-            // 重新插入标签
-            foreach (explode(',', $req['tags']) as $tag) {
-                $this->db('recordTag')->save([
-                    'tagId' => $tag,
+            $tags = [];
+            $recordTags = wei()->db('recordTag')->findAll(['recordId' => $this['id']]);
+            $tagIds = array_column($recordTags->toArray(), 'id', 'tagId');
+            foreach (explode(',', $req['tags']) as $tagId) {
+                $tags[] = [
+                    'id' => isset($tagIds[$tagId]) ? $tagIds[$tagId] : null,
+                    'tagId' => $tagId,
                     'recordTable' => 'product',
                     'recordId' => $this['id'],
-                ]);
+                ];
             }
+            $recordTags->saveColl($tags);
         }
 
         $ret = wei()->event->until('postProductsUpdate', [$this, $req]);
