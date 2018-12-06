@@ -458,6 +458,14 @@ define(['comps/artTemplate/template.min'], function (template) {
           that.close();
         }
 
+        // 触发事件
+        var e = $.Event('cart:afterCreate', {
+          picker: this,
+          cart: cart,
+          ret: ret,
+        });
+        $(document).trigger(e);
+
         // 购物车数量更新
         if (ret.code === 1 && ret.found === false) {
           var $num = $('.js-product-cart-num');
