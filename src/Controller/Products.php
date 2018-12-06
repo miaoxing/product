@@ -70,6 +70,7 @@ class Products extends \Miaoxing\Plugin\BaseController
                 'scores' => $product['scores'],
                 'priceText' => $product->getPriceText($price),
                 'stock' => $product->getStock(),
+                'soldQuantity' => $product['soldQuantity'],
             ];
         }
 
