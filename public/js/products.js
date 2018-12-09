@@ -218,7 +218,7 @@ define(['comps/artTemplate/template.min'], function (template) {
       var $modal = $(template.render('productModalTpl', {
         data: this.data,
         action: this.action,
-        actionType: $(this.e.target).data('type'),
+        actionType: this.e ? $(this.e.target).data('type') : '',
         cartId: this.cartId,
         quantity: this.quantity,
         skus: this.skus,
