@@ -76,7 +76,7 @@ $unit = $product['config']['unit'] ?: '件';
     <div class="product-item">
       <?php foreach ($product->getTags() as $tag) : ?>
         <?php if ($tag['enable']) : ?>
-          <span class="product-tag" style="background-color: <?= $tag['color'] ?>"><?= $tag['name'] ?></span>
+          <span class="product-tag" style="background-color: <?= $tag['color'] ?: '#777' ?>"><?= $tag['name'] ?></span>
         <?php endif ?>
       <?php endforeach ?>
     </div>
