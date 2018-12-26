@@ -2,6 +2,7 @@
 
 namespace Miaoxing\Product\Service;
 
+use Miaoxing\Config\ConfigTrait;
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Product\Job\ProductSave;
 use Miaoxing\ProductTag\Service\Tag;
@@ -9,9 +10,13 @@ use Miaoxing\ProductTag\Service\Tag;
 /**
  * 配置
  * 1. hideQuantity 是否隐藏库存 默认为0
+ *
+ * @property bool $enableProps
  */
 class Product extends BaseModel
 {
+    use ConfigTrait;
+
     const STATUS_ON_SALE = 1;
 
     const STATUS_UNLISTED = 2;
@@ -23,6 +28,12 @@ class Product extends BaseModel
     const STATUS_ENDED = 5;
 
     protected $autoId = true;
+
+    protected $configs = [
+        'enableProps' => [
+            'default' => false,
+        ],
+    ];
 
     /**
      * @var \Miaoxing\Category\Service\Category

@@ -181,7 +181,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
             <datalist id="units">
               <?php foreach (wei()->product()->getUnits() as $unit) : ?>
               <option value="<?= $unit ?>">
-                <?php endforeach ?>
+              <?php endforeach ?>
             </datalist>
           </div>
 
@@ -224,6 +224,18 @@ $hasScore = $wei->plugin->isInstalled('product-score');
             <textarea id="detail" name="detail"></textarea>
           </div>
         </div>
+
+        <?php if (wei()->product->enableProps) { ?>
+          <div class="form-group">
+            <label class="col-lg-2 control-label" for="props">
+              商品参数
+            </label>
+
+            <div class="col-lg-8">
+              <textarea id="props" name="props"></textarea>
+            </div>
+          </div>
+        <?php } ?>
       </fieldset>
 
       <fieldset>
@@ -546,6 +558,9 @@ $hasScore = $wei->plugin->isInstalled('product-score');
     });
 
     $('#detail').ueditor();
+
+    var $props = $('#props');
+    $props.length && $props.ueditor();
 
     // 开始结束时间使用日期时间范围选择器
     $('#startTime, #endTime').rangeDateTimePicker({
