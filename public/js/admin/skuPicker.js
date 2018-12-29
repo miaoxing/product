@@ -6,7 +6,7 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
   var SkuPicker = function(element, options) {
     this.options = options;
     this.$element = $(element);
-    this.$modal = $(template.render('skuPickerTpl'));
+    this.$modal = $(template.render('skuPickerTpl', options));
     this.$table = this.$modal.find('.js-sku-picker-table');
     this.$modal.appendTo(this.options.target);
     form.toOptions(this.$modal.find('#categoryId'), this.options.category, 'id', 'name');
@@ -15,7 +15,8 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
 
   SkuPicker.DEFAULTS = {
     data: {},
-    target: 'body'
+    target: 'body',
+    paramType: 'quantity'
   };
 
   SkuPicker.prototype.init = function () {
@@ -115,12 +116,25 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
     this.$table.on('change', '.js-sku-picker-quantity', function () {
       var $this = $(this);
       var id = $this.data('id');
-      var val = parseInt($this.val(), 10);
 
-      if (val < 1 || isNaN(val)) {
-        val = 1;
+      var val = $this.val();
+      switch (that.options.paramType) {
+        case 'price':
+          val = parseFloat(val);
+          if (val < 0 || isNaN(val)) {
+            val = 0;
+          }
+          $this.val(val.toFixed(2));
+          break;
+
+        case 'quantity':
+          val = parseInt(vak, 10);
+          if (val < 1 || isNaN(val)) {
+            val = 1;
+          }
+          $this.val(val);
+          break;
       }
-      $this.val(val);
 
       if (typeof that.options.data[id] !== 'undefined') {
         that.options.data[id].quantity = val;
@@ -142,14 +156,12 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
 
   // 更改已选数量和id
   SkuPicker.prototype.updateSelectedSku = function () {
-    var sum = 0;
+    this.$modal.find('.js-sku-picker-selected-num').html(this.options.data.length);
+
     var ids = [];
     $.each(this.options.data, function (id, data) {
-      sum += parseInt(data.quantity, 10);
       ids.push(id);
     });
-    this.$modal.find('.js-sku-picker-selected-num').html(sum);
-
     var val = '';
     if (ids.length === 0) {
       val = 'not-exists';

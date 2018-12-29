@@ -42,7 +42,7 @@
               <th>名称</th>
               <th>规格</th>
               <th style="width:120px">库存</th>
-              <th style="width:120px">数量</th>
+              <th style="width:120px"><%= paramName || '数量' %></th>
               <th style="width:120px">操作</th>
             </tr>
             </thead>
