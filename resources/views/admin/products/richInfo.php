@@ -7,8 +7,8 @@
       <h4 class="media-heading">
         <a href="<%= url || $.url('products/%s', id) %>" target="_blank">
           <%== name %>
-          <% if (free == '1') { %>
-            <span class="label label-success product-gift">赠品</span>
+          <% if (free == '1' || free == '2') { %>
+            <span class="label label-success product-gift"><%= free == '1' ? '赠品' : '换购' %></span>
           <% } %>
         </a>
       </h4>
