@@ -6,11 +6,16 @@
     <li class="border-primary">
       <a class="text-active-primary" href="#props-tab" data-toggle="tab">参数</a>
     </li>
+    <?php if ($product['config']['video']) { ?>
+      <li class="border-primary">
+        <a class="text-active-primary" href="#video-tab" data-toggle="tab">视频</a>
+      </li>
+    <?php } ?>
   </ul>
 <?php } else { ?>
   <div class="product-header border-top-bottom">商品详情</div>
 <?php } ?>
-<div class="tab-content">
+<div class="tab-content" style="margin-bottom: 44px">
   <div class="tab-pane fade in active" id="detail-tab">
     <div class="product-specs">
       <?php $event->trigger('productsShowSpecs', [$product]) ?>
@@ -32,6 +37,13 @@
   <div class="tab-pane fade in" id="props-tab">
     <?= $product['props'] ?>
   </div>
+  <?php if ($product['config']['video']) { ?>
+    <div class="tab-pane fade in" id="video-tab">
+      <video class="js-video" width="100%" controls controlsList="nodownload">
+        <source src="<?= $product['config']['video'] ?>" type="video/mp4"/>
+      </video>
+    </div>
+  <?php } ?>
 </div>
 
 <?= $block->js() ?>
@@ -45,6 +57,10 @@
     $('.js-product-tabs a').click(function (e) {
       e.preventDefault();
       $(this).tab('show');
+
+      if ($(this).attr('href') === '#video-tab') {
+        $('.js-video')[0].play();
+      }
     });
   })
 </script>

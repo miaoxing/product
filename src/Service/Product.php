@@ -12,6 +12,7 @@ use Miaoxing\ProductTag\Service\Tag;
  * 1. hideQuantity 是否隐藏库存 默认为0
  *
  * @property bool $enableProps
+ * @property bool $enableVideo
  */
 class Product extends BaseModel
 {
@@ -31,6 +32,9 @@ class Product extends BaseModel
 
     protected $configs = [
         'enableProps' => [
+            'default' => false,
+        ],
+        'enableVideo' => [
             'default' => false,
         ],
     ];

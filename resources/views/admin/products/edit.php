@@ -215,6 +215,8 @@ $hasScore = $wei->plugin->isInstalled('product-score');
           </div>
         </div>
 
+        <?php wei()->product->enableVideo && require $app->getControllerFile('_edit-video') ?>
+
         <div class="form-group">
           <label class="col-lg-2 control-label" for="detail">
             商品描述
