@@ -66,7 +66,7 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
           data: 'id',
           render: function (data, type, full) {
             if (typeof that.options.data[data] !== 'undefined') {
-              full.selectedQuantity = that.options.data[data].quantity;
+              full.selectedQuantity = that.options.data[data][that.options.paramType];
               full.selected = true;
             } else {
               full.selectedQuantity = 1;
@@ -137,7 +137,7 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
       }
 
       if (typeof that.options.data[id] !== 'undefined') {
-        that.options.data[id].quantity = val;
+        that.options.data[id][that.options.paramType] = val;
       }
     });
 
