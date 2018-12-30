@@ -25,6 +25,9 @@ class Sku extends BaseModel
         'attrIds' => [],
     ];
 
+    /**
+     * @return Product
+     */
     public function getProduct()
     {
         $this->product || $this->product = wei()->product()->findOrInitById($this['productId']);
