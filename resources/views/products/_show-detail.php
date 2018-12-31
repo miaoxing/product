@@ -16,7 +16,7 @@
   <div class="product-header border-top-bottom">商品详情</div>
 <?php } ?>
 <div class="tab-content" style="margin-bottom: 44px">
-  <div class="tab-pane fade in active" id="detail-tab">
+  <div class="js-images-preview product-detail tab-pane fade in active" id="detail-tab">
     <div class="product-specs">
       <?php $event->trigger('productsShowSpecs', [$product]) ?>
     </div>
@@ -30,11 +30,9 @@
         <?php endforeach ?>
       </div>
     <?php endif ?>
-    <div class="js-images-preview product-detail">
-      <?= isset($productDetail) ? $productDetail : $product->getProcessedDetail() ?>
-    </div>
+    <?= isset($productDetail) ? $productDetail : $product->getProcessedDetail() ?>
   </div>
-  <div class="tab-pane fade in" id="props-tab">
+  <div class="tab-pane fade in js-images-preview product-detail" id="props-tab">
     <?= $product['props'] ?>
   </div>
   <?php if ($product['config']['video']) { ?>
