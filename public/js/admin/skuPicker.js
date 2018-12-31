@@ -98,10 +98,10 @@ define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) 
         // .js-sku-item
         that.options.data[id] = {
           id: id,
-          quantity: $row.find('.js-sku-picker-quantity').val(),
           name: rowData.product.name,
           specs: $row.find('.js-sku-specs').html()
         };
+        that.options.data[id][that.options.paramType] = $row.find('.js-sku-picker-quantity').val();
       }
 
       // 重新渲染视图
