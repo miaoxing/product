@@ -144,7 +144,12 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
 </script>
 
 <?php require $this->getFile('@product/admin/products/richInfo.php') ?>
-<?php require $view->getFile('@admin/admin/checkboxCol.php') ?>
+<script id="listing-col-tpl" type="text/html">
+  <label>
+    <input class="js-toggle-status ace toggle-status" name="<%= name %>" data-id="<%= id %>" data-value="<%= value %>" type="checkbox" <% if (value != 0) { %> checked <% } %> >
+    <span class="lbl"></span>
+  </label>
+</script>
 
 <?= $block->js() ?>
 <script>
@@ -208,7 +213,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
           title: '上架',
           sClass: 't-4',
           render: function (data, type, full) {
-            return template.render('checkbox-col-tpl', {
+            return template.render('listing-col-tpl', {
               id: full.id + "_" + full.template,
               name: 'listing',
               value: data

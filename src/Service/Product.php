@@ -13,6 +13,7 @@ use Miaoxing\ProductTag\Service\Tag;
  *
  * @property bool $enableProps
  * @property bool $enableVideo
+ * @property bool $enableListingExt
  */
 class Product extends BaseModel
 {
@@ -35,6 +36,9 @@ class Product extends BaseModel
             'default' => false,
         ],
         'enableVideo' => [
+            'default' => false,
+        ],
+        'enableListingExt' => [
             'default' => false,
         ],
     ];
