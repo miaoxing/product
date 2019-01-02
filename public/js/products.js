@@ -253,7 +253,12 @@ define(['comps/artTemplate/template.min'], function (template) {
     initPicker: function () {
       var $el = this.$el;
       $el.on('hidden.bs.modal', function () {
-        $el.remove();
+        // 点击关闭返回原来页面
+        if ($.req('show-picker') && $(document.activeElement).hasClass('close')) {
+          window.history.back();
+        } else {
+          $el.remove();
+        }
       });
     },
 
