@@ -293,7 +293,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
             </label>
             <?php if (wei()->product->enableListingExt) { ?>
             <label class="radio-inline">
-              <input type="radio" name="listing" data-rule-required="true" value="2"> 上架，不显示在列表
+              <input type="radio" name="listing" data-rule-required="true" value="2"> 上架但不显示在列表
             </label>
             <?php } ?>
 
