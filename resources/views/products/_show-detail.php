@@ -3,9 +3,11 @@
     <li class="active border-primary">
       <a class="text-active-primary" href="#detail-tab" data-toggle="tab">详情</a>
     </li>
-    <li class="border-primary">
-      <a class="text-active-primary" href="#props-tab" data-toggle="tab">参数</a>
-    </li>
+    <?php if ($product['props']) { ?>
+      <li class="border-primary">
+        <a class="text-active-primary" href="#props-tab" data-toggle="tab">参数</a>
+      </li>
+    <?php } ?>
     <?php if ($product['config']['video']) { ?>
       <li class="border-primary">
         <a class="text-active-primary" href="#video-tab" data-toggle="tab">视频</a>
@@ -32,9 +34,11 @@
     <?php endif ?>
     <?= isset($productDetail) ? $productDetail : $product->getProcessedDetail() ?>
   </div>
-  <div class="tab-pane fade in js-images-preview product-detail" id="props-tab">
-    <?= $product['props'] ?>
-  </div>
+  <?php if ($product['props']) { ?>
+    <div class="tab-pane fade in js-images-preview product-detail" id="props-tab">
+      <?= $product['props'] ?>
+    </div>
+  <?php } ?>
   <?php if ($product['config']['video']) { ?>
     <div class="tab-pane fade in" id="video-tab">
       <video class="js-video" width="100%" controls controlsList="nodownload">
