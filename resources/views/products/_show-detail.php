@@ -22,16 +22,6 @@
     <div class="product-specs">
       <?php $event->trigger('productsShowSpecs', [$product]) ?>
     </div>
-    <?php if ($product->getTags()->length() && $setting('products.showTag')) : ?>
-      <div class="product-item">
-        <?php foreach ($product->getTags() as $tag) : ?>
-          <?php if ($tag['enable']) : ?>
-            <span class="product-tag"
-              style="background-color: <?= $tag['color'] ?: '#777' ?>"><?= $tag['name'] ?></span>
-          <?php endif ?>
-        <?php endforeach ?>
-      </div>
-    <?php endif ?>
     <?= isset($productDetail) ? $productDetail : $product->getProcessedDetail() ?>
   </div>
   <?php if ($product['props']) { ?>
