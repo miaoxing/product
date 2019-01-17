@@ -499,7 +499,7 @@ class Product extends BaseModel
     {
         // 1. 为单价格商品增加一个SKU
         if ($this->isNew() && !isset($req['skus'])) {
-            $skuData = $this->initOneSkuData($req['price'], $req['quantity'], (int) $req['scores']);
+            $skuData = $this->initOneSkuData($req['price'], $req['quantity'], (int) $req['scores'], $req['no']);
             $req['skus'] = $skuData['skus'];
             $req['skuConfigs'] = $skuData['skuConfigs'];
         }
@@ -520,6 +520,7 @@ class Product extends BaseModel
                 'price' => $this['price'],
                 'quantity' => $this['quantity'],
                 'score' => (int) $this['scores'],
+                'no' => $this['no'],
             ]);
         }
 
@@ -560,9 +561,10 @@ class Product extends BaseModel
      * @param float $price
      * @param int $quantity
      * @param int $score
+     * @param string $no
      * @return array
      */
-    protected function initOneSkuData($price, $quantity, $score = 0)
+    protected function initOneSkuData($price, $quantity, $score = 0, $no = '')
     {
         $attrId = wei()->seq();
         $price = (float) $price;
@@ -575,6 +577,7 @@ class Product extends BaseModel
                 'price' => $price,
                 'quantity' => $quantity,
                 'score' => $score,
+                'no' => $no,
                 'attrIds' => [$attrId],
             ],
         ];
