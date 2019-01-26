@@ -21,8 +21,6 @@ class Products extends \Miaoxing\Plugin\BaseController
                 return $this->renderCsv($req);
 
             case 'json':
-                wei()->statsD->startTiming('admin.product.index');
-
                 $products = wei()->product();
 
                 // 分页
@@ -82,8 +80,6 @@ class Products extends \Miaoxing\Plugin\BaseController
                 }
 
                 $this->event->trigger('postAdminProductListFind', [&$data, $req]);
-
-                wei()->statsD->endTiming('admin.product.index');
 
                 return $this->suc([
                     'message' => '读取列表成功',
