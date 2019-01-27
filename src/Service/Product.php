@@ -547,7 +547,7 @@ class Product extends BaseModel
         }
 
         $ret = wei()->event->until('postProductsUpdate', [$this, $req]);
-        wei()->queue->push(ProductSave::class, ['id' => $this['id']], wei()->app->getNamespace());
+        wei()->queue->push(ProductSave::class, ['id' => $this['id']]);
         if ($ret) {
             return $ret;
         }
