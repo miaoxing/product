@@ -181,7 +181,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
         {
           data: 'startTime',
           title: '上架时间~下架时间',
-          sClass: 't-12 text-center',
+          sClass: 't-13 text-center',
           render: function (data, type, full) {
             return full.startTime.substr(0, 10) + ' ~ ' +
               full.endTime.substr(0, 10);
