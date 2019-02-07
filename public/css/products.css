@@ -313,6 +313,7 @@
 .product-item dd {
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 0;
 }
 
 .product-item dl {
