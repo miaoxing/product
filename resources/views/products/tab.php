@@ -2,7 +2,7 @@
 tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
   <li class="nav-item">
     <a class="nav-link js-product-drawer-toggle" data-dir="left" href="javascript:">
-      <span class="caret caret-left"></span>
+      <span class="caret-left"></span>
       分类
     </a>
   </li>
@@ -33,7 +33,7 @@ tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
   <li class="nav-item">
     <a class="js-product-drawer-toggle nav-link" data-dir="right" href="javascript:">
       筛选 <?= $req['tags'] ? '<small>(已选)</small>' : '' ?>
-      <span class="caret caret-right"></span>
+      <span class="caret-right"></span>
     </a>
   </li>
 </ul>
