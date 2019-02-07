@@ -1,16 +1,16 @@
 <?php if (wei()->product->enableProps) { ?>
   <ul class="js-product-tabs nav tab-underline border-bottom m-t-sm header-tab m-b-0">
-    <li class="active border-primary">
-      <a class="text-active-primary" href="#detail-tab" data-toggle="tab">详情</a>
+    <li class="nav-item active border-primary">
+      <a class="nav-link text-active-primary" href="#detail-tab" data-toggle="tab">详情</a>
     </li>
     <?php if ($product['props']) { ?>
-      <li class="border-primary">
-        <a class="text-active-primary" href="#props-tab" data-toggle="tab">参数</a>
+      <li class="nav-item border-primary">
+        <a class="nav-link text-active-primary" href="#props-tab" data-toggle="tab">参数</a>
       </li>
     <?php } ?>
     <?php if ($product['config']['video']) { ?>
-      <li class="border-primary">
-        <a class="text-active-primary" href="#video-tab" data-toggle="tab">视频</a>
+      <li class="nav-item border-primary">
+        <a class="nav-link text-active-primary" href="#video-tab" data-toggle="tab">视频</a>
       </li>
     <?php } ?>
   </ul>

@@ -1,16 +1,16 @@
 <ul class="product-tab-underline nav tab-underline
 tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
-  <li>
-    <a class="js-product-drawer-toggle" data-dir="left" href="javascript:">
+  <li class="nav-item">
+    <a class="nav-link js-product-drawer-toggle" data-dir="left" href="javascript:">
       <span class="caret caret-left"></span>
       分类
     </a>
   </li>
-  <li class="<?= ($req['sort'] == '' || $req['sort'] == 'default') ? 'active border-primary' : '' ?>">
-    <a class="text-active-primary" href="<?= $url->query('products', ['sort' => 'default']) ?>">默认</a>
+  <li class="nav-item <?= ($req['sort'] == '' || $req['sort'] == 'default') ? 'active border-primary' : '' ?>">
+    <a class="nav-link text-active-primary" href="<?= $url->query('products', ['sort' => 'default']) ?>">默认</a>
   </li>
-  <li class="<?= $req['sort'] == 'soldQuantity' ? 'active border-primary' : '' ?>">
-    <a class="text-active-primary"
+  <li class="nav-item <?= $req['sort'] == 'soldQuantity' ? 'active border-primary' : '' ?>">
+    <a class="nav-link text-active-primary"
       href="<?= $url->query('products', [
         'sort' => 'soldQuantity',
         'order' => ($req['order'] == 'desc' ? 'asc' : 'desc'),
@@ -21,8 +21,8 @@ tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
       <?php endif ?>
     </a>
   </li>
-  <li class="<?= $req['sort'] == 'price' ? 'active border-primary' : '' ?>">
-    <a class="text-active-primary"
+  <li class="nav-item <?= $req['sort'] == 'price' ? 'active border-primary' : '' ?>">
+    <a class="nav-link text-active-primary"
       href="<?= $url->query('products', ['sort' => 'price', 'order' => ($req['order'] == 'desc' ? 'asc' : 'desc')]) ?>">
       价格
       <?php if ($req['sort'] == 'price') : ?>
@@ -30,8 +30,8 @@ tab-underline-sm <?= $req['picker'] ? 'border-top-bottom' : 'border-bottom' ?>">
       <?php endif ?>
     </a>
   </li>
-  <li>
-    <a class="js-product-drawer-toggle" data-dir="right" href="javascript:">
+  <li class="nav-item">
+    <a class="js-product-drawer-toggle nav-link" data-dir="right" href="javascript:">
       筛选 <?= $req['tags'] ? '<small>(已选)</small>' : '' ?>
       <span class="caret caret-right"></span>
     </a>
