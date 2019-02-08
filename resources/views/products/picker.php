@@ -4,8 +4,6 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header border-bottom">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
           <div class="modal-title flex" id="productModalLabel">
             <div class="product-picker-thumb">
               <img src="<%= data.images[0] %>">
@@ -19,6 +17,8 @@
               <?php endif ?>
             </div>
           </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <% if (skus.length > 1) { %>
