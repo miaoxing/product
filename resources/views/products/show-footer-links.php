@@ -4,7 +4,7 @@
   </a>
 <?php endif ?>
 <a class="product-action-link link-dark" href="<?= $url('carts') ?>">
-  <span class="js-product-cart-num product-cart-num label label-danger"></span>
+  <span class="js-product-cart-num product-cart-num badge badge-danger"></span>
   <i class="ni ni-cart"></i>
 </a>
 
