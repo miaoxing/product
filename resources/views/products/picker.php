@@ -3,7 +3,7 @@
     aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header border-bottom">
+        <div class="modal-header">
           <div class="modal-title flex" id="productModalLabel">
             <div class="product-picker-thumb">
               <img src="<%= data.images[0] %>">
