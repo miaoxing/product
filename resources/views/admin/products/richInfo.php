@@ -8,7 +8,7 @@
         <a href="<%= url || $.url('products/%s', id) %>" target="_blank">
           <%== name %>
           <% if (free == '1' || free == '2') { %>
-            <span class="label label-success product-gift"><%= free == '1' ? '赠品' : '换购' %></span>
+            <span class="badge badge-success product-gift"><%= free == '1' ? '赠品' : '换购' %></span>
           <% } %>
         </a>
       </h4>
