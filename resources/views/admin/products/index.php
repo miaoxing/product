@@ -6,7 +6,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
 
 <div class="page-header">
   <div class="pull-right">
-    <div class="btn-group">
+    <div class="dropdown">
       <button data-toggle="dropdown" class="btn btn-success dropdown-toggle">
         添加商品
         <span class="fa fa-caret-down icon-on-right"></span>
