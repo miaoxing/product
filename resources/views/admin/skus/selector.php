@@ -38,10 +38,18 @@
     </label>
 
     <div class="col-10">
-      <div class="input-group input-group-sm quantity-spinner pull-left">
-        <span class="input-group-addon sub-quantity"><i class="fa fa-minus"></i></span>
+      <div class="input-group quantity-spinner pull-left">
+        <span class="input-group-prepend sub-quantity">
+          <span class="input-group-text">
+            <i class="fa fa-minus"></i>
+          </span>
+        </span>
         <input type="text" class="form-control text-center quantity" name="quantity" value="1">
-        <span class="input-group-addon add-quantity"><i class="fa fa-plus"></i></span>
+        <span class="input-group-append add-quantity">
+          <span class="input-group-text">
+            <i class="fa fa-plus"></i>
+          </span>
+        </span>
       </div>
       <p class="form-control-static sku-quantity-text pull-left">
         库存<span class="sku-quantity"><%= skus[0].quantity %></span>件
