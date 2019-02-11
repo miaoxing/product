@@ -1,8 +1,8 @@
 <?php if ($product->isSingleSku()) : ?>
   <div class="form-group">
-    <label class="col-xs-3 control-label">库存</label>
+    <label class="col-3 control-label">库存</label>
 
-    <div class="col-xs-6">
+    <div class="col-6">
       <input class="form-control sku-quantity" type="text" data-id="<?= $product->getFirstSku()->get('id') ?>"
         data-name="quantity" value="<?= $product->getFirstSku()->get('quantity') ?>">
     </div>
