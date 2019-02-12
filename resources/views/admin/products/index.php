@@ -9,18 +9,12 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
     <div class="dropdown">
       <button data-toggle="dropdown" class="btn btn-success dropdown-toggle">
         添加商品
-        <span class="fa fa-caret-down icon-on-right"></span>
       </button>
 
-      <ul class="dropdown-menu pull-right">
-        <li class="product-new-single-price">
-          <a href="<?= $url('admin/products/new') ?>">单价格</a>
-        </li>
-
-        <li class="product-new-multi-price">
-          <a href="<?= $url('admin/products/new', ['template' => 'advanced']) ?>">多价格</a>
-        </li>
-      </ul>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item product-new-single-price" href="<?= $url('admin/products/new') ?>">单价格</a>
+        <a class="dropdown-item product-new-multi-price" href="<?= $url('admin/products/new', ['template' => 'advanced']) ?>">多价格</a>
+      </div>
 
       <?php if (wei()->setting('product.enableExport')) { ?>
         <a id="export-csv" class="btn btn-default pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
