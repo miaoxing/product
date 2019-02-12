@@ -89,8 +89,10 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">更新库存</h4>
+        <h5 class="modal-title">更新库存</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" role="form" id="edit-quantity-form"
