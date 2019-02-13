@@ -13,7 +13,7 @@
           </button>
         </div>
           <div class="modal-body sku-picker-modal-body">
-          <div class="well form-well sku-picker-well">
+          <div class="well sku-picker-well">
             <form class="form-inline js-sku-picker-form" role="form">
               <div class="form-group">
                 <select class="form-control" name="categoryId" id="categoryId">

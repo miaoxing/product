@@ -28,7 +28,7 @@
           </button>
         </div>
         <div class="modal-body p-a-0">
-          <div class="well form-well product-popup-picker-well">
+          <div class="well product-popup-picker-well">
             <form class="js-product-popup-picker-form form-inline" role="form">
               <div class="form-group">
                 <select class="js-product-popup-picker-category-id form-control" name="categoryId">
