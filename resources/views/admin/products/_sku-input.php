@@ -29,7 +29,9 @@
 
   <% if (specs.length === 0) { %>
   <tr>
-    <td colspan="6" class="table-empty-tips">请先输入规格</td>
+    <td colspan="6">
+      <div class="table-empty-tips">请先输入规格</div>
+    </td>
   </tr>
   <% } %>
 
