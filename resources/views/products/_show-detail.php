@@ -18,19 +18,19 @@
   <div class="product-header border-top-bottom">商品详情</div>
 <?php } ?>
 <div class="tab-content" style="margin-bottom: 44px">
-  <div class="js-images-preview product-detail tab-pane fade in active" id="detail-tab">
+  <div class="js-images-preview product-detail tab-pane fade show active" id="detail-tab">
     <div class="product-specs">
       <?php $event->trigger('productsShowSpecs', [$product]) ?>
     </div>
     <?= isset($productDetail) ? $productDetail : $product->getProcessedDetail() ?>
   </div>
   <?php if ($product['props']) { ?>
-    <div class="tab-pane fade in js-images-preview product-detail" id="props-tab">
+    <div class="tab-pane fade show js-images-preview product-detail" id="props-tab">
       <?= $product['props'] ?>
     </div>
   <?php } ?>
   <?php if ($product['config']['video']) { ?>
-    <div class="tab-pane fade in" id="video-tab">
+    <div class="tab-pane fade show" id="video-tab">
       <video class="js-video" width="100%" controls controlsList="nodownload">
         <source src="<?= $product['config']['video'] ?>" type="video/mp4"/>
       </video>
