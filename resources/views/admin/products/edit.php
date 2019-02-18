@@ -81,13 +81,11 @@ $hasScore = $wei->plugin->isInstalled('product-score');
           </label>
 
           <div class="col-sm-6 product-skus">
-            <div class="form-group sku-control-form-group">
-
-            </div>
-            <div class="form-group">
+            <div class="sku-control-form-group"></div>
+            <div class="col-form-label mb-2">
               <a href="javascript:" class="add-sku">+增加规格</a>
             </div>
-            <div class="form-group sku-table-form-group">
+            <div class="sku-table-form-group">
               <table class="sku-table table table-bordered">
 
               </table>
@@ -472,15 +470,17 @@ $hasScore = $wei->plugin->isInstalled('product-score');
 
 <!-- 商品规格选择器 -->
 <script id="sku-form-group-tpl" type="text/html">
-  <div class="form-group sku-control" id="sku-control-<%= id %>">
-    <input type="text" class="sku-name" placeholder="规格名称"/>
-
-    <p class="form-control-static pull-left">：</p>
-    <input type="text" class="sku-attrs" placeholder="请选择或输入规格">
-
-    <p class="form-control-static">
+  <div class="form-row sku-control mb-2" id="sku-control-<%= id %>">
+    <div class="col-auto">
+      <input type="text" class="sku-name" placeholder="规格名称"/>
+    </div>
+    <div class="col-form-label px-0">：</div>
+    <div class="col-auto">
+      <input type="text" class="sku-attrs" placeholder="请选择或输入规格">
+    </div>
+    <div class="col-auto col-form-label">
       &nbsp;<a href="javascript:" class="delete-sku">删除</a>
-    </p>
+    </div>
   </div>
 </script>
 
