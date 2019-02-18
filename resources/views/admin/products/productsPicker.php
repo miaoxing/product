@@ -6,7 +6,7 @@
   <li class="list-group-item">
     <%== template.render("product-tpl", product) %>
     <div class="media-actions">
-      <a href="javascript:;" title="删除" class="light-grey remove-product">
+      <a href="javascript:;" title="删除" class="text-muted remove-product">
         <i class="fa fa-times-circle-o"></i>
       </a>
     </div>
