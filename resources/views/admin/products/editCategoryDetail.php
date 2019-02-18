@@ -18,7 +18,7 @@
     <!-- PAGE detail BEGINS -->
     <form id="categoryDetail-form" class="form-horizontal" method="post" role="form">
       <fieldset>
-        <legend class="grey bigger-130">商品栏目详细信息</legend>
+        <legend class="text-muted bigger-130">商品栏目详细信息</legend>
 
         <div class="form-group">
           <label class="col-lg-2 control-label" for="categoryId">
