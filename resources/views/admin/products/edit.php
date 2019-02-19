@@ -19,7 +19,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
     <!-- PAGE detail BEGINS -->
     <form id="product-form" class="form-horizontal" method="post" role="form">
       <fieldset>
-        <legend class="text-muted bigger-130">1. 商品基本信息</legend>
+        <legend class="text-muted text-xl">1. 商品基本信息</legend>
         <div class="form-group">
           <label class="col-lg-2 control-label" for="category-id">
             <span class="text-warning">*</span>
@@ -190,7 +190,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
 
       </fieldset>
       <fieldset>
-        <legend class="text-muted bigger-130">2. 商品详情信息</legend>
+        <legend class="text-muted text-xl">2. 商品详情信息</legend>
         <div class="form-group single-price-form-group">
           <label class="col-lg-2 control-label" for="no">
             货号
@@ -239,7 +239,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
       </fieldset>
 
       <fieldset>
-        <legend class="text-muted bigger-130">3. 商品物流信息</legend>
+        <legend class="text-muted text-xl">3. 商品物流信息</legend>
 
         <div class="form-group">
           <label class="col-lg-2 control-label" for="shipping-tpl-id">
@@ -273,7 +273,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
       </fieldset>
 
       <fieldset>
-        <legend class="text-muted bigger-130">4. 其他信息</legend>
+        <legend class="text-muted text-xl">4. 其他信息</legend>
 
         <div class="form-group">
           <label class="col-lg-2 control-label" for="listing">
