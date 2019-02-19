@@ -27,7 +27,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body p-a-0">
+        <div class="modal-body p-0">
           <div class="well product-popup-picker-well">
             <form class="js-product-popup-picker-form form-inline" role="form">
               <div class="form-group">
