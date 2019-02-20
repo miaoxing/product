@@ -553,7 +553,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
     'comps/select2/select2.min',
     'validator',
     'ueditor',
-    'assets/dateTimePicker',
+    'plugins/admin/js/range-date-time-picker',
     'comps/jquery.serializeJSON/jquery.serializejson.min'
   ], function (product, numeric, form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
