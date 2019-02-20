@@ -21,8 +21,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
       <?php } ?>
     </div>
 
-    <?php if (wei()->setting('product.enableImport')) {
-    ?>
+    <?php if (wei()->setting('product.enableImport')) { ?>
       <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
         <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
           <span class="btn btn-default btn-file">
@@ -30,12 +29,10 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
             <span class="fileinput-exists">重新上传Excel</span>
               <input type="file" name="file">
           </span>
-          <a href="<?= $asset('assets/admin/mall/product/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
+          <a href="<?= $asset('plugins/product/files/商品批量导入模板.xls') ?>" class="btn btn-link">下载范例</a>
         </div>
       </form>
-    <?php
-
-} ?>
+    <?php } ?>
   </div>
 
   <h1>
