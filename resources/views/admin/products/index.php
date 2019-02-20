@@ -149,7 +149,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/admin/js/data-table', 'jquery-deparam', 'daterangepicker', 'plugins/excel/js/excel'], function (form) {
+  require(['form', 'plugins/admin/js/data-table', 'jquery-deparam', 'plugins/admin/js/date-range-picker', 'plugins/excel/js/excel'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
     form.toOptions($('#categoryId'), categoryJson, 'id', 'name');
 
