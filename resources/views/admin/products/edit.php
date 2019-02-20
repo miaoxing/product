@@ -551,7 +551,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
     'assets/numeric',
     'form',
     'comps/select2/select2.min',
-    'validator',
+    'plugins/app/js/validation',
     'ueditor',
     'plugins/admin/js/range-date-time-picker',
     'comps/jquery.serializeJSON/jquery.serializejson.min'
