@@ -1,5 +1,5 @@
 /* global template */
-define(['form', 'css!../../css/admin/product-popup-picker', 'template', 'dataTable'], function (form) {
+define(['form', 'css!../../css/admin/product-popup-picker', 'template', 'plugins/admin/js/data-table'], function (form) {
   var ProductPopupPicker = function () {
     // do nothing.
   };

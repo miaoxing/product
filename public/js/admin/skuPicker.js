@@ -1,4 +1,4 @@
-define(['jquery', 'form', 'template', 'dataTable'], function($, form, template) {
+define(['jquery', 'form', 'template', 'plugins/admin/js/data-table'], function($, form, template) {
 
   // SKU PICKER CLASS DEFINITION
   // ===========================
