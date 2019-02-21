@@ -6,7 +6,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
 
 <div class="page-header">
   <div class="pull-right">
-    <div class="dropdown">
+    <div class="dropdown d-inline-block">
       <button data-toggle="dropdown" class="btn btn-success dropdown-toggle">
         添加商品
       </button>
@@ -22,7 +22,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
     </div>
 
     <?php if (wei()->setting('product.enableImport')) { ?>
-      <form id="pro-upload-form" class="form-horizontal" method="post" role="form" style="display: inline-block;">
+      <form id="pro-upload-form" class="form-horizontal d-inline-block" method="post" role="form">
         <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
           <span class="btn btn-default btn-file">
             <span class="fileinput-new">从Excel导入</span>
