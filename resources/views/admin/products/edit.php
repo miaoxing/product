@@ -595,7 +595,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
 
   // 选择或新增标签
   require([
-    'assets/admin/tag',
+    'plugins/product-tag/js/admin/product-tags',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap'
