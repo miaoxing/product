@@ -1,7 +1,8 @@
 <?php
 
 $view->layout();
-$wei->page->addAsset('plugins/product/css/admin/products.css');
+$wei->page->addAsset('plugins/product/css/admin/products.css')
+  ->addAsset('comps/jasny-bootstrap/dist/css/jasny-bootstrap.min.css');
 ?>
 
 <div class="page-header">
@@ -146,7 +147,10 @@ $wei->page->addAsset('plugins/product/css/admin/products.css');
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/admin/js/data-table', 'jquery-unparam', 'plugins/admin/js/date-range-picker', 'plugins/excel/js/excel'], function (form) {
+  require(['form', 'plugins/admin/js/data-table', 'jquery-unparam', 'plugins/admin/js/date-range-picker',
+    'plugins/excel/js/excel',
+    'comps/jasny-bootstrap/dist/js/jasny-bootstrap.min',
+  ], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
     form.toOptions($('#categoryId'), categoryJson, 'id', 'name');
 
