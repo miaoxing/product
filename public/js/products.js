@@ -1,5 +1,5 @@
 /* global Snap */
-define(['comps/artTemplate/template.min'], function (template) {
+define(['plugins/app/libs/artTemplate/template.min'], function (template) {
   var Products = function () {
     // do nothing.
   };

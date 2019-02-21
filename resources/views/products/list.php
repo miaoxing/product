@@ -40,7 +40,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['comps/artTemplate/template.min'], function () {
+  require(['plugins/app/libs/artTemplate/template.min'], function () {
     template.helper('$', $);
     var $list = $('.js-product-list');
     $list.list({

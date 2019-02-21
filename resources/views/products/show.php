@@ -75,7 +75,7 @@ $unit = $product['config']['unit'] ?: '件';
 <script>
   require([
     'plugins/product/js/products',
-    'comps/artTemplate/template.min',
+    'plugins/app/libs/artTemplate/template.min',
     'comps/jquery_lazyload/jquery.lazyload.min',
     'plugins/app/js/bootstrap-tab'
   ], function (products) {
