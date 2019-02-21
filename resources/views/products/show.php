@@ -77,7 +77,7 @@ $unit = $product['config']['unit'] ?: '件';
     'plugins/product/js/products',
     'comps/artTemplate/template.min',
     'comps/jquery_lazyload/jquery.lazyload.min',
-    'assets/bsTab'
+    'plugins/app/js/bootstrap-tab'
   ], function (products) {
     template.helper('$', $);
     products.showAction(<?= json_encode($packageData, JSON_UNESCAPED_UNICODE) ?>);
