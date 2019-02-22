@@ -57,7 +57,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['plugins/category/js/admin/categories', 'plugins/admin/js/data-table', 'form'], function (category) {
+  require(['plugins/category/js/admin/categories', 'plugins/admin/js/data-table', 'plugins/admin/js/form'], function (category) {
     var recordTable = $('#category-table').dataTable({
       ajax: {
         url: $.url('admin/product-categories.json', {parentId: 'mall'})

@@ -147,7 +147,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/admin/js/data-table', 'plugins/admin/js/date-range-picker',
+  require(['plugins/admin/js/form', 'plugins/admin/js/data-table', 'plugins/admin/js/date-range-picker',
     'plugins/excel/js/excel',
     'comps/jasny-bootstrap/dist/js/jasny-bootstrap.min',
   ], function (form) {

@@ -549,7 +549,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
   require([
     'plugins/product/js/admin/product',
     'plugins/product/js/numeric',
-    'form',
+    'plugins/admin/js/form',
     'comps/select2/select2.min',
     'plugins/app/js/validation',
     'ueditor',

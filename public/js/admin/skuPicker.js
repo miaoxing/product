@@ -1,4 +1,4 @@
-define(['jquery', 'form', 'plugins/app/libs/artTemplate/template.min', 'plugins/admin/js/data-table'], function($, form, template) {
+define(['jquery', 'plugins/admin/js/form', 'plugins/app/libs/artTemplate/template.min', 'plugins/admin/js/data-table'], function($, form, template) {
 
   // SKU PICKER CLASS DEFINITION
   // ===========================
