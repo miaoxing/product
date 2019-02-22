@@ -87,7 +87,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'jquery-unparam', 'plugins/admin/js/data-table', 'plugins/app/js/validation'], function (form) {
+  require(['form', 'ueditor', 'plugins/admin/js/data-table', 'plugins/app/js/validation'], function (form) {
     var mallJson = <?= json_encode(wei()->category()->notDeleted()->withParent('mall')->getTreeToArray()) ?>;
     form.toOptions($('#parent-id'), mallJson, 'id', 'name');
     form.toOptions($('.js-list-tpl'), <?= json_encode($wei->product->getListTplsOptions()) ?>, 'name', 'value');
