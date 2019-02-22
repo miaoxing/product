@@ -1,5 +1,5 @@
 define([
-  'template',
+  plugins/app/libs/artTemplate/template.min,
   'plugins/seq/js/seq',
   'plugins/admin/js/image-upload'
 ], function (template) {

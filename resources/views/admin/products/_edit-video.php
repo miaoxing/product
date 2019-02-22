@@ -27,7 +27,7 @@
     }
   });
   require([
-    'template',
+    plugins/app/libs/artTemplate/template.min,
     'css!comps/blueimp-file-upload/css/jquery.fileupload',
     'comps/blueimp-file-upload/js/jquery.fileupload'
   ], function (template) {

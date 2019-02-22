@@ -55,7 +55,7 @@
 <script>
   require([
     'form',
-    'template',
+    plugins/app/libs/artTemplate/template.min,
     'comps/select2/select2.min',
     'comps/typeahead.js/dist/typeahead.bundle.min'
   ], function (form) {
