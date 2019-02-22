@@ -79,7 +79,6 @@ $unit = $product['config']['unit'] ?: '件';
     'comps/jquery_lazyload/jquery.lazyload.min',
     'plugins/app/js/bootstrap-tab'
   ], function (products) {
-    template.helper('$', $);
     products.showAction(<?= json_encode($packageData, JSON_UNESCAPED_UNICODE) ?>);
   });
 
