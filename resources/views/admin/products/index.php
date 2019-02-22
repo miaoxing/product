@@ -155,10 +155,10 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
     form.toOptions($('#categoryId'), categoryJson, 'id', 'name');
 
     $('#search-form').loadParams().update(function () {
-      recordTable.search($(this).serializeArray(), false);
+      recordTable.reload($(this).serialize(), false);
     });
 
-    var recordTable = $('#record-table').statefulDataTable({
+    var recordTable = $('#record-table').dataTable({
       ajax: {
         url: $.queryUrl('admin/products.json')
       },
