@@ -1,5 +1,5 @@
 define([
-  plugins/app/libs/artTemplate/template.min,
+  'plugins/app/libs/artTemplate/template.min',
   'css!plugins/product/css/admin/sku-input',
   'css!comps/select2/select2',
   'css!comps/select2-bootstrap-css/select2-bootstrap',
