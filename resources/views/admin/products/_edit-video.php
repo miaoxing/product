@@ -23,7 +23,7 @@
 <script>
   require.config({
     paths: {
-      'jquery-ui/ui/widget': 'plugins/admin/libs/jquery-ui/ui/minified/jquery.ui.widget.min'
+      'jquery-ui/ui/widget': 'plugins/admin/libs/jquery-ui-custom/jquery.ui.widget.min'
     }
   });
   require([
