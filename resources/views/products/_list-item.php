@@ -15,7 +15,7 @@
         </a>
       </div>
       <?php if (!$setting('product.hidePrice')) : ?>
-        <div class="product-list-price text-primary truncate">
+        <div class="product-list-price text-primary text-truncate">
           <%= priceText %>
           <% if (originalPrice != '0') { %>
           <del class="product-list-original-price text-muted small">￥<%= originalPrice %></del>
