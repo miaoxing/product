@@ -3,7 +3,7 @@
   <div class="form-group sku-control" id="sku-control-<%= id %>">
     <input type="text" class="sku-name" placeholder="规格名称"/>
 
-    <p class="form-control-static pull-left">：</p>
+    <p class="form-control-static float-left">：</p>
     <input type="text" class="sku-attrs" placeholder="请选择或输入规格">
 
     <p class="form-control-static">

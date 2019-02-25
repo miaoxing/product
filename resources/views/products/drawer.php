@@ -12,7 +12,7 @@
 
     <h3 class="product-drawer-title border-top-bottom bg-muted text-muted">
       商品栏目
-      <a class="js-product-drawer-close pull-right text-muted" href="javascript:">关闭</a>
+      <a class="js-product-drawer-close float-right text-muted" href="javascript:">关闭</a>
     </h3>
 
     <?php $categories = wei()->category()->enabled()->notDeleted()->withParent('mall')->desc('sort')->findAll(); ?>
@@ -70,7 +70,7 @@
   <div class="snap-drawer snap-drawer-right filter-drawer border-left">
     <h3 class="product-drawer-title bg-muted text-muted">
       商品标签
-      <a class="js-product-drawer-close pull-right text-muted" href="javascript:">关闭</a>
+      <a class="js-product-drawer-close float-right text-muted" href="javascript:">关闭</a>
     </h3>
 
     <?php require $view->getFile('@product-tag/tag/picker.php') ?>

@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <?= $block('header-actions') ?>
-<a class="btn pull-right btn-success" href="<?= $url('admin/product-categories/new') ?>">添加栏目</a>
+<a class="btn float-right btn-success" href="<?= $url('admin/product-categories/new') ?>">添加栏目</a>
 <?= $block->end() ?>
 
 <div class="row">

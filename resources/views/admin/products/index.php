@@ -6,7 +6,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
 ?>
 
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <div class="dropdown d-inline-block">
       <button data-toggle="dropdown" class="btn btn-success dropdown-toggle">
         添加商品
@@ -18,7 +18,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
       </div>
 
       <?php if (wei()->setting('product.enableExport')) { ?>
-        <a id="export-csv" class="btn btn-default pull-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
+        <a id="export-csv" class="btn btn-default float-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
       <?php } ?>
     </div>
 

@@ -38,7 +38,7 @@
     </label>
 
     <div class="col-10">
-      <div class="input-group quantity-spinner pull-left">
+      <div class="input-group quantity-spinner float-left">
         <span class="input-group-prepend sub-quantity">
           <span class="input-group-text">
             <i class="fa fa-minus"></i>
@@ -51,7 +51,7 @@
           </span>
         </span>
       </div>
-      <p class="form-control-static sku-quantity-text pull-left">
+      <p class="form-control-static sku-quantity-text float-left">
         库存<span class="sku-quantity"><%= skus[0].quantity %></span>件
       <p>
     </div>

@@ -25,7 +25,7 @@
                 <input type="text" class="form-control" name="name" placeholder="请输入名称搜索">
               </div>
 
-              <div class="pull-right">
+              <div class="float-right">
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" class="js-sku-picker-view-selected" name="id" value=""> 查看已选
