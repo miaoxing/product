@@ -1,6 +1,6 @@
 <script id="product-tpl" type="text/html">
   <div class="media user-media product-media">
-    <a class="media-left" href="<%= url || $.url('products/%s', id) %>" target="_blank">
+    <a class="mr-2" href="<%= url || $.url('products/%s', id) %>" target="_blank">
       <img class="media-object" src="<%= typeof images == 'undefined' ? '' : images[0] %>" style="width: 48px; height: 48px;">
     </a>
     <div class="media-body text-left">

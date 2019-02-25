@@ -25,7 +25,7 @@
     </label>
 
     <div class="col-6">
-      <p class="form-control-static text-warning">
+      <p class="form-control-plaintext text-warning">
         <small>￥</small>
         <span class="product-price-range"><%= skus[0].price %></span>
       </p>
@@ -51,7 +51,7 @@
           </span>
         </span>
       </div>
-      <p class="form-control-static sku-quantity-text float-left">
+      <p class="form-control-plaintext sku-quantity-text float-left">
         库存<span class="sku-quantity"><%= skus[0].quantity %></span>件
       <p>
     </div>

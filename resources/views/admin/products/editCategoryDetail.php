@@ -26,7 +26,7 @@
             栏目
           </label>
 
-          <div class="col-lg-4 form-control-static">
+          <div class="col-lg-4 form-control-plaintext">
             <p><?= $category['name'] ?></p>
           </div>
         </div>

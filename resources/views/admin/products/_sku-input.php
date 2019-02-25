@@ -3,10 +3,10 @@
   <div class="form-group sku-control" id="sku-control-<%= id %>">
     <input type="text" class="sku-name" placeholder="规格名称"/>
 
-    <p class="form-control-static float-left">：</p>
+    <p class="form-control-plaintext float-left">：</p>
     <input type="text" class="sku-attrs" placeholder="请选择或输入规格">
 
-    <p class="form-control-static">
+    <p class="form-control-plaintext">
       &nbsp;<a href="javascript:" class="delete-sku">删除</a>
     </p>
   </div>

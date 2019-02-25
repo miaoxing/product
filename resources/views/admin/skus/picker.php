@@ -32,7 +32,7 @@
                   </label>
                 </div>
                 <div class="form-group">
-                  <p class="form-control-static">已选 <span class="js-sku-picker-selected-num">0</span> 个商品</p>
+                  <p class="form-control-plaintext">已选 <span class="js-sku-picker-selected-num">0</span> 个商品</p>
                 </div>
               </div>
             </form>
