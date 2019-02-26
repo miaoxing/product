@@ -80,6 +80,6 @@
 </script>
 
 <script type="text/html" id="product-popup-picker-actions-tpl">
-  <a href="javascript:" class="js-product-popup-picker-toggle btn <%= selected ? 'selected btn-info' : 'btn-default' %>"
+  <a href="javascript:" class="js-product-popup-picker-toggle btn <%= selected ? 'selected btn-info' : 'btn-secondary' %>"
     data-id="<%= id %>"><%= selected ? '取消' : '选择' %></a>
 </script>

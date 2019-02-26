@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default float-right" href="<?= $url('admin/product-categories/edit?id='.$category['id']) ?>">返回列表</a>
+  <a class="btn btn-secondary float-right" href="<?= $url('admin/product-categories/edit?id='.$category['id']) ?>">返回列表</a>
 
   <h1>
     微商城
@@ -78,7 +78,7 @@
           </button>
 
           &nbsp; &nbsp; &nbsp;
-          <a class="btn btn-default" href="<?= $url('admin/products') ?>">
+          <a class="btn btn-secondary" href="<?= $url('admin/products') ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>

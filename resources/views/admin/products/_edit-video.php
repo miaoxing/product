@@ -3,7 +3,7 @@
     视频
   </label>
   <div class="col-lg-4">
-    <span class="btn btn-default fileinput-button">
+    <span class="btn btn-secondary fileinput-button">
       <span>选择文件</span>
       <input class="js-config-video-upload" type="file" name="file">
     </span>

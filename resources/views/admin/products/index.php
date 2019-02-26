@@ -18,14 +18,14 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
       </div>
 
       <?php if (wei()->setting('product.enableExport')) { ?>
-        <a id="export-csv" class="btn btn-default float-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
+        <a id="export-csv" class="btn btn-secondary float-right" style="margin-left: 5px;" href="javascript:void(0);">导出</a>
       <?php } ?>
     </div>
 
     <?php if (wei()->setting('product.enableImport')) { ?>
       <form id="pro-upload-form" class="form-horizontal d-inline-block" method="post" role="form">
         <div class="excel-fileinput fileinput fileinput-new" data-provides="fileinput">
-          <span class="btn btn-default btn-file">
+          <span class="btn btn-secondary btn-file">
             <span class="fileinput-new">从Excel导入</span>
             <span class="fileinput-exists">重新上传Excel</span>
               <input type="file" name="file">
@@ -98,7 +98,7 @@ $wei->page->addAsset('plugins/product/css/admin/products.css')
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
       </div>
     </div>
     <!-- /.modal-content -->

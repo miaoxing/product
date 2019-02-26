@@ -61,7 +61,7 @@
 </script>
 
 <script type="text/html" id="skuPickerActionsTpl">
-  <a href="javascript:;" class="btn <%= selected ? 'selected btn-info' : 'btn-default' %> js-sku-picker-toggle" data-id="<%= id %>"><%= selected ? '取消' : '选择' %></a>
+  <a href="javascript:;" class="btn <%= selected ? 'selected btn-info' : 'btn-secondary' %> js-sku-picker-toggle" data-id="<%= id %>"><%= selected ? '取消' : '选择' %></a>
 </script>
 
 <script type="text/html" id="skuPickerQuantityTpl">

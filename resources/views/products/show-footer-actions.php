@@ -2,7 +2,7 @@
   <?php if (isset($payable['link'])) : ?>
     <a class="btn btn-primary" href="<?= $payable['link'] ?>"><?= $payable['shortMessage'] ?></a>
   <?php else : ?>
-    <button class="js-product-action-disabled btn btn-default disabled border-left" type="button">
+    <button class="js-product-action-disabled btn btn-secondary disabled border-left" type="button">
       <?= $payable['shortMessage'] ?>
     </button>
   <?php endif ?>
