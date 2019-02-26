@@ -40,7 +40,7 @@
           </div>
           <% } %>
 
-          <dl class="js-quantity-item quantity-item flex flex-center">
+          <dl class="js-quantity-item quantity-item d-flex flex-center">
             <dt class="quantity-name"><%= data.config.quantityName || '数量' %></dt>
             <dd class="quantity-spinner flex-grow-1">
 
