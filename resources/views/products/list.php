@@ -32,7 +32,7 @@
   }
 </style>
 
-<div class="js-product-list product-container product-list product-list3-<?= $category['listTpl'] ?: 'md' ?> bg-light">
+<div class="js-product-list product-container product-list product-list3-<?= $category['listTpl'] ?: 'md' ?> bg-white">
 
 </div>
 

@@ -1,4 +1,4 @@
-<div class="js-product-drawers snap-drawers product-drawers bg-light display-none">
+<div class="js-product-drawers snap-drawers product-drawers bg-white display-none">
   <div class="snap-drawer snap-drawer-left category-drawer border-right">
     <form class="product-search-form" action="<?= $url->query('products') ?>" method="get">
       <div class="border-all border-radius">
