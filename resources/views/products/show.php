@@ -15,7 +15,7 @@ $unit = $product['config']['unit'] ?: '件';
 
   <?php require $view->getFile('@product/products/images.php') ?>
 
-  <div class="product-info border-top-bottom">
+  <div class="product-info border-y">
 
     <h2 class="product-title"><?= $product['name'] ?></h2>
 

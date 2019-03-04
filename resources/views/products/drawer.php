@@ -1,7 +1,7 @@
 <div class="js-product-drawers snap-drawers product-drawers bg-white display-none">
   <div class="snap-drawer snap-drawer-left category-drawer border-right">
     <form class="product-search-form" action="<?= $url->query('products') ?>" method="get">
-      <div class="border-all border-radius">
+      <div class="border-all rounded-lg">
         <input class="js-product-search product-search-input" name="q" value="<?= $e($req['q']) ?>" type="text"
           placeholder="请输入商品关键字搜索">
       </div>
@@ -10,7 +10,7 @@
       </button>
     </form>
 
-    <h3 class="product-drawer-title border-top-bottom bg-muted text-muted">
+    <h3 class="product-drawer-title border-y bg-muted text-muted">
       商品栏目
       <a class="js-product-drawer-close float-right text-muted" href="javascript:">关闭</a>
     </h3>

@@ -15,7 +15,7 @@
     <?php } ?>
   </ul>
 <?php } else { ?>
-  <div class="product-header border-top-bottom">商品详情</div>
+  <div class="product-header border-y">商品详情</div>
 <?php } ?>
 <div class="tab-content" style="margin-bottom: 44px">
   <div class="js-images-preview product-detail tab-pane fade show active" id="detail-tab">
