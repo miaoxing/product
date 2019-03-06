@@ -1,5 +1,5 @@
 <?php if (wei()->product->enableProps) { ?>
-  <ul class="js-product-tabs nav tab-underline border-bottom mt-2 header-tab mb-0">
+  <ul class="js-product-tabs header-tab nav tab-underline mt-2 mb-0">
     <li class="nav-item active border-primary">
       <a class="nav-link text-active-primary" href="#detail-tab" data-toggle="tab">详情</a>
     </li>
