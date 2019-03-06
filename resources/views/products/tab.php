@@ -1,4 +1,4 @@
-<ul class="product-tab-underline header-tab nav tab-underline mb-0 <?= $req['picker'] ? 'border-top' : '' ?>">
+<ul class="product-nav-underline header-nav nav nav-underline mb-0 <?= $req['picker'] ? 'border-top' : '' ?>">
   <li class="nav-item">
     <a class="nav-link js-product-drawer-toggle" data-dir="left" href="javascript:">
       <span class="caret caret-left"></span>
