@@ -1,15 +1,16 @@
-<ul class="product-tab-underline header-tab nav tab-underline <?= $req['picker'] ? 'border-y' : 'border-bottom' ?>">
+<ul class="product-tab-underline header-tab nav tab-underline mb-0 <?= $req['picker'] ? 'border-top' : '' ?>">
   <li class="nav-item">
     <a class="nav-link js-product-drawer-toggle" data-dir="left" href="javascript:">
       <span class="caret caret-left"></span>
       分类
     </a>
   </li>
-  <li class="nav-item <?= ($req['sort'] == '' || $req['sort'] == 'default') ? 'active border-primary' : '' ?>">
-    <a class="nav-link text-active-primary" href="<?= $url->query('products', ['sort' => 'default']) ?>">默认</a>
+  <li class="nav-item">
+    <a class="nav-link <?= ($req['sort'] == '' || $req['sort'] == 'default') ? 'active text-active-primary border-primary' : '' ?>"
+      href="<?= $url->query('products', ['sort' => 'default']) ?>">默认</a>
   </li>
-  <li class="nav-item <?= $req['sort'] == 'soldQuantity' ? 'active border-primary' : '' ?>">
-    <a class="nav-link text-active-primary"
+  <li class="nav-item">
+    <a class="nav-link <?= $req['sort'] == 'soldQuantity' ? 'active text-active-primary border-primary' : '' ?>"
       href="<?= $url->query('products', [
         'sort' => 'soldQuantity',
         'order' => ($req['order'] == 'desc' ? 'asc' : 'desc'),
@@ -20,8 +21,8 @@
       <?php endif ?>
     </a>
   </li>
-  <li class="nav-item <?= $req['sort'] == 'price' ? 'active border-primary' : '' ?>">
-    <a class="nav-link text-active-primary"
+  <li class="nav-item">
+    <a class="nav-link <?= $req['sort'] == 'price' ? 'active text-active-primary border-primary' : '' ?>"
       href="<?= $url->query('products', ['sort' => 'price', 'order' => ($req['order'] == 'desc' ? 'asc' : 'desc')]) ?>">
       价格
       <?php if ($req['sort'] == 'price') : ?>
