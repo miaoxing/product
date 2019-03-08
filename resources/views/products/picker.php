@@ -4,7 +4,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title flex" id="productModalLabel">
+          <div class="modal-title d-flex" id="productModalLabel">
             <div class="product-picker-thumb">
               <img src="<%= data.images[0] %>">
             </div>
@@ -65,7 +65,7 @@
           <input type="hidden" class="js-sku-id" value="<%= skus[0].id %>" name="skuId">
         </div>
 
-        <div class="js-product-actions modal-footer flex">
+        <div class="js-product-actions modal-footer d-flex">
           <% if (action == 'updateCart') { %>
           <input type="hidden" class="js-cart-id" name="id" value="<%= cartId %>">
           <button class="js-cart-update product-picker-btn btn btn-primary flex-grow-1" type="button">确定</button>
