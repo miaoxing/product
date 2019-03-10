@@ -75,7 +75,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
           </div>
         <?php } ?>
 
-        <div class="form-group sku-form-group display-none">
+        <div class="form-group sku-form-group" hidden>
           <label class="col-sm-2 control-label">
             商品规格
           </label>
@@ -104,7 +104,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
               data-rule-number="true" data-rule-min="0">
           </div>
 
-          <label class="col-lg-6 help-text price-tips display-none" for="price">
+          <label class="col-lg-6 help-text price-tips" hidden for="price">
             默认显示商品规格中的最小价格
           </label>
         </div>
@@ -148,7 +148,7 @@ $hasScore = $wei->plugin->isInstalled('product-score');
               data-rule-digits="true">
           </div>
 
-          <label class="col-lg-6 help-text quantity-tips display-none" for="quantity">
+          <label class="col-lg-6 help-text quantity-tips" hidden for="quantity">
             总库存等于"商品规格"中的"库存"总和
           </label>
         </div>
