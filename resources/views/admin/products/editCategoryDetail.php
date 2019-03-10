@@ -93,7 +93,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/app/js/validation', 'plugins/admin/js/spectrum','ueditor'], function () {
+  require(['plugins/admin/js/form', 'plugins/app/js/validation', 'plugins/admin/js/spectrum','ueditor'], function () {
     $('#categoryDetail-form')
       .loadJSON(<?= $categoryDetail->toJson() ?>)
       .ajaxForm({

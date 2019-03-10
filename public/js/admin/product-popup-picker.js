@@ -1,5 +1,5 @@
 /* global template */
-define(['form', 'css!../../css/admin/product-popup-picker', 'plugins/app/libs/artTemplate/template.min', 'plugins/admin/js/data-table'], function (form) {
+define(['plugins/admin/js/form', 'css!../../css/admin/product-popup-picker', 'plugins/app/libs/artTemplate/template.min', 'plugins/admin/js/data-table'], function (form) {
   var ProductPopupPicker = function () {
     // do nothing.
   };

@@ -61,7 +61,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'plugins/app/js/validation'], function (form) {
+  require(['plugins/admin/js/form', 'ueditor', 'plugins/app/js/validation'], function (form) {
     var listJson = <?= json_encode($wei->product->getListTplsOptions()) ?>;
     form.toOptions($('.js-product-default-list-tpl'), listJson, 'name', 'value');
 

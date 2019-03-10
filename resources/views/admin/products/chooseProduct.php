@@ -54,7 +54,7 @@
 <?= $block->js() ?>
 <script>
   require([
-    'form',
+    'plugins/admin/js/form',
     'plugins/app/libs/artTemplate/template.min',
     'comps/select2/select2.min',
     'comps/typeahead.js/dist/typeahead.bundle.min'
