@@ -153,7 +153,7 @@ define([
    */
   self.initSku = function () {
     // 显示多规格相关的提示
-    self.form.find('.price-tips, .quantity-tips, .sku-form-group').attr('hidden', false);
+    self.form.find('.price-tips, .quantity-tips, .sku-form-group').prop('hidden', false);
 
     // 1. 隐藏单价格商品所需的字段
     $('#quantity, #price, #scores').prop('readonly', true);
