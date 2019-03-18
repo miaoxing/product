@@ -18,7 +18,7 @@
   <div class="product-header border-y">商品详情</div>
 <?php } ?>
 <div class="tab-content" style="margin-bottom: 44px">
-  <div class="js-images-preview product-detail tab-pane fade show active" id="detail-tab">
+  <div class="js-images-preview images-preview product-detail tab-pane fade show active" id="detail-tab">
     <div class="product-specs">
       <?php $event->trigger('productsShowSpecs', [$product]) ?>
     </div>
