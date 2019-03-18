@@ -25,13 +25,13 @@
                 <input type="text" class="form-control" name="name" placeholder="请输入名称搜索">
               </div>
 
-              <div class="float-right">
-                <div class="checkbox">
+              <div class="ml-auto text-nowrap">
+                <div class="checkbox d-inline-block">
                   <label>
-                    <input type="checkbox" class="js-sku-picker-view-selected" name="id" value=""> 查看已选
+                    <input type="checkbox" class="js-sku-picker-view-selected mr-2" name="id" value=""> 查看已选
                   </label>
                 </div>
-                <div class="form-group">
+                <div class="form-group d-inline-block">
                   <p class="form-control-plaintext">已选 <span class="js-sku-picker-selected-num">0</span> 个商品</p>
                 </div>
               </div>
