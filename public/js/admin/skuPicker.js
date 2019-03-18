@@ -156,7 +156,7 @@ define(['jquery', 'plugins/admin/js/form', 'plugins/app/libs/artTemplate/templat
 
   // 更改已选数量和id
   SkuPicker.prototype.updateSelectedSku = function () {
-    this.$modal.find('.js-sku-picker-selected-num').html(this.options.data.length);
+    this.$modal.find('.js-sku-picker-selected-num').html(Object.keys(this.options.data).length);
 
     var ids = [];
     $.each(this.options.data, function (id, data) {
