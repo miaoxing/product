@@ -564,8 +564,9 @@
   width: 100%;
 }
 
-.modal-footer .btn + .product-picker-btn {
+.modal-footer .product-picker-btn {
   margin-left: 0;
+  margin-right: 0;
 }
 
 /* 多规格选择 */
