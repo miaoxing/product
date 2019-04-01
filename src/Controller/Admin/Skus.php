@@ -69,7 +69,8 @@ class Skus extends \Miaoxing\Plugin\BaseController
         // 同时更新商品的数量
         $product = $sku->getProduct();
         $product->save([
-            'quantity' => $product->getStock(),
+            'quantity' => wei()->db->sum('sku', 'quantity',
+                ['productId' => $product['id'], 'deleteTime' => '0000-00-00 00:00:00']),
         ]);
 
         return $this->suc();

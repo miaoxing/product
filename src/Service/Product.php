@@ -400,14 +400,13 @@ class Product extends BaseModel
     }
 
     /**
-     * 获取真实的库存
+     * 获取库存,超卖显示为0
      *
-     * @todo 和isSoldOut是同个含义
+     * @return int
      */
     public function getStock()
     {
-        $stock = $this->db->sum('sku', 'quantity', ['productId' => $this['id'], 'deleteTime' => '0000-00-00 00:00:00']);
-        return $stock < 0 ? 0 : $stock;
+        return $this['quantity'] < 0 ? 0 : $this['quantity'];
     }
 
     public function isSoldOut()
