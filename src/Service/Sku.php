@@ -64,13 +64,13 @@ class Sku extends BaseModel
 
     /**
      * 减库存
-     * @param $quantity
-     * @return bool
+     *
+     * @param int $quantity
      */
     public function subQuantity($quantity)
     {
-        $this->decr('quantity', (int) $quantity);
-        $this->save();
+        $this->incrSave('quantity', -$quantity);
+        $this->getProduct()->incrSave('quantity', -$quantity);
     }
 
     /**
