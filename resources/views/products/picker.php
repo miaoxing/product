@@ -1,3 +1,10 @@
+<style>
+  /* todo */
+  .product-picker .modal-content {
+    overflow: visible;
+  }
+</style>
+
 <script type="text/html" id="productModalTpl">
   <div class="js-product-picker product-picker modal-bottom modal fade" tabindex="-1" role="dialog"
     aria-labelledby="productModalLabel" aria-hidden="true">
