@@ -6,10 +6,10 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "dev-master@dev",
-    "miaoxing/category": "dev-master@dev",
-    "miaoxing/admin": "dev-master@dev",
-    "miaoxing/nav": "dev-master@dev"
+    "miaoxing/app": "^0.2.2",
+    "miaoxing/category": "^0.1.0",
+    "miaoxing/admin": "^0.2.2",
+    "miaoxing/nav": "^0.1.2"
   },
   "autoload": {
     "psr-4": {
