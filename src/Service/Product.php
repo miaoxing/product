@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Service;
 
-use Miaoxing\Config\ConfigTrait;
+use Miaoxing\Plugin\ConfigTrait;
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Product\Job\ProductSave;
 use Miaoxing\ProductTag\Service\Tag;

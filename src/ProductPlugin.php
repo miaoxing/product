@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product;
 
-class Plugin extends \Miaoxing\Plugin\BasePlugin
+class ProductPlugin extends \Miaoxing\Plugin\BasePlugin
 {
     protected $name = '商品';
 
