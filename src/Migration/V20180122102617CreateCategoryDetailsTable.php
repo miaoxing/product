@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Product\Migration;
 
-use Miaoxing\Plugin\BaseMigration;
+use Wei\Migration\BaseMigration;
 
 class V20180122102617CreateCategoryDetailsTable extends BaseMigration
 {
