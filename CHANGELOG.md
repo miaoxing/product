@@ -1,3 +1,16 @@
+## [0.1.1](https://github.com/miaoxing/product/compare/v0.1.0...v0.1.1) (2020-09-27)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/app:** upgrade from 0.2.3 to 0.2.4
+* **@miaoxing/category:** upgrade from 0.1.0 to 0.1.1
+* **@miaoxing/admin:** upgrade from 0.2.3 to 0.2.4
+* **@miaoxing/nav:** upgrade from 0.1.3 to 0.1.4
+
 # 0.1.0 (2020-09-25)
 
 
