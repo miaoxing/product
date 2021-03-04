@@ -2,15 +2,27 @@
 
 namespace Miaoxing\Product;
 
-class ProductPlugin extends \Miaoxing\Plugin\BasePlugin
+use Illuminate\Console\Scheduling\Schedule;
+use Miaoxing\Plugin\BasePlugin;
+use Miaoxing\Product\Task\UpdateTimingStatus;
+
+/**
+ * 商品插件
+ */
+class ProductPlugin extends BasePlugin
 {
     protected $name = '商品';
 
-    protected $version = '1.0.0';
+    protected $code = 208;
 
-    protected $adminNavId = 'products';
-
-    public function onAdminNavGetNavs(&$navs, &$categories, &$subCategories)
+    /**
+     * 添加后台菜单
+     *
+     * @param array $navs
+     * @param array $categories
+     * @param array $subCategories
+     */
+    public function onAdminNavGetNavs(array &$navs, array &$categories, array &$subCategories)
     {
         $categories['products'] = [
             'name' => '商品',
@@ -19,57 +31,24 @@ class ProductPlugin extends \Miaoxing\Plugin\BasePlugin
 
         $subCategories['products'] = [
             'parentId' => 'products',
-            'name' => '商品',
-            'icon' => 'fa fa-gift',
-        ];
-
-        $subCategories['products-service'] = [
-            'parentId' => 'products',
-            'name' => '商品服务',
-            'icon' => 'fa fa-gear',
-        ];
-
-        $navs[] = [
-            'parentId' => 'products',
-            'url' => 'admin/products',
             'name' => '商品管理',
-            'sort' => 900,
+            'url' => 'admin/products',
         ];
 
-        $navs[] = [
+        $subCategories[] = [
             'parentId' => 'products',
-            'url' => 'admin/product-categories',
-            'name' => '栏目管理',
-            'sort' => 800,
-        ];
-
-        $subCategories['product-setting'] = [
-            'parentId' => 'products',
-            'name' => '设置',
-            'icon' => 'fa fa-gear',
-            'sort' => 0,
-        ];
-
-        $navs[] = [
-            'parentId' => 'product-setting',
-            'url' => 'admin/product-settings',
-            'name' => '功能设置',
-            'sort' => 0,
+            'name' => '分类管理',
+            'url' => 'admin/categories',
         ];
     }
 
-    public function onLinkToGetLinks(&$links, &$types)
+    /**
+     * 添加自定义定时任务
+     *
+     * @param Schedule $schedule
+     */
+    public function onSchedule(Schedule $schedule)
     {
-        foreach (wei()->category()->notDeleted()->withParent('mall')->desc('sort')->getTree() as $category) {
-            $links[] = [
-                'typeId' => 'mall',
-                'name' => '商品栏目：' . $category['name'],
-                'url' => 'products?categoryId=' . $category['id'],
-            ];
-        }
-    }
-
-    public function onPreProductListFind($req = null, $products = null)
-    {
+        $schedule->call(new UpdateTimingStatus())->everyMinute();
     }
 }

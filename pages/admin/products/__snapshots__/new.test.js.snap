@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`admin/products form 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "method": "get",
+        "url": "/admin-api/products/defaults",
+      },
+    ],
+    Array [
+      Object {
+        "loading": true,
+        "method": "get",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/shipping-tpls",
+      },
+    ],
+    Array [
+      Object {
+        "loading": true,
+        "method": "get",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/categories",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
+
+exports[`admin/products form 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "method": "get",
+        "url": "/admin-api/products/defaults",
+      },
+    ],
+    Array [
+      Object {
+        "loading": true,
+        "method": "get",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/shipping-tpls",
+      },
+    ],
+    Array [
+      Object {
+        "loading": true,
+        "method": "get",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/categories",
+      },
+    ],
+    Array [
+      Object {
+        "data": Object {
+          "categoriesProducts": Array [],
+          "configs": Object {
+            "hideSoldNum": undefined,
+            "quantityName": undefined,
+            "unit": undefined,
+          },
+          "decStockMode": undefined,
+          "detail": Object {
+            "content": undefined,
+          },
+          "endAt": "",
+          "id": undefined,
+          "images": Array [],
+          "intro": undefined,
+          "isAllowAddCart": true,
+          "isAllowComment": true,
+          "isAllowCoupon": true,
+          "isListing": undefined,
+          "isRequireAddress": true,
+          "maxOrderQuantity": undefined,
+          "name": "测试商品",
+          "shippingTplId": 1,
+          "skus": Array [
+            Object {
+              "id": undefined,
+              "image": "",
+              "marketPrice": undefined,
+              "outerId": undefined,
+              "price": "1.23",
+              "score": undefined,
+              "specValues": Array [
+                Object {
+                  "name": "默认",
+                  "specName": "默认",
+                },
+              ],
+              "stockNum": "3",
+              "weight": undefined,
+            },
+          ],
+          "sort": 50,
+          "spec": Object {
+            "specs": Array [
+              Object {
+                "name": "默认",
+                "values": Array [
+                  Object {
+                    "name": "默认",
+                  },
+                ],
+              },
+            ],
+          },
+          "startAt": "",
+        },
+        "loading": true,
+        "method": "POST",
+        "url": "/admin-api/products",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
