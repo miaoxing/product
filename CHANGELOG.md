@@ -1,3 +1,25 @@
+## [0.1.2](https://github.com/miaoxing/product/compare/v0.1.1...v0.1.2) (2021-03-05)
+
+
+### Features
+
+* 增加后台商品管理功能 ([575bbd2](https://github.com/miaoxing/product/commit/575bbd2dc939f70d97e2cde6f65ebf2e29b6966f))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/test:** upgrade from 0.1.0 to 0.1.1
+* **@miaoxing/app:** upgrade from 0.2.4 to 0.2.5
+* **@miaoxing/category:** upgrade from 0.1.1 to 0.2.0
+* **@miaoxing/admin:** upgrade from 0.2.4 to 0.3.0
+* **@miaoxing/nav:** upgrade from 0.1.4 to 0.1.5
+* **@miaoxing/seq:** upgrade from 0.1.12 to 0.1.13
+* **@miaoxing/logistics:** upgrade from 0.1.1 to 0.1.2
+* **@miaoxing/ueditor:** upgrade to 0.1.0
+
 ## [0.1.1](https://github.com/miaoxing/product/compare/v0.1.0...v0.1.1) (2020-09-27)
 
 
