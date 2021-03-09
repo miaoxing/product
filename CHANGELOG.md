@@ -1,3 +1,20 @@
+## [0.1.6](https://github.com/miaoxing/product/compare/v0.1.5...v0.1.6) (2021-03-09)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from 6.3.0 to 6.3.1
+* **@miaoxing/app:** upgrade from 0.2.8 to 0.2.9
+* **@miaoxing/category:** upgrade from 0.2.3 to 0.2.4
+* **@miaoxing/admin:** upgrade from 0.3.3 to 0.3.4
+* **@miaoxing/nav:** upgrade from 0.1.8 to 0.1.9
+* **@miaoxing/seq:** upgrade from 0.1.16 to 0.1.17
+* **@miaoxing/logistics:** upgrade from 0.1.5 to 0.1.6
+* **@miaoxing/ueditor:** upgrade from 0.1.3 to 0.1.4
+
 ## [0.1.5](https://github.com/miaoxing/product/compare/v0.1.4...v0.1.5) (2021-03-09)
 
 
