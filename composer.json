@@ -10,7 +10,7 @@
   "require": {
     "miaoxing/app": "^0.2.10",
     "miaoxing/category": "^0.2.5",
-    "miaoxing/admin": "^0.3.5",
+    "miaoxing/admin": "^0.3.6",
     "miaoxing/nav": "^0.1.10",
     "miaoxing/seq": "^0.1.18",
     "miaoxing/logistics": "^0.1.7",
