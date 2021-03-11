@@ -3,7 +3,7 @@ import {CTableDeleteLink, Table, TableProvider, TableStatusCheckbox, useTable} f
 import {CEditLink, CNewBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
 import {LinkActions} from '@mxjs/actions';
-import ProductMedia from '@miaoxing/product/components/ProductMedia';
+import ProductMedia from '../../../components/ProductMedia';
 
 function getPriceText(price, score) {
   let text = '';
