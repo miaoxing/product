@@ -1,3 +1,15 @@
+## [0.1.9](https://github.com/miaoxing/product/compare/v0.1.8...v0.1.9) (2021-03-11)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/test:** upgrade from `0.1.1` to `0.1.2`
+* **@miaoxing/category:** upgrade from `0.2.5` to `0.2.6`
+* **@miaoxing/admin:** upgrade from `0.3.6` to `0.3.7`
+
 ## [0.1.8](https://github.com/miaoxing/product/compare/v0.1.7...v0.1.8) (2021-03-10)
 
 
