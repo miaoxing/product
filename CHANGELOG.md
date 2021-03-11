@@ -1,3 +1,13 @@
+## [0.1.11](https://github.com/miaoxing/product/compare/v0.1.10...v0.1.11) (2021-03-11)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/ueditor:** upgrade to `0.1.0`
+
 ## [0.1.10](https://github.com/miaoxing/product/compare/v0.1.9...v0.1.10) (2021-03-11)
 
 
