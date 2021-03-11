@@ -11,7 +11,7 @@ import Upload from '@mxjs/upload';
 import Sku from '../../../components/Sku';
 import api from '@mxjs/api';
 import $ from 'miaoxing';
-import FormUeditor from '@miaoxing/ueditor/components/FormUeditor';
+import {FormUeditor} from '@mxjs/ueditor';
 
 export default () => {
   const skuRef = useRef();
