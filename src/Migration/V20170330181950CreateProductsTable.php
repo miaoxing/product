@@ -2,7 +2,6 @@
 
 namespace Miaoxing\Product\Migration;
 
-use Miaoxing\Product\Service\ProductModel;
 use Wei\Migration\BaseMigration;
 
 class V20170330181950CreateProductsTable extends BaseMigration

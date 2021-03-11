@@ -26,12 +26,12 @@ use Wei\Time;
  */
 class ProductModel extends BaseModel
 {
+    use HasAppIdTrait;
     use ModelTrait;
     use ProductTrait;
-    use HasAppIdTrait;
     use ReqQueryTrait;
-    use SoftDeleteTrait;
     use SeqTrait;
+    use SoftDeleteTrait;
 
     const STATUS_NOT_STARTED = 1;
 
@@ -75,7 +75,6 @@ class ProductModel extends BaseModel
             'shortName' => '即将开始',
         ],
         self::STATUS_ON_SALE => [
-
         ],
         self::STATUS_ENDED => [
             'name' => '抢购结束',
@@ -279,8 +278,7 @@ class ProductModel extends BaseModel
      */
     protected function calIsInList(): bool
     {
-        if (
-            !$this->isListing
+        if (!$this->isListing
             || !$this->isHidden
             || $this->isDeleted()
         ) {

@@ -4,7 +4,6 @@ namespace Miaoxing\Product\Service;
 
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Model\ModelTrait;
-use Miaoxing\Plugin\Service\Model;
 use Miaoxing\Product\Metadata\ProductSpecTrait;
 
 /**

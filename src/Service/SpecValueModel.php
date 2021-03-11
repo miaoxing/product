@@ -13,10 +13,10 @@ use Miaoxing\Product\Metadata\SpecValueTrait;
  */
 class SpecValueModel extends BaseModel
 {
-    use ModelTrait;
-    use SpecValueTrait;
-    use SoftDeleteTrait;
     use HasAppIdTrait;
+    use ModelTrait;
+    use SoftDeleteTrait;
+    use SpecValueTrait;
 
     /**
      * 规格

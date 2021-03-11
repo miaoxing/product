@@ -4,7 +4,6 @@ namespace MiaoxingTest\Prodcut\Pages\AdminApi\Products\Defaults;
 
 use Miaoxing\Plugin\Service\Tester;
 use Miaoxing\Plugin\Test\BaseTestCase;
-use Miaoxing\Product\Service\ProductModel;
 
 class IndexTest extends BaseTestCase
 {

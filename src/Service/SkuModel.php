@@ -23,7 +23,7 @@ class SkuModel extends BaseModel
             'cast' => [
                 'list',
                 'type' => 'int',
-            ]
+            ],
         ],
     ];
 

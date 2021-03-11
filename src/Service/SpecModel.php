@@ -13,8 +13,8 @@ use Miaoxing\Product\Metadata\SpecTrait;
  */
 class SpecModel extends BaseModel
 {
-    use ModelTrait;
-    use SpecTrait;
-    use SoftDeleteTrait;
     use HasAppIdTrait;
+    use ModelTrait;
+    use SoftDeleteTrait;
+    use SpecTrait;
 }

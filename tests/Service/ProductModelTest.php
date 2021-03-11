@@ -4,8 +4,6 @@ namespace MiaoxingTest\Product\Service;
 
 use Miaoxing\Plugin\Test\BaseTestCase;
 use Miaoxing\Product\Service\ProductModel;
-use Wei\Req;
-use Wei\V;
 
 class ProductModelTest extends BaseTestCase
 {
@@ -57,9 +55,8 @@ class ProductModelTest extends BaseTestCase
                 [
                     'stockNum' => 1,
                 ],
-                ProductModel::STATUS_ON_SALE
-            ]
+                ProductModel::STATUS_ON_SALE,
+            ],
         ];
     }
 }
-

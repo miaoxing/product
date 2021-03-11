@@ -12,13 +12,10 @@ use Miaoxing\Product\Metadata\ProductImageTrait;
  */
 class ProductImageModel extends BaseModel
 {
+    use HasAppIdTrait;
     use ModelTrait;
     use ProductImageTrait;
-    use HasAppIdTrait;
 
-    /**
-     *
-     */
     const TYPE_DEFAULT = 1;
 
     /**
