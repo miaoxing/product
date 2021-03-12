@@ -3,7 +3,7 @@ import {fireEvent, render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import React from 'react';
 import {app} from '@mxjs/app';
-import $ from 'miaoxing';
+import $, {Ret} from 'miaoxing';
 import {waitFor} from '@testing-library/dom';
 import {bootstrap, createPromise, setUrl, resetUrl} from '@mxjs/test';
 
@@ -31,7 +31,7 @@ describe('admin/products', () => {
 
     $.http = jest.fn()
       // 读取默认数据
-      .mockImplementationOnce(() => promise.resolve({
+      .mockImplementationOnce(() => promise.resolve(Ret.new({
         code: 1,
         data: {
           images: [],
@@ -54,27 +54,27 @@ describe('admin/products', () => {
             ],
           },
         },
-      }))
+      })))
       // 读取运费模板
-      .mockImplementationOnce(() => promise2.resolve({
+      .mockImplementationOnce(() => promise2.resolve(Ret.new({
         code: 1,
         data: [{
           id: 1,
           name: '测试模板',
         }],
-      }))
+      })))
       // 读取分类
-      .mockImplementationOnce(() => promise3.resolve({
+      .mockImplementationOnce(() => promise3.resolve(Ret.new({
         code: 1,
         data: [{
           id: 1,
           name: '测试分类',
         }],
-      }))
+      })))
       // 提交
-      .mockImplementationOnce(() => promise4.resolve({
+      .mockImplementationOnce(() => promise4.resolve(Ret.new({
         code: 1,
-      }));
+      })));
 
     const {container, getByLabelText} = render(<MemoryRouter>
       <Page/>
