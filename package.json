@@ -27,6 +27,7 @@
     "@mxjs/ueditor": "^0.1.0"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@miaoxing/dev": "^6.3.2",
     "@mxjs/test": "^0.1.3",
     "@testing-library/react": "^10.0.4",
