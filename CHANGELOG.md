@@ -1,3 +1,35 @@
+## [0.1.12](https://github.com/miaoxing/product/compare/v0.1.11...v0.1.12) (2021-03-12)
+
+
+### Bug Fixes
+
+* 更新前端包依赖 ([4993a3e](https://github.com/miaoxing/product/commit/4993a3e8c539d83768f22aac3159999e5cfac0bf))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `0.3.6` to `0.3.7`
+* **@mxjs/a-clink:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-page:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/a-form:** upgrade from `0.2.9` to `0.2.10`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/upload:** upgrade from `0.3.7` to `0.3.8`
+* **@mxjs/a-sku:** upgrade from `0.1.7` to `0.1.8`
+* **@mxjs/ueditor:** upgrade from `0.1.0` to `0.1.1`
+* **@miaoxing/dev:** upgrade from `6.3.2` to `6.3.3`
+* **@mxjs/test:** upgrade from `0.1.3` to `0.1.4`
+* **jest-preset-miaoxing:** upgrade from `0.2.1` to `0.2.2`
+* **@miaoxing/app:** upgrade from `0.2.10` to `0.2.11`
+* **@miaoxing/category:** upgrade from `0.2.7` to `0.2.8`
+* **@miaoxing/admin:** upgrade from `0.3.8` to `0.3.9`
+* **@miaoxing/nav:** upgrade from `0.1.10` to `0.1.11`
+* **@miaoxing/seq:** upgrade from `0.1.18` to `0.1.19`
+* **@miaoxing/logistics:** upgrade from `0.1.7` to `0.1.8`
+* **@miaoxing/ueditor:** upgrade from `0.1.5` to `0.1.6`
+
 ## [0.1.11](https://github.com/miaoxing/product/compare/v0.1.10...v0.1.11) (2021-03-11)
 
 
