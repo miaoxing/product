@@ -88,6 +88,7 @@ exports[`admin/products form 2`] = `
     Array [
       Object {
         "data": Object {
+          "_startAt": null,
           "categoriesProducts": Array [],
           "configs": Object {
             "hideSoldNum": undefined,
