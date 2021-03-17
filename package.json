@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/product",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -19,12 +19,12 @@
     "@mxjs/a-clink": "^0.1.4",
     "@mxjs/a-page": "^0.2.4",
     "@mxjs/actions": "^0.1.0",
-    "@mxjs/a-form": "^0.2.10",
+    "@mxjs/a-form": "^0.2.11",
     "@mxjs/a-date-range-picker": "^0.2.5",
-    "@mxjs/upload": "^0.3.8",
+    "@mxjs/upload": "^0.3.9",
     "@mxjs/api": "^0.1.1",
-    "@mxjs/a-sku": "^0.1.8",
-    "@mxjs/ueditor": "^0.1.1"
+    "@mxjs/a-sku": "^0.1.9",
+    "@mxjs/ueditor": "^0.1.2"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.5.0",
