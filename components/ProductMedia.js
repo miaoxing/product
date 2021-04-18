@@ -3,7 +3,7 @@ import {Media} from '@mxjs/bootstrap';
 import {Avatar} from 'antd';
 import {PictureOutlined} from '@ant-design/icons';
 import propTypes from 'prop-types';
-import {css} from '@chakra-ui/react';
+import {css} from '@mxjs/css';
 
 /**
  * 商品媒体对象
