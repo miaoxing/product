@@ -114,7 +114,7 @@ exports[`admin/products form 2`] = `
           "skus": Array [
             Object {
               "id": undefined,
-              "image": "",
+              "image": undefined,
               "marketPrice": undefined,
               "outerId": undefined,
               "price": "1.23",

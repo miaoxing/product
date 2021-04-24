@@ -106,7 +106,6 @@ export default () => {
           label="图片"
           name="images"
           extra="支持.jpg .jpeg .bmp .gif .png格式照片，最多上传 9 张图片"
-          valuePropName="fileList"
           wrapperCol={{span: 12}}
         >
           <Upload

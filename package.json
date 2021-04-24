@@ -38,6 +38,7 @@
     "regenerator-runtime": "^0.13.5"
   },
   "ciDependencies": {
-    "@mxjs/css": "miaoxing/mxjs-css"
+    "@mxjs/css": "miaoxing/mxjs-css",
+    "@mxjs/upload": "miaoxing/mxjs-upload"
   }
 }

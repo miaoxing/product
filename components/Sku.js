@@ -225,14 +225,12 @@ export default class Sku extends React.Component {
             width: 60,
             render: (v, record) => {
               return this.renderBaseFormItem({
-                valuePropName: 'fileList',
                 name: ['skus', record.rowKey, 'image'],
                 initialValue: v,
               }, {
                 el: <Upload
                   max={1}
                   size={60}
-                  name={['skus', record.rowKey, 'image']}
                   url={$.apiUrl('files', {type: 'image'})}
                 />,
               });
