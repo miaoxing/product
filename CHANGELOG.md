@@ -1,3 +1,36 @@
+## [0.1.15](https://github.com/miaoxing/product/compare/v0.1.14...v0.1.15) (2021-04-27)
+
+
+### Features
+
+* 增加创建页面测试数据的 Seeder ([421a517](https://github.com/miaoxing/product/commit/421a517da09ed244de34a2bbad82942e3d3f0a7d))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `0.3.8` to `0.3.9`
+* **@mxjs/a-clink:** upgrade from `0.1.5` to `0.1.6`
+* **@mxjs/a-page:** upgrade from `0.2.5` to `0.2.6`
+* **@mxjs/actions:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/a-form:** upgrade from `0.2.12` to `0.2.13`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.6` to `0.2.7`
+* **@mxjs/upload:** upgrade from `0.3.10` to `0.4.0`
+* **@mxjs/a-sku:** upgrade from `0.1.10` to `0.1.11`
+* **@mxjs/css:** upgrade from `0.1.0` to `0.2.0`
+* **@mxjs/ueditor:** upgrade from `0.1.3` to `0.1.4`
+* **@miaoxing/dev:** upgrade from `6.3.4` to `6.4.0`
+* **@mxjs/test:** upgrade from `0.1.5` to `0.1.6`
+* **@miaoxing/app:** upgrade from `0.2.13` to `0.3.0`
+* **@miaoxing/category:** upgrade from `0.2.10` to `0.2.11`
+* **@miaoxing/admin:** upgrade from `0.3.11` to `0.3.12`
+* **@miaoxing/nav:** upgrade from `0.1.13` to `0.1.14`
+* **@miaoxing/seq:** upgrade from `0.1.21` to `0.1.22`
+* **@miaoxing/logistics:** upgrade from `0.1.10` to `0.1.11`
+* **@miaoxing/ueditor:** upgrade from `0.1.8` to `0.1.9`
+
 ## [0.1.14](https://github.com/miaoxing/product/compare/v0.1.13...v0.1.14) (2021-03-22)
 
 
