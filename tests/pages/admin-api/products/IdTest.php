@@ -138,4 +138,17 @@ class IdTest extends BaseTestCase
         ]);
         $this->assertRetSuc($ret);
     }
+
+    public function testInvalidCategoriesProducts()
+    {
+        $ret = Tester::postAdminApi('products', [
+            'name' => 'test',
+            'categoriesProducts' => [
+                [
+                    'categoryId' => 2 ^ 32,
+                ],
+            ],
+        ]);
+        $this->assertRetErr($ret, '第 1 个分类的值不存在');
+    }
 }

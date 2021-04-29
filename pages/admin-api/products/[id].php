@@ -1,5 +1,6 @@
 <?php
 
+use Miaoxing\Category\Service\CategoryModel;
 use Miaoxing\Logistics\Service\ShippingTplModel;
 use Miaoxing\Plugin\BaseController;
 use Miaoxing\Product\Service\ProductModel;
