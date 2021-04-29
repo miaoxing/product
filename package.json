@@ -39,6 +39,8 @@
   },
   "ciDependencies": {
     "@mxjs/css": "miaoxing/mxjs-css",
-    "@mxjs/upload": "miaoxing/mxjs-upload"
+    "@mxjs/upload": "miaoxing/mxjs-upload",
+    "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
+    "@miaoxing/dev": "miaoxing/dev"
   }
 }
