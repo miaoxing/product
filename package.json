@@ -12,7 +12,7 @@
     "plugins/*"
   ],
   "dependencies": {
-    "antd": "^4.13.1",
+    "antd": "^4.15.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "@mxjs/a-table": "^0.3.9",
@@ -28,7 +28,7 @@
     "@mxjs/ueditor": "^0.1.4"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.5.0",
+    "@ant-design/icons": "^4.6.2",
     "@miaoxing/dev": "^6.4.0",
     "@mxjs/test": "^0.1.6",
     "@testing-library/react": "^11.2.6",
