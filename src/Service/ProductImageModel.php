@@ -16,7 +16,7 @@ class ProductImageModel extends BaseModel
     use ModelTrait;
     use ProductImageTrait;
 
-    const TYPE_DEFAULT = 1;
+    public const TYPE_DEFAULT = 1;
 
     /**
      * {@inheritDoc}

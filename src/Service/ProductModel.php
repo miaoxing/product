@@ -33,27 +33,27 @@ class ProductModel extends BaseModel
     use SeqTrait;
     use SoftDeleteTrait;
 
-    const STATUS_NOT_STARTED = 1;
+    public const STATUS_NOT_STARTED = 1;
 
-    const STATUS_ON_SALE = 2;
+    public const STATUS_ON_SALE = 2;
 
-    const STATUS_ENDED = 3;
+    public const STATUS_ENDED = 3;
 
-    const STATUS_SOLD_OUT = 4;
+    public const STATUS_SOLD_OUT = 4;
 
-    const STATUS_DELISTED = 5;
+    public const STATUS_DELISTED = 5;
 
-    const STATUS_DELETED = 6;
+    public const STATUS_DELETED = 6;
 
     /**
      * 下单减库存
      */
-    const DEC_STOCK_MODE_BUY = 1;
+    public const DEC_STOCK_MODE_BUY = 1;
 
     /**
      * 脏腑减库存
      */
-    const DEC_STOCK_MODE_PAY = 2;
+    public const DEC_STOCK_MODE_PAY = 2;
 
     protected $deleteStatusColumn = 'status';
 
@@ -278,7 +278,8 @@ class ProductModel extends BaseModel
      */
     protected function calIsInList(): bool
     {
-        if (!$this->isListing
+        if (
+            !$this->isListing
             || !$this->isHidden
             || $this->isDeleted()
         ) {
