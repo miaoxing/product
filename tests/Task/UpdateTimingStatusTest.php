@@ -59,8 +59,8 @@ class UpdateTimingStatusTest extends BaseTestCase
             'isListing' => true,
             'stockNum' => 1,
             'status' => ProductModel::STATUS_NOT_STARTED,
-            'startAt' => date('Y-m-d H:i:s', time() - 1),
-            'endAt' => date('Y-m-d H:i:s', time() + 1),
+            'startAt' => date('Y-m-d H:i:s', time() - 2),
+            'endAt' => date('Y-m-d H:i:s', time() + 2),
         ]);
 
         $this->runTask();
