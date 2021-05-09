@@ -33,9 +33,7 @@
     "@mxjs/test": "^0.1.6",
     "@testing-library/react": "^11.2.6",
     "jest-preset-miaoxing": "^0.2.3",
-    "typescript": "^3.8.3",
-    "core-js": "^3.6.5",
-    "regenerator-runtime": "^0.13.5"
+    "typescript": "^3.8.3"
   },
   "ciDependencies": {
     "@mxjs/css": "miaoxing/mxjs-css",
