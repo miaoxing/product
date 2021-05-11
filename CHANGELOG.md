@@ -1,3 +1,38 @@
+## [0.1.16](https://github.com/miaoxing/product/compare/v0.1.15...v0.1.16) (2021-05-11)
+
+
+### Bug Fixes
+
+* 解决类名缺少命名空间 ([6e596d0](https://github.com/miaoxing/product/commit/6e596d060be9f500a7806c750fb022fdedb8a95f))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `0.3.9` to `0.3.10`
+* **@mxjs/a-clink:** upgrade from `0.1.6` to `0.1.7`
+* **@mxjs/a-page:** upgrade from `0.2.6` to `0.2.7`
+* **@mxjs/actions:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/a-form:** upgrade from `0.2.13` to `0.2.14`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.7` to `0.2.8`
+* **@mxjs/upload:** upgrade from `0.4.0` to `0.4.1`
+* **@mxjs/api:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/a-sku:** upgrade from `0.1.11` to `0.1.12`
+* **@mxjs/css:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/ueditor:** upgrade from `0.1.4` to `0.1.5`
+* **@miaoxing/dev:** upgrade from `6.4.0` to `7.0.0`
+* **@mxjs/test:** upgrade from `0.1.6` to `0.1.7`
+* **jest-preset-miaoxing:** upgrade from `0.2.3` to `0.2.4`
+* **@miaoxing/app:** upgrade from `0.3.0` to `0.3.1`
+* **@miaoxing/category:** upgrade from `0.2.11` to `0.2.12`
+* **@miaoxing/admin:** upgrade from `0.3.12` to `0.3.13`
+* **@miaoxing/nav:** upgrade from `0.1.14` to `0.1.15`
+* **@miaoxing/seq:** upgrade from `0.1.22` to `0.1.23`
+* **@miaoxing/logistics:** upgrade from `0.1.11` to `0.1.12`
+* **@miaoxing/ueditor:** upgrade from `0.1.9` to `0.1.10`
+
 ## [0.1.15](https://github.com/miaoxing/product/compare/v0.1.14...v0.1.15) (2021-04-27)
 
 
