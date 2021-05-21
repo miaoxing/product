@@ -1,3 +1,20 @@
+## [0.1.18](https://github.com/miaoxing/product/compare/v0.1.17...v0.1.18) (2021-05-21)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/upload:** upgrade from `0.4.2` to `0.4.3`
+* **@miaoxing/app:** upgrade from `0.3.2` to `0.3.3`
+* **@miaoxing/category:** upgrade from `0.2.13` to `0.2.14`
+* **@miaoxing/admin:** upgrade from `0.3.14` to `0.3.15`
+* **@miaoxing/nav:** upgrade from `0.1.16` to `0.1.17`
+* **@miaoxing/seq:** upgrade from `0.1.24` to `0.1.25`
+* **@miaoxing/logistics:** upgrade from `0.1.13` to `0.1.14`
+* **@miaoxing/ueditor:** upgrade from `0.1.11` to `0.1.12`
+
 ## [0.1.17](https://github.com/miaoxing/product/compare/v0.1.16...v0.1.17) (2021-05-12)
 
 
