@@ -15,6 +15,7 @@
     "antd": "^4.15.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "miaoxing": "^0.2.5",
     "@mxjs/a-table": "^0.3.11",
     "@mxjs/a-clink": "^0.1.8",
     "@mxjs/a-page": "^0.2.8",
@@ -25,15 +26,21 @@
     "@mxjs/api": "^0.1.3",
     "@mxjs/a-sku": "^0.1.13",
     "@mxjs/css": "^0.2.2",
-    "@mxjs/ueditor": "^0.1.6"
+    "@mxjs/ueditor": "^0.1.6",
+    "@ant-design/icons": "^4.6.2",
+    "@mxjs/icons": "^0.1.4",
+    "prop-types": "^15.7.2",
+    "@mxjs/a-button": "^0.2.12",
+    "@mxjs/a-color-picker": "^0.1.2",
+    "@mxjs/bootstrap": "^0.1.5"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.6.2",
     "@miaoxing/dev": "^7.0.1",
     "@mxjs/test": "^0.1.8",
     "@testing-library/react": "^11.2.6",
     "jest-preset-miaoxing": "^0.2.4",
-    "typescript": "^3.8.3"
+    "react-router": "^5.2.0",
+    "@mxjs/app": "^0.3.2"
   },
   "ciDependencies": {
     "@mxjs/css": "miaoxing/mxjs-css",
