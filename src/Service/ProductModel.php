@@ -303,4 +303,21 @@ class ProductModel extends BaseModel
     {
         return $this->calStatus();
     }
+
+    /**
+     * @param string|int|array $categoryId
+     * @return $this
+     */
+    public function withCategoryId($categoryId): self
+    {
+        $categoryIds = (array) $categoryId;
+        $subCategories = CategoryModel::select('id')->where('parentId', $categoryId)->fetchAll();
+        $categoryIds = array_merge($categoryIds, array_column($subCategories, 'id'));
+
+        $this->selectMain()
+            ->leftJoinRelation('categoriesProducts')
+            ->where('categoriesProducts.categoryId', $categoryIds);
+
+        return $this;
+    }
 }

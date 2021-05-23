@@ -13,8 +13,12 @@ return new class extends BaseController {
     public function get()
     {
         return IndexAction
-            ::beforeFind(function (ProductModel $models) {
+            ::beforeFind(function (ProductModel $models, $req) {
                 $models->setDefaultSortColumn(['sort', 'id']);
+
+                if (isset($req['search']['categoryId'])) {
+                    $models->withCategoryId($req['search']['categoryId']);
+                }
             })
             ->afterFind(function (ProductModel $models, $req) {
                 // @experimental 指定编号排序
