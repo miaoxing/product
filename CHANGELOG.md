@@ -3,7 +3,7 @@
 
 ### Features
 
-* **article, page:** 增加商品搜索组件 ([1a6679a](https://github.com/miaoxing/product/commit/1a6679a3c69616b18028f1d76f203aaef68d25d2))
+* **product, page:** 增加商品搜索组件 ([1a6679a](https://github.com/miaoxing/product/commit/1a6679a3c69616b18028f1d76f203aaef68d25d2))
 * **product:** 增加生成演示数据 ([6b4d8be](https://github.com/miaoxing/product/commit/6b4d8be17a8df0a366c03ef1ceaef4abd4a6c608))
 * **product:** 增加选择商品分类链接操作 ([fbb7836](https://github.com/miaoxing/product/commit/fbb78360153c6934274413a1898f36598d827705))
 * **product:** 增加选择商品详情链接操作 ([a27e9b6](https://github.com/miaoxing/product/commit/a27e9b6ce253d1b12770234a4667ac6b5738e24a))
