@@ -1,7 +1,9 @@
 import React from 'react';
-import {SearchOutlined} from '@ant-design/icons';
+import {ShoppingOutlined, SearchOutlined} from '@ant-design/icons';
 import ProductSearchPreview from './ProductSearchPreview';
 import ProductSearchConfig from './ProductSearchConfig';
+import ProductPreview from './ProductPreview';
+import ProductConfig from './ProductConfig';
 
 export default [
   {
@@ -19,6 +21,22 @@ export default [
         color: '#aaaaaa',
         backgroundColor: '#ffffff',
       },
+    },
+  },
+  {
+    type: 'product',
+    name: '商品列表',
+    icon: <ShoppingOutlined/>,
+    preview: ProductPreview,
+    config: ProductConfig,
+    default: {
+      source: 'all',
+      categoryIds: [],
+      productIds: [],
+      orderBy: '',
+      num: 10,
+      tpl: 2,
+      showMarketPrice: true,
     },
   },
 ];
