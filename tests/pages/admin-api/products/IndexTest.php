@@ -17,7 +17,7 @@ class IndexTest extends BaseTestCase
             'name' => '测试商品' . time(),
         ]);
 
-        $ret = Tester::getAdminApi('products');
+        $ret = Tester::request(['search' => ['id' => $product->id]])->getAdminApi('products');
 
         $this->assertSame($product->name, $ret['data'][0]['name']);
     }
