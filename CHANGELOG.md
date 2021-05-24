@@ -1,3 +1,16 @@
+## [0.1.19](https://github.com/miaoxing/product/compare/v0.1.18...v0.1.19) (2021-05-24)
+
+
+### Features
+
+* **article, page:** 增加商品搜索组件 ([1a6679a](https://github.com/miaoxing/product/commit/1a6679a3c69616b18028f1d76f203aaef68d25d2))
+* **product:** 增加生成演示数据 ([6b4d8be](https://github.com/miaoxing/product/commit/6b4d8be17a8df0a366c03ef1ceaef4abd4a6c608))
+* **product:** 增加选择商品分类链接操作 ([fbb7836](https://github.com/miaoxing/product/commit/fbb78360153c6934274413a1898f36598d827705))
+* **product:** 增加选择商品详情链接操作 ([a27e9b6](https://github.com/miaoxing/product/commit/a27e9b6ce253d1b12770234a4667ac6b5738e24a))
+* **product:** 增加通过 `categoryId` 参数查询分类下的商品 ([7e6eea5](https://github.com/miaoxing/product/commit/7e6eea512fc056b68cad148cf7b82455fb2b9638))
+* **product, experimental:** 列表允许指定商品编号排序 ([6de63ec](https://github.com/miaoxing/product/commit/6de63ec50d08a53e40145f6ef1b72c605eb656bd))
+* **product, page:** 增加商品列表组件 ([87c2510](https://github.com/miaoxing/product/commit/87c25106bdadb20e35c971bc177fff5faacb2081))
+
 ## [0.1.18](https://github.com/miaoxing/product/compare/v0.1.17...v0.1.18) (2021-05-21)
 
 
