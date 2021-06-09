@@ -169,7 +169,7 @@ class ProductModel extends BaseModel
      */
     public function shippingTpl()
     {
-        return $this->hasOne(ShippingTplModel::class);
+        return $this->belongsTo(ShippingTplModel::class);
     }
 
     /**
