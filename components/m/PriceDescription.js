@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {View, Text} from '@fower/taro';
 import Icon from '@mxjs/m-icon';
+import Divider from '@mxjs/m-divider';
 
 const PriceDescription = () => {
   const [show, setShow] = useState(false);
@@ -10,10 +11,10 @@ const PriceDescription = () => {
 
   return (
     <View bgWhite p3>
-      <View className="mx-divider" textSM alignItems="center" onClick={handleClick}>
+      <Divider textSM mx4 toCenterY onClick={handleClick}>
         商品价格说明
         <Icon type={'arrow-' + (show ? 'up' : 'down')} ml1/>
-      </View>
+      </Divider>
       {show && <View gray500 textSM leadingRelaxed>
         <View mb2>
           <Text gray900>划线价格：</Text>

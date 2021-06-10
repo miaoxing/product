@@ -33,7 +33,9 @@
     "prop-types": "^15.7.2",
     "@mxjs/a-button": "^0.2.12",
     "@mxjs/a-color-picker": "^0.1.2",
-    "@mxjs/bootstrap": "^0.1.5"
+    "@mxjs/bootstrap": "^0.1.5",
+    "taro-ui": "^3.0.0-alpha.10",
+    "@mxjs/m-divider": "^0.1.0"
   },
   "devDependencies": {
     "@miaoxing/dev": "^7.0.1",
