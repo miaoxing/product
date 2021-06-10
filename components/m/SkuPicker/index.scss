@@ -1,0 +1,70 @@
+$color-border-base: #d4d4d8; // var(--mx-colors-gray-300); 内部有运算，不能使用 CSS 变量
+$at-input-number-btn-color: var(--mx-colors-gray-900);
+
+@import "~taro-ui/dist/style/components/float-layout.scss";
+@import "~taro-ui/dist/style/components/input-number.scss";
+
+.at-float-layout {
+  &__container,
+  & .layout-body,
+  & .layout-body__content {
+    // TODO 改为固定高度，以便每次打开都在同一位置
+    // 加大窗口最大高度
+    max-height: 99vh;
+    // 不限窗口最小高度
+    min-height: 0;
+  }
+}
+
+.at-input-number--lg input,
+.at-input-number--lg .at-input-number__input {
+  // 缩小输入框，使其显示 3 个数字不被截断
+  width: 70px;
+}
+
+.sku-picker {
+  .at-float-layout__container {
+    // 头部使用圆角更加美观
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  // 内部元素自己控制间距
+  .layout-body {
+    padding: 0;
+  }
+
+  &-spec-item {
+    margin-bottom: .75rem;
+    overflow: hidden;
+  }
+
+  &-spec-name {
+    margin-bottom: .25rem;
+    font-size: 0.875rem;
+  }
+
+  &-spec-value {
+    float: left;
+    border-radius: .2rem;
+    text-align: center;
+    font-size: .75rem;
+    line-height: 1;
+    min-width: 1.5rem;
+    padding: .5rem 0.75rem;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    border: 1PX solid var(--mx-colors-gray-100);
+    background: var(--mx-colors-gray-100);
+
+    &.active {
+      color: var(--mx-colors-primary-500);
+      border-color: var(--mx-colors-primary-500);
+      background: var(--mx-colors-primary-50);
+    }
+
+    &.disabled {
+      color: var(--mx-colors-gray-400);
+    }
+  }
+}
