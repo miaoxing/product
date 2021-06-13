@@ -11,6 +11,8 @@ use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Product\Metadata\ProductTrait;
 use Miaoxing\Seq\Model\SeqTrait;
+use Wei\Event;
+use Wei\Ret;
 use Wei\Time;
 
 /**
@@ -89,6 +91,7 @@ class ProductModel extends BaseModel
             'shortName' => '已下架',
         ],
         self::STATUS_DELETED => [
+            'name' => '商品已删除',
             'shortName' => '已删除',
         ],
     ];
@@ -319,5 +322,110 @@ class ProductModel extends BaseModel
             ->where('categoriesProducts.categoryId', $categoryIds);
 
         return $this;
+    }
+
+    /**
+     * 检查商品是否可以加入购物车和下单的相同操作
+     *
+     * @return Ret
+     */
+    public function checkBeforeCreateCartAndOrder(): Ret
+    {
+        if (!in_array($this->status, [static::STATUS_ON_SALE, static::STATUS_NOT_STARTED], true)) {
+            $statusConfig = $this->getStatusConfigs()[$this->status];
+            return err([
+                'message' => $statusConfig['name'],
+                'shortMessage' => $statusConfig['shortName'],
+            ]);
+        }
+
+        $ret = Event::until('productCheckBeforeCreateCartAndOrder', [$this]);
+        if ($ret) {
+            return $ret;
+        }
+
+        return suc();
+    }
+
+    /**
+     * 检查商品是否可以加入购物车
+     *
+     * @param Ret|null $createRet
+     * @return Ret
+     */
+    public function checkCreateCart(Ret $createRet = null): Ret
+    {
+        $createRet || $createRet = $this->checkBeforeCreateCartAndOrder();
+        if ($createRet->isErr()) {
+            return $createRet;
+        }
+
+        if (!$this->isAllowAddCart) {
+            return err('该商品不可加入购物车');
+        }
+
+        $ret = Event::until('productCheckCreateCart', [$this]);
+        if ($ret) {
+            return $ret;
+        }
+
+        return suc('可以加入购物车');
+    }
+
+    /**
+     * 检查商品是否可以下单
+     *
+     * @param Ret|null $createRet
+     * @return Ret
+     */
+    public function checkCreateOrder(Ret $createRet = null): Ret
+    {
+        $createRet || $createRet = $this->checkBeforeCreateCartAndOrder();
+        if ($createRet->isErr()) {
+            return $createRet;
+        }
+
+        if ($this->status === static::STATUS_NOT_STARTED) {
+            $statusConfig = $this->getStatusConfigs()[$this->status];
+            return err([
+                'message' => $statusConfig['name'],
+                'shortMessage' => $statusConfig['shortName'],
+            ]);
+        }
+
+        $ret = Event::until('productCheckCreateOrder', [$this]);
+        if ($ret) {
+            return $ret;
+        }
+
+        return suc('可以购买');
+    }
+
+    /**
+     * 检查商品是否可以加入购物车或下单
+     *
+     * 可用场景
+     * 1. 商品详情，按需显示加入购物车或立即下单按钮
+     * 2. SKU 选择器，按需显示加入购物车或立即下单按钮
+     * 3. 商品列表，按需显示下单按钮，点击后再弹出选择窗口
+     *
+     * @return Ret
+     */
+    public function checkCreateCartOrOrder(): Ret
+    {
+        $create = $this->checkBeforeCreateCartAndOrder();
+        $createCart = $this->checkCreateCart($create);
+        $createOrder = $this->checkCreateOrder($create);
+
+        if ($createCart->isErr() && $createOrder->isErr()) {
+            // 如果两者都失败，暂时使用购物车的返回值
+            $ret = err($createOrder['message'], $createCart['code']);
+        } else {
+            $ret = suc();
+        }
+        $ret['createCart'] = $createCart;
+        $ret['createOrder'] = $createOrder;
+
+        return $ret;
     }
 }
