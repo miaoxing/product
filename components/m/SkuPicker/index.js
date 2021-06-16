@@ -6,8 +6,7 @@ import clsx from 'clsx';
 import $ from 'miaoxing';
 import Taro from '@tarojs/taro';
 import FooterBar from '@mxjs/m-footer-bar';
-import ButtonTheme from '@mxjs/m-button/ButtonTheme';
-import Button from '@mxjs/m-button';
+import ActionButtonGroup from '../ActionButtonGroup';
 
 const contains = function (container, array) {
   for (const el of array) {
@@ -343,16 +342,7 @@ const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateC
       </View>
 
       <FooterBar>
-        <ButtonTheme>
-          <Button.Group>
-            {source !== 'order' && <FooterBar.Button variant="secondary" onClick={createCart}>
-              加入购物车
-            </FooterBar.Button>}
-            {source !== 'cart' && <FooterBar.Button variant="primary" onClick={checkout}>
-              立即购买
-            </FooterBar.Button>}
-          </Button.Group>
-        </ButtonTheme>
+        <ActionButtonGroup createCartOrOrder={product.createCartOrOrder} source={source} onClick={create}/>
       </FooterBar>
     </AtFloatLayout>
   );
