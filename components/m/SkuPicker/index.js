@@ -1,12 +1,14 @@
 import {useEffect, useState} from 'react';
-import {Image, Text, View} from '@fower/taro';
-import {AtFloatLayout, AtInputNumber} from 'taro-ui';
+import {Image, Text, View, Block} from '@fower/taro';
+import {AtFloatLayout} from 'taro-ui';
 import './index.scss';
 import clsx from 'clsx';
 import $ from 'miaoxing';
 import Taro from '@tarojs/taro';
 import FooterBar from '@mxjs/m-footer-bar';
 import ActionButtonGroup from '../ActionButtonGroup';
+import Stepper from '@mxjs/m-stepper';
+import PropTypes from 'prop-types';
 
 const contains = function (container, array) {
   for (const el of array) {
@@ -17,50 +19,22 @@ const contains = function (container, array) {
   return true;
 };
 
-const getPriceRange = function (validSkus) {
-  if (validSkus.length === 1) {
-    return validSkus[0].price;
+const getRange = (skus, key) => {
+  if (skus.length === 1) {
+    return skus[0][key];
   }
 
-  let min = parseFloat(validSkus[0].price);
+  let min = parseFloat(skus[0][key]);
   let max = min;
-  for (let i in validSkus) {
-    if (Object.prototype.hasOwnProperty.call(validSkus, i)) {
-      let price = parseFloat(validSkus[i].price);
-      if (price < min) {
-        min = price;
-      }
-      if (price > max) {
-        max = price;
-      }
+  skus.forEach(sku => {
+    const value = parseFloat(sku[key]);
+    if (value < min) {
+      min = value;
     }
-  }
-
-  if (min === max) {
-    return min.toFixed(2);
-  } else {
-    return min.toFixed(2) + ' ~ ' + max.toFixed(2);
-  }
-};
-
-const getScoreRange = function (validSkus) {
-  if (validSkus.length === 1) {
-    return parseInt(validSkus[0].score, 10);
-  }
-
-  let min = parseInt(validSkus[0].score, 10);
-  let max = min;
-  for (let i in validSkus) {
-    if (Object.prototype.hasOwnProperty.call(validSkus, i)) {
-      let score = parseInt(validSkus[i].score, 10);
-      if (score < min) {
-        min = score;
-      }
-      if (score > max) {
-        max = score;
-      }
+    if (value > max) {
+      max = value;
     }
-  }
+  });
 
   if (min === max) {
     return min;
@@ -69,28 +43,22 @@ const getScoreRange = function (validSkus) {
   }
 };
 
-const getPriceText = function (validSkus) {
-  let text = '';
-  let price = getPriceRange(validSkus);
-  let score = getScoreRange(validSkus);
+const getPrice = function (validSkus) {
+  let price = getRange(validSkus, 'price');
+  let score = getRange(validSkus, 'score');
 
-  if (price !== '0.00') {
-    text += '￥' + price;
-  }
-
-  if (price !== '0.00' && score !== 0) {
-    text += ' + ';
-  }
-
-  if (score !== 0) {
-    text += score + '积分';
-  }
-
-  return text;
+  return (
+    <Block>
+      {!!price && <Text textXs>￥</Text>}
+      {!!price && price}
+      {price && score ? ' + ' : ''}
+      {!!score && score + '积分'}
+    </Block>
+  );
 };
 
 // TODO 简化
-const calSoldOutValueIds = function (skus, selectedValueIds = []) {
+const calSoldOutValueIds = function (skus, ids = []) {
   // 1. 找出所有售罄的规格值编号
   const valueStockNums = {};
   skus.forEach(sku => {
@@ -110,15 +78,15 @@ const calSoldOutValueIds = function (skus, selectedValueIds = []) {
   }
 
   // 2. 找出选中后，剩下的是售罄的规则值编号
-  if (selectedValueIds.length) {
+  if (ids.length) {
     skus.forEach(sku => {
       if (sku.stockNum !== 0) {
         return;
       }
-      selectedValueIds.forEach(selectedValueId => {
-        if (sku.specValueIds.includes(selectedValueId)) {
+      ids.forEach(id => {
+        if (sku.specValueIds.includes(id)) {
           sku.specValueIds.forEach(valueId => {
-            if (valueId === selectedValueId) {
+            if (valueId === id) {
               return;
             }
             soldOutValueIds.push(valueId);
@@ -155,44 +123,129 @@ const generateSelectedText = (product, selectedValueIds) => {
   return '已选：' + selectedValueNames.join(' / ');
 };
 
-const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateCartCount}) => {
+/**
+ * 通过规格值数组，计算出规格值对象
+ */
+const calSelectedValueIds = (product, ids) => {
+  const selectedValueIds = {};
+  product.spec.specs.forEach(spec => {
+    spec.values.forEach(value => {
+      if (ids.includes(value.id)) {
+        selectedValueIds[spec.id] = value.id;
+      }
+    });
+  });
+  return selectedValueIds;
+};
+
+const useStateWithDep = (defaultValue, dep) => {
+  const hasDep = typeof dep !== 'undefined';
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(() => {
+    setValue(hasDep ? defaultValue() : defaultValue);
+  }, [JSON.stringify(hasDep ? dep : defaultValue)]);
+  return [value, setValue];
+};
+
+const SkuPicker = (
+  {
+    product,
+    isOpened,
+    onClose,
+    action,
+    quantity: quantityProp = 1,
+    selectedValueIds: selectedValueIdsProp = [],
+    cartId,
+    onAfterSelectSpec,
+    onAfterRequest,
+  },
+) => {
   // 当前可购买的数量
-  const [stockNum, setStockNum] = useState(product.stockNum);
+  const [stockNum, setStockNum] = useState();
 
   // 当前的价格范围
-  const [priceText, setPriceText] = useState('');
-  useEffect(() => {
-    setPriceText(getPriceText(product.skus));
-  }, []);
+  const [price, setPrice] = useState();
 
   // 购买的数量
-  const [quantity, setQuantity] = useState(1);
-
-  // 售罄的规则值编号
-  const [soldOutValueIds, setSoldOutValueIds] = useState([]);
-  useEffect(() => {
-    const soldOutValueIds = calSoldOutValueIds(product.skus);
-    if (soldOutValueIds.length) {
-      setSoldOutValueIds(soldOutValueIds);
-    }
-  }, []);
+  const [quantity, setQuantity] = useStateWithDep(quantityProp);
 
   // 当前选中的规格值编号
-  const [selectedValueIds, setSelectedValueIds] = useState({});
+  const [selectedValueIds, setSelectedValueIds] = useStateWithDep(() => {
+    return calSelectedValueIds(product, selectedValueIdsProp);
+  }, selectedValueIdsProp);
+
+  // 选中所有规格后计算出的 SKU 编号
   const [skuId, setSkuId] = useState();
 
+  // 售罄的规格值编号
+  const [soldOutValueIds, setSoldOutValueIds] = useState(() => calSoldOutValueIds(product.skus));
+
+  // 选择/取消选择规格值
   const selectValueId = (i, valueId) => {
-    // 不可选择已售罄的规格值
-    if (soldOutValueIds.includes(valueId)) {
+    const isUnselect = selectedValueIds[i] === valueId;
+
+    // 允许取消选择，但不可选中已售罄的规格值
+    if (!isUnselect && soldOutValueIds.includes(valueId)) {
       return;
     }
 
-    if (selectedValueIds[i] === valueId) {
+    if (isUnselect) {
       delete selectedValueIds[i];
     } else {
       selectedValueIds[i] = valueId;
     }
+    setSelectedValueIds({...selectedValueIds});
+  };
 
+  const handleClose = () => {
+    onClose && onClose();
+  };
+
+  // 预设接口允许外部调用
+  const api = {};
+
+  api.generateSelectedText = () => {
+    return generateSelectedText(product, selectedValueIds);
+  };
+
+  api.createCart = async () => {
+    const {ret} = await $.post({
+      url: $.apiUrl('carts'),
+      data: {
+        skuId,
+        quantity,
+      },
+    });
+
+    $.ret(ret);
+    ret.isSuc() && handleClose();
+    onAfterRequest && onAfterRequest(ret);
+  };
+
+  api.updateCart = async () => {
+    const {ret} = await $.patch({
+      url: $.apiUrl('carts/%s', cartId),
+      data: {
+        skuId,
+        quantity,
+      },
+    });
+
+    $.ret(ret);
+    ret.isSuc() && handleClose();
+    onAfterRequest && onAfterRequest(ret);
+  };
+
+  api.createOrder = () => {
+    handleClose();
+    Taro.navigateTo({
+      url: $.url('orders/new', {skuId, quantity}),
+    });
+  };
+
+  // 选择规格后，更新 SKU 编号, 库存数量，价格文案等
+  useEffect(() => {
     const ids = Object.values(selectedValueIds);
 
     let stockNum = 0;
@@ -209,27 +262,15 @@ const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateC
       });
     }
 
-    if (validSkus.length === 1) {
-      setSkuId(validSkus[0].id);
-    }
+    setSkuId(validSkus.length === 1 ? validSkus[0].id : null);
     setSoldOutValueIds(calSoldOutValueIds(product.skus, ids));
     setStockNum(stockNum);
     setQuantity(stockNum < quantity ? stockNum : quantity);
-    setPriceText(getPriceText(validSkus));
-    setSelectedValueIds({...selectedValueIds});
-    setSelectedText && setSelectedText(generateSelectedText(product, selectedValueIds));
-  };
+    setPrice(getPrice(validSkus));
+    onAfterSelectSpec && onAfterSelectSpec(api);
+  }, [JSON.stringify(selectedValueIds)]);
 
-  const unit = product.configs.unit || '件';
-
-  const create = (source) => {
-    if (source === 'cart') {
-      createCart();
-    } else {
-      createOrder();
-    }
-  };
-
+  // 检查规格是否已选完
   const check = () => {
     for (const spec of product.spec.specs) {
       if (!selectedValueIds[spec.id]) {
@@ -240,35 +281,17 @@ const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateC
     return true;
   };
 
-  const createCart = async () => {
+  const handleClickButton = (action) => {
     if (!check()) {
       return;
     }
-
-    const ret = await $.post({
-      url: $.apiUrl('carts'),
-      data: {
-        quantity,
-        skuId,
-      },
-    });
-
-    $.ret(ret).suc(onClose);
-
-    if (ret.exists && updateCartCount) {
-      updateCartCount();
+    if (action === 'createCart') {
+      api.createCart();
+    } else if (action === 'updateCart') {
+      api.updateCart();
+    } else {
+      api.createOrder();
     }
-  };
-
-  const createOrder = () => {
-    if (!check()) {
-      return;
-    }
-
-    onClose();
-    Taro.navigateTo({
-      url: $.url('orders/new'),
-    });
   };
 
   const handlePreviewImage = () => {
@@ -277,36 +300,36 @@ const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateC
     });
   };
 
+  const unit = product.configs.unit || '件';
+
   return (
-    <AtFloatLayout isOpened={isOpened} onClose={onClose} className="sku-picker">
+    <AtFloatLayout isOpened={isOpened} onClose={handleClose} className="sku-picker">
       <View m3 toBetween>
         <View flex>
-          <Image w24 h24 rounded1 overflowHidden src={product.image} onClick={handlePreviewImage}/>
-          <View>
-            <View mx2 textBase>
-              {product.name}
-              <View brand500>
-                {priceText}
-              </View>
-            </View>
+          <Image w16 h16 rounded1 overflowHidden src={product.image} onClick={handlePreviewImage}/>
+          <View mx2 textBase brand500 alignSelf="flex-end">
+            {price}
           </View>
         </View>
-        <View text3XL fontHairline mt="-1rem" gray500 onClick={onClose}>&times;</View>
+        <View text3XL fontHairline mt="-1rem" gray500 onClick={handleClose}>&times;</View>
       </View>
 
       <View maxH="60vh" overflowYScroll mb="56px">
         <View m3 column className="border-b">
           {product.spec.specs.map((spec) => {
             return (
-              <View className="sku-picker-spec-item">
+              <View key={spec.id} className="sku-picker-spec-item">
                 <View className="sku-picker-spec-name">{spec.name}</View>
                 <View>
                   {spec.values.map(value => {
+                    const active = selectedValueIds[spec.id] === value.id;
                     return (
                       <Text
+                        key={value.id}
                         className={clsx('sku-picker-spec-value', {
-                          active: selectedValueIds[spec.id] === value.id,
-                          disabled: soldOutValueIds.includes(value.id),
+                          active,
+                          // 购物车中，售罄时，不禁用已选中的规格
+                          disabled: !active && soldOutValueIds.includes(value.id),
                         })}
                         onClick={selectValueId.bind(this, spec.id, value.id)}
                       >
@@ -329,23 +352,28 @@ const SkuPicker = ({product, isOpened, source, onClose, setSelectedText, updateC
               剩下 {stockNum} {unit}
             </Text>
             {' '}
-            <AtInputNumber
-              type="digit"
-              size="large"
-              min={1}
-              max={stockNum}
-              value={quantity}
-              onChange={setQuantity}
-            />
+            <Stepper value={quantity} onChange={setQuantity} min={1} max={stockNum}/>
           </View>
         </View>
       </View>
 
       <FooterBar>
-        <ActionButtonGroup createCartOrOrder={product.createCartOrOrder} source={source} onClick={create}/>
+        <ActionButtonGroup ret={product.createCartOrOrder} action={action} onClick={handleClickButton}/>
       </FooterBar>
     </AtFloatLayout>
   );
+};
+
+SkuPicker.propTypes = {
+  product: PropTypes.object.isRequired,
+  isOpened: PropTypes.bool,
+  onClose: PropTypes.func,
+  action: PropTypes.string,
+  quantity: PropTypes.number,
+  selectedValueIds: PropTypes.arrayOf(PropTypes.number),
+  cartId: PropTypes.number,
+  onAfterSelectSpec: PropTypes.func,
+  onAfterRequest: PropTypes.func,
 };
 
 export default SkuPicker;
