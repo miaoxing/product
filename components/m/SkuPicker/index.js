@@ -129,6 +129,13 @@ const generateSelectedText = (product, selectedValueIds) => {
 const calSelectedValueIds = (product, ids) => {
   const selectedValueIds = {};
 
+  // 如果只有一个规格，默认选中
+  if (ids.length === 0 && product.spec.specs.length === 1) {
+    const spec = product.spec.specs[0];
+    selectedValueIds[spec.id] = spec.values[0].id;
+    return selectedValueIds;
+  }
+
   product.spec.specs.forEach(spec => {
     spec.values.forEach(value => {
       if (ids.includes(value.id)) {
