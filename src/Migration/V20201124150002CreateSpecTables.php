@@ -50,6 +50,7 @@ class V20201124150002CreateSpecTables extends BaseMigration
             ->bigId()->comment('编号')
             ->uInt('app_id')->comment('应用编号')
             ->uBigInt('product_id')->comment('商品编号')
+            ->bool('is_default')->comment('是否默认规格')
             ->json('specs')->comment('规格内容，内容如：[{id,values:[{id,name,image},...]},...]')
             ->timestamps()
             ->userstamps()

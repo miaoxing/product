@@ -10,6 +10,7 @@ class ProductSpecResource extends BaseResource
     public function transform(ProductSpecModel $spec): array
     {
         return $spec->toArray([
+            'isDefault',
             'specs',
         ]);
     }

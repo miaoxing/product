@@ -118,11 +118,33 @@ return new class extends BaseController {
                     $data['skus'][$i]['specValueIds'][] = $specValueIds[$specValue['specName']][$specValue['name']];
                 }
             }
+
+            $data['spec']['isDefault'] = $this->isDefaultSpec($data['spec']['specs']);
         }
 
         $this->saveWithRelations($product, $data, ['spec', 'images', 'detail', 'skus', 'categoriesProducts']);
 
         return $product->toRet();
+    }
+
+    /**
+     * 检查商品规格是否为默认规格
+     *
+     * @param array $specs
+     * @return bool
+     */
+    private function isDefaultSpec(array $specs): bool
+    {
+        if (count($specs) > 1) {
+            return false;
+        }
+        if (count($specs[0]['values']) > 1) {
+            return false;
+        }
+
+        $defaultSpecs = ProductModel::getDefaultSpecs();
+        return $specs[0]['id'] === $defaultSpecs[0]['id']
+            && $specs[0]['values'][0]['id'] === $defaultSpecs[0]['values'][0]['id'];
     }
 
     /**
