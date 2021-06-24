@@ -128,6 +128,7 @@ const generateSelectedText = (product, selectedValueIds) => {
  */
 const calSelectedValueIds = (product, ids) => {
   const selectedValueIds = {};
+
   product.spec.specs.forEach(spec => {
     spec.values.forEach(value => {
       if (ids.includes(value.id)) {
@@ -315,7 +316,7 @@ const SkuPicker = (
       </View>
 
       <View maxH="60vh" overflowYScroll mb="56px">
-        <View m3 column className="border-b">
+        {!product.spec.isDefault && <View m3 column className="border-b">
           {product.spec.specs.map((spec) => {
             return (
               <View key={spec.id} className="sku-picker-spec-item">
@@ -341,7 +342,7 @@ const SkuPicker = (
               </View>
             );
           })}
-        </View>
+        </View>}
 
         <View m3 toCenterY toBetween>
           <Text mr2 textSM css={{whiteSpace: 'nowrap'}}>数量</Text>
