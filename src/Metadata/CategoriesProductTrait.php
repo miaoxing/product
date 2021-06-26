@@ -3,7 +3,7 @@
 namespace Miaoxing\Product\Metadata;
 
 /**
- * @property int $id 编号
+ * @property int|null $id 编号
  * @property int $appId 应用编号
  * @property int $categoryId 分类编号
  * @property int $productId 商品编号

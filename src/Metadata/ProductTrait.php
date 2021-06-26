@@ -3,14 +3,14 @@
 namespace Miaoxing\Product\Metadata;
 
 /**
- * @property int $id 编号
+ * @property int|null $id 编号
  * @property int $appId 应用编号
  * @property string $outerId 外部编号
  * @property int $shippingTplId 运费模板编号
  * @property string $name 名称
  * @property string $intro 简介
- * @property float $minPrice 最低的销售价
- * @property float $minMarketPrice 最低销售价的划线价
+ * @property string $minPrice 最低的销售价
+ * @property string $minMarketPrice 最低销售价的划线价
  * @property int $minScore 最低的积分
  * @property int $stockNum 库存
  * @property int $soldNum 销量
