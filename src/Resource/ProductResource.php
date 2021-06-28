@@ -28,6 +28,7 @@ class ProductResource extends BaseResource
                 'isRequireAddress',
                 'isAllowComment',
                 'configs',
+                'deletedAt',
             ]),
             'images' => ProductImageResource::whenLoaded($product, 'images'),
             'spec' => ProductSpecResource::whenLoaded($product, 'spec'),
