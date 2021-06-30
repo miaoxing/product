@@ -60,7 +60,7 @@ export default () => {
 
       <Form
         formRef={form}
-        afterLoad={ret => {
+        afterLoad={({ret}) => {
           // 将商品分类关联表的 id 缓存起来，以便提交时设置回去
           ret.data.categoryIds = ret.data.categoriesProducts.map(categoryProduct => {
             categoryProductIds.current[categoryProduct.categoryId] = categoryProduct.id;
