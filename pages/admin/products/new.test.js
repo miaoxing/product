@@ -31,50 +31,58 @@ describe('admin/products', () => {
 
     $.http = jest.fn()
       // 读取默认数据
-      .mockImplementationOnce(() => promise.resolve(Ret.new({
-        code: 1,
-        data: {
-          images: [],
-          categoriesProducts: [],
-          skus: [],
-          sort: 50,
-          shippingTplId: 1, // TODO 前台 API 设置
-          spec: {
-            specs: [
-              {
-                id: 3,
-                name: '默认',
-                values: [
-                  {
-                    id: 4,
-                    name: '默认',
-                  },
-                ],
-              },
-            ],
+      .mockImplementationOnce(() => promise.resolve({
+        ret: Ret.new({
+          code: 1,
+          data: {
+            images: [],
+            categoriesProducts: [],
+            skus: [],
+            sort: 50,
+            shippingTplId: 1, // TODO 前台 API 设置
+            spec: {
+              specs: [
+                {
+                  id: 3,
+                  name: '默认',
+                  values: [
+                    {
+                      id: 4,
+                      name: '默认',
+                    },
+                  ],
+                },
+              ],
+            },
           },
-        },
-      })))
+        }),
+      }))
       // 读取运费模板
-      .mockImplementationOnce(() => promise2.resolve(Ret.new({
-        code: 1,
-        data: [{
-          id: 1,
-          name: '测试模板',
-        }],
-      })))
+      .mockImplementationOnce(() => promise2.resolve({
+        ret: Ret.new({
+          code: 1,
+          data: [{
+            id: 1,
+            name: '测试模板',
+          }],
+        }),
+      }))
       // 读取分类
-      .mockImplementationOnce(() => promise3.resolve(Ret.new({
-        code: 1,
-        data: [{
-          id: 1,
-          name: '测试分类',
-        }],
-      })))
+      .mockImplementationOnce(() => promise3.resolve({
+        ret: Ret.new({
+          code: 1,
+          data: [{
+            id: 1,
+            name: '测试分类',
+          }],
+        }),
+      }))
       // 提交
-      .mockImplementationOnce(() => promise4.resolve(Ret.new({
-        code: 1,
-      })));
+      .mockImplementationOnce(() => promise4.resolve({
+        ret: Ret.new({
+          code: 1,
+        }),
+      }));
 
     const {container, getByLabelText} = render(<MemoryRouter>
       <Page/>

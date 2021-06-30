@@ -28,17 +28,19 @@ describe('admin/products', () => {
     $.http = jest.fn()
       // 读取列表数据
       .mockImplementationOnce(() => promise.resolve({
-        code: 1,
-        data: [
-          {
-            id: 1,
-            name: '商品1',
-            minPrice: 3,
-            stockNum: 4,
-            isListing: true,
-            createdAt: '2020-01-01 00:00:00',
-          },
-        ],
+        ret: {
+          code: 1,
+          data: [
+            {
+              id: 1,
+              name: '商品1',
+              minPrice: 3,
+              stockNum: 4,
+              isListing: true,
+              createdAt: '2020-01-01 00:00:00',
+            },
+          ],
+        },
       }));
 
     const {findByText} = render(<MemoryRouter>

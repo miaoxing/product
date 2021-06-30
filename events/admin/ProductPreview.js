@@ -297,7 +297,7 @@ const ProductPreview = (
         sort,
         order,
       }),
-    }).then(ret => {
+    }).then(({ret}) => {
       if (ret.isErr()) {
         $.ret(ret);
         return;

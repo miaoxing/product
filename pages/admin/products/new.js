@@ -21,7 +21,7 @@ export default () => {
   // 加载运费模板
   const [shippingTpls, setShippingTpl] = useState([]);
   useEffect(() => {
-    api.getMax('shipping-tpls', {loading: true}).then(ret => {
+    api.getMax('shipping-tpls', {loading: true}).then(({ret}) => {
       if (ret.isSuc()) {
         setShippingTpl(ret.data);
         if (ret.data.length) {
@@ -36,7 +36,7 @@ export default () => {
   // 加载商品分类
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    api.getMax('categories', {loading: true}).then(ret => {
+    api.getMax('categories', {loading: true}).then(({ret}) => {
       if (ret.isSuc()) {
         setCategories(ret.data.map(category => ({
           value: category.id,

@@ -11,7 +11,7 @@ const ProductConfig = ({propName}) => {
   // 加载商品分类
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    api.getMax('categories', {loading: true}).then(ret => {
+    api.getMax('categories', {loading: true}).then(({ret}) => {
       if (ret.isSuc()) {
         setCategories(ret.data.map(category => ({
           value: category.id,

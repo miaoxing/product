@@ -94,7 +94,7 @@ const ProductPickerLabel = ({value, extra}) => {
   useEffect(() => {
     if (!extra.name) {
       (async () => {
-        const ret = await api.get('products/' + value.id);
+        const {ret} = await api.get('products/' + value.id);
         setName(ret.data.name);
       })();
     }
