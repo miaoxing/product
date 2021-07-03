@@ -15,8 +15,8 @@
 .sku-picker {
   .at-float-layout__container {
     // 头部使用圆角更加美观
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-top-left-radius: var(--mx-space-4);
+    border-top-right-radius: var(--mx-space-4);
   }
 
   // 内部元素自己控制间距
@@ -25,25 +25,25 @@
   }
 
   &-spec-item {
-    margin-bottom: .75rem;
+    margin-bottom: var(--mx-space-3);
     overflow: hidden;
   }
 
   &-spec-name {
-    margin-bottom: .25rem;
-    font-size: 0.875rem;
+    margin-bottom: var(--mx-space-2);
+    font-size: var(--mx-fontSizes-sm);
   }
 
   &-spec-value {
     float: left;
-    border-radius: .2rem;
+    border-radius: var(--mx-space-1);
     text-align: center;
-    font-size: .75rem;
+    font-size: var(--mx-fontSizes-xs);
     line-height: 1;
-    min-width: 1.5rem;
-    padding: .5rem 0.75rem;
-    margin-bottom: .5rem;
-    margin-right: .5rem;
+    min-width: var(--mx-space-6);
+    padding: var(--mx-space-2) var(--mx-space-3);
+    margin-bottom: var(--mx-space-2);
+    margin-right: var(--mx-space-2);
     border: 1PX solid var(--mx-colors-gray-100);
     background: var(--mx-colors-gray-100);
 
