@@ -23,7 +23,7 @@ class SpecValueModel extends BaseModel
      *
      * @return $this
      */
-    public function spec()
+    public function spec(): SpecModel
     {
         return $this->belongsTo(SpecModel::class);
     }

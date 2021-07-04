@@ -110,7 +110,7 @@ class ProductModel extends BaseModel
      *
      * @return ProductImageModel|ProductImageModel[]
      */
-    public function images()
+    public function images(): ProductImageModel
     {
         return $this->hasMany(ProductImageModel::class);
     }
@@ -120,7 +120,7 @@ class ProductModel extends BaseModel
      *
      * @return ProductDetailModel
      */
-    public function detail()
+    public function detail(): ProductDetailModel
     {
         return $this->hasOne(ProductDetailModel::class);
     }
@@ -130,7 +130,7 @@ class ProductModel extends BaseModel
      *
      * @return ProductSpecModel
      */
-    public function spec()
+    public function spec(): ProductSpecModel
     {
         return $this->hasOne(ProductSpecModel::class);
     }
@@ -140,7 +140,7 @@ class ProductModel extends BaseModel
      *
      * @return SkuModel|SkuModel[]
      */
-    public function skus()
+    public function skus(): SkuModel
     {
         return $this->hasMany(SkuModel::class);
     }
@@ -150,7 +150,7 @@ class ProductModel extends BaseModel
      *
      * @return CategoryModel|CategoryModel[]
      */
-    public function categories()
+    public function categories(): CategoryModel
     {
         return $this->belongsToMany(CategoryModel::class);
     }
@@ -160,7 +160,7 @@ class ProductModel extends BaseModel
      *
      * @return CategoriesProductModel|CategoriesProductModel[]
      */
-    public function categoriesProducts()
+    public function categoriesProducts(): CategoriesProductModel
     {
         return $this->hasMany(CategoriesProductModel::class);
     }
@@ -170,7 +170,7 @@ class ProductModel extends BaseModel
      *
      * @return ShippingTplModel
      */
-    public function shippingTpl()
+    public function shippingTpl(): ShippingTplModel
     {
         return $this->belongsTo(ShippingTplModel::class);
     }
