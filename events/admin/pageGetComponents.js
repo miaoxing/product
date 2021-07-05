@@ -1,4 +1,3 @@
-import React from 'react';
 import {ShoppingOutlined, SearchOutlined} from '@ant-design/icons';
 import ProductSearchPreview from './ProductSearchPreview';
 import ProductSearchConfig from './ProductSearchConfig';

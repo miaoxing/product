@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {Media} from '@mxjs/bootstrap';
 import {Avatar} from 'antd';
 import {PictureOutlined} from '@ant-design/icons';
@@ -10,7 +10,7 @@ import {css} from '@mxjs/css';
  *
  * 包含了商品小图和名称
  */
-export default class extends React.Component {
+export default class extends Component {
   static propTypes = {
     product: propTypes.shape({
       name: propTypes.string.isRequired,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef, Component } from 'react';
 import {FormContext} from '@mxjs/a-form';
 import {Form as AntdForm, Input} from 'antd';
 import SkuBase from '@mxjs/a-sku';
@@ -10,7 +10,7 @@ import $ from 'miaoxing';
  *
  * @internal 待整理完善
  */
-export default class Sku extends React.Component {
+export default class Sku extends Component {
   static context = FormContext;
 
   constructor(props, context) {
@@ -27,7 +27,7 @@ export default class Sku extends React.Component {
       propVoList: [],
       skuData: [],
     };
-    this.skuRef = React.createRef();
+    this.skuRef = createRef();
   }
 
   async addPropApi() {

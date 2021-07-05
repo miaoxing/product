@@ -1,4 +1,3 @@
-import React from 'react';
 import Icon from '@mxjs/icons';
 import ProductPicker from './ProductPicker';
 import CategoryPicker from './CategoryPicker';

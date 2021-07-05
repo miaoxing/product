@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import {Card, Radio, Select, TreeSelect, InputNumber, Switch} from 'antd';
 import PropTypes from 'prop-types';
 import {FormItem, useForm} from '@mxjs/a-form';
