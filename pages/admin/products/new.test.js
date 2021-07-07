@@ -1,9 +1,8 @@
 import Page from './new';
-import {fireEvent, render, screen} from '@testing-library/react';
+import {fireEvent, render, screen, waitFor} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import {app} from '@mxjs/app';
 import $, {Ret} from 'miaoxing';
-import {waitFor} from '@testing-library/dom';
 import {bootstrap, createPromise, setUrl, resetUrl} from '@mxjs/test';
 
 bootstrap();
