@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkuPicker basic 1`] = `
+<div>
+  <taro-view-core
+    class="at-float-layout sku-picker"
+  >
+    <taro-view-core
+      class="at-float-layout__overlay"
+    />
+    <taro-view-core
+      class="at-float-layout__container layout"
+    >
+      <taro-view-core
+        class="layout-body"
+      >
+        <taro-scroll-view-core
+          class="layout-body__content"
+          scrolly="true"
+        >
+          <taro-view-core
+            style="justify-content: space-between; flex-direction: row; display: flex;"
+          >
+            <taro-view-core
+              style="display: flex;"
+            >
+              <taro-image-core
+                style="border-radius: 4rpx; overflow: hidden;"
+              />
+              <taro-view-core
+                style="color: rgb(32, 201, 151); align-self: flex-end;"
+              >
+                <taro-block-core>
+                  
+                </taro-block-core>
+              </taro-view-core>
+            </taro-view-core>
+            <taro-view-core
+              style="margin-top: -1rem; font-weight: 100; color: rgb(113, 113, 122);"
+            >
+              ×
+            </taro-view-core>
+          </taro-view-core>
+          <taro-view-core
+            style="margin-bottom: 56px; max-height: 60vh; overflow-y: scroll;"
+          >
+            <taro-view-core
+              class="border-b"
+              style="flex-direction: column; display: flex;"
+            >
+              <taro-view-core
+                class="sku-picker-spec-item"
+              >
+                <taro-view-core
+                  class="sku-picker-spec-name"
+                >
+                  默认
+                </taro-view-core>
+                <taro-view-core>
+                  <taro-text-core
+                    class="sku-picker-spec-value active"
+                  >
+                    默认
+                  </taro-text-core>
+                </taro-view-core>
+              </taro-view-core>
+            </taro-view-core>
+            <taro-view-core
+              style="align-items: center; justify-content: space-between; flex-direction: row; display: flex;"
+            >
+              <taro-text-core
+                class="css-1vq2xix-SkuPicker"
+              >
+                数量
+              </taro-text-core>
+              <taro-view-core
+                style="align-items: center; justify-content: space-between; flex-direction: row; display: flex;"
+              >
+                <taro-text-core
+                  style="color: rgb(113, 113, 122);"
+                >
+                   
+                  剩下 
+                  10
+                   
+                  件
+                </taro-text-core>
+                 
+                <taro-view-core
+                  class="mx-stepper"
+                >
+                  <taro-button-core
+                    class="mx-stepper-minus"
+                    disabled="true"
+                  />
+                  <taro-input-core
+                    class="mx-stepper-input"
+                  />
+                  <taro-button-core
+                    class="mx-stepper-plus"
+                  />
+                </taro-view-core>
+              </taro-view-core>
+            </taro-view-core>
+          </taro-view-core>
+          <taro-view-core
+            class="mx-footer-bar"
+          >
+            <taro-view-core
+              class="mx-btn-theme mx-btn-theme-pill"
+            >
+              <taro-view-core
+                class="mx-btn-group"
+              >
+                <taro-button-core
+                  class="mx-btn mx-btn-secondary mx-footer-bar-btn"
+                >
+                  加入购物车
+                </taro-button-core>
+                <taro-button-core
+                  class="mx-btn mx-btn-primary mx-footer-bar-btn"
+                >
+                  立即购买
+                </taro-button-core>
+              </taro-view-core>
+            </taro-view-core>
+          </taro-view-core>
+        </taro-scroll-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </taro-view-core>
+</div>
+`;
