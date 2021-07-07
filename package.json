@@ -38,7 +38,20 @@
     "@mxjs/a-color-picker": "^0.1.2",
     "@mxjs/bootstrap": "^0.1.5",
     "taro-ui": "^3.0.0-alpha.10",
-    "@mxjs/m-divider": "^0.1.0"
+    "@mxjs/m-divider": "^0.1.0",
+    "@fower/taro": "^1.16.0",
+    "@tarojs/components": "^3.2.10",
+    "@mxjs/m-icon": "^0.1.0",
+    "@mxjs/m-rich-text": "^0.1.0",
+    "@mxjs/m-page": "^0.1.0",
+    "@mxjs/m-card": "^0.1.0",
+    "@mxjs/m-button": "^0.1.0",
+    "@mxjs/m-footer-bar": "^0.1.0",
+    "@mxjs/m-list": "^0.1.0",
+    "@mxjs/m-ret": "^0.1.0",
+    "@mxjs/m-stepper": "^0.1.0",
+    "clsx": "^1.1.1",
+    "@tarojs/taro": "^3.2.10"
   },
   "devDependencies": {
     "@miaoxing/dev": "^7.0.1",
@@ -57,6 +70,16 @@
     "@mxjs/a-form": "miaoxing/mxjs-a-form",
     "@mxjs/a-table": "miaoxing/mxjs-a-table",
     "@mxjs/a-page": "miaoxing/mxjs-a-page",
-    "@mxjs/a-button": "miaoxing/mxjs-a-button"
+    "@mxjs/a-button": "miaoxing/mxjs-a-button",
+    "@mxjs/m-divider":  "miaoxing/mxjs-m-divider",
+    "@mxjs/m-icon": "miaoxing/mxjs-m-icon",
+    "@mxjs/m-rich-text": "miaoxing/mxjs-m-rich-text",
+    "@mxjs/m-page": "miaoxing/mxjs-m-page",
+    "@mxjs/m-card": "miaoxing/mxjs-m-card",
+    "@mxjs/m-button": "miaoxing/mxjs-m-button",
+    "@mxjs/m-footer-bar": "miaoxing/mxjs-m-footer-bar",
+    "@mxjs/m-list": "miaoxing/mxjs-m-list",
+    "@mxjs/m-ret": "miaoxing/mxjs-m-ret",
+    "@mxjs/m-stepper": "miaoxing/mxjs-m-stepper"
   }
 }
