@@ -139,6 +139,71 @@ class IdTest extends BaseTestCase
         $this->assertRetSuc($ret);
     }
 
+    public function testPostIsDefault()
+    {
+        $ret = Tester::postAdminApi('products', [
+            'name' => '测试',
+            'spec' => [
+                'specs' => ProductModel::getDefaultSpecs(),
+            ],
+            'skus' => [
+                [
+                    'price' => 3,
+                    'stockNum' => 4,
+                    'specValues' => [
+                        [
+                            'name' => '默认',
+                            'specName' => '默认',
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+        $this->assertRetSuc($ret);
+
+        /** @var ProductModel $product */
+        $product = $ret['data'];
+
+        $this->assertTrue($product->spec->isDefault);
+    }
+
+    public function testPostIsDefaultFalse()
+    {
+        $ret = Tester::postAdminApi('products', [
+            'name' => '测试',
+            'spec' => [
+                'specs' => [
+                    [
+                        'name' => '默认',
+                        'values' => [
+                            [
+                                'name' => '默认2',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'skus' => [
+                [
+                    'price' => 3,
+                    'stockNum' => 4,
+                    'specValues' => [
+                        [
+                            'name' => '默认2',
+                            'specName' => '默认',
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+        $this->assertRetSuc($ret);
+
+        /** @var ProductModel $product */
+        $product = $ret['data'];
+
+        $this->assertFalse($product->spec->isDefault);
+    }
+
     public function testInvalidCategoriesProducts()
     {
         $ret = Tester::postAdminApi('products', [
