@@ -30,8 +30,7 @@ describe('admin/products', () => {
     $.http = jest.fn()
       // 读取默认数据
       .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.new({
-          code: 1,
+        ret: Ret.suc({
           data: {
             images: [],
             categoriesProducts: [],
@@ -57,8 +56,7 @@ describe('admin/products', () => {
       }))
       // 读取运费模板
       .mockImplementationOnce(() => promise2.resolve({
-        ret: Ret.new({
-          code: 1,
+        ret: Ret.suc({
           data: [{
             id: 1,
             name: '测试模板',
@@ -67,19 +65,17 @@ describe('admin/products', () => {
       }))
       // 读取分类
       .mockImplementationOnce(() => promise3.resolve({
-        ret: Ret.new({
-          code: 1,
+        ret: Ret.suc({
           data: [{
             id: 1,
             name: '测试分类',
+            children: [],
           }],
         }),
       }))
       // 提交
       .mockImplementationOnce(() => promise4.resolve({
-        ret: Ret.new({
-          code: 1,
-        }),
+        ret: Ret.suc(),
       }));
 
     const {container, getByLabelText} = render(<MemoryRouter>

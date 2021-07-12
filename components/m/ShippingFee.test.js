@@ -11,8 +11,7 @@ describe('ShippingFee', () => {
 
     $.http = jest.fn()
       .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.new({
-          code: 0,
+        ret: Ret.suc({
           data: {
             rules: [
               {
@@ -42,8 +41,7 @@ describe('ShippingFee', () => {
 
     $.http = jest.fn()
       .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.new({
-          code: 0,
+        ret: Ret.suc({
           data: {
             rules: [
               {
@@ -73,8 +71,7 @@ describe('ShippingFee', () => {
 
     $.http = jest.fn()
       .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.new({
-          code: 0,
+        ret: Ret.suc({
           data: {
             isFreeShipping: true,
             rules: [],
@@ -98,8 +95,7 @@ describe('ShippingFee', () => {
 
     $.http = jest.fn()
       .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.new({
-          code: 0,
+        ret: Ret.suc({
           data: {
             isFreeShipping: false,
             rules: [
