@@ -1,20 +1,16 @@
 import ActionButtonGroup from './ActionButtonGroup';
 import {fireEvent, render} from '@testing-library/react';
+import {Ret} from 'miaoxing';
 
 describe('ActionButtonGroup', () => {
   test('basic', async () => {
     const handleClick = jest.fn();
     const {container, queryByText} = render(
       <ActionButtonGroup
-        ret={{
-          code: 0,
-          createCart: {
-            code: 0,
-          },
-          createOrder: {
-            code: 0,
-          },
-        }}
+        ret={Ret.suc({
+          createCart: Ret.suc(),
+          createOrder: Ret.suc(),
+        })}
         onClick={handleClick}
       />,
     );
@@ -32,15 +28,10 @@ describe('ActionButtonGroup', () => {
   test('hide create cart', () => {
     const {container} = render(
       <ActionButtonGroup
-        ret={{
-          code: 0,
-          createCart: {
-            code: 1,
-          },
-          createOrder: {
-            code: 0,
-          },
-        }}
+        ret={Ret.suc({
+          createCart: Ret.err('err'),
+          createOrder: Ret.suc(),
+        })}
         onClick={() => {
         }}
       />,
@@ -52,15 +43,10 @@ describe('ActionButtonGroup', () => {
   test('hide create order', () => {
     const {container} = render(
       <ActionButtonGroup
-        ret={{
-          code: 0,
-          createCart: {
-            code: 0,
-          },
-          createOrder: {
-            code: 1,
-          },
-        }}
+        ret={Ret.suc({
+          createCart: Ret.suc(),
+          createOrder: Ret.err('err'),
+        })}
         onClick={() => {
         }}
       />,
@@ -75,15 +61,10 @@ describe('ActionButtonGroup', () => {
     const {container, queryByText} = render(
       <ActionButtonGroup
         action="updateCart"
-        ret={{
-          code: 0,
-          createCart: {
-            code: 0,
-          },
-          createOrder: {
-            code: 0,
-          },
-        }}
+        ret={Ret.suc({
+          createCart: Ret.suc(),
+          createOrder: Ret.suc(),
+        })}
         onClick={handleClick}
       />,
     );
@@ -97,18 +78,14 @@ describe('ActionButtonGroup', () => {
   test('error', () => {
     const {container} = render(
       <ActionButtonGroup
-        ret={{
-          code: 1,
+        ret={Ret.err({
           message: '商品已下架',
-          createCart: {
-            code: 1,
+          createCart: Ret.err({
             message: '商品已下架',
             shortMessage: '已下架',
-          },
-          createOrder: {
-            code: 1,
-          },
-        }}
+          }),
+          createOrder: Ret.err('err'),
+        })}
         onClick={() => {
         }}
       />,
