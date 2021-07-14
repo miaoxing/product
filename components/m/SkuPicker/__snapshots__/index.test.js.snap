@@ -131,3 +131,9 @@ exports[`SkuPicker basic 1`] = `
   </taro-view-core>
 </div>
 `;
+
+exports[`SkuPicker close 1`] = `
+Array [
+  Array [],
+]
+`;
