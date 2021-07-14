@@ -8,7 +8,8 @@
   "jest": {
     "preset": "jest-preset-miaoxing",
     "moduleNameMapper": {
-      "@tarojs/components": "@tarojs/components/dist-h5/react"
+      "@tarojs/components": "@tarojs/components/dist-h5/react",
+      "@tarojs/taro": "@tarojs/taro-h5"
     },
     "globals": {
       "ENABLE_INNER_HTML": true,
