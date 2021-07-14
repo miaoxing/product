@@ -2,18 +2,19 @@ import {ButtonGroup} from '@mxjs/m-button';
 import FooterBar from '@mxjs/m-footer-bar';
 import ButtonTheme from '@mxjs/m-button/ButtonTheme';
 import PropTypes from 'prop-types';
+import {Ret} from 'miaoxing';
 
 /**
  * 商品操作按钮组
  */
 const ActionButtonGroup = ({ret, action, onClick}) => {
-  const {code, createCart, createOrder} = ret;
-  const isSuc = code === 0;
+  const {createCart, createOrder} = ret;
+  const isSuc = Ret.isSuc(ret);
 
   const shortMessage = createCart.shortMessage || createOrder.shortMessage;
 
-  const showCart = createCart.code === 0 && action !== 'createOrder';
-  const showOrder = createOrder.code === 0 && action !== 'createCart';
+  const showCart = Ret.isSuc(createCart) && action !== 'createOrder';
+  const showOrder = Ret.isSuc(createOrder) && action !== 'createCart';
 
   // 更新购物车暂无逻辑，直接展示即可
   if (action === 'updateCart') {
