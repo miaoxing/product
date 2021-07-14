@@ -1,5 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Show action 1`] = `
+Array [
+  Array [
+    Object {
+      "current": "http://dev.test.com/uploads/1/210610/002439539409.png",
+      "urls": Array [
+        "http://dev.test.com/uploads/1/210610/002439539409.png",
+        "http://dev.test.com/uploads/1/210610/000924427937.jpg",
+        "http://dev.test.com/uploads/1/210610/000918792585.jpg",
+        "http://dev.test.com/uploads/1/210610/002904468645.png",
+      ],
+    },
+  ],
+]
+`;
+
+exports[`Show action 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "ignoreError": true,
+        "url": "/api/products/1?include=detail",
+      },
+    ],
+    Array [
+      Object {
+        "url": "/api/carts/count",
+      },
+    ],
+    Array [
+      Object {
+        "url": "/api/products/81/shipping-tpl?filterRulesByCity=1",
+      },
+    ],
+    Array [
+      Object {
+        "data": Object {
+          "quantity": 1,
+          "skuId": 46,
+        },
+        "method": "post",
+        "url": "/api/carts",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
+
 exports[`Show basic 1`] = `
 <div>
   <taro-view-core
@@ -19,6 +98,21 @@ exports[`Show basic 1`] = `
               style="width: 100%; height: 100%;"
             />
           </taro-swiper-item-core>
+          <taro-swiper-item-core>
+            <taro-image-core
+              style="width: 100%; height: 100%;"
+            />
+          </taro-swiper-item-core>
+          <taro-swiper-item-core>
+            <taro-image-core
+              style="width: 100%; height: 100%;"
+            />
+          </taro-swiper-item-core>
+          <taro-swiper-item-core>
+            <taro-image-core
+              style="width: 100%; height: 100%;"
+            />
+          </taro-swiper-item-core>
         </taro-swiper-core>
         <taro-view-core
           class="mx-card"
@@ -33,7 +127,7 @@ exports[`Show basic 1`] = `
                 <taro-text-core>
                   ￥
                 </taro-text-core>
-                16.64
+                9
               </taro-text-core>
               <taro-text-core
                 style="color: rgb(113, 113, 122);"
@@ -42,7 +136,7 @@ exports[`Show basic 1`] = `
                 <taro-text-core
                   style="text-decoration: line-through;"
                 >
-                  0
+                  10
                 </taro-text-core>
               </taro-text-core>
             </taro-view-core>
@@ -51,11 +145,13 @@ exports[`Show basic 1`] = `
             >
               <taro-view-core>
                 <taro-view-core>
-                  alias commodi ipsam
+                  这公会车车挂这公会车车挂非常防虫扥东这公会车车挂这公会车车挂非常防虫扥东
                 </taro-view-core>
                 <taro-view-core
                   style="color: rgb(113, 113, 122);"
-                />
+                >
+                  欢迎亲临门店体验
+                </taro-view-core>
               </taro-view-core>
               <taro-button-core
                 class="mx-btn"
@@ -77,6 +173,27 @@ exports[`Show basic 1`] = `
           <taro-view-core
             class="mx-list mx-list-sm mx-list-borderless"
           >
+            <taro-view-core
+              class="mx-list-item mx-list-has-arrow mx-list-description-left"
+            >
+              <taro-view-core
+                class="mx-list-title"
+              >
+                选择
+              </taro-view-core>
+              <taro-view-core
+                class="mx-list-detail"
+              >
+                尺寸 / 颜色
+              </taro-view-core>
+              <taro-view-core
+                class="mx-list-arrow"
+              >
+                <taro-text-core
+                  class="mxi mxi-arrow-right"
+                />
+              </taro-view-core>
+            </taro-view-core>
             <taro-view-core
               class="mx-list-item-3 mx-list-item mx-list-description-left"
             >
@@ -115,7 +232,25 @@ exports[`Show basic 1`] = `
             class="mx-rich-text"
           >
             <p>
-              Alice in a hurried nervous manner, smiling at everything about her, to pass away the moment she quite forgot you didn't like cats.' 'Not like cats!' cried the Gryphon. 'It's all his fancy, that: he.
+              <img
+                alt="14 - 3 (2).png"
+                src="http://dev.test.com/uploads/images/20210528/1622199614338752.png"
+              />
+            </p>
+            <p>
+              Alice: he had a cons
+              <span
+                style="color: #548DD4;"
+              >
+                ultation about this, and after a few minutes it puffed away without speaking, but at any r
+              </span>
+              ate,' sai
+              <span
+                style="background-color: #F79646;"
+              >
+                d Alice: 'allo
+              </span>
+              w me to introduce it.' 'I don't know what a long way. So they got.
             </p>
           </taro-view-core>
         </taro-view-core>
@@ -211,7 +346,7 @@ exports[`Show basic 1`] = `
                         <taro-text-core>
                           ￥
                         </taro-text-core>
-                        16.64
+                        11 ~ 9
                         
                       </taro-block-core>
                     </taro-view-core>
@@ -226,6 +361,58 @@ exports[`Show basic 1`] = `
                   style="margin-bottom: 56px; max-height: 60vh; overflow-y: scroll;"
                 >
                   <taro-view-core
+                    class="border-b"
+                    style="flex-direction: column; display: flex;"
+                  >
+                    <taro-view-core
+                      class="sku-picker-spec-item"
+                    >
+                      <taro-view-core
+                        class="sku-picker-spec-name"
+                      >
+                        尺寸
+                      </taro-view-core>
+                      <taro-view-core>
+                        <taro-text-core
+                          class="sku-picker-spec-value disabled"
+                        >
+                          S
+                        </taro-text-core>
+                        <taro-text-core
+                          class="sku-picker-spec-value"
+                        >
+                          M
+                        </taro-text-core>
+                        <taro-text-core
+                          class="sku-picker-spec-value"
+                        >
+                          L
+                        </taro-text-core>
+                      </taro-view-core>
+                    </taro-view-core>
+                    <taro-view-core
+                      class="sku-picker-spec-item"
+                    >
+                      <taro-view-core
+                        class="sku-picker-spec-name"
+                      >
+                        颜色
+                      </taro-view-core>
+                      <taro-view-core>
+                        <taro-text-core
+                          class="sku-picker-spec-value"
+                        >
+                          红色
+                        </taro-text-core>
+                        <taro-text-core
+                          class="sku-picker-spec-value disabled"
+                        >
+                          蓝色
+                        </taro-text-core>
+                      </taro-view-core>
+                    </taro-view-core>
+                  </taro-view-core>
+                  <taro-view-core
                     style="align-items: center; justify-content: space-between; flex-direction: row; display: flex;"
                   >
                     <taro-text-core
@@ -239,9 +426,10 @@ exports[`Show basic 1`] = `
                       <taro-text-core
                         style="color: rgb(113, 113, 122);"
                       >
+                        每人限购 11 件
                          
                         剩下 
-                        51
+                        27
                          
                         件
                       </taro-text-core>
@@ -311,7 +499,7 @@ exports[`Show basic 2`] = `
     ],
     Array [
       Object {
-        "url": "/api/products/82/shipping-tpl?filterRulesByCity=1",
+        "url": "/api/products/81/shipping-tpl?filterRulesByCity=1",
       },
     ],
   ],
