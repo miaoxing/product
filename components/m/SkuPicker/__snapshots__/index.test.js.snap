@@ -137,3 +137,15 @@ Array [
   Array [],
 ]
 `;
+
+exports[`SkuPicker preview image 1`] = `
+Array [
+  Array [
+    Object {
+      "urls": Array [
+        undefined,
+      ],
+    },
+  ],
+]
+`;

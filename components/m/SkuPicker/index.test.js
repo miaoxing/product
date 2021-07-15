@@ -1,7 +1,7 @@
 import SkuPicker from './index';
 import {render, fireEvent} from '@testing-library/react';
 import {Ret} from 'miaoxing';
-import {useState} from 'react';
+import Taro from '@tarojs/taro';
 
 const product = {
   spec: {
@@ -50,5 +50,18 @@ describe('SkuPicker', () => {
 
     expect(handleClose).toBeCalledTimes(1);
     expect(handleClose.mock.calls).toMatchSnapshot();
+  });
+
+  test('preview image', () => {
+    const {container} = render(<SkuPicker product={product}/>);
+
+    // 点击查看图片
+    const image = container.querySelector('taro-image-core');
+
+    Taro.previewImage = jest.fn();
+
+    fireEvent.click(image);
+    expect(Taro.previewImage).toBeCalled();
+    expect(Taro.previewImage.mock.calls).toMatchSnapshot();
   });
 });
