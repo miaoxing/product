@@ -37,6 +37,7 @@ export default class Products extends Component {
         $.ret(ret);
         return;
       }
+
       this.setState({
         ret,
         selectedText: ret.data.spec.specs.map(spec => spec.name).join(' / '),
@@ -180,7 +181,7 @@ export default class Products extends Component {
                 <Icon type="home" textBase/>
                 店铺
               </FooterBar.Icon>
-              <FooterBar.Icon href={$.url('carts')}>
+              <FooterBar.Icon href={$.url('carts?x=y')}>
                 <AtBadge value={this.state.cartCount || null} className="cart-num">
                   <Icon type="cart" textBase/>
                 </AtBadge>

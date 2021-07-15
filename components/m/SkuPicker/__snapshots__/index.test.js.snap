@@ -54,13 +54,13 @@ exports[`SkuPicker basic 1`] = `
                 <taro-view-core
                   class="sku-picker-spec-name"
                 >
-                  默认
+                  默认规格
                 </taro-view-core>
                 <taro-view-core>
                   <taro-text-core
                     class="sku-picker-spec-value active"
                   >
-                    默认
+                    默认值
                   </taro-text-core>
                 </taro-view-core>
               </taro-view-core>
@@ -81,7 +81,7 @@ exports[`SkuPicker basic 1`] = `
                 >
                    
                   剩下 
-                  10
+                  21
                    
                   件
                 </taro-text-core>
@@ -143,7 +143,7 @@ Array [
   Array [
     Object {
       "urls": Array [
-        undefined,
+        "https://dev.test.com/uploads/1/210610/002439539409.png",
       ],
     },
   ],

@@ -4,12 +4,12 @@ exports[`Show action 1`] = `
 Array [
   Array [
     Object {
-      "current": "http://dev.test.com/uploads/1/210610/002439539409.png",
+      "current": "https://dev.test.com/uploads/1/210610/002439539409.png",
       "urls": Array [
-        "http://dev.test.com/uploads/1/210610/002439539409.png",
-        "http://dev.test.com/uploads/1/210610/000924427937.jpg",
-        "http://dev.test.com/uploads/1/210610/000918792585.jpg",
-        "http://dev.test.com/uploads/1/210610/002904468645.png",
+        "https://dev.test.com/uploads/1/210610/002439539409.png",
+        "https://dev.test.com/uploads/1/210610/000924427937.jpg",
+        "https://dev.test.com/uploads/1/210610/000918792585.jpg",
+        "https://dev.test.com/uploads/1/210610/002904468645.png",
       ],
     },
   ],
@@ -32,14 +32,14 @@ exports[`Show action 2`] = `
     ],
     Array [
       Object {
-        "url": "/api/products/81/shipping-tpl?filterRulesByCity=1",
+        "url": "/api/products/1/shipping-tpl?filterRulesByCity=1",
       },
     ],
     Array [
       Object {
         "data": Object {
           "quantity": 1,
-          "skuId": 46,
+          "skuId": 3,
         },
         "method": "post",
         "url": "/api/carts",
@@ -145,12 +145,12 @@ exports[`Show basic 1`] = `
             >
               <taro-view-core>
                 <taro-view-core>
-                  这公会车车挂这公会车车挂非常防虫扥东这公会车车挂这公会车车挂非常防虫扥东
+                  alias commodi ipsam
                 </taro-view-core>
                 <taro-view-core
                   style="color: rgb(113, 113, 122);"
                 >
-                  欢迎亲临门店体验
+                  consequatur officia sequi
                 </taro-view-core>
               </taro-view-core>
               <taro-button-core
@@ -234,7 +234,7 @@ exports[`Show basic 1`] = `
             <p>
               <img
                 alt="14 - 3 (2).png"
-                src="http://dev.test.com/uploads/images/20210528/1622199614338752.png"
+                src="https://dev.test.com/uploads/images/20210528/1622199614338752.png"
               />
             </p>
             <p>
@@ -346,7 +346,7 @@ exports[`Show basic 1`] = `
                         <taro-text-core>
                           ￥
                         </taro-text-core>
-                        11 ~ 9
+                        9 ~ 14
                         
                       </taro-block-core>
                     </taro-view-core>
@@ -374,7 +374,7 @@ exports[`Show basic 1`] = `
                       </taro-view-core>
                       <taro-view-core>
                         <taro-text-core
-                          class="sku-picker-spec-value disabled"
+                          class="sku-picker-spec-value"
                         >
                           S
                         </taro-text-core>
@@ -382,11 +382,6 @@ exports[`Show basic 1`] = `
                           class="sku-picker-spec-value"
                         >
                           M
-                        </taro-text-core>
-                        <taro-text-core
-                          class="sku-picker-spec-value"
-                        >
-                          L
                         </taro-text-core>
                       </taro-view-core>
                     </taro-view-core>
@@ -405,7 +400,7 @@ exports[`Show basic 1`] = `
                           红色
                         </taro-text-core>
                         <taro-text-core
-                          class="sku-picker-spec-value disabled"
+                          class="sku-picker-spec-value"
                         >
                           蓝色
                         </taro-text-core>
@@ -426,10 +421,9 @@ exports[`Show basic 1`] = `
                       <taro-text-core
                         style="color: rgb(113, 113, 122);"
                       >
-                        每人限购 11 件
                          
                         剩下 
-                        27
+                        21
                          
                         件
                       </taro-text-core>
@@ -499,7 +493,7 @@ exports[`Show basic 2`] = `
     ],
     Array [
       Object {
-        "url": "/api/products/81/shipping-tpl?filterRulesByCity=1",
+        "url": "/api/products/1/shipping-tpl?filterRulesByCity=1",
       },
     ],
   ],
