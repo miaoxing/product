@@ -82,4 +82,78 @@ describe('SkuPicker', () => {
 
     expect(first.className).toContain('active');
   });
+
+  test('dont disable sold out spec if selected', () => {
+    const newProduct = {
+      ...product,
+      spec: {
+        'isDefault': false,
+        'specs': [
+          {
+            'id': 2,
+            'name': '尺寸',
+            'values': [{'id': 2, 'name': 'S'}, {'id': 3, 'name': 'M'}],
+          },
+          {
+            'id': 3,
+            'name': '颜色',
+            'values': [{'id': 5, 'name': '红色'}, {'id': 7, 'name': '蓝色'}],
+          },
+        ],
+      },
+      skus: [{
+        'id': 1,
+        'specValueIds': [2, 5],
+        'price': '9',
+        'marketPrice': '10',
+        'score': 0,
+        'stockNum': 0,
+        'soldNum': 0,
+        'image': '',
+      }, {
+        'id': 2,
+        'specValueIds': [2, 7],
+        'price': '11',
+        'marketPrice': '12',
+        'score': 0,
+        'stockNum': 0,
+        'soldNum': 0,
+        'image': '',
+      }, {
+        'id': 3,
+        'specValueIds': [3, 5],
+        'price': '12',
+        'marketPrice': '13',
+        'score': 0,
+        'stockNum': 12,
+        'soldNum': 0,
+        'image': '',
+      }, {
+        'id': 4,
+        'specValueIds': [3, 7],
+        'price': '14',
+        'marketPrice': '15',
+        'score': 0,
+        'stockNum': 0,
+        'soldNum': 0,
+        'image': '',
+      }],
+    };
+
+    const {getByText} = render(<SkuPicker product={newProduct} selectedValueIds={[2, 5]}/>);
+
+    // 选中的规格，不禁用
+    const size = getByText('S');
+    expect(size.className).toContain('active');
+    expect(size.className).not.toContain('disabled');
+
+    // 取消选择后，被禁用
+    fireEvent.click(size);
+    expect(size.className).toContain('disabled');
+
+    // 再次点击，不能选中，依然是禁用状态
+    fireEvent.click(size);
+    expect(size.className).not.toContain('active');
+    expect(size.className).toContain('disabled');
+  });
 });
