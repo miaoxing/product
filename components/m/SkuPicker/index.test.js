@@ -73,4 +73,13 @@ describe('SkuPicker', () => {
 
     expect(queryByText('默认')).toBeNull();
   });
+
+  test('default selected if only one spec value', () => {
+    product.spec.specs[0].values[0].name = '默认值';
+    const {getByText} = render(<SkuPicker product={product}/>);
+
+    const first = getByText('默认值');
+
+    expect(first.className).toContain('active');
+  });
 });
