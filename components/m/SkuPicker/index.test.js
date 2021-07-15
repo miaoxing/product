@@ -64,4 +64,13 @@ describe('SkuPicker', () => {
     expect(Taro.previewImage).toBeCalled();
     expect(Taro.previewImage.mock.calls).toMatchSnapshot();
   });
+
+  test('hide default spec', () => {
+    const newSpec = {...product.spec, isDefault: true};
+    const newProduct = {...product, spec: newSpec};
+
+    const {queryByText} = render(<SkuPicker product={newProduct}/>);
+
+    expect(queryByText('默认')).toBeNull();
+  });
 });
