@@ -1,5 +1,5 @@
 import SkuPicker from './index';
-import {render, fireEvent} from '@testing-library/react';
+import {render, fireEvent, waitFor} from '@testing-library/react';
 import Taro from '@tarojs/taro';
 import {createProduct, createSingleSkuProduct} from '@miaoxing/product/test-utils';
 
@@ -76,5 +76,47 @@ describe('SkuPicker', () => {
     const {queryByText} = render(<SkuPicker product={createProduct({maxOrderQuantity: 11})}/>);
 
     expect(queryByText(/每人限购 11 件/)).not.toBeNull();
+  });
+
+  test('select spec', async () => {
+    const {container, getByText, queryByText, findByText} = render(<SkuPicker product={createProduct()}/>);
+
+    expect(queryByText('9 ~ 14')).not.toBeNull();
+    expect(queryByText(/剩下(\s+)21(\s+)件/)).not.toBeNull();
+
+    const stepper = container.querySelector('.mx-stepper-input');
+
+    // TODO Error: The given element does not have a value setter
+    // fireEvent.change(stepper, {target: {value: '7'}});
+    const plus = container.querySelector('.mx-stepper-plus');
+    for (let i = 1; i < 7; i++) {
+      fireEvent.click(plus);
+    }
+    expect(stepper.value).toBe(7);
+
+    const sizeS = getByText('S');
+    fireEvent.click(sizeS);
+    expect(sizeS.className).toContain('active');
+    expect(queryByText('9 ~ 11')).not.toBeNull();
+    expect(queryByText(/剩下(\s+)6(\s+)件/)).not.toBeNull();
+    expect(stepper.value).toBe(6);
+
+    // S 红色 无货
+    const colorRed = getByText('红色');
+    expect(colorRed.className).toContain('disabled');
+
+    const colorBlue = getByText('蓝色');
+    fireEvent.click(colorBlue);
+    expect(colorBlue.className).toContain('active');
+    await findByText('11');
+    expect(queryByText(/剩下(\s+)6(\s+)件/)).not.toBeNull();
+
+    const sizeM = getByText('M');
+    fireEvent.click(sizeM);
+    expect(sizeM.className).toContain('active');
+    expect(sizeS.className).not.toContain('active');
+    await waitFor(() => expect(colorRed.className).not.toContain('disabled'));
+    expect(queryByText('14')).not.toBeNull();
+    expect(queryByText(/剩下(\s+)8(\s+)件/)).not.toBeNull();
   });
 });
