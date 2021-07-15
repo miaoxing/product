@@ -156,4 +156,12 @@ describe('SkuPicker', () => {
     expect(size.className).not.toContain('active');
     expect(size.className).toContain('disabled');
   });
+
+  test('maxOrderQuantity', () => {
+    product.maxOrderQuantity = 11;
+
+    const {queryByText} = render(<SkuPicker product={product}/>);
+
+    expect(queryByText(/每人限购 11 件/)).not.toBeNull();
+  });
 });
