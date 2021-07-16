@@ -198,4 +198,36 @@ describe('SkuPicker', () => {
     expect(handleClose).toMatchSnapshot();
     expect(handleAfterRequest).toMatchSnapshot();
   });
+
+  test('create order', async () => {
+    Taro.navigateTo = jest.fn();
+
+    const promise = createPromise();
+    const handleClose = jest.fn()
+      .mockImplementationOnce(() => promise.resolve());
+
+    const {container, getByText} = render(<SkuPicker
+      product={createProduct()}
+      action="createOrder"
+      onClose={handleClose}
+    />);
+
+    const sizeS = getByText('S');
+    fireEvent.click(sizeS);
+
+    const colorBlue = getByText('蓝色');
+    fireEvent.click(colorBlue);
+
+    const plus = container.querySelector('.mx-stepper-plus');
+    fireEvent.click(plus);
+
+    const btn = getByText('立即购买');
+    fireEvent.click(btn);
+
+    await promise;
+
+    expect(container).toMatchSnapshot();
+    expect(Taro.navigateTo).toMatchSnapshot();
+    expect(handleClose).toMatchSnapshot();
+  });
 });
