@@ -558,6 +558,55 @@ Array [
 ]
 `;
 
+exports[`SkuPicker show unselected tips 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "data": Object {
+          "quantity": 1,
+          "skuId": 2,
+        },
+        "method": "post",
+        "url": "/api/carts",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
+
+exports[`SkuPicker show unselected tips 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "请选择尺寸",
+    ],
+    Array [
+      "请选择颜色",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`SkuPicker update cart 1`] = `
 <div>
   <taro-view-core

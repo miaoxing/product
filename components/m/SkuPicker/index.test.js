@@ -230,4 +230,36 @@ describe('SkuPicker', () => {
     expect(Taro.navigateTo).toMatchSnapshot();
     expect(handleClose).toMatchSnapshot();
   });
+
+  test('show unselected tips', async () => {
+    $.err = jest.fn();
+
+    const promise = createPromise();
+    $.http = jest.fn()
+      .mockImplementationOnce(() => promise.resolve({
+        ret: Ret.suc(),
+      }));
+
+    const {getByText} = render(<SkuPicker
+      product={createProduct()}
+      action="createCart"
+    />);
+
+    const btn = getByText('加入购物车');
+    fireEvent.click(btn);
+
+    const sizeS = getByText('S');
+    fireEvent.click(sizeS);
+    fireEvent.click(btn);
+
+    const colorBlue = getByText('蓝色');
+    fireEvent.click(colorBlue);
+
+    fireEvent.click(btn);
+
+    await promise;
+
+    expect($.http).toMatchSnapshot();
+    expect($.err).toMatchSnapshot();
+  });
 });
