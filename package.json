@@ -6,16 +6,7 @@
   "author": "twinh",
   "license": "MIT",
   "jest": {
-    "preset": "jest-preset-miaoxing",
-    "moduleNameMapper": {
-      "@tarojs/components": "@tarojs/components/dist-h5/react",
-      "@tarojs/taro": "@tarojs/taro-h5"
-    },
-    "globals": {
-      "ENABLE_INNER_HTML": true,
-      "ENABLE_ADJACENT_HTML": true,
-      "ENABLE_SIZE_APIS": true
-    }
+    "preset": "jest-preset-miaoxing"
   },
   "workspaces": [
     "plugins/*"
