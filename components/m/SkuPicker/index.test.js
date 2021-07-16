@@ -2,6 +2,10 @@ import SkuPicker from './index';
 import {render, fireEvent, waitFor} from '@testing-library/react';
 import Taro from '@tarojs/taro';
 import {createProduct, createSingleSkuProduct} from '@miaoxing/product/test-utils';
+import {bootstrap, createPromise} from '@mxjs/test';
+import $, {Ret} from 'miaoxing';
+
+bootstrap();
 
 describe('SkuPicker', () => {
   test('basic', async () => {
@@ -118,5 +122,44 @@ describe('SkuPicker', () => {
     await waitFor(() => expect(colorRed.className).not.toContain('disabled'));
     expect(queryByText('14')).not.toBeNull();
     expect(queryByText(/剩下(\s+)8(\s+)件/)).not.toBeNull();
+  });
+
+  test('create cart', async () => {
+    $.http = jest.fn()
+      .mockImplementationOnce(() => new Promise(resolve => resolve({
+        ret: Ret.suc(),
+      })));
+
+    const handleClose = jest.fn();
+
+    const promise = createPromise();
+    const handleAfterRequest = jest.fn()
+      .mockImplementationOnce(() => promise.resolve());
+
+    const {container, getByText} = render(<SkuPicker
+      product={createProduct()}
+      action="createCart"
+      onClose={handleClose}
+      onAfterRequest={handleAfterRequest}
+    />);
+
+    const sizeS = getByText('S');
+    fireEvent.click(sizeS);
+
+    const colorBlue = getByText('蓝色');
+    fireEvent.click(colorBlue);
+
+    const plus = container.querySelector('.mx-stepper-plus');
+    fireEvent.click(plus);
+
+    const btn = getByText('加入购物车');
+    fireEvent.click(btn);
+
+    await promise;
+
+    expect(container).toMatchSnapshot();
+    expect($.http).toMatchSnapshot();
+    expect(handleClose).toMatchSnapshot();
+    expect(handleAfterRequest).toMatchSnapshot();
   });
 });
