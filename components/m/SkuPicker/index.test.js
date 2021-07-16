@@ -162,4 +162,40 @@ describe('SkuPicker', () => {
     expect(handleClose).toMatchSnapshot();
     expect(handleAfterRequest).toMatchSnapshot();
   });
+
+  test('update cart', async () => {
+    $.http = jest.fn()
+      .mockImplementationOnce(() => new Promise(resolve => resolve({
+        ret: Ret.suc(),
+      })));
+
+    const handleClose = jest.fn();
+
+    const promise = createPromise();
+    const handleAfterRequest = jest.fn()
+      .mockImplementationOnce(() => promise.resolve());
+
+    const {container, getByText} = render(<SkuPicker
+      product={createProduct()}
+      action="updateCart"
+      cartId={1}
+      selectedValueIds={[2, 3]}
+      quantity={3}
+      onClose={handleClose}
+      onAfterRequest={handleAfterRequest}
+    />);
+
+    const plus = container.querySelector('.mx-stepper-plus');
+    fireEvent.click(plus);
+
+    const btn = getByText('确 定');
+    fireEvent.click(btn);
+
+    await promise;
+
+    expect(container).toMatchSnapshot();
+    expect($.http).toMatchSnapshot();
+    expect(handleClose).toMatchSnapshot();
+    expect(handleAfterRequest).toMatchSnapshot();
+  });
 });
