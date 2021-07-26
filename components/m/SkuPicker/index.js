@@ -156,6 +156,8 @@ const useStateWithDep = (defaultValue, dep) => {
   return [value, setValue];
 };
 
+let counter = 0;
+
 const SkuPicker = (
   {
     product,
@@ -278,6 +280,24 @@ const SkuPicker = (
     onAfterSelectSpec && onAfterSelectSpec(api);
   }, [JSON.stringify(selectedValueIds)]);
 
+  // 计算和底部操作按钮的距离，手机宽 375 时，距离为 56
+  const [id] = useState(() => {
+    return '__sku-picker-footer-bar-' + ++counter;
+  });
+  const [footerBarHeight, setFooterBarHeight] = useState(56);
+  useEffect(() => {
+    setTimeout(() => {
+      const query = Taro.createSelectorQuery();
+      query.select('#' + id).boundingClientRect(rect => {
+        if (!rect) {
+          return;
+        }
+
+        setFooterBarHeight(rect.height + 'px');
+      }).exec();
+    });
+  }, []);
+
   // 检查规格是否已选完
   const check = () => {
     for (const spec of product.spec.specs) {
@@ -322,7 +342,7 @@ const SkuPicker = (
         <View text3XL fontHairline mt="-1rem" gray500 onClick={handleClose}>&times;</View>
       </View>
 
-      <View maxH="60vh" overflowYScroll mb="56px">
+      <View maxH="60vh" overflowYScroll mb={footerBarHeight}>
         {!product.spec.isDefault && <View m3 column className="border-b">
           {product.spec.specs.map((spec) => {
             return (
@@ -365,7 +385,7 @@ const SkuPicker = (
         </View>
       </View>
 
-      <FooterBar>
+      <FooterBar id={id}>
         <ActionButtonGroup ret={product.createCartOrOrder} action={action} onClick={handleClickButton}/>
       </FooterBar>
     </AtFloatLayout>
