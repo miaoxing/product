@@ -358,7 +358,7 @@ exports[`Show basic 1`] = `
                   </taro-view-core>
                 </taro-view-core>
                 <taro-view-core
-                  style="margin-bottom: 56px; max-height: 60vh; overflow-y: scroll;"
+                  style="max-height: 60vh; overflow-y: scroll; margin-bottom: 0px;"
                 >
                   <taro-view-core
                     class="border-b"
