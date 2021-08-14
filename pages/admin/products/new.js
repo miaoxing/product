@@ -8,7 +8,7 @@ import {Form, FormItem, FormAction, Select} from '@mxjs/a-form';
 import {Divider, Radio, Switch, AutoComplete, TreeSelect} from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import Upload from '@mxjs/upload';
-import Sku from '../../../components/Sku';
+import Sku from '@miaoxing/product/components/admin/Sku';
 import api from '@mxjs/api';
 import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';

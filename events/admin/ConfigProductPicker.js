@@ -12,7 +12,7 @@ import api from '@mxjs/api';
 import appendUrl from 'append-url';
 import PropTypes from 'prop-types';
 import {NewBtn} from '@mxjs/a-button';
-import ProductMedia from '../../components/ProductMedia';
+import ProductMedia from '@miaoxing/product/components/admin/ProductMedia';
 
 const defaultImage = window.location.origin + $.url('plugins/page/images/default-swiper.svg');
 
