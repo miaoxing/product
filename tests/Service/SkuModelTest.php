@@ -20,9 +20,9 @@ class SkuModelTest extends BaseTestCase
         $createCart = $sku->checkCreateCart();
 
         if ($createCart->isErr()) {
-            $this->assertRetErr($ret, $ret['message']);
+            $this->assertRetErr($ret, $ret->getMessage());
         } else {
-            $this->assertRetSuc($ret, $ret['message']);
+            $this->assertRetSuc($ret, $ret->getMessage());
         }
     }
 
