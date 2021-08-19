@@ -9,6 +9,7 @@ import FooterBar from '@mxjs/m-footer-bar';
 import ActionButtonGroup from '../ActionButtonGroup';
 import Stepper from '@mxjs/m-stepper';
 import PropTypes from 'prop-types';
+import useId from '@accessible/use-id';
 
 const contains = function (container, array) {
   for (const el of array) {
@@ -156,8 +157,6 @@ const useStateWithDep = (defaultValue, dep) => {
   return [value, setValue];
 };
 
-let counter = 0;
-
 const SkuPicker = (
   {
     product,
@@ -281,14 +280,12 @@ const SkuPicker = (
   }, [JSON.stringify(selectedValueIds)]);
 
   // 计算和底部操作按钮的距离，手机宽 375 时，距离为 56
-  const [id] = useState(() => {
-    return '__sku-picker-footer-bar-' + ++counter;
-  });
+  const cls = useId(null, '__sku-picker-footer-bar-');
   const [footerBarHeight, setFooterBarHeight] = useState(56);
   useEffect(() => {
     setTimeout(() => {
       const query = Taro.createSelectorQuery();
-      query.select('#' + id).boundingClientRect(rect => {
+      query.select('.' + cls).boundingClientRect(rect => {
         if (!rect) {
           return;
         }
@@ -385,7 +382,7 @@ const SkuPicker = (
         </View>
       </View>
 
-      <FooterBar id={id}>
+      <FooterBar className={cls}>
         <ActionButtonGroup ret={product.createCartOrOrder} action={action} onClick={handleClickButton}/>
       </FooterBar>
     </AtFloatLayout>
