@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductMedia basic 1`] = `
+<div>
+  <div
+    class="media"
+  >
+    <span
+      class="ant-avatar ant-avatar-square ant-avatar-image ant-avatar-icon css-8er82g"
+      style="width: 48px; height: 48px; line-height: 48px; font-size: 24px;"
+    >
+      <img
+        src="image"
+      />
+    </span>
+    <div
+      class="media-body"
+    >
+      name
+    </div>
+  </div>
+</div>
+`;
