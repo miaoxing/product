@@ -13,7 +13,7 @@ use Wei\V;
 return new class extends BaseController {
     use ItemTrait;
 
-    protected $expand = [
+    protected $include = [
         'images',
         'spec',
         'skus',
