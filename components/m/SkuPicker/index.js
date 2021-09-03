@@ -9,7 +9,7 @@ import FooterBar from '@mxjs/m-footer-bar';
 import ActionButtonGroup from '../ActionButtonGroup';
 import Stepper from '@mxjs/m-stepper';
 import PropTypes from 'prop-types';
-import useId from '@accessible/use-id';
+import useUid from 'use-uid';
 
 const contains = function (container, array) {
   for (const el of array) {
@@ -280,7 +280,7 @@ const SkuPicker = (
   }, [JSON.stringify(selectedValueIds)]);
 
   // 计算和底部操作按钮的距离，手机宽 375 时，距离为 56
-  const cls = useId(null, '__sku-picker-footer-bar-');
+  const cls = useUid('__sku-picker-footer-bar-');
   const [footerBarHeight, setFooterBarHeight] = useState(56);
   useEffect(() => {
     setTimeout(() => {
