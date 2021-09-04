@@ -4,6 +4,7 @@ namespace Miaoxing\Product\Service;
 
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Model\ModelTrait;
+use Miaoxing\Plugin\Model\SnowflakeTrait;
 use Miaoxing\Product\Metadata\ProductSpecTrait;
 
 /**
@@ -13,4 +14,5 @@ class ProductSpecModel extends BaseModel
 {
     use ModelTrait;
     use ProductSpecTrait;
+    use SnowflakeTrait;
 }

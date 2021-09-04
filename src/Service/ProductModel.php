@@ -8,9 +8,9 @@ use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Model\ModelTrait;
 use Miaoxing\Plugin\Model\ReqQueryTrait;
+use Miaoxing\Plugin\Model\SnowflakeTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Product\Metadata\ProductTrait;
-use Miaoxing\Seq\Model\SeqTrait;
 use Wei\Event;
 use Wei\Ret;
 use Wei\Time;
@@ -32,7 +32,7 @@ class ProductModel extends BaseModel
     use ModelTrait;
     use ProductTrait;
     use ReqQueryTrait;
-    use SeqTrait;
+    use SnowflakeTrait;
     use SoftDeleteTrait;
 
     public const STATUS_NOT_STARTED = 1;
