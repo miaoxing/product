@@ -15,7 +15,7 @@ class V20170330181950CreateProductsTable extends BaseMigration
             ->bigId()->comment('编号')
             ->uInt('app_id')->comment('应用编号')
             ->string('outer_id', 36)->comment('外部编号')
-            ->uInt('shipping_tpl_id')->comment('运费模板编号')
+            ->uBigInt('shipping_tpl_id')->comment('运费模板编号')
             ->string('name')->comment('名称')
             ->string('intro')->comment('简介')
             ->uDecimal('min_price', 10)->comment('最低的销售价')
@@ -47,8 +47,8 @@ class V20170330181950CreateProductsTable extends BaseMigration
             ->exec();
 
         $this->schema->table('product_details')->tableComment('商品详情；1:1')
-            ->id()->comment('编号')
-            ->int('product_id')->comment('商品编号')
+            ->bigId()->comment('编号')
+            ->uBigInt('product_id')->comment('商品编号')
             ->mediumText('content')->comment('内容')
             ->timestamps()
             ->userstamps()

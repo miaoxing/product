@@ -33,8 +33,8 @@ return new class extends BaseController {
             $v->tinyChar('url', '地址');
         });
         $v->array('categoriesProducts', '分类', null, 9)->each(function (V $v) {
-            $v->uDefaultInt('id', '编号')->optional();
-            $v->uDefaultInt('categoryId', '值')->modelExists(CategoryModel::class);
+            $v->uBigInt('id', '编号')->optional();
+            $v->uBigInt('categoryId', '值')->modelExists(CategoryModel::class);
         });
         $v->array(['spec', 'specs'], '规格', 1, 3)->required($product->isNew())->each(function (V $v) {
             $v->char('name', '名称')->maxCharLength(5);
@@ -59,7 +59,7 @@ return new class extends BaseController {
                 $v->char('specName', '规格名称')->maxCharLength(5);
             });
         });
-        $v->uDefaultInt('shippingTplId', '运费模板')->modelExists(ShippingTplModel::class);
+        $v->uBigInt('shippingTplId', '运费模板')->modelExists(ShippingTplModel::class);
         $v->mediumText(['detail', 'content'], '描述');
         $v->bool('isListing', '是否上架');
         $v->dateTime('startAt', '上架开始时间')->allowEmpty();

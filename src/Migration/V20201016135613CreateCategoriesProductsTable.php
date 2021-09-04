@@ -14,7 +14,7 @@ class V20201016135613CreateCategoriesProductsTable extends BaseMigration
         $this->schema->table('categories_products')->tableComment('商品分类；m:n')
             ->bigId()->comment('编号')
             ->uInt('app_id')->comment('应用编号')
-            ->uInt('category_id')->comment('分类编号')
+            ->uBigInt('category_id')->comment('分类编号')
             ->uBigInt('product_id')->comment('商品编号')
             ->uSmallInt('sort')->comment('顺序，从大到小排列')
             ->userstamps()
