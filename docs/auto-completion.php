@@ -8,6 +8,12 @@ class CategoriesProductModelMixin {
 }
 
 /**
+ * @property    Miaoxing\Product\Service\Product $product
+ */
+class ProductMixin {
+}
+
+/**
  * @property    Miaoxing\Product\Service\ProductDetailModel $productDetailModel
  * @method      Miaoxing\Product\Service\ProductDetailModel productDetailModel() 返回当前对象
  */
@@ -58,6 +64,7 @@ class SpecValueModelMixin {
 
 /**
  * @mixin CategoriesProductModelMixin
+ * @mixin ProductMixin
  * @mixin ProductDetailModelMixin
  * @mixin ProductImageModelMixin
  * @mixin ProductModelMixin
@@ -82,6 +89,9 @@ $categoriesProduct = wei()->categoriesProductModel;
 
 /** @var Miaoxing\Product\Service\CategoriesProductModel|Miaoxing\Product\Service\CategoriesProductModel[] $categoriesProducts */
 $categoriesProducts = wei()->categoriesProductModel();
+
+/** @var Miaoxing\Product\Service\Product $product */
+$product = wei()->product;
 
 /** @var Miaoxing\Product\Service\ProductDetailModel $productDetail */
 $productDetail = wei()->productDetailModel;

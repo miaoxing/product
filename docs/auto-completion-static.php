@@ -30,11 +30,11 @@ class CategoriesProductModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see CategoriesProductModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -82,9 +82,21 @@ class CategoriesProductModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see CategoriesProductModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -156,6 +168,7 @@ class CategoriesProductModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::findAll
      */
     public static function findAll(array $ids): self
@@ -178,6 +191,7 @@ class CategoriesProductModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -190,7 +204,7 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -230,6 +244,7 @@ class CategoriesProductModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::all
      */
     public static function all(): self
@@ -244,6 +259,26 @@ class CategoriesProductModel
      * @see CategoriesProductModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see CategoriesProductModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see CategoriesProductModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -481,8 +516,13 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -495,8 +535,12 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -509,8 +553,12 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -523,8 +571,12 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -857,22 +909,47 @@ class CategoriesProductModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see CategoriesProductModel::setCacheTime
+     * @see CategoriesProductModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see CategoriesProductModel::unscoped
+     * @see CategoriesProductModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see CategoriesProductModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see CategoriesProductModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -898,7 +975,7 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::reallyDestroy
      */
-    public static function reallyDestroy($id = false): self
+    public static function reallyDestroy($id = null): self
     {
     }
 
@@ -933,6 +1010,44 @@ class CategoriesProductModel
     }
 }
 
+class Product
+{
+    /**
+     * Create product by given params
+     *
+     * @param array|Req $req
+     * @return Ret
+     * @see Product::create
+     */
+    public static function create($req): \Wei\Ret
+    {
+    }
+
+    /**
+     * Update product by given params and product model
+     *
+     * @param array|Req $req
+     * @param ProductModel $product
+     * @return Ret
+     * @see Product::update
+     */
+    public static function update($req, ProductModel $product): \Wei\Ret
+    {
+    }
+
+    /**
+     * Create or update product by given params
+     *
+     * @param array|Req $req
+     * @param ProductModel|null $product
+     * @return Ret
+     * @see Product::createOrUpdate
+     */
+    public static function createOrUpdate($req, ProductModel $product = null): \Wei\Ret
+    {
+    }
+}
+
 class ProductDetailModel
 {
     /**
@@ -961,11 +1076,11 @@ class ProductDetailModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductDetailModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -1013,9 +1128,21 @@ class ProductDetailModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductDetailModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -1087,6 +1214,7 @@ class ProductDetailModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::findAll
      */
     public static function findAll(array $ids): self
@@ -1109,6 +1237,7 @@ class ProductDetailModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -1121,7 +1250,7 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -1161,6 +1290,7 @@ class ProductDetailModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::all
      */
     public static function all(): self
@@ -1175,6 +1305,26 @@ class ProductDetailModel
      * @see ProductDetailModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductDetailModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductDetailModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -1412,8 +1562,13 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -1426,8 +1581,12 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -1440,8 +1599,12 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -1454,8 +1617,12 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -1788,22 +1955,47 @@ class ProductDetailModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductDetailModel::setCacheTime
+     * @see ProductDetailModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductDetailModel::unscoped
+     * @see ProductDetailModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductDetailModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductDetailModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -1851,11 +2043,11 @@ class ProductImageModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductImageModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -1903,9 +2095,21 @@ class ProductImageModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductImageModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -1977,6 +2181,7 @@ class ProductImageModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::findAll
      */
     public static function findAll(array $ids): self
@@ -1999,6 +2204,7 @@ class ProductImageModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -2011,7 +2217,7 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -2051,6 +2257,7 @@ class ProductImageModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::all
      */
     public static function all(): self
@@ -2065,6 +2272,26 @@ class ProductImageModel
      * @see ProductImageModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductImageModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductImageModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -2302,8 +2529,13 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -2316,8 +2548,12 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -2330,8 +2566,12 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -2344,8 +2584,12 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -2678,22 +2922,47 @@ class ProductImageModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductImageModel::setCacheTime
+     * @see ProductImageModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductImageModel::unscoped
+     * @see ProductImageModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductImageModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductImageModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -2751,11 +3020,11 @@ class ProductModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -2803,9 +3072,21 @@ class ProductModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -2877,6 +3158,7 @@ class ProductModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::findAll
      */
     public static function findAll(array $ids): self
@@ -2899,6 +3181,7 @@ class ProductModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -2911,7 +3194,7 @@ class ProductModel
      * @return $this
      * @see ProductModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -2951,6 +3234,7 @@ class ProductModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::all
      */
     public static function all(): self
@@ -2965,6 +3249,26 @@ class ProductModel
      * @see ProductModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -3202,8 +3506,13 @@ class ProductModel
      * @return $this
      * @see ProductModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -3216,8 +3525,12 @@ class ProductModel
      * @return $this
      * @see ProductModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -3230,8 +3543,12 @@ class ProductModel
      * @return $this
      * @see ProductModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -3244,8 +3561,12 @@ class ProductModel
      * @return $this
      * @see ProductModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -3578,22 +3899,47 @@ class ProductModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductModel::setCacheTime
+     * @see ProductModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductModel::unscoped
+     * @see ProductModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -3613,22 +3959,13 @@ class ProductModel
     }
 
     /**
-     * @param array|string $columns
-     * @return $this
-     * @see ProductModel::like
-     */
-    public static function like($columns): self
-    {
-    }
-
-    /**
      * Really remove the record from database
      *
      * @param int|string $id
      * @return $this
      * @see ProductModel::reallyDestroy
      */
-    public static function reallyDestroy($id = false): self
+    public static function reallyDestroy($id = null): self
     {
     }
 
@@ -3691,11 +4028,11 @@ class ProductSpecModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductSpecModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -3743,9 +4080,21 @@ class ProductSpecModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductSpecModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -3817,6 +4166,7 @@ class ProductSpecModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::findAll
      */
     public static function findAll(array $ids): self
@@ -3839,6 +4189,7 @@ class ProductSpecModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -3851,7 +4202,7 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -3891,6 +4242,7 @@ class ProductSpecModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::all
      */
     public static function all(): self
@@ -3905,6 +4257,26 @@ class ProductSpecModel
      * @see ProductSpecModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductSpecModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductSpecModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -4142,8 +4514,13 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -4156,8 +4533,12 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -4170,8 +4551,12 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -4184,8 +4569,12 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -4518,22 +4907,47 @@ class ProductSpecModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductSpecModel::setCacheTime
+     * @see ProductSpecModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductSpecModel::unscoped
+     * @see ProductSpecModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductSpecModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductSpecModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -4581,11 +4995,11 @@ class SkuModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SkuModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -4633,9 +5047,21 @@ class SkuModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SkuModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -4707,6 +5133,7 @@ class SkuModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::findAll
      */
     public static function findAll(array $ids): self
@@ -4729,6 +5156,7 @@ class SkuModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -4741,7 +5169,7 @@ class SkuModel
      * @return $this
      * @see SkuModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -4781,6 +5209,7 @@ class SkuModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::all
      */
     public static function all(): self
@@ -4795,6 +5224,26 @@ class SkuModel
      * @see SkuModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SkuModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SkuModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -5032,8 +5481,13 @@ class SkuModel
      * @return $this
      * @see SkuModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -5046,8 +5500,12 @@ class SkuModel
      * @return $this
      * @see SkuModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -5060,8 +5518,12 @@ class SkuModel
      * @return $this
      * @see SkuModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -5074,8 +5536,12 @@ class SkuModel
      * @return $this
      * @see SkuModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -5408,22 +5874,47 @@ class SkuModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SkuModel::setCacheTime
+     * @see SkuModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SkuModel::unscoped
+     * @see SkuModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SkuModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SkuModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -5439,6 +5930,47 @@ class SkuModel
      * @see SkuModel::isRelation
      */
     public static function isRelation(string $method): bool
+    {
+    }
+
+    /**
+     * Really remove the record from database
+     *
+     * @param int|string $id
+     * @return $this
+     * @see SkuModel::reallyDestroy
+     */
+    public static function reallyDestroy($id = null): self
+    {
+    }
+
+    /**
+     * Add a query to filter soft deleted records
+     *
+     * @return $this
+     * @see SkuModel::withoutDeleted
+     */
+    public static function withoutDeleted(): self
+    {
+    }
+
+    /**
+     * Add a query to return only deleted records
+     *
+     * @return $this
+     * @see SkuModel::onlyDeleted
+     */
+    public static function onlyDeleted(): self
+    {
+    }
+
+    /**
+     * Remove "withoutDeleted" in the query, expect to return all records
+     *
+     * @return $this
+     * @see SkuModel::withDeleted
+     */
+    public static function withDeleted(): self
     {
     }
 }
@@ -5471,11 +6003,11 @@ class SpecModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SpecModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -5523,9 +6055,21 @@ class SpecModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SpecModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -5597,6 +6141,7 @@ class SpecModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::findAll
      */
     public static function findAll(array $ids): self
@@ -5619,6 +6164,7 @@ class SpecModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -5631,7 +6177,7 @@ class SpecModel
      * @return $this
      * @see SpecModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -5671,6 +6217,7 @@ class SpecModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::all
      */
     public static function all(): self
@@ -5685,6 +6232,26 @@ class SpecModel
      * @see SpecModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SpecModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SpecModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -5922,8 +6489,13 @@ class SpecModel
      * @return $this
      * @see SpecModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -5936,8 +6508,12 @@ class SpecModel
      * @return $this
      * @see SpecModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -5950,8 +6526,12 @@ class SpecModel
      * @return $this
      * @see SpecModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -5964,8 +6544,12 @@ class SpecModel
      * @return $this
      * @see SpecModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -6298,22 +6882,47 @@ class SpecModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SpecModel::setCacheTime
+     * @see SpecModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SpecModel::unscoped
+     * @see SpecModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -6339,7 +6948,7 @@ class SpecModel
      * @return $this
      * @see SpecModel::reallyDestroy
      */
-    public static function reallyDestroy($id = false): self
+    public static function reallyDestroy($id = null): self
     {
     }
 
@@ -6402,11 +7011,11 @@ class SpecValueModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SpecValueModel::toRet
      */
-    public static function toRet(array $merge = []): \Wei\Ret
+    public static function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -6454,9 +7063,21 @@ class SpecValueModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SpecValueModel::destroyOrFail
+     */
+    public static function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -6528,6 +7149,7 @@ class SpecValueModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::findAll
      */
     public static function findAll(array $ids): self
@@ -6550,6 +7172,7 @@ class SpecValueModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::findAllBy
      */
     public static function findAllBy($column, $operator = null, $value = null): self
@@ -6562,7 +7185,7 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::findOrInitBy
      */
-    public static function findOrInitBy(array $attributes, $data = []): self
+    public static function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -6602,6 +7225,7 @@ class SpecValueModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::all
      */
     public static function all(): self
@@ -6616,6 +7240,26 @@ class SpecValueModel
      * @see SpecValueModel::indexBy
      */
     public static function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SpecValueModel::unscoped
+     */
+    public static function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SpecValueModel::setCacheTime
+     */
+    public static function setCacheTime(?int $seconds): self
     {
     }
 
@@ -6853,8 +7497,13 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::join
      */
-    public static function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public static function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -6867,8 +7516,12 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::innerJoin
      */
-    public static function innerJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function innerJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -6881,8 +7534,12 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::leftJoin
      */
-    public static function leftJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function leftJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -6895,8 +7552,12 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::rightJoin
      */
-    public static function rightJoin(string $table, string $first = null, string $operator = '=', string $second = null): self
-    {
+    public static function rightJoin(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null
+    ): self {
     }
 
     /**
@@ -7229,22 +7890,47 @@ class SpecValueModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SpecValueModel::setCacheTime
+     * @see SpecValueModel::joinRelation
      */
-    public static function setCacheTime(?int $seconds): self
+    public static function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SpecValueModel::unscoped
+     * @see SpecValueModel::innerJoinRelation
      */
-    public static function unscoped($scopes = []): self
+    public static function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecValueModel::leftJoinRelation
+     */
+    public static function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecValueModel::rightJoinRelation
+     */
+    public static function rightJoinRelation($name): self
     {
     }
 
@@ -7270,7 +7956,7 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::reallyDestroy
      */
-    public static function reallyDestroy($id = false): self
+    public static function reallyDestroy($id = null): self
     {
     }
 
@@ -7336,11 +8022,11 @@ class CategoriesProductModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see CategoriesProductModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -7388,9 +8074,21 @@ class CategoriesProductModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see CategoriesProductModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -7462,6 +8160,7 @@ class CategoriesProductModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::findAll
      */
     public function findAll(array $ids): self
@@ -7484,6 +8183,7 @@ class CategoriesProductModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -7496,7 +8196,7 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -7536,6 +8236,7 @@ class CategoriesProductModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see CategoriesProductModel::all
      */
     public function all(): self
@@ -7550,6 +8251,26 @@ class CategoriesProductModel
      * @see CategoriesProductModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see CategoriesProductModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see CategoriesProductModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -7787,8 +8508,13 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -8163,22 +8889,47 @@ class CategoriesProductModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see CategoriesProductModel::setCacheTime
+     * @see CategoriesProductModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see CategoriesProductModel::unscoped
+     * @see CategoriesProductModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see CategoriesProductModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see CategoriesProductModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -8204,7 +8955,7 @@ class CategoriesProductModel
      * @return $this
      * @see CategoriesProductModel::reallyDestroy
      */
-    public function reallyDestroy($id = false): self
+    public function reallyDestroy($id = null): self
     {
     }
 
@@ -8239,6 +8990,44 @@ class CategoriesProductModel
     }
 }
 
+class Product
+{
+    /**
+     * Create product by given params
+     *
+     * @param array|Req $req
+     * @return Ret
+     * @see Product::create
+     */
+    public function create($req): \Wei\Ret
+    {
+    }
+
+    /**
+     * Update product by given params and product model
+     *
+     * @param array|Req $req
+     * @param ProductModel $product
+     * @return Ret
+     * @see Product::update
+     */
+    public function update($req, ProductModel $product): \Wei\Ret
+    {
+    }
+
+    /**
+     * Create or update product by given params
+     *
+     * @param array|Req $req
+     * @param ProductModel|null $product
+     * @return Ret
+     * @see Product::createOrUpdate
+     */
+    public function createOrUpdate($req, ProductModel $product = null): \Wei\Ret
+    {
+    }
+}
+
 class ProductDetailModel
 {
     /**
@@ -8267,11 +9056,11 @@ class ProductDetailModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductDetailModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -8319,9 +9108,21 @@ class ProductDetailModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductDetailModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -8393,6 +9194,7 @@ class ProductDetailModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::findAll
      */
     public function findAll(array $ids): self
@@ -8415,6 +9217,7 @@ class ProductDetailModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -8427,7 +9230,7 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -8467,6 +9270,7 @@ class ProductDetailModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductDetailModel::all
      */
     public function all(): self
@@ -8481,6 +9285,26 @@ class ProductDetailModel
      * @see ProductDetailModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductDetailModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductDetailModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -8718,8 +9542,13 @@ class ProductDetailModel
      * @return $this
      * @see ProductDetailModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -9094,22 +9923,47 @@ class ProductDetailModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductDetailModel::setCacheTime
+     * @see ProductDetailModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductDetailModel::unscoped
+     * @see ProductDetailModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductDetailModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductDetailModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -9157,11 +10011,11 @@ class ProductImageModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductImageModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -9209,9 +10063,21 @@ class ProductImageModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductImageModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -9283,6 +10149,7 @@ class ProductImageModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::findAll
      */
     public function findAll(array $ids): self
@@ -9305,6 +10172,7 @@ class ProductImageModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -9317,7 +10185,7 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -9357,6 +10225,7 @@ class ProductImageModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductImageModel::all
      */
     public function all(): self
@@ -9371,6 +10240,26 @@ class ProductImageModel
      * @see ProductImageModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductImageModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductImageModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -9608,8 +10497,13 @@ class ProductImageModel
      * @return $this
      * @see ProductImageModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -9984,22 +10878,47 @@ class ProductImageModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductImageModel::setCacheTime
+     * @see ProductImageModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductImageModel::unscoped
+     * @see ProductImageModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductImageModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductImageModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -10057,11 +10976,11 @@ class ProductModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -10109,9 +11028,21 @@ class ProductModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -10183,6 +11114,7 @@ class ProductModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::findAll
      */
     public function findAll(array $ids): self
@@ -10205,6 +11137,7 @@ class ProductModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -10217,7 +11150,7 @@ class ProductModel
      * @return $this
      * @see ProductModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -10257,6 +11190,7 @@ class ProductModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductModel::all
      */
     public function all(): self
@@ -10271,6 +11205,26 @@ class ProductModel
      * @see ProductModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -10508,8 +11462,13 @@ class ProductModel
      * @return $this
      * @see ProductModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -10884,22 +11843,47 @@ class ProductModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductModel::setCacheTime
+     * @see ProductModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductModel::unscoped
+     * @see ProductModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -10919,22 +11903,13 @@ class ProductModel
     }
 
     /**
-     * @param array|string $columns
-     * @return $this
-     * @see ProductModel::like
-     */
-    public function like($columns): self
-    {
-    }
-
-    /**
      * Really remove the record from database
      *
      * @param int|string $id
      * @return $this
      * @see ProductModel::reallyDestroy
      */
-    public function reallyDestroy($id = false): self
+    public function reallyDestroy($id = null): self
     {
     }
 
@@ -10997,11 +11972,11 @@ class ProductSpecModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see ProductSpecModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -11049,9 +12024,21 @@ class ProductSpecModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see ProductSpecModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -11123,6 +12110,7 @@ class ProductSpecModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::findAll
      */
     public function findAll(array $ids): self
@@ -11145,6 +12133,7 @@ class ProductSpecModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -11157,7 +12146,7 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -11197,6 +12186,7 @@ class ProductSpecModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see ProductSpecModel::all
      */
     public function all(): self
@@ -11211,6 +12201,26 @@ class ProductSpecModel
      * @see ProductSpecModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see ProductSpecModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see ProductSpecModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -11448,8 +12458,13 @@ class ProductSpecModel
      * @return $this
      * @see ProductSpecModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -11824,22 +12839,47 @@ class ProductSpecModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see ProductSpecModel::setCacheTime
+     * @see ProductSpecModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see ProductSpecModel::unscoped
+     * @see ProductSpecModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductSpecModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see ProductSpecModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -11887,11 +12927,11 @@ class SkuModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SkuModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -11939,9 +12979,21 @@ class SkuModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SkuModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -12013,6 +13065,7 @@ class SkuModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::findAll
      */
     public function findAll(array $ids): self
@@ -12035,6 +13088,7 @@ class SkuModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -12047,7 +13101,7 @@ class SkuModel
      * @return $this
      * @see SkuModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -12087,6 +13141,7 @@ class SkuModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SkuModel::all
      */
     public function all(): self
@@ -12101,6 +13156,26 @@ class SkuModel
      * @see SkuModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SkuModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SkuModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -12338,8 +13413,13 @@ class SkuModel
      * @return $this
      * @see SkuModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -12714,22 +13794,47 @@ class SkuModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SkuModel::setCacheTime
+     * @see SkuModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SkuModel::unscoped
+     * @see SkuModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SkuModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SkuModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -12745,6 +13850,47 @@ class SkuModel
      * @see SkuModel::isRelation
      */
     public function isRelation(string $method): bool
+    {
+    }
+
+    /**
+     * Really remove the record from database
+     *
+     * @param int|string $id
+     * @return $this
+     * @see SkuModel::reallyDestroy
+     */
+    public function reallyDestroy($id = null): self
+    {
+    }
+
+    /**
+     * Add a query to filter soft deleted records
+     *
+     * @return $this
+     * @see SkuModel::withoutDeleted
+     */
+    public function withoutDeleted(): self
+    {
+    }
+
+    /**
+     * Add a query to return only deleted records
+     *
+     * @return $this
+     * @see SkuModel::onlyDeleted
+     */
+    public function onlyDeleted(): self
+    {
+    }
+
+    /**
+     * Remove "withoutDeleted" in the query, expect to return all records
+     *
+     * @return $this
+     * @see SkuModel::withDeleted
+     */
+    public function withDeleted(): self
     {
     }
 }
@@ -12777,11 +13923,11 @@ class SpecModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SpecModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -12829,9 +13975,21 @@ class SpecModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SpecModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -12903,6 +14061,7 @@ class SpecModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::findAll
      */
     public function findAll(array $ids): self
@@ -12925,6 +14084,7 @@ class SpecModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -12937,7 +14097,7 @@ class SpecModel
      * @return $this
      * @see SpecModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -12977,6 +14137,7 @@ class SpecModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecModel::all
      */
     public function all(): self
@@ -12991,6 +14152,26 @@ class SpecModel
      * @see SpecModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SpecModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SpecModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -13228,8 +14409,13 @@ class SpecModel
      * @return $this
      * @see SpecModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -13604,22 +14790,47 @@ class SpecModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SpecModel::setCacheTime
+     * @see SpecModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SpecModel::unscoped
+     * @see SpecModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -13645,7 +14856,7 @@ class SpecModel
      * @return $this
      * @see SpecModel::reallyDestroy
      */
-    public function reallyDestroy($id = false): self
+    public function reallyDestroy($id = null): self
     {
     }
 
@@ -13708,11 +14919,11 @@ class SpecValueModel
     /**
      * Returns the success result with model data
      *
-     * @param array $merge
+     * @param array|string|BaseResource|mixed $merge
      * @return Ret
      * @see SpecValueModel::toRet
      */
-    public function toRet(array $merge = []): \Wei\Ret
+    public function toRet($merge = []): \Wei\Ret
     {
     }
 
@@ -13760,9 +14971,21 @@ class SpecValueModel
     }
 
     /**
+     * Find a record by primary key, or throws 404 exception if record not found, then destroy the record
+     *
+     * @param string|int $id
+     * @return $this
+     * @throws \Exception when record not found
+     * @see SpecValueModel::destroyOrFail
+     */
+    public function destroyOrFail($id): self
+    {
+    }
+
+    /**
      * Set the record field value
      *
-     * @param string|int $name
+     * @param string|int|null $name
      * @param mixed $value
      * @param bool $throwException
      * @return $this|false
@@ -13834,6 +15057,7 @@ class SpecValueModel
      *
      * @param array $ids
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::findAll
      */
     public function findAll(array $ids): self
@@ -13856,6 +15080,7 @@ class SpecValueModel
      * @param mixed|null $operator
      * @param mixed|null $value
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::findAllBy
      */
     public function findAllBy($column, $operator = null, $value = null): self
@@ -13868,7 +15093,7 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::findOrInitBy
      */
-    public function findOrInitBy(array $attributes, $data = []): self
+    public function findOrInitBy(array $attributes = [], $data = []): self
     {
     }
 
@@ -13908,6 +15133,7 @@ class SpecValueModel
 
     /**
      * @return $this|$this[]
+     * @phpstan-return $this
      * @see SpecValueModel::all
      */
     public function all(): self
@@ -13922,6 +15148,26 @@ class SpecValueModel
      * @see SpecValueModel::indexBy
      */
     public function indexBy(string $column): self
+    {
+    }
+
+    /**
+     * @param array|string|true $scopes
+     * @return $this
+     * @see SpecValueModel::unscoped
+     */
+    public function unscoped($scopes = []): self
+    {
+    }
+
+    /**
+     * Set or remove cache time for the query
+     *
+     * @param int|null $seconds
+     * @return $this
+     * @see SpecValueModel::setCacheTime
+     */
+    public function setCacheTime(?int $seconds): self
     {
     }
 
@@ -14159,8 +15405,13 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::join
      */
-    public function join(string $table, string $first = null, string $operator = '=', string $second = null, string $type = 'INNER'): self
-    {
+    public function join(
+        string $table,
+        string $first = null,
+        string $operator = '=',
+        string $second = null,
+        string $type = 'INNER'
+    ): self {
     }
 
     /**
@@ -14535,22 +15786,47 @@ class SpecValueModel
     }
 
     /**
-     * Set or remove cache time for the query
+     * Add a (inner) join base on the relation to the query
      *
-     * @param int|null $seconds
+     * @param string|array $name
+     * @param string $type
      * @return $this
-     * @see SpecValueModel::setCacheTime
+     * @see SpecValueModel::joinRelation
      */
-    public function setCacheTime(?int $seconds): self
+    public function joinRelation($name, string $type = 'INNER'): self
     {
     }
 
     /**
-     * @param array|string|true $scopes
+     * Add a inner join base on the relation to the query
+     *
+     * @param string|array $name
      * @return $this
-     * @see SpecValueModel::unscoped
+     * @see SpecValueModel::innerJoinRelation
      */
-    public function unscoped($scopes = []): self
+    public function innerJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a left join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecValueModel::leftJoinRelation
+     */
+    public function leftJoinRelation($name): self
+    {
+    }
+
+    /**
+     * Add a right join base on the relation to the query
+     *
+     * @param string|array $name
+     * @return $this
+     * @see SpecValueModel::rightJoinRelation
+     */
+    public function rightJoinRelation($name): self
     {
     }
 
@@ -14576,7 +15852,7 @@ class SpecValueModel
      * @return $this
      * @see SpecValueModel::reallyDestroy
      */
-    public function reallyDestroy($id = false): self
+    public function reallyDestroy($id = null): self
     {
     }
 

@@ -5,7 +5,7 @@ namespace Miaoxing\Product\Seeder;
 use Faker\Factory;
 use Miaoxing\Category\Service\CategoryModel;
 use Miaoxing\Plugin\Seeder\BaseSeeder;
-use Miaoxing\Plugin\Service\Tester;
+use Miaoxing\Product\Service\Product;
 use Miaoxing\Product\Service\ProductModel;
 
 class V20210415002317CreateProducts extends BaseSeeder
@@ -20,8 +20,7 @@ class V20210415002317CreateProducts extends BaseSeeder
         $categoryIds = array_column(CategoryModel::select('id')->fetchAll(), 'id');
 
         foreach (range(1, 30) as $i) {
-            // TODO 增加 api 方便创建
-            Tester::postAdminApi('products', [
+            Product::create([
                 'name' => $faker->words(3, true),
                 'images' => [
                     [
