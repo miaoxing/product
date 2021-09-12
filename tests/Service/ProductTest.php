@@ -35,6 +35,35 @@ class ProductTest extends BaseTestCase
         $this->assertRetErr($ret, '名称不能为空');
     }
 
+    public function testCreateOrUpdate()
+    {
+        $ret = Product::createOrUpdate($this->getCreateData());
+        $this->assertRetSuc($ret);
+        $this->assertInstanceOf(ProductModel::class, $ret['data']);
+    }
+
+    public function testCreateOrUpdateErr()
+    {
+        $ret = Product::createOrUpdate([]);
+        $this->assertRetErr($ret, '名称不能为空');
+    }
+
+    public function testCreateOrUpdateWithNewProduct()
+    {
+        $product = ProductModel::new();
+        $ret = Product::createOrUpdate($this->getCreateData(), $product);
+        $this->assertRetSuc($ret);
+        $this->assertSame($ret['data'], $product);
+    }
+
+    public function testCreateOrUpdateWithExistProduct()
+    {
+        $product = Product::create($this->getCreateData())['data'];
+        $ret = Product::createOrUpdate(['name' => '测试商品2'], $product);
+        $this->assertRetSuc($ret);
+        $this->assertSame('测试商品2', $product->name);
+    }
+
     protected function getCreateData(): array
     {
         return [
