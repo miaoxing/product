@@ -3,6 +3,7 @@
 namespace Miaoxing\Product\Service;
 
 use Miaoxing\Plugin\BaseModel;
+use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Model\ModelTrait;
 use Miaoxing\Plugin\Model\SnowflakeTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
@@ -18,6 +19,7 @@ use Wei\Ret;
 class SkuModel extends BaseModel
 {
     use BelongsToProductTrait;
+    use HasAppIdTrait;
     use ModelTrait;
     use SkuTrait;
     use SnowflakeTrait;
