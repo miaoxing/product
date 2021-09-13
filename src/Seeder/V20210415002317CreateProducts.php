@@ -6,7 +6,6 @@ use Faker\Factory;
 use Miaoxing\Category\Service\CategoryModel;
 use Miaoxing\Plugin\Seeder\BaseSeeder;
 use Miaoxing\Product\Service\Product;
-use Miaoxing\Product\Service\ProductModel;
 
 class V20210415002317CreateProducts extends BaseSeeder
 {
@@ -36,7 +35,7 @@ class V20210415002317CreateProducts extends BaseSeeder
                     ],
                 ],
                 'spec' => [
-                    'specs' => ProductModel::getDefaultSpecs(),
+                    'specs' => Product::getDefaultSpecs(),
                 ],
                 'skus' => [
                     [

@@ -1,6 +1,7 @@
 <?php
 
 use Miaoxing\Plugin\BaseController;
+use Miaoxing\Product\Service\Product;
 use Miaoxing\Product\Service\ProductModel;
 
 return new class extends BaseController {
@@ -11,7 +12,7 @@ return new class extends BaseController {
             'images' => [],
             'categoriesProducts' => [],
             'spec' => [
-                'specs' => ProductModel::getDefaultSpecs(),
+                'specs' => Product::getDefaultSpecs(),
             ],
         ]);
 

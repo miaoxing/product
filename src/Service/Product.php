@@ -152,6 +152,25 @@ class Product extends BaseService
     }
 
     /**
+     * 返回默认的规格配置
+     *
+     * @return array[][]
+     * @svc
+     */
+    protected function getDefaultSpecs(): array
+    {
+        $spec = SpecModel::findByOrCreate(['name' => '默认']);
+        $specValue = SpecValueModel::findByOrCreate(['specId' => $spec->id, 'name' => '默认']);
+        return [
+            $spec->toArray(['id', 'name']) + [
+                'values' => [
+                    $specValue->toArray(['id', 'name']),
+                ],
+            ],
+        ];
+    }
+
+    /**
      * 检查商品规格是否为默认规格
      *
      * @param array $specs
@@ -167,7 +186,7 @@ class Product extends BaseService
             return false;
         }
 
-        $defaultSpecs = ProductModel::getDefaultSpecs();
+        $defaultSpecs = $this->getDefaultSpecs();
         return $specs[0]['id'] === $defaultSpecs[0]['id']
             && $specs[0]['values'][0]['id'] === $defaultSpecs[0]['values'][0]['id'];
     }

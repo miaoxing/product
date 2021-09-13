@@ -69,7 +69,7 @@ class ProductTest extends BaseTestCase
         return [
             'name' => '测试商品',
             'spec' => [
-                'specs' => ProductModel::getDefaultSpecs(),
+                'specs' => Product::getDefaultSpecs(),
             ],
             'skus' => [
                 [

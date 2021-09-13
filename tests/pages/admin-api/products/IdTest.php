@@ -4,6 +4,7 @@ namespace MiaoxingTest\Prodcut\Pages\AdminApi\Products;
 
 use Miaoxing\Plugin\Service\Tester;
 use Miaoxing\Plugin\Test\BaseTestCase;
+use Miaoxing\Product\Service\Product;
 use Miaoxing\Product\Service\ProductModel;
 
 class IdTest extends BaseTestCase
@@ -144,7 +145,7 @@ class IdTest extends BaseTestCase
         $ret = Tester::postAdminApi('products', [
             'name' => '测试',
             'spec' => [
-                'specs' => ProductModel::getDefaultSpecs(),
+                'specs' => Product::getDefaultSpecs(),
             ],
             'skus' => [
                 [

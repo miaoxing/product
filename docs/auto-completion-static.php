@@ -1016,7 +1016,7 @@ class Product
      * Create product by given params
      *
      * @param array|Req $req
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::create
      */
     public static function create($req): \Wei\Ret
@@ -1028,7 +1028,7 @@ class Product
      *
      * @param array|Req $req
      * @param ProductModel $product
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::update
      */
     public static function update($req, ProductModel $product): \Wei\Ret
@@ -1040,10 +1040,20 @@ class Product
      *
      * @param array|Req $req
      * @param ProductModel|null $product
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::createOrUpdate
      */
     public static function createOrUpdate($req, ProductModel $product = null): \Wei\Ret
+    {
+    }
+
+    /**
+     * 返回默认的规格配置
+     *
+     * @return array[][]
+     * @see Product::getDefaultSpecs
+     */
+    public static function getDefaultSpecs(): array
     {
     }
 }
@@ -8996,7 +9006,7 @@ class Product
      * Create product by given params
      *
      * @param array|Req $req
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::create
      */
     public function create($req): \Wei\Ret
@@ -9008,7 +9018,7 @@ class Product
      *
      * @param array|Req $req
      * @param ProductModel $product
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::update
      */
     public function update($req, ProductModel $product): \Wei\Ret
@@ -9020,10 +9030,20 @@ class Product
      *
      * @param array|Req $req
      * @param ProductModel|null $product
-     * @return Ret
+     * @return Ret|array{data: ProductModel}
      * @see Product::createOrUpdate
      */
     public function createOrUpdate($req, ProductModel $product = null): \Wei\Ret
+    {
+    }
+
+    /**
+     * 返回默认的规格配置
+     *
+     * @return array[][]
+     * @see Product::getDefaultSpecs
+     */
+    public function getDefaultSpecs(): array
     {
     }
 }
