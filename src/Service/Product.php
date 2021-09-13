@@ -156,8 +156,9 @@ class Product extends BaseService
      *
      * @param array $specs
      * @return bool
+     * @internal
      */
-    private function isDefaultSpec(array $specs): bool
+    protected function isDefaultSpec(array $specs): bool
     {
         if (count($specs) > 1) {
             return false;
@@ -177,8 +178,9 @@ class Product extends BaseService
      * @param array $skus
      * @param string $column
      * @return int
+     * @internal
      */
-    private function calSkusCountValue($skus, $column)
+    protected function calSkusCountValue(array $skus, string $column): int
     {
         $count = 0;
         foreach ($skus as $sku) {
@@ -193,8 +195,9 @@ class Product extends BaseService
      * @param array $skus
      * @param string $column
      * @return array
+     * @internal
      */
-    private function calSkuMinItem($skus, string $column)
+    protected function calSkuMinItem(array $skus, string $column): array
     {
         $match = [];
         $min = \PHP_INT_MAX;
@@ -214,8 +217,9 @@ class Product extends BaseService
      * @param array $skus
      * @param string $column
      * @return int
+     * @internal
      */
-    private function calSkusMinValue($skus, $column)
+    protected function calSkusMinValue(array $skus, string $column): int
     {
         $min = \PHP_INT_MAX;
         foreach ($skus as $sku) {
@@ -232,10 +236,11 @@ class Product extends BaseService
      *
      * @param ProductModel $product
      * @param array|ArrayAccess $data
-     * @param $relations
+     * @param array $relations
      * @return $this
+     * @internal
      */
-    private function saveWithRelations(ProductModel $product, $data, $relations)
+    protected function saveWithRelations(ProductModel $product, $data, array $relations): self
     {
         $product->save($data);
         $this->saveRelations($product, $data, $relations);
@@ -246,11 +251,12 @@ class Product extends BaseService
      * 保存关联模型的数据
      *
      * @param ProductModel $product
-     * @param array $data
+     * @param array|ArrayAccess $data
      * @param array $relations
      * @return $this
+     * @internal
      */
-    private function saveRelations(ProductModel $product, $data, array $relations)
+    protected function saveRelations(ProductModel $product, $data, array $relations): self
     {
         foreach ($relations as $relation) {
             if (isset($data[$relation])) {
