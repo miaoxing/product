@@ -4,10 +4,15 @@ import Taro from '@tarojs/taro';
 import {createProduct, createSingleSkuProduct} from '@miaoxing/product/test-utils';
 import {bootstrap, createPromise} from '@mxjs/test';
 import $, {Ret} from 'miaoxing';
+import {reset} from 'use-uid';
 
 bootstrap();
 
 describe('SkuPicker', () => {
+  beforeEach(() => {
+    reset();
+  });
+
   test('basic', async () => {
     const {container} = render(<SkuPicker product={createSingleSkuProduct()}/>);
 

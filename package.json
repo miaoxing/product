@@ -52,7 +52,7 @@
     "@mxjs/m-stepper": "^0.1.0",
     "clsx": "^1.1.1",
     "@tarojs/taro": "^3.2.10",
-    "use-uid": "^0.1.0"
+    "use-uid": "^1.0.0"
   },
   "devDependencies": {
     "@miaoxing/dev": "^7.0.1",
