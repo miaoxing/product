@@ -141,7 +141,7 @@ exports[`Show basic 1`] = `
               </taro-text-core>
             </taro-view-core>
             <taro-view-core
-              style="justify-content: space-between; align-items: center; flex-direction: row; display: flex;"
+              style="flex-direction: row; justify-content: space-between; align-items: center; display: flex;"
             >
               <taro-view-core>
                 <taro-view-core>
@@ -155,7 +155,7 @@ exports[`Show basic 1`] = `
               </taro-view-core>
               <taro-button-core
                 class="mx-btn"
-                style="justify-content: center; align-items: center; flex-shrink: 0; color: rgb(113, 113, 122); background-color: transparent; line-height: 1; flex-direction: column; display: flex;"
+                style="flex-direction: column; flex-shrink: 0; color: rgb(113, 113, 122); background-color: transparent; line-height: 1; justify-content: center; align-items: center; display: flex;"
               >
                 <taro-text-core
                   class="mxi mxi-share"
@@ -204,7 +204,7 @@ exports[`Show basic 1`] = `
               </taro-view-core>
               <taro-view-core
                 class="mx-list-detail"
-                style="justify-content: space-between; flex-direction: row; display: flex;"
+                style="flex-direction: row; justify-content: space-between; display: flex;"
               >
                 <taro-text-core>
                    
@@ -259,7 +259,7 @@ exports[`Show basic 1`] = `
         >
           <taro-view-core
             class="mx-divider"
-            style="align-items: center; flex-direction: row; display: flex;"
+            style="flex-direction: row; align-items: center; display: flex;"
           >
             商品价格说明
             <taro-text-core
@@ -268,7 +268,7 @@ exports[`Show basic 1`] = `
           </taro-view-core>
         </taro-view-core>
         <taro-view-core
-          class="mx-footer-bar"
+          class="mx-footer-bar __mx-footer-bar-1"
         >
           <taro-button-core
             class="mx-btn mx-footer-bar-icon"
@@ -331,7 +331,7 @@ exports[`Show basic 1`] = `
                 scrolly="true"
               >
                 <taro-view-core
-                  style="justify-content: space-between; flex-direction: row; display: flex;"
+                  style="flex-direction: row; justify-content: space-between; display: flex;"
                 >
                   <taro-view-core
                     style="display: flex;"
@@ -408,7 +408,7 @@ exports[`Show basic 1`] = `
                     </taro-view-core>
                   </taro-view-core>
                   <taro-view-core
-                    style="align-items: center; justify-content: space-between; flex-direction: row; display: flex;"
+                    style="flex-direction: row; align-items: center; justify-content: space-between; display: flex;"
                   >
                     <taro-text-core
                       class="css-1vq2xix-SkuPicker"
@@ -416,7 +416,7 @@ exports[`Show basic 1`] = `
                       数量
                     </taro-text-core>
                     <taro-view-core
-                      style="align-items: center; justify-content: space-between; flex-direction: row; display: flex;"
+                      style="flex-direction: row; align-items: center; justify-content: space-between; display: flex;"
                     >
                       <taro-text-core
                         style="color: rgb(113, 113, 122);"
@@ -446,7 +446,7 @@ exports[`Show basic 1`] = `
                   </taro-view-core>
                 </taro-view-core>
                 <taro-view-core
-                  class="mx-footer-bar"
+                  class="mx-footer-bar __mx-footer-bar-3 __sku-picker-footer-bar-2"
                 >
                   <taro-view-core
                     class="mx-btn-theme mx-btn-theme-pill"
@@ -483,7 +483,7 @@ exports[`Show basic 2`] = `
     Array [
       Object {
         "ignoreError": true,
-        "url": "/api/products/1",
+        "url": "/api/products/1?include=detail",
       },
     ],
     Array [
