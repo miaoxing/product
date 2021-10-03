@@ -84,6 +84,7 @@
     "@mxjs/m-footer-bar": "miaoxing/mxjs-m-footer-bar",
     "@mxjs/m-list": "miaoxing/mxjs-m-list",
     "@mxjs/m-ret": "miaoxing/mxjs-m-ret",
-    "@mxjs/m-stepper": "miaoxing/mxjs-m-stepper"
+    "@mxjs/m-stepper": "miaoxing/mxjs-m-stepper",
+    "@mxjs/theme": "miaoxing/mxjs-theme"
   }
 }
