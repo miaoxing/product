@@ -1,9 +1,9 @@
-import Show from './show';
 import {render, waitFor, fireEvent} from '@testing-library/react';
 import $, {Ret} from 'miaoxing';
 import {createPromise, bootstrap, setUrl, resetUrl} from '@mxjs/test';
 import Taro from '@tarojs/taro';
 import {createProduct} from '@miaoxing/product/test-utils';
+import Show from './show';
 
 bootstrap();
 
@@ -44,7 +44,7 @@ describe('Show', () => {
         }),
       }));
 
-    const {container, getByText} = render(<Show/>);
+    const {container, getByText} = render(<Show />);
 
     await waitFor(() => {
       expect(getByText('包邮')).not.toBeNull();
@@ -89,7 +89,7 @@ describe('Show', () => {
         }),
       }));
 
-    const {container, getByText, findByText, findAllByText} = render(<Show/>);
+    const {container, getByText, findByText, findAllByText} = render(<Show />);
 
     await waitFor(() => {
       expect(getByText('包邮')).not.toBeNull();
