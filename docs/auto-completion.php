@@ -4,62 +4,71 @@
  * @property    Miaoxing\Product\Service\CategoriesProductModel $categoriesProductModel
  * @method      Miaoxing\Product\Service\CategoriesProductModel categoriesProductModel() 返回当前对象
  */
-class CategoriesProductModelMixin {
+class CategoriesProductModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\Product $product
  */
-class ProductMixin {
+class ProductMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\ProductDetailModel $productDetailModel
  * @method      Miaoxing\Product\Service\ProductDetailModel productDetailModel() 返回当前对象
  */
-class ProductDetailModelMixin {
+class ProductDetailModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\ProductImageModel $productImageModel 商品图片模型
  * @method      Miaoxing\Product\Service\ProductImageModel productImageModel() 返回当前对象
  */
-class ProductImageModelMixin {
+class ProductImageModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\ProductModel $productModel 商品模型
  * @method      Miaoxing\Product\Service\ProductModel productModel() 返回当前对象
  */
-class ProductModelMixin {
+class ProductModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\ProductSpecModel $productSpecModel 商品规格
  * @method      Miaoxing\Product\Service\ProductSpecModel productSpecModel() 返回当前对象
  */
-class ProductSpecModelMixin {
+class ProductSpecModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\SkuModel $skuModel SKU
  * @method      Miaoxing\Product\Service\SkuModel skuModel() 返回当前对象
  */
-class SkuModelMixin {
+class SkuModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\SpecModel $specModel 规格
  * @method      Miaoxing\Product\Service\SpecModel specModel() 返回当前对象
  */
-class SpecModelMixin {
+class SpecModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\Product\Service\SpecValueModel $specValueModel 规格值
  * @method      Miaoxing\Product\Service\SpecValueModel specValueModel() 返回当前对象
  */
-class SpecValueModelMixin {
+class SpecValueModelMixin
+{
 }
 
 /**
@@ -73,7 +82,8 @@ class SpecValueModelMixin {
  * @mixin SpecModelMixin
  * @mixin SpecValueModelMixin
  */
-class AutoCompletion {
+class AutoCompletion
+{
 }
 
 /**
@@ -81,7 +91,7 @@ class AutoCompletion {
  */
 function wei()
 {
-    return new AutoCompletion;
+    return new AutoCompletion();
 }
 
 /** @var Miaoxing\Product\Service\CategoriesProductModel $categoriesProduct */

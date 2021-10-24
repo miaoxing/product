@@ -6,7 +6,7 @@ use Miaoxing\Services\Page\CollGetTrait;
 use Miaoxing\Services\Page\PostToPatchTrait;
 use Miaoxing\Services\Service\IndexAction;
 
-return new class extends BaseController {
+return new class () extends BaseController {
     use CollGetTrait;
     use PostToPatchTrait;
 
@@ -22,7 +22,7 @@ return new class extends BaseController {
             })
             ->afterFind(function (ProductModel $models, $req) {
                 // @experimental 指定编号排序
-                if ($req['sortField'] !== 'id') {
+                if ('id' !== $req['sortField']) {
                     return;
                 }
 
@@ -33,8 +33,8 @@ return new class extends BaseController {
 
                 $iterator = $models->getIterator();
                 $iterator->uasort(function ($article1, $article2) use ($ids) {
-                    $pos1 = array_search($article1->id, $ids);
-                    $pos2 = array_search($article2->id, $ids);
+                    $pos1 = array_search($article1->id, $ids, true);
+                    $pos2 = array_search($article2->id, $ids, true);
                     return $pos1 - $pos2;
                 });
                 $models->fromArray($iterator);

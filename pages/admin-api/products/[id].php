@@ -5,7 +5,7 @@ use Miaoxing\Product\Service\Product;
 use Miaoxing\Product\Service\ProductModel;
 use Miaoxing\Services\Page\ItemTrait;
 
-return new class extends BaseController {
+return new class () extends BaseController {
     use ItemTrait;
 
     protected $include = [
