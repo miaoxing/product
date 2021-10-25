@@ -25,6 +25,7 @@ exports[`SkuPicker basic 1`] = `
               style="display: flex;"
             >
               <taro-image-core
+                src="https://dev.test.com/uploads/1/210610/002439539409.png"
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
@@ -95,6 +96,7 @@ exports[`SkuPicker basic 1`] = `
                   />
                   <taro-input-core
                     class="mx-stepper-input"
+                    value="1"
                   />
                   <taro-button-core
                     class="mx-stepper-plus"
@@ -163,6 +165,7 @@ exports[`SkuPicker create cart 1`] = `
               style="display: flex;"
             >
               <taro-image-core
+                src="https://dev.test.com/uploads/1/210610/002439539409.png"
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
@@ -263,6 +266,7 @@ exports[`SkuPicker create cart 1`] = `
                   />
                   <taro-input-core
                     class="mx-stepper-input"
+                    value="2"
                   />
                   <taro-button-core
                     class="mx-stepper-plus"
@@ -379,6 +383,7 @@ exports[`SkuPicker create order 1`] = `
               style="display: flex;"
             >
               <taro-image-core
+                src="https://dev.test.com/uploads/1/210610/002439539409.png"
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
@@ -479,6 +484,7 @@ exports[`SkuPicker create order 1`] = `
                   />
                   <taro-input-core
                     class="mx-stepper-input"
+                    value="2"
                   />
                   <taro-button-core
                     class="mx-stepper-plus"
@@ -632,6 +638,7 @@ exports[`SkuPicker update cart 1`] = `
               style="display: flex;"
             >
               <taro-image-core
+                src="https://dev.test.com/uploads/1/210610/002439539409.png"
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
@@ -731,6 +738,7 @@ exports[`SkuPicker update cart 1`] = `
                   />
                   <taro-input-core
                     class="mx-stepper-input"
+                    value="4"
                   />
                   <taro-button-core
                     class="mx-stepper-plus"
