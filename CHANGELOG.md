@@ -1,3 +1,105 @@
+# [0.2.0](https://github.com/miaoxing/product/compare/v0.1.19...v0.2.0) (2021-10-28)
+
+
+### Bug Fixes
+
+* **Cast:** `decimal` 字段转换为 PHP 变量时，由浮点数改为字符串 ([c08e02a](https://github.com/miaoxing/product/commit/c08e02a74fbc891c801e3170a7f989329d3a9246))
+* **product:** `ProductSpecModel` 和 ``SkuModel` 增加 `HasAppIdTrait` ([563d01f](https://github.com/miaoxing/product/commit/563d01fb02bdcf65b5dceaf99f32e27ea31cb103))
+* **product:** 使用 `use-uid` 替代 `@accessible/use-id`，解决首次渲染 id 为空的问题 ([be4080a](https://github.com/miaoxing/product/commit/be4080a5a840b5cbd1161a3c3fcc90fcd3f054fb))
+* **product:** 运费模板模型关联错误 ([7146319](https://github.com/miaoxing/product/commit/71463196130ade08fed4e72727c594952f1693d0))
+* **SkuModel:** 增加使用 `SoftDeleteTrait` ([92aada0](https://github.com/miaoxing/product/commit/92aada020d55727f256a97ca2efd297303b800d3))
+
+
+### Code Refactoring
+
+* `expand` 参数改为 `include` ([ad78e8f](https://github.com/miaoxing/product/commit/ad78e8f4852efe487ea3210092e890ac64d2289d))
+* **Model:** 模型的关联方法加上返回值 ([4a210fe](https://github.com/miaoxing/product/commit/4a210fe9b67b49936a9a5ea93d641d81418faf39))
+
+
+### Features
+
+* **product:** `getDefaultSpecs` 方法由 `ProductModel` 移到 `Product` 中 ([669d85d](https://github.com/miaoxing/product/commit/669d85ddb9544dac294bd7dbbd776990e321b29b))
+* **product:** 增加 `Product` 服务用于创建或更新商品 ([b668230](https://github.com/miaoxing/product/commit/b6682302a2e2608d5908c1edded3bea2260ad631))
+* 数据表主键 由 `int` 改为 `bigint` ([c99906f](https://github.com/miaoxing/product/commit/c99906ff940cfe0952f0c09a76d00233e247995c))
+* 更新 `react` 到 17 ([b1bcfa5](https://github.com/miaoxing/product/commit/b1bcfa52292d5ec542db1c704f828a3c546d585b))
+* 模型通过 `SnowflakeTrait` 生成 id ([fecac11](https://github.com/miaoxing/product/commit/fecac11acb72f620b33598d5c2bb65cdfb294d6b))
+* **cart:** 处理商品已删除的情况 ([87ae711](https://github.com/miaoxing/product/commit/87ae7111b822421865ea63d4c030867f750ba531))
+* **product:** 允许外部调用 `ProductMedia` 组件 ([3d7f87c](https://github.com/miaoxing/product/commit/3d7f87ce54b2128e663beb4113de3c954c8a4115))
+* **product:** 增加 `Price` 组件，用于展示价格时突出整数，缩小小数 ([c6c251c](https://github.com/miaoxing/product/commit/c6c251c07bac5496efff91834c75289fb5a9b6bf))
+* **product:** 增加 `SkuPicker` 组件 ([79b0193](https://github.com/miaoxing/product/commit/79b0193c67fec2d7e93206a27965e21b32fd3d91))
+* **product:** 增加前端商品详情页 ([929aaab](https://github.com/miaoxing/product/commit/929aaabe18ef635232f731fbd9b41f498284c694))
+* **product:** 增加商品操作按钮组，用于根据条件展示加入购物和立即下单按钮 ([77ada68](https://github.com/miaoxing/product/commit/77ada6894295a30b3361aeda02b5cba006ae3000))
+* **product:** 增加商品相关资源类 ([afa8684](https://github.com/miaoxing/product/commit/afa8684935ccfe182159f0ed280c5f4d6b08cb4e))
+* **product:** 增加方法，用于检查商品是否可以加入购物车或下单 ([a9f027c](https://github.com/miaoxing/product/commit/a9f027c23aa395094b34b5d65345b78c5e1e848e))
+* **product:** 增加获取商品详情接口 ([0ff92f6](https://github.com/miaoxing/product/commit/0ff92f6401241a6dfbbffdd0de34bde94d7b53c6))
+* **product:** 增加获取商品运费模板接口 ([b91511f](https://github.com/miaoxing/product/commit/b91511fa4d082c1b91d60b55747abd345f27ff89))
+* **product, experimental:** 增加测试辅助方法 ([ea2a2e0](https://github.com/miaoxing/product/commit/ea2a2e050f60bc9e1a9e7c1ecc8bb102800cf94d))
+* **ProductSpec:** 商品规格表增加 `is_default` 字段判断是否为默认规格 ([5870ac0](https://github.com/miaoxing/product/commit/5870ac0124b1f67e98ff1ce798262666e02219e7))
+* **SkuModel:** 增加 `checkCreateCart` 方法，检查当前 SKU 是否可购买 ([61c17d5](https://github.com/miaoxing/product/commit/61c17d5cdf1073bd5229b88a76465786f4919976))
+* **SkuModel:** 增加商品模型关联 ([70a38b2](https://github.com/miaoxing/product/commit/70a38b2a705f91add297db720d0bdbd3c0c2c88c))
+* **SkuPicker:** 如果只有一个规格，默认选中 ([c9123d6](https://github.com/miaoxing/product/commit/c9123d6eba6c600c64e1c889c868562eea753e40))
+* **SkuPicker:** 如果是默认规格，不展示规格选择功能 ([b35ce20](https://github.com/miaoxing/product/commit/b35ce20363ecb7943033d30e031e368217f9a56d))
+* **SkuPicker:** 支持编辑购物车的情况 ([67aa70c](https://github.com/miaoxing/product/commit/67aa70cdab9b68b46268c11926d5aa2cc8684df5))
+* **SkuPicker:** 根据底部操作栏高度，计算内容和底部操作按钮的距离 ([20c1e1b](https://github.com/miaoxing/product/commit/20c1e1b1e009104dd0eabf3b702e4a90d316fd85))
+* **u, product:** 增加划线价格和未划线价格说明 ([b82b545](https://github.com/miaoxing/product/commit/b82b54536f7152bd802ea6a2b3d63c1209213d9a))
+* **u, product:** 增加发货的运费说明 ([dafadf8](https://github.com/miaoxing/product/commit/dafadf88942c44de26dda701792de8d673743896))
+
+
+### BREAKING CHANGES
+
+* **product:** `getDefaultSpecs` 方法由 `ProductModel` 移到 `Product` 中
+* 数据表主键 由 `int` 改为 `bigint`
+* `expand` 参数改为 `include`
+* 更新 `react` 到 17
+* **Model:** 模型的关联方法加上返回值
+* **Cast:** `decimal` 字段转换为 PHP 变量时，由浮点数改为字符串
+* **ProductSpec:** 更新了 `product_specs` 建表语句，需重新运行
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.13` to `1.0.14`
+* **miaoxing:** upgrade from `0.2.5` to `0.3.0`
+* **@mxjs/a-table:** upgrade from `0.3.11` to `0.4.0`
+* **@mxjs/a-clink:** upgrade from `0.1.8` to `0.2.0`
+* **@mxjs/a-page:** upgrade from `0.2.8` to `0.3.0`
+* **@mxjs/actions:** upgrade from `0.1.3` to `0.2.0`
+* **@mxjs/a-form:** upgrade from `0.2.15` to `0.3.0`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.9` to `0.3.0`
+* **@mxjs/upload:** upgrade from `0.4.3` to `0.5.0`
+* **@mxjs/api:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-sku:** upgrade from `0.1.13` to `0.2.0`
+* **@mxjs/css:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/ueditor:** upgrade from `0.1.6` to `0.2.0`
+* **@mxjs/icons:** upgrade from `0.1.4` to `0.2.0`
+* **@mxjs/a-button:** upgrade from `0.2.12` to `0.3.0`
+* **@mxjs/a-color-picker:** upgrade from `0.1.2` to `0.2.0`
+* **@mxjs/bootstrap:** upgrade from `0.1.5` to `0.1.6`
+* **@mxjs/m-divider:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-icon:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-rich-text:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-page:** upgrade from `0.1.0` to `0.2.0`
+* **@mxjs/m-card:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-button:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-footer-bar:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-list:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-ret:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/m-stepper:** upgrade from `0.1.0` to `0.1.1`
+* **@miaoxing/dev:** upgrade from `7.0.1` to `8.0.0`
+* **@mxjs/test:** upgrade from `0.1.8` to `0.2.0`
+* **jest-preset-miaoxing:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/app:** upgrade from `0.3.2` to `0.3.3`
+* **@miaoxing/app:** upgrade from `0.3.3` to `0.4.0`
+* **@miaoxing/category:** upgrade from `0.2.14` to `0.3.0`
+* **@miaoxing/admin:** upgrade from `0.3.15` to `0.4.0`
+* **@miaoxing/nav:** upgrade from `0.1.17` to `0.1.18`
+* **@miaoxing/seq:** upgrade from `0.1.25` to `0.1.26`
+* **@miaoxing/logistics:** upgrade from `0.1.14` to `0.2.0`
+* **@miaoxing/ueditor:** upgrade from `0.1.12` to `0.1.13`
+
 ## [0.1.19](https://github.com/miaoxing/product/compare/v0.1.18...v0.1.19) (2021-05-24)
 
 
