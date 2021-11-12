@@ -12,6 +12,7 @@ import Sku from '@miaoxing/product/components/admin/Sku';
 import api from '@mxjs/api';
 import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';
+import {FormItemSort} from '@miaoxing/admin';
 
 export default () => {
   const skuRef = useRef();
@@ -189,7 +190,7 @@ export default () => {
           <Switch/>
         </FormItem>
 
-        <FormItem label="顺序" name="sort" type="number"/>
+        <FormItemSort/>
 
         <FormItem name="id" type="hidden"/>
 
