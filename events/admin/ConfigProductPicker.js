@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {Table, TableProvider, useTable} from '@mxjs/a-table';
-import {Media} from '@mxjs/bootstrap';
+import Media from '@mxjs/a-media';
 import {CloseCircleFilled, DownCircleFilled, UpCircleFilled} from '@ant-design/icons';
 import $ from 'miaoxing';
 import {Avatar, Button, Modal} from 'antd';

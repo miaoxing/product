@@ -2,7 +2,7 @@ import { Component } from 'react';
 import {Avatar} from 'antd';
 import {PictureOutlined} from '@ant-design/icons';
 import propTypes from 'prop-types';
-import {Box} from '@fower/react';
+import Media from '@mxjs/a-media';
 
 /**
  * 商品媒体对象
@@ -20,12 +20,12 @@ export default class extends Component {
   render() {
     const product = this.props.product;
     return (
-      <Box toTop>
+      <Media>
         <Avatar src={product.image} icon={<PictureOutlined/>} shape="square" size={48}/>
-        <Box flex={1} ml3>
+        <Media.Body>
           {product.name}
-        </Box>
-      </Box>
+        </Media.Body>
+      </Media>
     );
   }
 }
