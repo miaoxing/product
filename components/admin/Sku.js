@@ -1,6 +1,6 @@
 import { createRef, Component } from 'react';
 import {FormContext} from '@mxjs/a-form';
-import {Form as AntdForm, Input} from 'antd';
+import {Form as AntdForm, Input, Typography} from 'antd';
 import SkuBase from '@mxjs/a-sku';
 import Upload from '@mxjs/upload';
 import $ from 'miaoxing';
@@ -50,7 +50,7 @@ export default class Sku extends Component {
     <>
       {name}
       {' '}
-      <span className="text-warning">*</span>
+      <Typography.Text type="warning">*</Typography.Text>
     </>
   )
 
