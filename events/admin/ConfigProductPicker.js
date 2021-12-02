@@ -4,7 +4,7 @@ import Media from '@mxjs/a-media';
 import {CloseCircleFilled, DownCircleFilled, UpCircleFilled} from '@ant-design/icons';
 import $ from 'miaoxing';
 import {Avatar, Button, Modal} from 'antd';
-import {css} from '@mxjs/css';
+import {css} from '@fower/core';
 import Icon from '@mxjs/icons';
 import {PageActions} from '@mxjs/a-page';
 import {SearchForm, SearchItem} from '@mxjs/a-form';
@@ -13,32 +13,34 @@ import appendUrl from 'append-url';
 import PropTypes from 'prop-types';
 import {NewBtn} from '@mxjs/a-button';
 import {ProductMedia} from '@miaoxing/product/admin';
+import {spacing} from '@mxjs/css';
 
 const defaultImage = window.location.origin + $.url('plugins/page/images/default-swiper.svg');
 
-const cardCss = css({
+const cardClass = css({
   position: 'relative',
-  mb: 4,
-  p: 6,
-  boxShadow: 'sm',
-  border: '1px solid',
-  borderColor: 'gray.100',
-  _hover: {
+  mb4: true,
+  px6: true,
+  pt6: true,
+  shadowTiny: true,
+  border: 1,
+  borderColor: 'gray100',
+  ':hover': {
     '> .toolbar': {
       display: 'block',
     },
   },
 });
 
-const toolbarCss = css({
+const toolbarClass = css({
   display: 'none',
   position: 'absolute',
-  top: -4,
-  right: -2,
-  fontSize: 'xl',
+  top: -spacing(4),
+  right: -spacing(2),
+  textXL: true,
   '> a': {
-    ml: 1,
-    color: 'gray.400',
+    ml1: true,
+    gray400: true,
   },
 });
 
@@ -93,8 +95,8 @@ const ProductPicker = ({value = [], onChange}) => {
     <>
       <div>
         {products.map((product, index) => {
-          return <Media key={product.id} css={cardCss}>
-            <div className="toolbar" css={toolbarCss}>
+          return <Media key={product.id} className={cardClass}>
+            <div className={'toolbar ' + toolbarClass}>
               {index !== 0 && <a href="#" onClick={(e) => {
                 e.preventDefault();
                 move(index, index - 1);
@@ -118,7 +120,7 @@ const ProductPicker = ({value = [], onChange}) => {
                 <CloseCircleFilled/>
               </a>
             </div>
-            <Avatar src={product.image || defaultImage} shape="square" size={48} css={css({mr: 3})}/>
+            <Avatar src={product.image || defaultImage} shape="square" size={48}/>
             <Media.Body>
               {product.name}
             </Media.Body>

@@ -41,8 +41,8 @@ const ProductSearchPreview = ({placeholder, inputShape, style = {}, inputStyle =
   inputCss.borderRadius = borderRadii[inputShape];
 
   return (
-    <div css={formCss}>
-      <div css={inputCss}>
+    <div style={formCss}>
+      <div style={inputCss}>
         <Icon type="icon-search" style={iconStyle}/>
         {' '}
         {placeholder || '搜索'}
