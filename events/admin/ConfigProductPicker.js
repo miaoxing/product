@@ -4,7 +4,6 @@ import Media from '@mxjs/a-media';
 import {CloseCircleFilled, DownCircleFilled, UpCircleFilled} from '@ant-design/icons';
 import $ from 'miaoxing';
 import {Avatar, Button, Modal} from 'antd';
-import {css} from '@fower/core';
 import Icon from '@mxjs/icons';
 import {PageActions} from '@mxjs/a-page';
 import {SearchForm, SearchItem} from '@mxjs/a-form';
@@ -13,7 +12,7 @@ import appendUrl from 'append-url';
 import PropTypes from 'prop-types';
 import {NewBtn} from '@mxjs/a-button';
 import {ProductMedia} from '@miaoxing/product/admin';
-import {spacing} from '@mxjs/css';
+import {css, spacing} from '@mxjs/css';
 
 const defaultImage = window.location.origin + $.url('plugins/page/images/default-swiper.svg');
 
