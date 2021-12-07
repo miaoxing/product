@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "@miaoxing/dev": "^8.0.0",
+    "@mxjs/a-media": "^0.1.0",
     "@mxjs/test": "^0.2.0",
     "@testing-library/react": "^11.2.6",
     "jest-preset-miaoxing": "^0.2.5",
@@ -73,6 +74,7 @@
     "jest-preset-miaoxing": "miaoxing/jest-preset-miaoxing",
     "@mxjs/a-form": "miaoxing/mxjs-a-form",
     "@mxjs/a-table": "miaoxing/mxjs-a-table",
+    "@mxjs/a-media": "miaoxing/mxjs-a-media",
     "@mxjs/a-page": "miaoxing/mxjs-a-page",
     "@mxjs/a-button": "miaoxing/mxjs-a-button",
     "@mxjs/m-divider": "miaoxing/mxjs-m-divider",
