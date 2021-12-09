@@ -39,7 +39,7 @@
     "@mxjs/bootstrap": "^0.1.6",
     "taro-ui": "^3.0.0-alpha.10",
     "@mxjs/m-divider": "^0.1.1",
-    "@fower/taro": "^1.59.0",
+    "@fower/taro": "^1.61.0",
     "@tarojs/components": "^3.3.10",
     "@mxjs/m-icon": "^0.1.1",
     "@mxjs/m-rich-text": "^0.1.1",
