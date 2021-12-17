@@ -13,8 +13,7 @@ import PropTypes from 'prop-types';
 import {NewBtn} from '@mxjs/a-button';
 import {ProductMedia} from '@miaoxing/product/admin';
 import {css, spacing} from '@mxjs/css';
-
-const defaultImage = window.location.origin + $.url('plugins/page/images/default-swiper.svg');
+import defaultImage from '../../images/default-image.svg';
 
 const cardClass = css({
   position: 'relative',

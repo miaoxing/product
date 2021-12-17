@@ -4,8 +4,7 @@ import $ from 'miaoxing';
 import {Empty} from 'antd';
 import {css} from '@mxjs/css';
 import {Box} from '@mxjs/box';
-
-const defaultImage = window.location.origin + $.url('plugins/page/images/default-swiper.svg');
+import defaultImage from '../../images/default-image.svg';
 
 const space = 4;
 
