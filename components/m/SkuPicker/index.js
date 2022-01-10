@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
-import {Image, Text, View, Block} from '@fower/taro';
+import {Image, Text, View} from '@fower/taro';
+import {Block} from '@tarojs/components';
 import {AtFloatLayout} from 'taro-ui';
 import './index.scss';
 import clsx from 'clsx';
