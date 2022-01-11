@@ -3,10 +3,10 @@
 exports[`ProductMedia basic 1`] = `
 <div>
   <div
-    class="media"
+    class="flex flexDirection-row row-toTop"
   >
     <span
-      class="ant-avatar ant-avatar-square ant-avatar-image ant-avatar-icon css-8er82g"
+      class="ant-avatar ant-avatar-square ant-avatar-image ant-avatar-icon"
       style="width: 48px; height: 48px; line-height: 48px; font-size: 24px;"
     >
       <img
@@ -14,7 +14,7 @@ exports[`ProductMedia basic 1`] = `
       />
     </span>
     <div
-      class="media-body"
+      class="flex-1 ml-12"
     >
       name
     </div>
