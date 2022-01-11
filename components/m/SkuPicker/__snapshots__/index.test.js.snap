@@ -31,9 +31,7 @@ exports[`SkuPicker basic 1`] = `
               <taro-view-core
                 style="color: rgb(32, 201, 151); align-self: flex-end;"
               >
-                <taro-block-core>
-                  
-                </taro-block-core>
+                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
@@ -171,13 +169,11 @@ exports[`SkuPicker create cart 1`] = `
               <taro-view-core
                 style="color: rgb(32, 201, 151); align-self: flex-end;"
               >
-                <taro-block-core>
-                  <taro-text-core>
-                    ￥
-                  </taro-text-core>
-                  11
-                  
-                </taro-block-core>
+                <taro-text-core>
+                  ￥
+                </taro-text-core>
+                11
+                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
@@ -389,13 +385,11 @@ exports[`SkuPicker create order 1`] = `
               <taro-view-core
                 style="color: rgb(32, 201, 151); align-self: flex-end;"
               >
-                <taro-block-core>
-                  <taro-text-core>
-                    ￥
-                  </taro-text-core>
-                  11
-                  
-                </taro-block-core>
+                <taro-text-core>
+                  ￥
+                </taro-text-core>
+                11
+                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
@@ -644,13 +638,11 @@ exports[`SkuPicker update cart 1`] = `
               <taro-view-core
                 style="color: rgb(32, 201, 151); align-self: flex-end;"
               >
-                <taro-block-core>
-                  <taro-text-core>
-                    ￥
-                  </taro-text-core>
-                  12
-                  
-                </taro-block-core>
+                <taro-text-core>
+                  ￥
+                </taro-text-core>
+                12
+                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
