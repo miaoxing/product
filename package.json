@@ -52,6 +52,7 @@
     "@mxjs/m-stepper": "^0.1.1",
     "clsx": "^1.1.1",
     "@tarojs/taro": "^3.3.20",
+    "taro-test": "^0.1.0",
     "use-uid": "^1.0.0"
   },
   "devDependencies": {
@@ -87,6 +88,7 @@
     "@mxjs/m-list": "miaoxing/mxjs-m-list",
     "@mxjs/m-ret": "miaoxing/mxjs-m-ret",
     "@mxjs/m-stepper": "miaoxing/mxjs-m-stepper",
-    "@mxjs/theme": "miaoxing/mxjs-theme"
+    "@mxjs/theme": "miaoxing/mxjs-theme",
+    "taro-test": "miaoxing/taro-test"
   }
 }

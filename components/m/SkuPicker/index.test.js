@@ -5,6 +5,9 @@ import {createProduct, createSingleSkuProduct} from '@miaoxing/product/test-util
 import {bootstrap, createPromise} from '@mxjs/test';
 import $, {Ret} from 'miaoxing';
 import {reset} from 'use-uid';
+import {init} from 'taro-test';
+
+init();
 
 bootstrap();
 

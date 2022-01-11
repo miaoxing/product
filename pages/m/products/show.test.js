@@ -3,8 +3,10 @@ import $, {Ret} from 'miaoxing';
 import {createPromise, bootstrap, setUrl, resetUrl} from '@mxjs/test';
 import Taro from '@tarojs/taro';
 import {createProduct} from '@miaoxing/product/test-utils';
+import {init} from 'taro-test';
 import Show from './show';
 
+init();
 bootstrap();
 
 describe('Show', () => {
