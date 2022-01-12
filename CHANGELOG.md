@@ -1,3 +1,66 @@
+## [0.2.1](https://github.com/miaoxing/product/compare/v0.2.0...v0.2.1) (2022-01-12)
+
+
+### Bug Fixes
+
+* **product:** 使用 taro 的 Block，解决 Invalid prop `style` supplied to `React.Fragment` 问题 ([7307436](https://github.com/miaoxing/product/commit/73074366ffa75d2e06b38dc1d72fdd6a7218fd3b))
+* 更新 `[@fower](https://github.com/fower)` 到 `^1.59.0` ([c9ef75d](https://github.com/miaoxing/product/commit/c9ef75d50609a6556541582d22fdf3ea885da45a))
+
+
+### Features
+
+* **taro:** 限制 taro 为 3.3.x，3.4 有 BREAKING CHANGES ([0a0033a](https://github.com/miaoxing/product/commit/0a0033a23c018aa68454f7d0f901457647454d4a))
+* 更新 `[@fower](https://github.com/fower)` 到 `^1.61` ([6b8ee7b](https://github.com/miaoxing/product/commit/6b8ee7b32408dea7b332e324f9995941ccdf64f8))
+* 更新 `antd` 到 `~4.17.4` ([e93e130](https://github.com/miaoxing/product/commit/e93e13009e88c43d5ee39178358d707581126ab0))
+* 更新 taro 到 `^3.3.20` ([331b441](https://github.com/miaoxing/product/commit/331b441c5fc0d13d07f574dbf6d5171bc6251a54))
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.14` to `1.0.15`
+* **miaoxing:** upgrade from `0.3.0` to `0.4.0`
+* **@mxjs/a-table:** upgrade from `0.4.0` to `0.4.1`
+* **@mxjs/a-clink:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/a-page:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/actions:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/a-form:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/a-date-range-picker:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/upload:** upgrade from `0.5.0` to `0.5.1`
+* **@mxjs/api:** upgrade from `0.1.4` to `0.1.5`
+* **@mxjs/a-sku:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/css:** upgrade from `0.2.3` to `0.3.0`
+* **@mxjs/ueditor:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/icons:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/a-button:** upgrade from `0.3.0` to `0.4.0`
+* **@mxjs/a-color-picker:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/bootstrap:** upgrade from `0.1.6` to `0.1.7`
+* **@mxjs/m-divider:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-icon:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-rich-text:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-page:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/m-card:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-button:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-footer-bar:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-list:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-ret:** upgrade from `0.1.1` to `0.1.2`
+* **@mxjs/m-stepper:** upgrade from `0.1.1` to `0.1.2`
+* **taro-test:** upgrade from `0.1.0` to `0.1.1`
+* **@miaoxing/dev:** upgrade from `8.0.0` to `8.0.1`
+* **@mxjs/a-media:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/test:** upgrade from `0.2.0` to `0.2.1`
+* **jest-preset-miaoxing:** upgrade from `0.2.5` to `0.3.0`
+* **@mxjs/app:** upgrade from `0.3.3` to `0.4.0`
+* **@miaoxing/app:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/category:** upgrade from `0.3.0` to `0.4.0`
+* **@miaoxing/admin:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/nav:** upgrade from `0.1.18` to `0.1.19`
+* **@miaoxing/seq:** upgrade from `0.1.26` to `0.1.27`
+* **@miaoxing/logistics:** upgrade from `0.2.0` to `0.3.0`
+* **@miaoxing/ueditor:** upgrade from `0.1.13` to `0.1.14`
+
 # [0.2.0](https://github.com/miaoxing/product/compare/v0.1.19...v0.2.0) (2021-10-28)
 
 
