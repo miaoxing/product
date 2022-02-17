@@ -7,12 +7,11 @@ import {Page, PageActions} from '@mxjs/a-page';
 import {Form, FormItem, FormAction, Select} from '@mxjs/a-form';
 import {Divider, Radio, Switch, AutoComplete, TreeSelect} from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
-import Upload from '@mxjs/upload';
 import Sku from '@miaoxing/product/components/admin/Sku';
 import api from '@mxjs/api';
 import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';
-import {FormItemSort} from '@miaoxing/admin';
+import {FormItemSort, Upload} from '@miaoxing/admin';
 
 export default () => {
   const skuRef = useRef();
@@ -109,10 +108,7 @@ export default () => {
           extra="支持.jpg .jpeg .bmp .gif .png格式照片，最多上传 9 张图片"
           wrapperCol={{span: 12}}
         >
-          <Upload
-            url={$.apiUrl('files', {type: 'image'})}
-            max={9}
-          />
+          <Upload max={9}/>
         </FormItem>
 
         <FormItem label="分类" name="categoryIds">

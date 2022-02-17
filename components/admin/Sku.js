@@ -2,8 +2,7 @@ import { createRef, Component } from 'react';
 import {FormContext} from '@mxjs/a-form';
 import {Form as AntdForm, Input, Typography} from 'antd';
 import SkuBase from '@mxjs/a-sku';
-import Upload from '@mxjs/upload';
-import $ from 'miaoxing';
+import {Upload} from '@miaoxing/admin';
 
 /**
  * 规格编辑器
@@ -228,11 +227,7 @@ export default class Sku extends Component {
                 name: ['skus', record.rowKey, 'image'],
                 initialValue: v,
               }, {
-                el: <Upload
-                  max={1}
-                  size={60}
-                  url={$.apiUrl('files', {type: 'image'})}
-                />,
+                el: <Upload max={1} size={60}/>,
               });
             },
           },
