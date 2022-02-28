@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/product",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -26,7 +26,7 @@
     "@mxjs/actions": "^0.2.2",
     "@mxjs/a-form": "^0.3.2",
     "@mxjs/a-date-range-picker": "^0.3.2",
-    "@mxjs/upload": "^0.5.2",
+    "@mxjs/upload": "^0.6.0",
     "@mxjs/api": "^0.1.6",
     "@mxjs/a-sku": "^0.2.2",
     "@mxjs/css": "^0.3.1",

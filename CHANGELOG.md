@@ -1,3 +1,26 @@
+## [0.2.3](https://github.com/miaoxing/product/compare/v0.2.2...v0.2.3) (2022-02-28)
+
+
+### Bug Fixes
+
+* **product:** 解决 `specValueIds` 使用 int 输出到前端丢失精度 ([2771d02](https://github.com/miaoxing/product/commit/2771d02a23f6092fbfcd84da3f048535b20f53e2))
+* **product:** 解决运费模板偶发未选择的问题 ([6e283dc](https://github.com/miaoxing/product/commit/6e283dce9b664fbd0c69f23fdbd251117b956f94))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/upload:** upgrade from `0.5.2` to `0.6.0`
+* **@miaoxing/app:** upgrade from `0.5.1` to `0.6.0`
+* **@miaoxing/category:** upgrade from `0.4.1` to `0.4.2`
+* **@miaoxing/admin:** upgrade from `0.5.1` to `0.5.2`
+* **@miaoxing/nav:** upgrade from `0.1.20` to `0.1.21`
+* **@miaoxing/seq:** upgrade from `0.1.28` to `0.1.29`
+* **@miaoxing/logistics:** upgrade from `0.3.1` to `0.3.2`
+* **@miaoxing/ueditor:** upgrade from `0.1.15` to `0.1.16`
+
 ## [0.2.2](https://github.com/miaoxing/product/compare/v0.2.1...v0.2.2) (2022-02-05)
 
 
