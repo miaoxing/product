@@ -33,7 +33,7 @@ class SkuModel extends BaseModel
         'specValueIds' => [
             'cast' => [
                 'list',
-                'type' => 'int',
+                'type' => 'string',
             ],
         ],
     ];
