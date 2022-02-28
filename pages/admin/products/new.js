@@ -13,6 +13,9 @@ import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';
 import {FormItemSort, Upload} from '@miaoxing/admin';
 
+// TODO 解决 setShippingTpl 后，afterLoad 还未获取到 shippingTpls 模板未选择
+let loadedShippingTpls = [];
+
 export default () => {
   const skuRef = useRef();
   const categoryProductIds = useRef({});
@@ -23,8 +26,9 @@ export default () => {
   useEffect(() => {
     api.getMax('shipping-tpls', {loading: true}).then(({ret}) => {
       if (ret.isSuc()) {
+        loadedShippingTpls = ret.data;
         setShippingTpl(ret.data);
-        if (ret.data.length) {
+        if (!$.req('id') && ret.data.length) {
           form.current.setFieldsValue({shippingTplId: ret.data[0].id});
         }
       } else {
@@ -73,8 +77,9 @@ export default () => {
           });
 
           // 如果运费模板先加载完，使用第一个值
-          if (shippingTpls.length) {
-            ret.data.shippingTplId = shippingTpls[0].id;
+          if (!ret.data.id && loadedShippingTpls.length) {
+            ret.data.shippingTplId = loadedShippingTpls[0].id;
+            loadedShippingTpls = [];
           }
 
           // TODO 未加载完成就退出页面，则不调用 afterLoad
