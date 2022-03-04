@@ -13,7 +13,7 @@ class V20170330181950CreateProductsTable extends BaseMigration
     {
         $this->schema->table('products')->tableComment('商品')
             ->bigId()->comment('编号')
-            ->uInt('app_id')->comment('应用编号')
+            ->uBigInt('app_id')->comment('应用编号')
             ->string('outer_id', 36)->comment('外部编号')
             ->uBigInt('shipping_tpl_id')->comment('运费模板编号')
             ->string('name')->comment('名称')

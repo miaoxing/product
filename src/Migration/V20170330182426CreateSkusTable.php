@@ -13,7 +13,7 @@ class V20170330182426CreateSkusTable extends BaseMigration
     {
         $this->schema->table('skus')->tableComment('商品SKU；1:m')
             ->bigId()->comment('编号')
-            ->uInt('app_id')->comment('应用编号')
+            ->uBigInt('app_id')->comment('应用编号')
             ->string('outer_id', 36)->comment('外部编号')
             ->uBigInt('product_id')->comment('商品编号')
             ->string('spec_value_ids', 64)->comment('多个规格值编号，使用,隔开')
