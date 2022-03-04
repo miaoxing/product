@@ -1,3 +1,39 @@
+# [0.3.0](https://github.com/miaoxing/product/compare/v0.2.3...v0.3.0) (2022-03-04)
+
+
+### Features
+
+* 数据表 `app_id` 字段由 `int` 升级到 `bigint` ([3bccae2](https://github.com/miaoxing/product/commit/3bccae2fcc023f268902fe4bdd1c238aa9cb6747))
+
+
+### BREAKING CHANGES
+
+* 数据表 `app_id` 字段由 `int` 升级到 `bigint`
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `0.4.2` to `0.4.3`
+* **@mxjs/a-clink:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/a-page:** upgrade from `0.3.2` to `0.3.3`
+* **@mxjs/a-form:** upgrade from `0.3.2` to `0.3.3`
+* **@mxjs/upload:** upgrade from `0.6.0` to `0.6.1`
+* **@mxjs/api:** upgrade from `0.1.6` to `0.1.7`
+* **@mxjs/a-sku:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/ueditor:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/test:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/app:** upgrade from `0.4.1` to `0.4.2`
+* **@miaoxing/app:** upgrade from `0.6.0` to `0.6.1`
+* **@miaoxing/category:** upgrade from `0.4.2` to `0.5.0`
+* **@miaoxing/admin:** upgrade from `0.5.2` to `0.6.0`
+* **@miaoxing/nav:** upgrade from `0.1.21` to `0.1.22`
+* **@miaoxing/seq:** upgrade from `0.1.29` to `0.1.30`
+* **@miaoxing/logistics:** upgrade from `0.3.2` to `0.4.0`
+* **@miaoxing/ueditor:** upgrade from `0.1.16` to `0.1.17`
+
 ## [0.2.3](https://github.com/miaoxing/product/compare/v0.2.2...v0.2.3) (2022-02-28)
 
 
