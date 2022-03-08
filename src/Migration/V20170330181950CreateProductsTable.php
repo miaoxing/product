@@ -48,6 +48,7 @@ class V20170330181950CreateProductsTable extends BaseMigration
 
         $this->schema->table('product_details')->tableComment('商品详情；1:1')
             ->bigId()->comment('编号')
+            ->uBigInt('app_id')->comment('应用编号')
             ->uBigInt('product_id')->comment('商品编号')
             ->mediumText('content')->comment('内容')
             ->timestamps()
