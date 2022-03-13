@@ -63,9 +63,6 @@ class V20201124150002CreateSpecTables extends BaseMigration
      */
     public function down()
     {
-        $this->schema->dropIfExists('product_images')
-            ->dropIfExists('specs')
-            ->dropIfExists('spec_values')
-            ->dropIfExists('product_specs');
+        $this->schema->dropIfExists(['product_images', 'specs', 'spec_values', 'product_specs']);
     }
 }

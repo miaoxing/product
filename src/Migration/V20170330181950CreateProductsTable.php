@@ -61,7 +61,6 @@ class V20170330181950CreateProductsTable extends BaseMigration
      */
     public function down()
     {
-        $this->schema->dropIfExists('products')
-            ->dropIfExists('product_details');
+        $this->schema->dropIfExists(['products', 'product_details']);
     }
 }
