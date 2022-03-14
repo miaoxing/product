@@ -5,12 +5,6 @@
   "main": "index.js",
   "author": "twinh",
   "license": "MIT",
-  "jest": {
-    "preset": "jest-preset-miaoxing",
-    "moduleNameMapper": {
-      "@miaoxing/product/(.*)": "<rootDir>/$1"
-    }
-  },
   "workspaces": [
     "plugins/*"
   ],
