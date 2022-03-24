@@ -12,8 +12,8 @@ return new class () extends BaseController {
 
     public function get()
     {
-        return IndexAction
-            ::beforeFind(function (ProductModel $models, $req) {
+        return IndexAction::new()
+            ->beforeFind(function (ProductModel $models, $req) {
                 $models->setDefaultSortColumn(['sort', 'id']);
 
                 if (isset($req['search']['categoryId'])) {
