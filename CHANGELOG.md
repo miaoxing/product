@@ -1,3 +1,54 @@
+# [0.4.0](https://github.com/miaoxing/product/compare/v0.3.0...v0.4.0) (2022-03-31)
+
+
+### Bug Fixes
+
+* 数据表增加 `app_id` 字段 ([ccf3869](https://github.com/miaoxing/product/commit/ccf3869ff80224590b2d2f2d6d2cc577b88aa216))
+
+
+### Features
+
+* 更新 `fower` 到 `^1.70.0` ([22e3879](https://github.com/miaoxing/product/commit/22e38797e3e8b1842763ca2f585bc5a8130bf41a))
+
+
+### BREAKING CHANGES
+
+* 数据表增加 `app_id` 字段
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `0.4.3` to `0.4.4`
+* **@mxjs/a-clink:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/a-page:** upgrade from `0.3.3` to `0.3.4`
+* **@mxjs/a-form:** upgrade from `0.3.3` to `0.3.4`
+* **@mxjs/upload:** upgrade from `0.6.1` to `0.6.2`
+* **@mxjs/api:** upgrade from `0.1.7` to `0.1.8`
+* **@mxjs/a-sku:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/css:** upgrade from `0.3.1` to `0.3.2`
+* **@mxjs/ueditor:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/m-divider:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-icon:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-rich-text:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-page:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/m-card:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-button:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-footer-bar:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-list:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/m-stepper:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-media:** upgrade from `0.1.2` to `0.1.3`
+* **@mxjs/test:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/app:** upgrade from `0.4.2` to `0.4.3`
+* **@miaoxing/app:** upgrade from `0.6.1` to `0.6.2`
+* **@miaoxing/category:** upgrade from `0.5.0` to `0.5.1`
+* **@miaoxing/admin:** upgrade from `0.6.0` to `0.7.0`
+* **@miaoxing/nav:** upgrade from `0.1.22` to `0.1.23`
+* **@miaoxing/logistics:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/ueditor:** upgrade from `0.1.17` to `0.1.18`
+
 # [0.3.0](https://github.com/miaoxing/product/compare/v0.2.3...v0.3.0) (2022-03-04)
 
 
