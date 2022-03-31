@@ -29,7 +29,7 @@ exports[`SkuPicker basic 1`] = `
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
-                style="color: rgb(32, 201, 151); align-self: flex-end;"
+                style="color: rgb(59, 130, 246); align-self: flex-end;"
               >
                 
               </taro-view-core>
@@ -167,7 +167,7 @@ exports[`SkuPicker create cart 1`] = `
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
-                style="color: rgb(32, 201, 151); align-self: flex-end;"
+                style="color: rgb(59, 130, 246); align-self: flex-end;"
               >
                 <taro-text-core>
                   ￥
@@ -383,7 +383,7 @@ exports[`SkuPicker create order 1`] = `
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
-                style="color: rgb(32, 201, 151); align-self: flex-end;"
+                style="color: rgb(59, 130, 246); align-self: flex-end;"
               >
                 <taro-text-core>
                   ￥
@@ -636,7 +636,7 @@ exports[`SkuPicker update cart 1`] = `
                 style="border-radius: 4rpx; overflow: hidden;"
               />
               <taro-view-core
-                style="color: rgb(32, 201, 151); align-self: flex-end;"
+                style="color: rgb(59, 130, 246); align-self: flex-end;"
               >
                 <taro-text-core>
                   ￥
