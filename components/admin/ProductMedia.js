@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import {Avatar} from 'antd';
 import {PictureOutlined} from '@ant-design/icons';
 import propTypes from 'prop-types';
@@ -9,23 +8,22 @@ import Media from '@mxjs/a-media';
  *
  * 包含了商品小图和名称
  */
-export default class extends Component {
-  static propTypes = {
-    product: propTypes.shape({
-      name: propTypes.string.isRequired,
-      image: propTypes.string,
-    }),
-  }
+const ProductMedia = ({product}) => {
+  return (
+    <Media>
+      <Avatar src={product.image} icon={<PictureOutlined/>} shape="square" size={48}/>
+      <Media.Body>
+        {product.name}
+      </Media.Body>
+    </Media>
+  );
+};
 
-  render() {
-    const product = this.props.product;
-    return (
-      <Media>
-        <Avatar src={product.image} icon={<PictureOutlined/>} shape="square" size={48}/>
-        <Media.Body>
-          {product.name}
-        </Media.Body>
-      </Media>
-    );
-  }
-}
+ProductMedia.propTypes = {
+  product: propTypes.shape({
+    name: propTypes.string.isRequired,
+    image: propTypes.string,
+  }),
+};
+
+export default ProductMedia;
