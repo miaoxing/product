@@ -3,6 +3,7 @@
 namespace Miaoxing\Product;
 
 use Illuminate\Console\Scheduling\Schedule;
+use Miaoxing\Admin\Service\AdminMenu;
 use Miaoxing\Plugin\BasePlugin;
 use Miaoxing\Product\Task\UpdateTimingStatus;
 
@@ -15,31 +16,13 @@ class ProductPlugin extends BasePlugin
 
     protected $code = 208;
 
-    /**
-     * 添加后台菜单
-     *
-     * @param array $navs
-     * @param array $categories
-     * @param array $subCategories
-     */
-    public function onAdminNavGetNavs(array &$navs, array &$categories, array &$subCategories)
+    public function onAdminMenuGetMenus(AdminMenu $menu)
     {
-        $categories['products'] = [
-            'name' => '商品',
-            'sort' => 900,
-        ];
+        $product = $menu->addChild('product')->setLabel('商品')->setSort(900);
 
-        $subCategories['products'] = [
-            'parentId' => 'products',
-            'name' => '商品管理',
-            'url' => 'admin/products',
-        ];
+        $product->addChild()->setLabel('商品管理')->setUrl('admin/products');
 
-        $subCategories[] = [
-            'parentId' => 'products',
-            'name' => '分类管理',
-            'url' => 'admin/categories',
-        ];
+        $product->addChild()->setLabel('分类管理')->setUrl('admin/categories');
     }
 
     /**
