@@ -1,3 +1,23 @@
+## [0.4.5](https://github.com/miaoxing/product/compare/v0.4.4...v0.4.5) (2022-07-02)
+
+
+### Bug Fixes
+
+* 解决 composer 2.2+ 默认不启用插件导致安装路径错误 ([bae46a4](https://github.com/miaoxing/product/commit/bae46a4df349a3affe86ae730f66331fbf418300))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/app:** upgrade from `0.6.5` to `0.6.6`
+* **@miaoxing/category:** upgrade from `0.5.5` to `0.5.6`
+* **@miaoxing/admin:** upgrade from `0.8.0` to `0.8.1`
+* **@miaoxing/nav:** upgrade from `0.1.27` to `0.1.28`
+* **@miaoxing/logistics:** upgrade from `0.5.4` to `0.5.5`
+* **@miaoxing/ueditor:** upgrade from `0.1.21` to `0.1.22`
+
 ## [0.4.4](https://github.com/miaoxing/product/compare/v0.4.3...v0.4.4) (2022-07-01)
 
 
