@@ -1,3 +1,50 @@
+## [0.4.6](https://github.com/miaoxing/product/compare/v0.4.5...v0.4.6) (2022-08-02)
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.18` to `1.0.19`
+* **miaoxing:** upgrade from `0.4.3` to `0.4.4`
+* **@mxjs/a-table:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-clink:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-page:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/actions:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/a-form:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-date-range-picker:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/upload:** upgrade from `0.6.6` to `0.6.7`
+* **@mxjs/api:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-sku:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/css:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/ueditor:** upgrade from `0.2.8` to `0.2.9`
+* **@mxjs/icons:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-button:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/a-color-picker:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/bootstrap:** upgrade from `0.1.10` to `0.1.11`
+* **@mxjs/m-divider:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-icon:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-rich-text:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-page:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-card:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-button:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-footer-bar:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-list:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-ret:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/m-stepper:** upgrade from `1.0.0` to `1.0.1`
+* **taro-test:** upgrade from `1.0.0` to `1.0.1`
+* **@miaoxing/dev:** upgrade from `8.1.2` to `8.1.3`
+* **@mxjs/a-media:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/test:** upgrade from `1.0.0` to `1.0.1`
+* **@mxjs/app:** upgrade from `0.5.2` to `0.5.3`
+* **@miaoxing/app:** upgrade from `0.6.6` to `0.6.7`
+* **@miaoxing/category:** upgrade from `0.5.6` to `0.5.7`
+* **@miaoxing/admin:** upgrade from `0.8.1` to `0.9.0`
+* **@miaoxing/nav:** upgrade from `0.1.28` to `0.1.29`
+* **@miaoxing/logistics:** upgrade from `0.5.5` to `0.5.6`
+* **@miaoxing/ueditor:** upgrade from `0.1.22` to `0.1.23`
+
 ## [0.4.5](https://github.com/miaoxing/product/compare/v0.4.4...v0.4.5) (2022-07-02)
 
 
