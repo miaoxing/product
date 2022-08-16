@@ -6,8 +6,8 @@ use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Model\ModelTrait;
 use Miaoxing\Plugin\Model\SnowflakeTrait;
-use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Product\Metadata\SpecTrait;
+use Wei\Model\SoftDeleteTrait;
 
 /**
  * 规格

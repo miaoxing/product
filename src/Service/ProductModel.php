@@ -9,9 +9,9 @@ use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Model\ModelTrait;
 use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\Plugin\Model\SnowflakeTrait;
-use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Product\Metadata\ProductTrait;
 use Wei\Event;
+use Wei\Model\SoftDeleteTrait;
 use Wei\Ret;
 use Wei\Time;
 
