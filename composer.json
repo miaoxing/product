@@ -8,12 +8,12 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "^0.6.7",
-    "miaoxing/category": "^0.5.7",
-    "miaoxing/admin": "^0.9.0",
-    "miaoxing/nav": "^0.1.29",
-    "miaoxing/logistics": "^0.5.6",
-    "miaoxing/ueditor": "^0.1.23"
+    "miaoxing/app": "^0.6.8",
+    "miaoxing/category": "^0.5.8",
+    "miaoxing/admin": "^0.9.1",
+    "miaoxing/nav": "^0.1.30",
+    "miaoxing/logistics": "^0.5.7",
+    "miaoxing/ueditor": "^0.1.24"
   },
   "autoload": {
     "psr-4": {
