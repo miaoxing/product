@@ -3,10 +3,10 @@
 namespace Miaoxing\Product\Metadata;
 
 /**
- * @property int|null $id 编号
- * @property int $appId 应用编号
+ * @property string|null $id 编号
+ * @property string $appId 应用编号
  * @property string $outerId 外部编号
- * @property int $productId 商品编号
+ * @property string $productId 商品编号
  * @property string $specValueIds 多个规格值编号，使用,隔开
  * @property string $no 货号
  * @property string $price 销售价
@@ -19,10 +19,10 @@ namespace Miaoxing\Product\Metadata;
  * @property string $image 图片
  * @property string|null $createdAt
  * @property string|null $updatedAt
- * @property int $createdBy
- * @property int $updatedBy
+ * @property string $createdBy
+ * @property string $updatedBy
  * @property string|null $deletedAt
- * @property int $deletedBy
+ * @property string $deletedBy
  * @internal will change in the future
  */
 trait SkuTrait

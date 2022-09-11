@@ -3,10 +3,10 @@
 namespace Miaoxing\Product\Metadata;
 
 /**
- * @property int|null $id 编号
- * @property int $appId 应用编号
+ * @property string|null $id 编号
+ * @property string $appId 应用编号
  * @property string $outerId 外部编号
- * @property int $shippingTplId 运费模板编号
+ * @property string $shippingTplId 运费模板编号
  * @property string $name 名称
  * @property string $intro 简介
  * @property string $minPrice 最低的销售价
@@ -31,10 +31,12 @@ namespace Miaoxing\Product\Metadata;
  * @property string $configs 配置
  * @property string|null $createdAt
  * @property string|null $updatedAt
- * @property int $createdBy
- * @property int $updatedBy
+ * @property string $createdBy
+ * @property string $updatedBy
  * @property string|null $deletedAt
- * @property int $deletedBy
+ * @property string $deletedBy
+ * @property string|null $purgedAt
+ * @property string $purgedBy
  * @internal will change in the future
  */
 trait ProductTrait
