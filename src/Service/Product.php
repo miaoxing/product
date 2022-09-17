@@ -61,7 +61,7 @@ class Product extends BaseService
             $v->uBigInt('categoryId', '值')->modelExists(CategoryModel::class);
         });
         $v->array(['spec', 'specs'], '规格', 1, 3)->required($product->isNew())->each(function (V $v) {
-            $v->char('name', '名称')->maxCharLength(5);
+            $v->maxCharLength('name', '名称', 5);
             $v->array('values', '值', 1, 10)->each(function (V $v) {
                 $v->tinyChar('name', '名称');
             });
@@ -75,12 +75,12 @@ class Product extends BaseService
                 return $callback->getValidator()->getFieldData('price') > 0 || $input > 0;
             }, '%name%和价格至少有一个大于0');
             $v->uDefaultInt('stockNum', '库存')->required();
-            $v->char('no', '货号')->maxCharLength(16);
+            $v->maxCharLength('no', '货号', 16);
             $v->uNumber('weight', '重量', 10, 3);
             $v->tinyChar('image', '图片');
             $v->array('specValues', '规格值')->required()->each(function (V $v) {
                 $v->tinyChar('name', '名称');
-                $v->char('specName', '规格名称')->maxCharLength(5);
+                $v->maxCharLength('specName', '规格名称', 5);
             });
         });
         $v->uBigInt('shippingTplId', '运费模板')->modelExists(ShippingTplModel::class);
@@ -89,8 +89,8 @@ class Product extends BaseService
         $v->dateTime('startAt', '上架开始时间')->allowEmpty();
         $v->dateTime('endAt', '上架结束时间')->allowEmpty()->gte($req['startAt'] ?? null);
         $v->uSmallInt('maxOrderQuantity', '最大购买数量');
-        $v->char(['configs', 'quantityName'], '"数量"名称', null, 4);
-        $v->char(['configs', 'unit'], '单位', null, 2);
+        $v->maxCharLength(['configs', 'quantityName'], '"数量"名称', 4);
+        $v->maxCharLength(['configs', 'unit'], '单位', 2);
         $v->char(['configs', 'hideSoldNum'], '是否隐藏销量');
         $v->uTinyInt('decStockMode', '库存计数');
         $v->bool('isAllowAddCart', '是否可加入购物车');
