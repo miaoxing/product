@@ -54,7 +54,7 @@ class Product extends BaseService
         $v->tinyChar('intro', '简短描述');
         $v->array('images', '图片', null, 9)->each(function (V $v) {
             $v->uBigInt('id', '编号')->optional();
-            $v->tinyChar('url', '地址');
+            $v->imageUrl('url', '地址');
         });
         $v->array('categoriesProducts', '分类', null, 9)->each(function (V $v) {
             $v->uBigInt('id', '编号')->optional();
@@ -77,7 +77,7 @@ class Product extends BaseService
             $v->uDefaultInt('stockNum', '库存')->required();
             $v->maxCharLength('no', '货号', 16);
             $v->uNumber('weight', '重量', 10, 3);
-            $v->tinyChar('image', '图片');
+            $v->imageUrl('image', '图片');
             $v->array('specValues', '规格值')->required()->each(function (V $v) {
                 $v->tinyChar('name', '名称');
                 $v->maxCharLength('specName', '规格名称', 5);
