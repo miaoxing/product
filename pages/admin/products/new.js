@@ -1,7 +1,7 @@
 /**
  * @share [id]/edit
  */
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {CListBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
 import {Form, FormItem, FormAction, Select} from '@mxjs/a-form';
@@ -16,7 +16,7 @@ import {FormItemSort, Upload} from '@miaoxing/admin';
 // TODO 解决 setShippingTpl 后，afterLoad 还未获取到 shippingTpls 模板未选择
 let loadedShippingTpls = [];
 
-export default () => {
+const New = () => {
   const skuRef = useRef();
   const categoryProductIds = useRef({});
   const form = useRef();
@@ -200,3 +200,5 @@ export default () => {
     </Page>
   );
 };
+
+export default New;

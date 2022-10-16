@@ -21,7 +21,7 @@ function getPriceText(price, score) {
   return text;
 }
 
-export default () => {
+const Index = () => {
   const [table] = useTable();
 
   return (
@@ -78,3 +78,5 @@ export default () => {
     </Page>
   );
 };
+
+export default Index;
