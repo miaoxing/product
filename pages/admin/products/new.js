@@ -4,14 +4,14 @@
 import {useEffect, useRef, useState} from 'react';
 import {CListBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
-import {Form, FormItem, FormAction, Select} from '@mxjs/a-form';
+import {Form, FormItem, FormAction} from '@mxjs/a-form';
 import {Divider, Radio, Switch, AutoComplete, TreeSelect} from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import Sku from '@miaoxing/product/components/admin/Sku';
 import api from '@mxjs/api';
 import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';
-import {FormItemSort, Upload} from '@miaoxing/admin';
+import {FormItemSort, Select, Upload} from '@miaoxing/admin';
 
 // TODO 解决 setShippingTpl 后，afterLoad 还未获取到 shippingTpls 模板未选择
 let loadedShippingTpls = [];
@@ -22,20 +22,12 @@ const New = () => {
   const form = useRef();
 
   // 加载运费模板
-  const [shippingTpls, setShippingTpl] = useState([]);
-  useEffect(() => {
-    api.getMax('shipping-tpls', {loading: true}).then(({ret}) => {
-      if (ret.isSuc()) {
-        loadedShippingTpls = ret.data;
-        setShippingTpl(ret.data);
-        if (!$.req('id') && ret.data.length) {
-          form.current.setFieldsValue({shippingTplId: ret.data[0].id});
-        }
-      } else {
-        $.ret(ret);
-      }
-    });
-  }, []);
+  const handleShippingTplsAfterLoad = ({data}) => {
+    loadedShippingTpls = data;
+    if (!$.req('id') && data.length) {
+      form.current.setFieldsValue({shippingTplId: data[0].id});
+    }
+  };
 
   // 加载商品分类
   const [categories, setCategories] = useState([]);
@@ -131,7 +123,7 @@ const New = () => {
         <Sku ref={skuRef}/>
 
         <FormItem label="运费模板" name="shippingTplId">
-          <Select options={shippingTpls} labelKey="name" valueKey="id"/>
+          <Select url="shipping-tpls" afterLoad={handleShippingTplsAfterLoad} labelKey="name" valueKey="id"/>
         </FormItem>
 
         <FormUeditor label="描述" name={['detail', 'content']}/>
