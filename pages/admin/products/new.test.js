@@ -28,6 +28,25 @@ describe('admin/products', () => {
     const promise4 = createPromise();
 
     $.http = jest.fn()
+      // 读取分类
+      .mockImplementationOnce(() => promise3.resolve({
+        ret: Ret.suc({
+          data: [{
+            id: 1,
+            name: '测试分类',
+            children: [],
+          }],
+        }),
+      }))
+      // 读取运费模板
+      .mockImplementationOnce(() => promise2.resolve({
+        ret: Ret.suc({
+          data: [{
+            id: 1,
+            name: '测试模板',
+          }],
+        }),
+      }))
       // 读取默认数据
       .mockImplementationOnce(() => promise.resolve({
         ret: Ret.suc({
@@ -52,25 +71,6 @@ describe('admin/products', () => {
               ],
             },
           },
-        }),
-      }))
-      // 读取运费模板
-      .mockImplementationOnce(() => promise2.resolve({
-        ret: Ret.suc({
-          data: [{
-            id: 1,
-            name: '测试模板',
-          }],
-        }),
-      }))
-      // 读取分类
-      .mockImplementationOnce(() => promise3.resolve({
-        ret: Ret.suc({
-          data: [{
-            id: 1,
-            name: '测试分类',
-            children: [],
-          }],
         }),
       }))
       // 提交

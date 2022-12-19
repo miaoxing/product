@@ -1,32 +1,12 @@
-import { useState, useEffect } from 'react';
-import {Card, Radio, Select, TreeSelect, InputNumber, Switch} from 'antd';
+import {useState} from 'react';
+import {Card, Radio, Select, InputNumber, Switch} from 'antd';
 import PropTypes from 'prop-types';
 import {FormItem, useForm} from '@mxjs/a-form';
-import $ from 'miaoxing';
-import api from '@mxjs/api';
+import {TreeSelect} from '@miaoxing/admin';
 import ConfigProductPicker from './ConfigProductPicker';
 import ColorPicker from '@mxjs/a-color-picker';
 
 const ProductConfig = ({propName}) => {
-  // 加载商品分类
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    api.getMax('categories', {loading: true}).then(({ret}) => {
-      if (ret.isSuc()) {
-        setCategories(ret.data.map(category => ({
-          value: category.id,
-          title: category.name,
-          children: category.children.map(subCategory => ({
-            value: subCategory.id,
-            title: subCategory.name,
-          })),
-        })));
-      } else {
-        $.ret(ret);
-      }
-    });
-  }, []);
-
   const form = useForm();
   const [source, setSource] = useState(form.getFieldValue(['components'].concat(propName(['source']))));
 
@@ -44,13 +24,9 @@ const ProductConfig = ({propName}) => {
 
       {source === 'category' && <FormItem label="选择分类" name={propName(['categoryIds'])}>
         <TreeSelect
-          showSearch
-          showArrow
-          allowClear
+          url="categories"
           multiple
-          treeDefaultExpandAll
           placeholder="请选择"
-          treeData={categories}
         />
       </FormItem>}
 

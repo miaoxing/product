@@ -5,8 +5,12 @@ exports[`admin/products form 1`] = `
   "calls": Array [
     Array [
       Object {
+        "loading": true,
         "method": "get",
-        "url": "/admin-api/products/defaults",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/categories",
       },
     ],
     Array [
@@ -21,12 +25,8 @@ exports[`admin/products form 1`] = `
     ],
     Array [
       Object {
-        "loading": true,
         "method": "get",
-        "params": Object {
-          "limit": 500,
-        },
-        "url": "/admin-api/categories",
+        "url": "/admin-api/products/defaults",
       },
     ],
   ],
@@ -61,8 +61,12 @@ exports[`admin/products form 2`] = `
   "calls": Array [
     Array [
       Object {
+        "loading": true,
         "method": "get",
-        "url": "/admin-api/products/defaults",
+        "params": Object {
+          "limit": 500,
+        },
+        "url": "/admin-api/categories",
       },
     ],
     Array [
@@ -77,12 +81,8 @@ exports[`admin/products form 2`] = `
     ],
     Array [
       Object {
-        "loading": true,
         "method": "get",
-        "params": Object {
-          "limit": 500,
-        },
-        "url": "/admin-api/categories",
+        "url": "/admin-api/products/defaults",
       },
     ],
     Array [

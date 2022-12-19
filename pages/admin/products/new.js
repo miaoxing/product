@@ -1,17 +1,16 @@
 /**
  * @share [id]/edit
  */
-import {useEffect, useRef, useState} from 'react';
+import {useRef} from 'react';
 import {CListBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
 import {Form, FormItem, FormAction} from '@mxjs/a-form';
-import {Divider, Radio, Switch, AutoComplete, TreeSelect} from 'antd';
+import {Divider, Radio, Switch, AutoComplete} from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import Sku from '@miaoxing/product/components/admin/Sku';
-import api from '@mxjs/api';
 import $ from 'miaoxing';
 import {FormUeditor} from '@mxjs/ueditor';
-import {FormItemSort, Select, Upload} from '@miaoxing/admin';
+import {FormItemSort, Select, TreeSelect, Upload} from '@miaoxing/admin';
 
 // TODO 解决 setShippingTpl 后，afterLoad 还未获取到 shippingTpls 模板未选择
 let loadedShippingTpls = [];
@@ -28,25 +27,6 @@ const New = () => {
       form.current.setFieldsValue({shippingTplId: data[0].id});
     }
   };
-
-  // 加载商品分类
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    api.getMax('categories', {loading: true}).then(({ret}) => {
-      if (ret.isSuc()) {
-        setCategories(ret.data.map(category => ({
-          value: category.id,
-          title: category.name,
-          children: category.children.map(subCategory => ({
-            value: subCategory.id,
-            title: subCategory.name,
-          })),
-        })));
-      } else {
-        $.ret(ret);
-      }
-    });
-  }, []);
 
   return (
     <Page>
@@ -110,13 +90,9 @@ const New = () => {
 
         <FormItem label="分类" name="categoryIds">
           <TreeSelect
-            showSearch
-            showArrow
-            allowClear
+            url="categories"
             multiple
-            treeDefaultExpandAll
             placeholder="请选择"
-            treeData={categories}
           />
         </FormItem>
 
