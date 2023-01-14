@@ -216,13 +216,13 @@ exports[`Show basic 1`] = `
             style="flex-direction: row; justify-content: space-between; display: flex;"
           >
             <taro-text-core>
-
+               
               包邮
             </taro-text-core>
             <taro-text-core
               style="color: rgb(156, 163, 175);"
             >
-              销量
+              销量 
               0
             </taro-text-core>
           </taro-view-core>
@@ -356,7 +356,7 @@ exports[`Show basic 1`] = `
                     ￥
                   </taro-text-core>
                   9 ~ 14
-
+                  
                 </taro-view-core>
               </taro-view-core>
               <taro-view-core
@@ -429,13 +429,13 @@ exports[`Show basic 1`] = `
                   <taro-text-core
                     style="color: rgb(107, 114, 128);"
                   >
-
-                    剩下
+                     
+                    剩下 
                     21
-
+                     
                     件
                   </taro-text-core>
-
+                   
                   <taro-view-core
                     class="mx-stepper"
                   >
