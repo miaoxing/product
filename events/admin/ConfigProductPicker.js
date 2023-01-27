@@ -60,7 +60,7 @@ const ProductPicker = ({value = [], onChange}) => {
 
   // Modal 中的数据
   // 需要受控，以便打开 modal 选中已选的商品
-  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
   const [selectedRowKeys, setSelectedRowKeys] = useState(value);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const ProductPicker = ({value = [], onChange}) => {
           </Media>;
         })}
         <Button block type="dashed" onClick={() => {
-          setVisible(true);
+          setOpen(true);
         }}>
           <Icon type="mi-popup"/>
           选 择
@@ -133,18 +133,18 @@ const ProductPicker = ({value = [], onChange}) => {
       </div>
       <Modal
         title="选择商品"
-        visible={visible}
+        open={open}
         width={800}
         bodyStyle={{
           padding: '1rem',
         }}
         onOk={() => {
           onChange(selectedRowKeys);
-          setVisible(false);
+          setOpen(false);
         }}
         onCancel={() => {
           setSelectedRowKeys(value);
-          setVisible(false);
+          setOpen(false);
         }}
       >
         <TableProvider>
