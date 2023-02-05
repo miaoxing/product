@@ -18,11 +18,11 @@ class ProductPlugin extends BasePlugin
 
     public function onAdminMenuGetMenus(AdminMenu $menu)
     {
-        $product = $menu->addChild('product')->setLabel('商品')->setSort(900);
+        $product = $menu->child('product')->setLabel('商品')->setSort(900);
 
-        $product->addChild()->setLabel('商品管理')->setUrl('admin/products');
-
-        $product->addChild()->setLabel('分类管理')->setUrl('admin/categories');
+        $products = $product->addChild()->setLabel('商品管理')->setUrl('admin/products')->setSort(900);
+        $products->addChild()->setUrl('admin/products/new')->setLabel('添加');
+        $products->addChild()->setUrl('admin/products/[id]/edit')->setLabel('编辑');
     }
 
     /**
