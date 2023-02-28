@@ -59,6 +59,9 @@
     "@mxjs/app": "^0.5.4",
     "lodash": "^4.17.21"
   },
+  "resolutions": {
+    "@fower/core": "~1.75.0"
+  },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
     "@mxjs/app": "miaoxing/mxjs-app",
