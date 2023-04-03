@@ -76,6 +76,7 @@
     "@mxjs/a-media": "miaoxing/mxjs-a-media",
     "@mxjs/a-page": "miaoxing/mxjs-a-page",
     "@mxjs/a-button": "miaoxing/mxjs-a-button",
+    "@mxjs/auth": "miaoxing/mxjs-auth",
     "@mxjs/box": "miaoxing/mxjs-box",
     "@mxjs/m-divider": "miaoxing/mxjs-m-divider",
     "@mxjs/m-icon": "miaoxing/mxjs-m-icon",
@@ -87,6 +88,7 @@
     "@mxjs/m-list": "miaoxing/mxjs-m-list",
     "@mxjs/m-ret": "miaoxing/mxjs-m-ret",
     "@mxjs/m-stepper": "miaoxing/mxjs-m-stepper",
+    "@mxjs/router": "miaoxing/mxjs-router",
     "@mxjs/test": "miaoxing/mxjs-test",
     "@mxjs/theme": "miaoxing/mxjs-theme",
     "taro-test": "miaoxing/taro-test"
