@@ -1,3 +1,55 @@
+## [0.4.18](https://github.com/miaoxing/product/compare/v0.4.17...v0.4.18) (2023-05-31)
+
+
+### Features
+
+* **antd5:** 更新 `antd` 到 `5.1.6` ([c75df57](https://github.com/miaoxing/product/commit/c75df57d3cfbcc7e14b5143a1712fa2141ccf112))
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.20` to `1.0.21`
+* **miaoxing:** upgrade from `0.4.6` to `0.4.7`
+* **@mxjs/a-table:** upgrade from `1.4.2` to `1.5.0`
+* **@mxjs/a-clink:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/a-page:** upgrade from `2.1.1` to `2.1.2`
+* **@mxjs/actions:** upgrade from `0.2.10` to `0.2.11`
+* **@mxjs/a-form:** upgrade from `1.3.0` to `1.4.0`
+* **@mxjs/a-date-range-picker:** upgrade from `1.2.3` to `2.0.0`
+* **@mxjs/upload:** upgrade from `0.6.17` to `0.6.18`
+* **@mxjs/api:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/a-sku:** upgrade from `1.1.3` to `1.2.0`
+* **@mxjs/css:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/ueditor:** upgrade from `0.2.19` to `0.2.20`
+* **@mxjs/icons:** upgrade from `1.0.2` to `1.0.3`
+* **@mxjs/a-button:** upgrade from `1.3.1` to `2.0.0`
+* **@mxjs/a-color-picker:** upgrade from `1.0.2` to `1.0.3`
+* **@mxjs/bootstrap:** upgrade from `0.1.12` to `0.1.13`
+* **@mxjs/m-divider:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-icon:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-rich-text:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-page:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-card:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-button:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-footer-bar:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-list:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-ret:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/m-stepper:** upgrade from `1.1.0` to `1.1.1`
+* **taro-test:** upgrade from `1.0.2` to `1.0.3`
+* **@miaoxing/dev:** upgrade from `8.2.0` to `8.2.1`
+* **@mxjs/a-media:** upgrade from `1.0.2` to `1.0.3`
+* **@mxjs/test:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/app:** upgrade from `0.5.4` to `0.5.5`
+* **@miaoxing/app:** upgrade from `0.7.2` to `0.7.3`
+* **@miaoxing/category:** upgrade from `0.5.18` to `0.5.19`
+* **@miaoxing/admin:** upgrade from `0.10.3` to `0.10.4`
+* **@miaoxing/nav:** upgrade from `0.1.38` to `0.1.39`
+* **@miaoxing/logistics:** upgrade from `0.5.17` to `0.5.18`
+* **@miaoxing/ueditor:** upgrade from `0.1.32` to `0.1.33`
+
 ## [0.4.17](https://github.com/miaoxing/product/compare/v0.4.16...v0.4.17) (2023-04-30)
 
 
