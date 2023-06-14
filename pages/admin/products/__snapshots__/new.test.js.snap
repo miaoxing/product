@@ -10,7 +10,7 @@ exports[`admin/products form 1`] = `
         "params": Object {
           "limit": 500,
         },
-        "url": "/admin-api/categories",
+        "url": "/api/admin/categories",
       },
     ],
     Array [
@@ -20,14 +20,14 @@ exports[`admin/products form 1`] = `
         "params": Object {
           "limit": 500,
         },
-        "url": "/admin-api/shipping-tpls",
+        "url": "/api/admin/shipping-tpls",
       },
     ],
     Array [
       Object {
         "loading": true,
         "method": "get",
-        "url": "/admin-api/products/defaults",
+        "url": "/api/admin/products/defaults",
       },
     ],
   ],
@@ -67,7 +67,7 @@ exports[`admin/products form 2`] = `
         "params": Object {
           "limit": 500,
         },
-        "url": "/admin-api/categories",
+        "url": "/api/admin/categories",
       },
     ],
     Array [
@@ -77,14 +77,14 @@ exports[`admin/products form 2`] = `
         "params": Object {
           "limit": 500,
         },
-        "url": "/admin-api/shipping-tpls",
+        "url": "/api/admin/shipping-tpls",
       },
     ],
     Array [
       Object {
         "loading": true,
         "method": "get",
-        "url": "/admin-api/products/defaults",
+        "url": "/api/admin/products/defaults",
       },
     ],
     Array [
@@ -148,7 +148,7 @@ exports[`admin/products form 2`] = `
         },
         "loading": true,
         "method": "POST",
-        "url": "/admin-api/products",
+        "url": "/api/admin/products",
       },
     ],
   ],

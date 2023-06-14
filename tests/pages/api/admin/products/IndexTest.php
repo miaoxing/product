@@ -1,6 +1,6 @@
 <?php
 
-namespace MiaoxingTest\Prodcut\Pages\AdminApi\Products;
+namespace MiaoxingTest\Prodcut\Pages\Api\Admin\Products;
 
 use Miaoxing\Plugin\Service\Tester;
 use Miaoxing\Plugin\Service\User;
