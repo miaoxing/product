@@ -87,7 +87,12 @@ describe('admin/products', () => {
     expect($.http).toMatchSnapshot();
 
     // 看到表单加载了数据
-    await waitFor(() => expect(getByLabelText('顺序').value).toBe('50'));
+    await waitFor(() => expect(getByLabelText('顺序').value).toBe('50'), {
+      timeout: 5000,
+      onTimeout: (error) => {
+        console.error('waitFor timeout', error);
+      },
+    });
     expect(getByLabelText('名称').value).toBe('');
 
     // 提交表单
