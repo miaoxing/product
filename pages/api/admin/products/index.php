@@ -1,12 +1,12 @@
 <?php
 
-use Miaoxing\Plugin\BaseController;
+use Miaoxing\Plugin\BasePage;
 use Miaoxing\Product\Service\ProductModel;
 use Miaoxing\Services\Page\CollGetTrait;
 use Miaoxing\Services\Page\PostToPatchTrait;
 use Miaoxing\Services\Service\IndexAction;
 
-return new class () extends BaseController {
+return new class () extends BasePage {
     use CollGetTrait;
     use PostToPatchTrait;
 

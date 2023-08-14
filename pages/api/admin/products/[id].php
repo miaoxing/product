@@ -1,11 +1,11 @@
 <?php
 
-use Miaoxing\Plugin\BaseController;
+use Miaoxing\Plugin\BasePage;
 use Miaoxing\Product\Service\Product;
 use Miaoxing\Product\Service\ProductModel;
 use Miaoxing\Services\Page\ItemTrait;
 
-return new class () extends BaseController {
+return new class () extends BasePage {
     use ItemTrait;
 
     protected $include = [
