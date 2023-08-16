@@ -1,6 +1,6 @@
 import { createRef, Component } from 'react';
 import {FormContext} from '@mxjs/a-form';
-import {Form as AntdForm, Input, Typography} from 'antd';
+import {Form, Input, Typography} from 'antd';
 import SkuBase from '@mxjs/a-sku';
 import {Upload} from '@miaoxing/admin';
 
@@ -39,9 +39,9 @@ export default class Sku extends Component {
 
   renderBaseFormItem(props, item = {}) {
     return (
-      <AntdForm.Item {...props} style={{marginBottom: '0px'}}>
+      <Form.Item {...props} style={{marginBottom: '0px'}}>
         {item.el || <Input style={{textAlign: 'center'}}/>}
-      </AntdForm.Item>
+      </Form.Item>
     );
   }
 
