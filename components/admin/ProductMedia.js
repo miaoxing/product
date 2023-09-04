@@ -11,7 +11,7 @@ import Media from '@mxjs/a-media';
 const ProductMedia = ({product}) => {
   return (
     <Media>
-      <Avatar src={product.image} icon={<PictureOutlined/>} shape="square" size={48}/>
+      <Avatar src={product.image} icon={<PictureOutlined/>} shape="square" size={54}/>
       <Media.Body>
         {product.name}
       </Media.Body>

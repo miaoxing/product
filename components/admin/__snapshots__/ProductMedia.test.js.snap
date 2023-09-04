@@ -7,7 +7,7 @@ exports[`ProductMedia basic 1`] = `
   >
     <span
       class="ant-avatar ant-avatar-square ant-avatar-image ant-avatar-icon"
-      style="width: 48px; height: 48px; line-height: 48px; font-size: 24px;"
+      style="width: 54px; height: 54px; line-height: 54px; font-size: 27px;"
     >
       <img
         src="image"
