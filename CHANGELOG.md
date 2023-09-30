@@ -1,3 +1,29 @@
+## [0.4.22](https://github.com/miaoxing/product/compare/v0.4.21...v0.4.22) (2023-09-30)
+
+
+### Features
+
+* **u:** 图片改为宽高 54，以便和带预览功能的图片宽高一致 ([583d2ed](https://github.com/miaoxing/product/commit/583d2ed243d1a135a16c3a7e64d5d69fc6301838))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-page:** upgrade from `2.1.5` to `2.2.0`
+* **@mxjs/a-form:** upgrade from `1.6.0` to `1.7.0`
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.3` to `2.0.4`
+* **@mxjs/upload:** upgrade from `0.6.21` to `0.6.22`
+* **@mxjs/a-sku:** upgrade from `1.2.3` to `1.2.4`
+* **@mxjs/ueditor:** upgrade from `0.2.23` to `0.2.24`
+* **@miaoxing/app:** upgrade from `0.7.6` to `0.7.7`
+* **@miaoxing/category:** upgrade from `0.5.22` to `0.5.23`
+* **@miaoxing/admin:** upgrade from `0.11.0` to `0.11.1`
+* **@miaoxing/nav:** upgrade from `0.1.42` to `0.1.43`
+* **@miaoxing/logistics:** upgrade from `0.5.21` to `0.5.22`
+* **@miaoxing/ueditor:** upgrade from `0.1.36` to `0.1.37`
+
 ## [0.4.21](https://github.com/miaoxing/product/compare/v0.4.20...v0.4.21) (2023-09-02)
 
 
