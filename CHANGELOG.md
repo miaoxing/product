@@ -1,3 +1,24 @@
+## [0.4.23](https://github.com/miaoxing/product/compare/v0.4.22...v0.4.23) (2023-11-02)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.5.3` to `1.6.0`
+* **@mxjs/a-form:** upgrade from `1.7.0` to `2.0.0`
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.4` to `2.0.5`
+* **@mxjs/upload:** upgrade from `0.6.22` to `0.6.23`
+* **@mxjs/a-sku:** upgrade from `1.2.4` to `1.2.5`
+* **@mxjs/ueditor:** upgrade from `0.2.24` to `0.2.25`
+* **@miaoxing/app:** upgrade from `0.7.7` to `0.7.8`
+* **@miaoxing/category:** upgrade from `0.5.23` to `0.5.24`
+* **@miaoxing/admin:** upgrade from `0.11.1` to `0.11.2`
+* **@miaoxing/nav:** upgrade from `0.1.43` to `0.1.44`
+* **@miaoxing/logistics:** upgrade from `0.5.22` to `0.5.23`
+* **@miaoxing/ueditor:** upgrade from `0.1.37` to `0.1.38`
+
 ## [0.4.22](https://github.com/miaoxing/product/compare/v0.4.21...v0.4.22) (2023-09-30)
 
 
