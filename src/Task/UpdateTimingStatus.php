@@ -16,12 +16,11 @@ final class UpdateTimingStatus
     public function __invoke()
     {
         // 1. 定时开始
-        $products = ProductModel
-            ::where('status', ProductModel::STATUS_NOT_STARTED)
+        $products = ProductModel::where('status', ProductModel::STATUS_NOT_STARTED)
                 ->where('is_listing', true)
                 ->where('stock_num', '>=', 0)
                 ->where('start_at', '<', Time::now())
-                ->where(function (ProductModel $model) {
+                ->where(static function (ProductModel $model) {
                     $model->where('end_at', '>', Time::now())->orWhereNull('end_at');
                 })
                 ->all();

@@ -52,33 +52,33 @@ class Product extends BaseService
         $v = V::defaultOptional();
         $v->tinyChar('name', '名称')->required($product->isNew())->notBlank();
         $v->tinyChar('intro', '简短描述');
-        $v->array('images', '图片', null, 9)->each(function (V $v) {
+        $v->array('images', '图片', null, 9)->each(static function (V $v) {
             $v->uBigInt('id', '编号')->optional();
             $v->imageUrl('url', '地址');
         });
-        $v->array('categoriesProducts', '分类', null, 9)->each(function (V $v) {
+        $v->array('categoriesProducts', '分类', null, 9)->each(static function (V $v) {
             $v->uBigInt('id', '编号')->optional();
             $v->uBigInt('categoryId', '值')->modelExists(CategoryModel::class);
         });
-        $v->array(['spec', 'specs'], '规格', 1, 3)->required($product->isNew())->each(function (V $v) {
+        $v->array(['spec', 'specs'], '规格', 1, 3)->required($product->isNew())->each(static function (V $v) {
             $v->maxCharLength('name', '名称', 5);
-            $v->array('values', '值', 1, 10)->each(function (V $v) {
+            $v->array('values', '值', 1, 10)->each(static function (V $v) {
                 $v->tinyChar('name', '名称');
             });
         });
-        $v->array('skus', '规格明细')->required($product->isNew())->each(function (V $v) {
+        $v->array('skus', '规格明细')->required($product->isNew())->each(static function (V $v) {
             $v->defaultOptional();
             $v->uBigInt('id', '编号');
             $v->uNumber('price', '价格', 10, 2)->required();
             $v->uNumber('marketPrice', '划线价', 10, 2);
-            $v->uDefaultInt('score', '积分')->callback(function ($input, IsCallback $callback) {
+            $v->uDefaultInt('score', '积分')->callback(static function ($input, IsCallback $callback) {
                 return $callback->getValidator()->getFieldData('price') > 0 || $input > 0;
             }, '%name%和价格至少有一个大于0');
             $v->uDefaultInt('stockNum', '库存')->required();
             $v->maxCharLength('no', '货号', 16);
             $v->uNumber('weight', '重量', 10, 3);
             $v->imageUrl('image', '图片')->allowEmpty();
-            $v->array('specValues', '规格值')->required()->each(function (V $v) {
+            $v->array('specValues', '规格值')->required()->each(static function (V $v) {
                 $v->tinyChar('name', '名称');
                 $v->maxCharLength('specName', '规格名称', 5);
             });

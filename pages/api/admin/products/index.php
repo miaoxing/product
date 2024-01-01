@@ -13,14 +13,14 @@ return new class () extends BasePage {
     public function get()
     {
         return IndexAction::new()
-            ->beforeFind(function (ProductModel $models, $req) {
+            ->beforeFind(static function (ProductModel $models, $req) {
                 $models->setDefaultSortColumn(['sort', 'id']);
 
                 if (isset($req['search']['categoryId'])) {
                     $models->withCategoryId($req['search']['categoryId']);
                 }
             })
-            ->afterFind(function (ProductModel $models, $req) {
+            ->afterFind(static function (ProductModel $models, $req) {
                 // @experimental 指定编号排序
                 if ('id' !== $req['sortField']) {
                     return;
@@ -32,7 +32,7 @@ return new class () extends BasePage {
                 }
 
                 $iterator = $models->getIterator();
-                $iterator->uasort(function ($article1, $article2) use ($ids) {
+                $iterator->uasort(static function ($article1, $article2) use ($ids) {
                     $pos1 = array_search($article1->id, $ids, true);
                     $pos2 = array_search($article2->id, $ids, true);
                     return $pos1 - $pos2;
