@@ -77,7 +77,7 @@
     "@mxjs/a-page": "miaoxing/mxjs-a-page",
     "@mxjs/a-button": "miaoxing/mxjs-a-button",
     "@mxjs/auth": "miaoxing/mxjs-auth",
-    "@mxjs/box": "miaoxing/mxjs-box",
+    "@mxjs/a-box": "miaoxing/mxjs-a-box",
     "@mxjs/m-divider": "miaoxing/mxjs-m-divider",
     "@mxjs/m-icon": "miaoxing/mxjs-m-icon",
     "@mxjs/m-rich-text": "miaoxing/mxjs-m-rich-text",

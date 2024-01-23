@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'miaoxing';
-import {Empty} from 'antd';
-import {css} from '@mxjs/css';
-import {Box} from '@mxjs/box';
+import { Empty } from 'antd';
+import { css } from '@mxjs/css';
+import { Box } from '@mxjs/a-box';
 import defaultImage from '../../images/default-image.svg';
 
 const space = 4;
@@ -52,7 +52,7 @@ const listPropTypes = {
 };
 
 const Image = ({product}) => (
-  <Box relative pt="100%">
+  <Box position="relative" pt="100%">
     <img className={productImgCss} src={product.image || defaultImage}/>
   </Box>
 );
@@ -284,11 +284,11 @@ const ProductPreview = (
     <>
       {
         products.length ?
-          <Box flex style={style}>
+          <Box diaplay="flex" style={style}>
             <Tpl products={products} showMarketPrice={showMarketPrice}/>
           </Box>
           :
-          <Box overflowHidden>
+          <Box overflow="hidden">
             <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}/>
           </Box>
       }
@@ -309,4 +309,4 @@ ProductPreview.propTypes = {
 
 export default ProductPreview;
 
-export {defaultImage};
+export { defaultImage };
