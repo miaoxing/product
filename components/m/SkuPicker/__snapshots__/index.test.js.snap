@@ -30,9 +30,7 @@ exports[`SkuPicker basic 1`] = `
               />
               <taro-view-core
                 style="color: rgb(59, 130, 246); align-self: flex-end;"
-              >
-                
-              </taro-view-core>
+              />
             </taro-view-core>
             <taro-view-core
               style="margin-top: -1rem; font-weight: 100; color: rgb(107, 114, 128);"
@@ -173,7 +171,6 @@ exports[`SkuPicker create cart 1`] = `
                   ￥
                 </taro-text-core>
                 11
-                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
@@ -389,7 +386,6 @@ exports[`SkuPicker create order 1`] = `
                   ￥
                 </taro-text-core>
                 11
-                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core
@@ -642,7 +638,6 @@ exports[`SkuPicker update cart 1`] = `
                   ￥
                 </taro-text-core>
                 12
-                
               </taro-view-core>
             </taro-view-core>
             <taro-view-core

@@ -96,7 +96,6 @@ exports[`ShippingFee start fee 0 2`] = `
 exports[`ShippingFee without city 1`] = `
 <div>
   <taro-text-core>
-    
      
     快递：￥9.8
   </taro-text-core>

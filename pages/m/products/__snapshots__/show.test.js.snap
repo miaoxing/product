@@ -356,7 +356,6 @@ exports[`Show basic 1`] = `
                     ￥
                   </taro-text-core>
                   9 ~ 14
-                  
                 </taro-view-core>
               </taro-view-core>
               <taro-view-core
