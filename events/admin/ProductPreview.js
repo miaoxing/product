@@ -2,49 +2,32 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'miaoxing';
 import { Empty } from 'antd';
-import { css } from '@mxjs/css';
 import { Box } from '@mxjs/a-box';
 import defaultImage from '../../images/default-image.svg';
 
-const space = 4;
+const ProductLink = (props) => {
+  return (
+    <Box as="a" display="block" bg="white" color="inherit" {...props}/>
+  );
+};
 
-const productLinkCss = css({
-  display: 'block',
-  background: 'white',
-  color: 'inherit',
-});
+const ProductDetail = (props) => {
+  return (
+    <Box p={2} {...props}/>
+  );
+};
 
-const productDetailCss = css({
-  p: '8px',
-});
+const ProductName = (props) => {
+  return (
+    <Box textAlign="left" h="40px" overflow="hidden" fontSize="16px" lineHeight="20px" {...props}/>
+  );
+};
 
-const productNameCss = css({
-  textAlign: 'left',
-  h: '40px',
-  overflow: 'hidden',
-  fontSize: '16px',
-  lineHeight: '20px',
-});
-
-const productImgCss = css({
-  w: '100%',
-  h: '100%',
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  objectFit: 'cover',
-});
-
-const productMarketPriceCss = css({
-  color: '#757575',
-  fontWeight: 400,
-  fontSize: '80%',
-  ml: '4px',
-});
-
-const productItem1Css = css({
-  m: space * 2 + 'px',
-});
+const ProductImg = (props) => {
+  return (
+    <Box as="img" w="full" h="full" position="absolute" top={0} left={0} objectFit="cover" {...props}/>
+  );
+};
 
 const listPropTypes = {
   products: PropTypes.array,
@@ -53,7 +36,7 @@ const listPropTypes = {
 
 const Image = ({product}) => (
   <Box position="relative" pt="100%">
-    <img className={productImgCss} src={product.image || defaultImage}/>
+    <ProductImg src={product.image || defaultImage}/>
   </Box>
 );
 
@@ -64,9 +47,10 @@ Image.propTypes = {
 const Price = ({product, showMarketPrice}) => (
   <Box color="#f28c48">
     ￥{product.minPrice}
-    {!!(showMarketPrice && product.minMarketPrice) && <del className={productMarketPriceCss}>
-      ￥{product.minMarketPrice}
-    </del>}
+    {!!(showMarketPrice && product.minMarketPrice) &&
+      <Box as="del" color="#757575" fontWeight="400" fontSize="sm" ml={1}>
+        ￥{product.minMarketPrice}
+      </Box>}
   </Box>
 );
 
@@ -79,17 +63,17 @@ const List1 = ({products, showMarketPrice}) => {
   return (
     <Box w="100%">
       {products.map((product) => (
-        <div key={product.id} className={productItem1Css}>
-          <a className={productLinkCss} href="#">
+        <Box key={product.id} m={2}>
+          <ProductLink href="#">
             <Image product={product}/>
-            <div className={productDetailCss}>
-              <div className={productNameCss}>
+            <ProductDetail>
+              <ProductName>
                 {product.name}
-              </div>
+              </ProductName>
               <Price product={product} showMarketPrice={showMarketPrice}/>
-            </div>
-          </a>
-        </div>
+            </ProductDetail>
+          </ProductLink>
+        </Box>
       ))}
     </Box>
   );
@@ -97,112 +81,67 @@ const List1 = ({products, showMarketPrice}) => {
 
 List1.propTypes = listPropTypes;
 
-const productList2Css = css({
-  display: 'flex',
-  flexWrap: 'wrap',
-  p: space + 'px',
-});
-
-const productItem2Css = css({
-  w: '50%',
-  p: space + 'px',
-});
-
 const List2 = ({products, showMarketPrice}) => {
   return (
-    <div className={productList2Css}>
+    <Box display="flex" flexWrap="wrap" p={1}>
       {products.map((product) => (
-        <div key={product.id} className={productItem2Css}>
-          <a className={productLinkCss} href="#">
+        <Box key={product.id} w="50%" p={1}>
+          <ProductLink href="#">
             <Image product={product}/>
-            <div className={productDetailCss}>
-              <div className={productNameCss}>
+            <ProductDetail>
+              <ProductName>
                 {product.name}
-              </div>
+              </ProductName>
               <Price product={product} showMarketPrice={showMarketPrice}/>
-            </div>
-          </a>
-        </div>
+            </ProductDetail>
+          </ProductLink>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 
 List2.propTypes = listPropTypes;
 
-const productList3Css = css({
-  display: 'flex',
-  flexWrap: 'wrap',
-  p: space + 'px',
-});
-
-const productItem3Css = css({
-  w: '33.333333%',
-  p: space + 'px',
-});
-
 const List3 = ({products, showMarketPrice}) => {
   return (
-    <div className={productList3Css}>
+    <Box display="flex" flexWrap="wrap" p={1}>
       {products.map((product) => (
-        <div key={product.id} className={productItem3Css}>
-          <a className={productLinkCss} href="#">
+        <Box key={product.id} w={1 / 3} p={1}>
+          <ProductLink href="#">
             <Image product={product}/>
-            <div className={productDetailCss}>
-              <div className={productNameCss}>
+            <ProductDetail>
+              <ProductName>
                 {product.name}
-              </div>
+              </ProductName>
               <Price product={product} showMarketPrice={showMarketPrice}/>
-            </div>
-          </a>
-        </div>
+            </ProductDetail>
+          </ProductLink>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 
 List3.propTypes = listPropTypes;
 
-const productList4Css = css({
-  w: '100%',
-});
-
-const productItem4Css = css({
-  display: 'flex',
-  m: space * 2 + 'px',
-});
-
-const productImg4Css = css({
-  w: '120px',
-  h: '120px',
-  objectFit: 'cover',
-});
-
-const productDetail4Css = css({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  mx: '16px',
-  my: '8px',
-});
-
 const List4 = ({products, showMarketPrice}) => {
   return (
-    <div className={productList4Css}>
+    <Box w="full">
       {products.map((product) => (
-        <div key={product.id} className={productItem4Css}>
-          <Box as="a" className={productLinkCss} style={{display: 'flex'}} w="100%" href="#">
-            <img className={productImg4Css} src={product.image || defaultImage}/>
-            <div className={productDetail4Css}>
-              <div className={productNameCss}>
+        <Box key={product.id} display="flex" m={2}>
+          <ProductLink display="flex" w="full" href="#">
+            <Box as="img" w="120px" h="120px" objectFit="cover" src={product.image || defaultImage}/>
+            <Box display="flex" flexDirection="column" justifyContent="space-between" mx={4} my={2}>
+              <ProductName>
                 {product.name}
-              </div>
+              </ProductName>
               <Price product={product} showMarketPrice={showMarketPrice}/>
-            </div>
-          </Box>
-        </div>
+            </Box>
+          </ProductLink>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 
@@ -284,7 +223,7 @@ const ProductPreview = (
     <>
       {
         products.length ?
-          <Box diaplay="flex" style={style}>
+          <Box display="flex" style={style}>
             <Tpl products={products} showMarketPrice={showMarketPrice}/>
           </Box>
           :

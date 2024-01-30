@@ -23,7 +23,6 @@
     "@mxjs/upload": "^0.6.26",
     "@mxjs/api": "^1.0.10",
     "@mxjs/a-sku": "^1.2.8",
-    "@mxjs/css": "^1.1.6",
     "@mxjs/ueditor": "^0.2.28",
     "@ant-design/icons": "^4.6.2",
     "@mxjs/icons": "^1.0.8",
@@ -65,7 +64,6 @@
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
     "@mxjs/app": "miaoxing/mxjs-app",
-    "@mxjs/css": "miaoxing/mxjs-css",
     "@mxjs/upload": "miaoxing/mxjs-upload",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "@miaoxing/admin": "miaoxing/admin",
