@@ -1,3 +1,47 @@
+## [0.4.27](https://github.com/miaoxing/product/compare/v0.4.26...v0.4.27) (2024-01-31)
+
+
+### Features
+
+* 更新 `react` 支持 18 ([139f050](https://github.com/miaoxing/product/commit/139f0501245a062a79db6cf4069caf7f9240641c))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.6.3` to `1.7.0`
+* **@mxjs/a-clink:** upgrade from `2.0.5` to `2.1.0`
+* **@mxjs/a-page:** upgrade from `2.2.3` to `2.3.0`
+* **@mxjs/actions:** upgrade from `0.2.16` to `0.2.17`
+* **@mxjs/a-form:** upgrade from `2.0.3` to `2.1.0`
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.8` to `2.1.0`
+* **@mxjs/upload:** upgrade from `0.6.26` to `0.6.27`
+* **@mxjs/a-sku:** upgrade from `1.2.8` to `1.3.0`
+* **@mxjs/ueditor:** upgrade from `0.2.28` to `0.2.29`
+* **@mxjs/icons:** upgrade from `1.0.8` to `1.1.0`
+* **@mxjs/a-button:** upgrade from `3.0.5` to `3.1.0`
+* **@mxjs/a-color-picker:** upgrade from `1.0.8` to `1.1.0`
+* **@mxjs/bootstrap:** upgrade from `0.1.18` to `0.1.19`
+* **@mxjs/m-divider:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-icon:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-rich-text:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-page:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-card:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-button:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-footer-bar:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-list:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/m-ret:** upgrade from `1.0.9` to `1.1.0`
+* **@mxjs/m-stepper:** upgrade from `1.1.6` to `1.2.0`
+* **@mxjs/a-media:** upgrade from `1.0.8` to `2.0.0`
+* **@miaoxing/app:** upgrade from `0.7.11` to `0.8.0`
+* **@miaoxing/category:** upgrade from `0.5.27` to `0.5.28`
+* **@miaoxing/admin:** upgrade from `0.11.5` to `0.12.0`
+* **@miaoxing/nav:** upgrade from `0.1.47` to `0.1.48`
+* **@miaoxing/logistics:** upgrade from `0.5.26` to `0.5.27`
+* **@miaoxing/ueditor:** upgrade from `0.1.41` to `0.1.42`
+
 ## [0.4.26](https://github.com/miaoxing/product/compare/v0.4.25...v0.4.26) (2024-01-08)
 
 
