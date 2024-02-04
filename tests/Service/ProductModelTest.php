@@ -67,7 +67,7 @@ class ProductModelTest extends BaseTestCase
      * @param Ret|null $createOrder
      * @dataProvider providerForCheckCreateCartOrOrder
      */
-    public function testCheckCreateCartOrOrder(array $attributes, Ret $createCart, Ret $createOrder = null): void
+    public function testCheckCreateCartOrOrder(array $attributes, Ret $createCart, ?Ret $createOrder = null): void
     {
         $product = ProductModel::new($attributes);
         $ret = $product->checkCreateCartOrOrder();

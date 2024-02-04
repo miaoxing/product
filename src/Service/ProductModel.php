@@ -353,7 +353,7 @@ class ProductModel extends BaseModel
      * @param Ret|null $createRet
      * @return Ret
      */
-    public function checkCreateCart(Ret $createRet = null): Ret
+    public function checkCreateCart(?Ret $createRet = null): Ret
     {
         $createRet || $createRet = $this->checkBeforeCreateCartAndOrder();
         if ($createRet->isErr()) {
@@ -378,7 +378,7 @@ class ProductModel extends BaseModel
      * @param Ret|null $createRet
      * @return Ret
      */
-    public function checkCreateOrder(Ret $createRet = null): Ret
+    public function checkCreateOrder(?Ret $createRet = null): Ret
     {
         $createRet || $createRet = $this->checkBeforeCreateCartAndOrder();
         if ($createRet->isErr()) {

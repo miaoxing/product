@@ -45,7 +45,7 @@ class Product extends BaseService
      * @return Ret|array{data: ProductModel}
      * @svc
      */
-    protected function createOrUpdate($req, ProductModel $product = null): Ret
+    protected function createOrUpdate($req, ?ProductModel $product = null): Ret
     {
         $product || $product = ProductModel::new();
 
