@@ -19,7 +19,10 @@ class ProductPlugin extends BasePlugin
 
     public function onAdminMenuGetMenus(AdminMenu $menu)
     {
-        $product = $menu->child('product')->setLabel('商品')->setSort(900);
+        $product = $menu->child('product')
+            ->setLabel('商品')
+            ->setIcon('https://cdnjs.cloudflare.com/ajax/libs/ant-design-icons-svg/4.3.1/outlined/tags.svg')
+            ->setSort(900);
 
         $products = $product->addChild()->setLabel('商品管理')->setUrl('admin/products')->setSort(900);
         $products->addChild()->setLabel('添加')->setUrl('admin/products/new');
