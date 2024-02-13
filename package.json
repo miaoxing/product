@@ -17,7 +17,6 @@
     "@mxjs/a-table": "^1.7.0",
     "@mxjs/a-clink": "^2.1.0",
     "@mxjs/a-page": "^2.3.0",
-    "@mxjs/actions": "^0.2.17",
     "@mxjs/a-form": "^2.1.0",
     "@mxjs/a-date-range-picker": "^2.1.0",
     "@mxjs/upload": "^0.6.27",
