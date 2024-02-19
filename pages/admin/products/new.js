@@ -9,7 +9,7 @@ import {Divider, Radio, Switch, AutoComplete} from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import Sku from '@miaoxing/product/components/admin/Sku';
 import $ from 'miaoxing';
-import {FormUeditor} from '@mxjs/ueditor';
+import {FormUeditor} from '@mxjs/a-ueditor';
 import {FormItemSort, Select, TreeSelect, Upload} from '@miaoxing/admin';
 
 // TODO 解决 setShippingTpl 后，afterLoad 还未获取到 shippingTpls 模板未选择
