@@ -1,3 +1,35 @@
+## [0.4.28](https://github.com/miaoxing/product/compare/v0.4.27...v0.4.28) (2024-02-20)
+
+
+### Features
+
+* `@mxjs/ueditor` 依赖更改为 `@mxjs/a-ueditor` ([9853f9b](https://github.com/miaoxing/product/commit/9853f9bc779e84811f694c248f96d170886a8d25))
+* 更新 antd, antd icons 版本 ([c802854](https://github.com/miaoxing/product/commit/c802854395c8f5889dc2e1d72f2b0629d83b5bfc))
+* 菜单增加图标 ([e94bb5d](https://github.com/miaoxing/product/commit/e94bb5d64022766a9ef8de4f0c2aa0f282d8f17f))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-table:** upgrade from `1.7.0` to `1.8.0`
+* **@mxjs/a-clink:** upgrade from `2.1.0` to `2.1.1`
+* **@mxjs/a-page:** upgrade from `2.3.0` to `2.4.0`
+* **@mxjs/a-form:** upgrade from `2.1.0` to `2.2.0`
+* **@mxjs/a-date-range-picker:** upgrade from `2.1.0` to `2.2.0`
+* **@mxjs/upload:** upgrade from `0.6.27` to `0.6.28`
+* **@mxjs/a-sku:** upgrade from `1.3.0` to `1.4.0`
+* **@mxjs/a-ueditor:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/icons:** upgrade from `1.1.0` to `1.2.0`
+* **@mxjs/a-button:** upgrade from `3.1.0` to `3.2.0`
+* **@miaoxing/app:** upgrade from `0.8.0` to `0.8.1`
+* **@miaoxing/category:** upgrade from `0.5.28` to `0.5.29`
+* **@miaoxing/admin:** upgrade from `0.12.0` to `0.12.1`
+* **@miaoxing/nav:** upgrade from `0.1.48` to `0.1.49`
+* **@miaoxing/logistics:** upgrade from `0.5.27` to `0.5.28`
+* **@miaoxing/ueditor:** upgrade from `0.1.42` to `0.1.43`
+
 ## [0.4.27](https://github.com/miaoxing/product/compare/v0.4.26...v0.4.27) (2024-01-31)
 
 
