@@ -19,7 +19,6 @@
     "@mxjs/a-page": "^2.4.0",
     "@mxjs/a-form": "^2.2.0",
     "@mxjs/a-date-range-picker": "^2.2.0",
-    "@mxjs/upload": "^0.6.28",
     "@mxjs/api": "^1.0.10",
     "@mxjs/a-sku": "^1.4.0",
     "@mxjs/a-ueditor": "^1.1.1",
@@ -63,7 +62,6 @@
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
     "@mxjs/app": "miaoxing/mxjs-app",
-    "@mxjs/upload": "miaoxing/mxjs-upload",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "@miaoxing/admin": "miaoxing/admin",
     "@miaoxing/dev": "miaoxing/dev",
