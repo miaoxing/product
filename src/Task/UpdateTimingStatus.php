@@ -2,18 +2,16 @@
 
 namespace Miaoxing\Product\Task;
 
+use Miaoxing\Plugin\Schedule\Task;
 use Miaoxing\Product\Service\ProductModel;
 use Wei\Time;
 
 /**
  * 更新商品的定时开始和结束状态
  */
-final class UpdateTimingStatus
+class UpdateTimingStatus extends Task
 {
-    /**
-     * 执行操作
-     */
-    public function __invoke()
+    public function run()
     {
         // 1. 定时开始
         $products = ProductModel::where('status', ProductModel::STATUS_NOT_STARTED)

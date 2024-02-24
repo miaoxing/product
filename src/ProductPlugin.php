@@ -2,10 +2,10 @@
 
 namespace Miaoxing\Product;
 
-use Illuminate\Console\Scheduling\Schedule;
 use Miaoxing\Admin\Service\AdminMenu;
 use Miaoxing\App\Service\PermissionMap;
 use Miaoxing\Plugin\BasePlugin;
+use Miaoxing\Plugin\Service\Schedule;
 use Miaoxing\Product\Task\UpdateTimingStatus;
 
 /**
@@ -51,6 +51,6 @@ class ProductPlugin extends BasePlugin
      */
     public function onSchedule(Schedule $schedule)
     {
-        $schedule->call(new UpdateTimingStatus())->everyMinute();
+        $schedule->add(UpdateTimingStatus::class)->everyMinute();
     }
 }

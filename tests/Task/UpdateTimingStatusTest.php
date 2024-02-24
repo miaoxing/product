@@ -88,6 +88,6 @@ class UpdateTimingStatusTest extends BaseTestCase
     protected function runTask()
     {
         $task = new UpdateTimingStatus();
-        $task();
+        $task->run();
     }
 }
