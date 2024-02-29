@@ -1,3 +1,24 @@
+## [0.4.29](https://github.com/miaoxing/product/compare/v0.4.28...v0.4.29) (2024-02-29)
+
+
+### Features
+
+* **product:** 更新任务使用新的 `Schedule` 服务 ([b487b03](https://github.com/miaoxing/product/commit/b487b03db3849f1ecaf840fd7fae3b173f74c3db))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-page:** upgrade from `2.4.0` to `2.4.1`
+* **@miaoxing/app:** upgrade from `0.8.1` to `0.8.2`
+* **@miaoxing/category:** upgrade from `0.5.29` to `0.5.30`
+* **@miaoxing/admin:** upgrade from `0.12.1` to `0.12.2`
+* **@miaoxing/nav:** upgrade from `0.1.49` to `0.1.50`
+* **@miaoxing/logistics:** upgrade from `0.5.28` to `0.5.29`
+* **@miaoxing/ueditor:** upgrade from `0.1.43` to `0.1.44`
+
 ## [0.4.28](https://github.com/miaoxing/product/compare/v0.4.27...v0.4.28) (2024-02-20)
 
 
