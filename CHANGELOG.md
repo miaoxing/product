@@ -1,3 +1,46 @@
+## [0.4.30](https://github.com/miaoxing/product/compare/v0.4.29...v0.4.30) (2024-03-31)
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.26` to `1.0.27`
+* **miaoxing:** upgrade from `0.4.12` to `0.4.13`
+* **@mxjs/a-table:** upgrade from `1.8.0` to `1.8.1`
+* **@mxjs/a-clink:** upgrade from `2.1.1` to `2.1.2`
+* **@mxjs/a-page:** upgrade from `2.4.1` to `2.5.0`
+* **@mxjs/a-form:** upgrade from `2.2.0` to `2.2.1`
+* **@mxjs/a-date-range-picker:** upgrade from `2.2.0` to `2.2.1`
+* **@mxjs/api:** upgrade from `1.0.10` to `1.0.11`
+* **@mxjs/a-sku:** upgrade from `1.4.0` to `1.4.1`
+* **@mxjs/a-ueditor:** upgrade from `1.1.1` to `1.1.2`
+* **@mxjs/icons:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-button:** upgrade from `3.2.0` to `3.2.1`
+* **@mxjs/a-color-picker:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-divider:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-icon:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-rich-text:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-page:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-card:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-button:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-footer-bar:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-list:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/m-ret:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/m-stepper:** upgrade from `1.2.0` to `1.2.1`
+* **taro-test:** upgrade from `1.0.8` to `1.0.9`
+* **@miaoxing/dev:** upgrade from `9.1.0` to `9.1.1`
+* **@mxjs/a-media:** upgrade from `2.0.0` to `2.0.1`
+* **@mxjs/test:** upgrade from `1.0.10` to `1.0.11`
+* **@mxjs/app:** upgrade from `0.6.5` to `0.6.6`
+* **@miaoxing/app:** upgrade from `0.8.2` to `0.8.3`
+* **@miaoxing/category:** upgrade from `0.5.30` to `0.5.31`
+* **@miaoxing/admin:** upgrade from `0.12.2` to `0.12.3`
+* **@miaoxing/nav:** upgrade from `0.1.50` to `0.1.51`
+* **@miaoxing/logistics:** upgrade from `0.5.29` to `0.5.30`
+* **@miaoxing/ueditor:** upgrade from `0.1.44` to `0.1.45`
+
 ## [0.4.29](https://github.com/miaoxing/product/compare/v0.4.28...v0.4.29) (2024-02-29)
 
 
