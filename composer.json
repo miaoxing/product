@@ -8,12 +8,12 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "^0.8.3",
-    "miaoxing/category": "^0.5.31",
-    "miaoxing/admin": "^0.12.3",
-    "miaoxing/nav": "^0.1.51",
-    "miaoxing/logistics": "^0.5.30",
-    "miaoxing/ueditor": "^0.1.45"
+    "miaoxing/app": "^0.9.0",
+    "miaoxing/category": "^0.5.32",
+    "miaoxing/admin": "^0.13.0",
+    "miaoxing/nav": "^0.1.52",
+    "miaoxing/logistics": "^0.6.0",
+    "miaoxing/ueditor": "^0.1.46"
   },
   "autoload": {
     "psr-4": {
@@ -35,13 +35,13 @@
   },
   "extra": {
     "require-ci": {
-      "miaoxing/admin": "miaoxing/admin as 0.12.x-dev",
+      "miaoxing/admin": "miaoxing/admin as 0.13.x-dev",
       "miaoxing/dev": "miaoxing/dev as 8.x-dev",
       "miaoxing/phpstan-miaoxing": "miaoxing/phpstan-miaoxing as 3.x-dev",
       "miaoxing/plugin": "miaoxing/plugin as 0.14.x-dev",
       "miaoxing/services": "miaoxing/services as 0.9.x-dev",
-      "miaoxing/app": "miaoxing/app as 0.8.x-dev",
-      "miaoxing/logistics": "miaoxing/logistics as 0.5.x-dev",
+      "miaoxing/app": "miaoxing/app as 0.9.x-dev",
+      "miaoxing/logistics": "miaoxing/logistics as 0.6.x-dev",
       "wei/wei": "twinh/wei as 0.17.x-dev"
     }
   },
