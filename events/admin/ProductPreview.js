@@ -201,13 +201,14 @@ const ProductPreview = (
     const [sort, order] = orderBy.split(' ');
 
     $.get({
-      url: $.apiUrl('products', {
+      url: 'products',
+      params: {
         sortField: 'id',
         limit: num,
         search,
         sort,
         order,
-      }),
+      },
     }).then(({ret}) => {
       if (ret.isErr()) {
         $.ret(ret);

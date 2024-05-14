@@ -55,7 +55,7 @@ const CategoryPicker = ({pickerRef, linkPicker, value}) => {
       </SearchForm>
       <Table
         tableApi={table}
-        url={$.apiUrl('categories')}
+        url="categories"
         expandedRowKeys={expandedRowKeys}
         expandIcon={({record}) => (record.children ? '' : '└ ')}
         postData={(data) => {

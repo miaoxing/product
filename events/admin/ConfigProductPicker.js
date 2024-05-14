@@ -161,7 +161,7 @@ const ProductPicker = ({value = [], onChange}) => {
           </SearchForm>
           <Table
             tableApi={table}
-            url={$.apiUrl('products')}
+            url="products"
             rowSelection={{
               selectedRowKeys,
               onChange: (selectedRowKeys) => {
