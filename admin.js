@@ -1,1 +1,5 @@
-export ProductMedia from './components/admin/ProductMedia';
+import ProductMedia from './components/admin/ProductMedia';
+
+export {
+  ProductMedia,
+};
