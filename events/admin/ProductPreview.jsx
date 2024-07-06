@@ -2,30 +2,30 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'miaoxing';
 import { Empty } from 'antd';
-import { Box } from '@mxjs/a-box';
 import defaultImage from '../../images/default-image.svg';
+import classNames from 'classnames';
 
-const ProductLink = (props) => {
+const ProductLink = ({className, ...props}) => {
   return (
-    <Box as="a" display="block" bg="white" color="inherit" {...props}/>
+    <a className={classNames('block bg-white text-inherit', className)} {...props}/>
   );
 };
 
 const ProductDetail = (props) => {
   return (
-    <Box p={2} {...props}/>
+    <div className="p-2" {...props}/>
   );
 };
 
 const ProductName = (props) => {
   return (
-    <Box textAlign="left" h="40px" overflow="hidden" fontSize="16px" lineHeight="20px" {...props}/>
+    <div className="text-left h-10 overflow-hidden text-base" {...props}/>
   );
 };
 
 const ProductImg = (props) => {
   return (
-    <Box as="img" w="full" h="full" position="absolute" top={0} left={0} objectFit="cover" {...props}/>
+    <img className="w-full h-full absolute top-0 left-0 object-cover" {...props}/>
   );
 };
 
@@ -34,24 +34,24 @@ const listPropTypes = {
   showMarketPrice: PropTypes.bool,
 };
 
-const Image = ({product}) => (
-  <Box position="relative" pt="100%">
+const Image = ({ product }) => (
+  <div className="relative pt-[100%]">
     <ProductImg src={product.image || defaultImage}/>
-  </Box>
+  </div>
 );
 
 Image.propTypes = {
   product: PropTypes.object,
 };
 
-const Price = ({product, showMarketPrice}) => (
-  <Box color="#f28c48">
+const Price = ({ product, showMarketPrice }) => (
+  <div className="text-[#f28c48]">
     ￥{product.minPrice}
     {!!(showMarketPrice && product.minMarketPrice) &&
-      <Box as="del" color="#757575" fontWeight="400" fontSize="sm" ml={1}>
+      <del className="text-gray-600 text-sm ml-1">
         ￥{product.minMarketPrice}
-      </Box>}
-  </Box>
+      </del>}
+  </div>
 );
 
 Price.propTypes = {
@@ -59,11 +59,11 @@ Price.propTypes = {
   showMarketPrice: PropTypes.bool,
 };
 
-const List1 = ({products, showMarketPrice}) => {
+const List1 = ({ products, showMarketPrice }) => {
   return (
-    <Box w="100%">
+    <div className="w-full">
       {products.map((product) => (
-        <Box key={product.id} m={2}>
+        <div key={product.id} className="m-2">
           <ProductLink href="#">
             <Image product={product}/>
             <ProductDetail>
@@ -73,19 +73,19 @@ const List1 = ({products, showMarketPrice}) => {
               <Price product={product} showMarketPrice={showMarketPrice}/>
             </ProductDetail>
           </ProductLink>
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 
 List1.propTypes = listPropTypes;
 
-const List2 = ({products, showMarketPrice}) => {
+const List2 = ({ products, showMarketPrice }) => {
   return (
-    <Box display="flex" flexWrap="wrap" p={1}>
+    <div className="flex flex-wrap p-1">
       {products.map((product) => (
-        <Box key={product.id} w="50%" p={1}>
+        <div key={product.id} className="w-1/2 p-1">
           <ProductLink href="#">
             <Image product={product}/>
             <ProductDetail>
@@ -95,19 +95,19 @@ const List2 = ({products, showMarketPrice}) => {
               <Price product={product} showMarketPrice={showMarketPrice}/>
             </ProductDetail>
           </ProductLink>
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 
 List2.propTypes = listPropTypes;
 
-const List3 = ({products, showMarketPrice}) => {
+const List3 = ({ products, showMarketPrice }) => {
   return (
-    <Box display="flex" flexWrap="wrap" p={1}>
+    <div className="flex flex-wrap p-1">
       {products.map((product) => (
-        <Box key={product.id} w={1 / 3} p={1}>
+        <div key={product.id} className="w-1/3 p-1">
           <ProductLink href="#">
             <Image product={product}/>
             <ProductDetail>
@@ -117,31 +117,31 @@ const List3 = ({products, showMarketPrice}) => {
               <Price product={product} showMarketPrice={showMarketPrice}/>
             </ProductDetail>
           </ProductLink>
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 
 List3.propTypes = listPropTypes;
 
-const List4 = ({products, showMarketPrice}) => {
+const List4 = ({ products, showMarketPrice }) => {
   return (
-    <Box w="full">
+    <div className="w-full">
       {products.map((product) => (
-        <Box key={product.id} display="flex" m={2}>
-          <ProductLink display="flex" w="full" href="#">
-            <Box as="img" w="120px" h="120px" objectFit="cover" src={product.image || defaultImage}/>
-            <Box display="flex" flexDirection="column" justifyContent="space-between" mx={4} my={2}>
+        <div key={product.id} className="flex m-2">
+          <ProductLink className="flex w-full" href="#">
+            <img className="w-[120px] h-[120px] object-cover" src={product.image || defaultImage}/>
+            <div className="flex flex-col justify-between mx-4 my-2">
               <ProductName>
                 {product.name}
               </ProductName>
               <Price product={product} showMarketPrice={showMarketPrice}/>
-            </Box>
+            </div>
           </ProductLink>
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 
@@ -209,7 +209,7 @@ const ProductPreview = (
         sort,
         order,
       },
-    }).then(({ret}) => {
+    }).then(({ ret }) => {
       if (ret.isErr()) {
         $.ret(ret);
         return;
@@ -224,13 +224,13 @@ const ProductPreview = (
     <>
       {
         products.length ?
-          <Box display="flex" style={style}>
+          <div className="flex" style={style}>
             <Tpl products={products} showMarketPrice={showMarketPrice}/>
-          </Box>
+          </div>
           :
-          <Box overflow="hidden">
+          <div className="overflow-hidden">
             <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}/>
-          </Box>
+          </div>
       }
     </>
   );
