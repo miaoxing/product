@@ -4,7 +4,7 @@
 import { useRef } from 'react';
 import { CListBtn } from '@mxjs/a-clink';
 import { Page, PageActions } from '@mxjs/a-page';
-import { Form, FormItem, FormAction } from '@mxjs/a-form';
+import { Form, FormItem, FormActions } from '@mxjs/a-form';
 import { Divider, Radio, Switch, AutoComplete } from 'antd';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import Sku from '@miaoxing/product/components/admin/Sku';
@@ -166,7 +166,7 @@ const New = () => {
           <FormItem name="id" type="hidden"/>
         </Section>
 
-        <FormAction/>
+        <FormActions/>
       </Form>
     </Page>
   );
