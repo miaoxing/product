@@ -86,8 +86,10 @@ const ProductPicker = ({value = [], onChange}) => {
         title="选择商品"
         open={open}
         width={800}
-        bodyStyle={{
-          padding: '1rem',
+        styles={{
+          body: {
+            padding: '1rem',
+          }
         }}
         onOk={() => {
           onChange(selectedRowKeys);
