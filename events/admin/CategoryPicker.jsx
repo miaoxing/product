@@ -44,7 +44,7 @@ const CategoryPicker = ({pickerRef, linkPicker, value}) => {
   >
     <TableProvider>
       <PageActions>
-        <NewBtn href={$.url('admin/categories/new')} target="_blank">
+        <NewBtn to={$.url('admin/categories/new')} target="_blank">
           添 加{' '}<Icon type="mi-external-link"/>
         </NewBtn>
         <Button onClick={() => {

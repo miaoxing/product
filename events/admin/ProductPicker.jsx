@@ -42,7 +42,7 @@ const ProductPicker = ({pickerRef, linkPicker, value}) => {
   >
     <TableProvider>
       <PageActions>
-        <NewBtn href={$.url('admin/products/new')} target="_blank">
+        <NewBtn to={$.url('admin/products/new')} target="_blank">
           添 加{' '}<Icon type="mi-external-link"/>
         </NewBtn>
         <Button onClick={() => {
