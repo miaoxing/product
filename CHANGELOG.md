@@ -1,3 +1,59 @@
+## [0.5.3](https://github.com/miaoxing/product/compare/v0.5.2...v0.5.3) (2024-07-31)
+
+
+### Bug Fixes
+
+* `export default from` 改为标准语法 ([790d0fa](https://github.com/miaoxing/product/commit/790d0fa53c7b30a56d7677b69c610f153fa9951c))
+
+
+### Features
+
+* 升级 antd `Modal` 的 `bodyStyle` 为 `styles` ([5ce8156](https://github.com/miaoxing/product/commit/5ce8156ab412b37bd991e1c6f248be8dbc8a4aa0))
+* **u:** 调整页面内容为卡片视图 ([c304946](https://github.com/miaoxing/product/commit/c304946804367e4e0c5edc8118796942ab672615))
+* Box 组件改为 tailwind 类名 ([2986af5](https://github.com/miaoxing/product/commit/2986af5ef561ac725c19a115acd9aba00cdc3d49))
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.27` to `1.0.28`
+* **miaoxing:** upgrade from `0.4.15` to `0.4.16`
+* **@mxjs/a-table:** upgrade from `1.9.0` to `2.0.0`
+* **@mxjs/a-clink:** upgrade from `3.0.1` to `3.0.2`
+* **@mxjs/a-page:** upgrade from `3.0.1` to `4.0.0`
+* **@mxjs/a-form:** upgrade from `3.0.2` to `4.0.0`
+* **@mxjs/a-date-range-picker:** upgrade from `3.0.2` to `3.0.3`
+* **@mxjs/api:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-section:** upgrade from `1.0.0` to `1.1.0`
+* **@mxjs/a-sku:** upgrade from `1.4.4` to `1.4.5`
+* **@mxjs/a-ueditor:** upgrade from `1.1.5` to `1.1.6`
+* **@mxjs/icons:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/a-button:** upgrade from `4.0.1` to `5.0.0`
+* **@mxjs/a-color-picker:** upgrade from `1.1.1` to `1.1.2`
+* **@mxjs/m-divider:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-icon:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-rich-text:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-page:** upgrade from `1.2.3` to `1.2.4`
+* **@mxjs/m-card:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-button:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-footer-bar:** upgrade from `1.2.3` to `1.2.4`
+* **@mxjs/m-list:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/m-ret:** upgrade from `1.1.3` to `1.1.4`
+* **@mxjs/m-stepper:** upgrade from `1.2.1` to `1.2.2`
+* **taro-test:** upgrade from `1.0.9` to `1.0.10`
+* **@miaoxing/dev:** upgrade from `9.1.1` to `9.1.2`
+* **@mxjs/a-media:** upgrade from `2.0.1` to `3.0.0`
+* **@mxjs/test:** upgrade from `2.0.0` to `2.0.1`
+* **@mxjs/app:** upgrade from `0.8.0` to `0.8.1`
+* **@miaoxing/app:** upgrade from `0.10.1` to `0.10.2`
+* **@miaoxing/category:** upgrade from `0.5.34` to `0.5.35`
+* **@miaoxing/admin:** upgrade from `0.13.2` to `0.14.0`
+* **@miaoxing/nav:** upgrade from `0.1.54` to `0.1.55`
+* **@miaoxing/logistics:** upgrade from `0.6.2` to `0.6.3`
+* **@miaoxing/ueditor:** upgrade from `0.1.48` to `0.1.49`
+
 ## [0.5.2](https://github.com/miaoxing/product/compare/v0.5.1...v0.5.2) (2024-06-30)
 
 
