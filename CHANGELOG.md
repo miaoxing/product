@@ -1,3 +1,47 @@
+## [0.5.5](https://github.com/miaoxing/product/compare/v0.5.4...v0.5.5) (2024-08-03)
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.0.28` to `1.0.29`
+* **miaoxing:** upgrade from `0.4.17` to `0.4.18`
+* **@mxjs/a-table:** upgrade from `2.0.1` to `2.0.2`
+* **@mxjs/a-clink:** upgrade from `3.0.3` to `3.0.4`
+* **@mxjs/a-page:** upgrade from `4.0.1` to `4.0.2`
+* **@mxjs/a-form:** upgrade from `4.0.1` to `4.0.2`
+* **@mxjs/a-date-range-picker:** upgrade from `3.0.4` to `3.0.5`
+* **@mxjs/api:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/a-section:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-sku:** upgrade from `1.4.6` to `1.4.7`
+* **@mxjs/a-ueditor:** upgrade from `1.1.7` to `1.1.8`
+* **@mxjs/icons:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/a-button:** upgrade from `5.0.1` to `5.0.2`
+* **@mxjs/a-color-picker:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/m-divider:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-icon:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-rich-text:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-page:** upgrade from `1.2.5` to `1.2.6`
+* **@mxjs/m-card:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-button:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-footer-bar:** upgrade from `1.2.5` to `1.2.6`
+* **@mxjs/m-list:** upgrade from `1.2.2` to `1.2.3`
+* **@mxjs/m-ret:** upgrade from `1.1.5` to `1.1.6`
+* **@mxjs/m-stepper:** upgrade from `1.2.2` to `1.2.3`
+* **taro-test:** upgrade from `1.0.10` to `1.0.11`
+* **@miaoxing/dev:** upgrade from `9.1.2` to `9.1.3`
+* **@mxjs/a-media:** upgrade from `3.0.0` to `3.0.1`
+* **@mxjs/test:** upgrade from `2.0.2` to `2.0.3`
+* **@mxjs/app:** upgrade from `0.8.1` to `0.8.2`
+* **@miaoxing/app:** upgrade from `0.10.2` to `0.10.3`
+* **@miaoxing/category:** upgrade from `0.5.36` to `0.5.37`
+* **@miaoxing/admin:** upgrade from `0.15.0` to `0.15.1`
+* **@miaoxing/nav:** upgrade from `0.1.55` to `0.1.56`
+* **@miaoxing/logistics:** upgrade from `0.6.4` to `0.6.5`
+* **@miaoxing/ueditor:** upgrade from `0.1.49` to `0.1.50`
+
 ## [0.5.4](https://github.com/miaoxing/product/compare/v0.5.3...v0.5.4) (2024-08-02)
 
 
