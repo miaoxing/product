@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "append-url": "^1.0.29",
-    "antd": "~5.13",
+    "antd": "~5.19",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1",
     "miaoxing": "^0.4.18",
