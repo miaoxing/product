@@ -4,7 +4,7 @@ use Miaoxing\Logistics\Resource\ShippingTplResource;
 use Miaoxing\Plugin\BasePage;
 use Miaoxing\Product\Service\ProductModel;
 
-return new class () extends BasePage {
+return new class extends BasePage {
     public function get($req)
     {
         $product = ProductModel::findOrFail($req['id']);
