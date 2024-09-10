@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
-import {Button, Modal} from 'antd';
-import {Table, TableProvider, useTable} from '@mxjs/a-table';
-import {SearchForm, SearchItem} from '@mxjs/a-form';
-import {PageActions} from '@mxjs/a-page';
+import { useState } from 'react';
+import { Button, Modal } from 'antd';
+import { Table, TableProvider, useTable } from '@mxjs/a-table';
+import { SearchForm, SearchItem } from '@mxjs/a-form';
+import { PageActions } from '@mxjs/a-page';
 import Icon from '@mxjs/icons';
 import $ from 'miaoxing';
 import PropTypes from 'prop-types';
-import {NewBtn} from '@mxjs/a-button';
+import { NewBtn } from '@mxjs/a-button';
+import { useQuery } from '@mxjs/query';
 
-const CategoryPicker = ({pickerRef, linkPicker, value}) => {
+const CategoryPicker = ({ pickerRef, linkPicker, value }) => {
   const [table] = useTable();
   const [id, setId] = useState(value.id);
   const [name, setName] = useState();
@@ -34,7 +35,7 @@ const CategoryPicker = ({pickerRef, linkPicker, value}) => {
     }}
     onOk={() => {
       if (id) {
-        linkPicker.addValue({id}, {name});
+        linkPicker.addValue({ id }, { name });
       }
       setOpen(false);
     }}
@@ -58,7 +59,7 @@ const CategoryPicker = ({pickerRef, linkPicker, value}) => {
         tableApi={table}
         url="categories"
         expandedRowKeys={expandedRowKeys}
-        expandIcon={({record}) => (record.children ? '' : '└ ')}
+        expandIcon={({ record }) => (record.children ? '' : '└ ')}
         postData={(data) => {
           setExpandedRowKeys(data.map(record => record.id));
           return data;
@@ -97,19 +98,9 @@ CategoryPicker.propTypes = {
   value: PropTypes.object,
 };
 
-const CategoryPickerLabel = ({value, extra}) => {
-  const [name, setName] = useState('');
-
-  useEffect(() => {
-    if (!extra.name) {
-      (async () => {
-        const {ret} = await $.get('categories/' + value.id);
-        setName(ret.data.name);
-      })();
-    }
-  }, [value.id, extra]);
-
-  return extra.name || name;
+const CategoryPickerLabel = ({ value, extra }) => {
+  const { data = {} } = useQuery(!extra.name ? 'categories/' + value.id : null);
+  return extra.name || data.name;
 };
 
 CategoryPicker.Label = CategoryPickerLabel;
