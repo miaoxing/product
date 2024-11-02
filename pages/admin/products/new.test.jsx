@@ -28,6 +28,15 @@ describe('admin/products', () => {
     const promise4 = createPromise();
 
     $.http = jest.fn()
+      // 读取运费模板
+      .mockImplementationOnce(() => promise2.resolve({
+        ret: Ret.suc({
+          data: [{
+            id: 1,
+            name: '测试模板',
+          }],
+        }),
+      }))
       // 读取分类
       .mockImplementationOnce(() => promise3.resolve({
         ret: Ret.suc({
@@ -35,15 +44,6 @@ describe('admin/products', () => {
             id: 1,
             name: '测试分类',
             children: [],
-          }],
-        }),
-      }))
-      // 读取运费模板
-      .mockImplementationOnce(() => promise2.resolve({
-        ret: Ret.suc({
-          data: [{
-            id: 1,
-            name: '测试模板',
           }],
         }),
       }))
@@ -82,7 +82,7 @@ describe('admin/products', () => {
       <Page/>
     </MemoryRouter>);
 
-    await Promise.all([promise, promise2]);
+    await Promise.all([promise, promise2, promise3]);
     expect($.http).toHaveBeenCalledTimes(3);
     expect($.http).toMatchSnapshot();
 
