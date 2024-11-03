@@ -1,3 +1,20 @@
+## [0.5.9](https://github.com/miaoxing/product/compare/v0.5.8...v0.5.9) (2024-11-03)
+
+
+### Bug Fixes
+
+* 更新 `afterLoad` 的参数 ([bb3a550](https://github.com/miaoxing/product/commit/bb3a55062e636eb4a185b4dd03706be17ef6bcb9))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/category:** upgrade from `0.5.40` to `0.5.41`
+* **@miaoxing/admin:** upgrade from `0.16.1` to `0.16.2`
+* **@miaoxing/logistics:** upgrade from `0.6.8` to `0.6.9`
+
 ## [0.5.8](https://github.com/miaoxing/product/compare/v0.5.7...v0.5.8) (2024-11-01)
 
 

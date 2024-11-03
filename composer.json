@@ -9,10 +9,10 @@
   "license": "MIT",
   "require": {
     "miaoxing/app": "^0.10.6",
-    "miaoxing/category": "^0.5.40",
-    "miaoxing/admin": "^0.16.1",
+    "miaoxing/category": "^0.5.41",
+    "miaoxing/admin": "^0.16.2",
     "miaoxing/nav": "^0.1.59",
-    "miaoxing/logistics": "^0.6.8",
+    "miaoxing/logistics": "^0.6.9",
     "miaoxing/ueditor": "^0.1.53"
   },
   "autoload": {
