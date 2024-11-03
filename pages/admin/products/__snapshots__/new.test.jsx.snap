@@ -5,6 +5,7 @@ exports[`admin/products form 1`] = `
   "calls": Array [
     Array [
       Object {
+        "suspense": true,
         "url": "shipping-tpls?limit=500",
       },
     ],
@@ -57,6 +58,7 @@ exports[`admin/products form 2`] = `
   "calls": Array [
     Array [
       Object {
+        "suspense": true,
         "url": "shipping-tpls?limit=500",
       },
     ],
@@ -79,7 +81,66 @@ exports[`admin/products form 2`] = `
     ],
     Array [
       Object {
-        "url": "shipping-tpls?limit=500",
+        "data": Object {
+          "_startAt": null,
+          "categoriesProducts": Array [],
+          "configs": Object {
+            "hideSoldNum": undefined,
+            "quantityName": undefined,
+            "unit": undefined,
+          },
+          "decStockMode": undefined,
+          "detail": Object {
+            "content": undefined,
+          },
+          "endAt": "",
+          "id": undefined,
+          "images": Array [],
+          "intro": undefined,
+          "isAllowAddCart": true,
+          "isAllowComment": true,
+          "isAllowCoupon": true,
+          "isListing": undefined,
+          "isRequireAddress": true,
+          "maxOrderQuantity": undefined,
+          "name": "测试商品",
+          "shippingTplId": 1,
+          "skus": Array [
+            Object {
+              "id": undefined,
+              "image": undefined,
+              "marketPrice": undefined,
+              "outerId": undefined,
+              "price": "1.23",
+              "score": undefined,
+              "specValues": Array [
+                Object {
+                  "name": "默认",
+                  "specName": "默认",
+                },
+              ],
+              "stockNum": "3",
+              "weight": undefined,
+            },
+          ],
+          "sort": 50,
+          "spec": Object {
+            "specs": Array [
+              Object {
+                "name": "默认",
+                "values": Array [
+                  Object {
+                    "name": "默认",
+                  },
+                ],
+              },
+            ],
+          },
+          "startAt": "",
+        },
+        "loading": true,
+        "method": "POST",
+        "url": "/api/admin/products",
       },
     ],
   ],
