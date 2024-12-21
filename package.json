@@ -57,7 +57,8 @@
     "lodash": "^4.17.21"
   },
   "resolutions": {
-    "@fower/core": "~1.75.0"
+    "@fower/core": "~1.75.0",
+    "nwsapi": "2.2.0"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
