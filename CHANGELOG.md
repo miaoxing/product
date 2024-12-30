@@ -1,3 +1,51 @@
+# [0.6.0](https://github.com/miaoxing/product/compare/v0.5.10...v0.6.0) (2024-12-30)
+
+
+### Bug Fixes
+
+* 限制 react 版本低于 19，避免测试失败 ([6781c73](https://github.com/miaoxing/product/commit/6781c73536c3bd400e1067a7b8fd1d7ae47116fd))
+
+
+### Code Refactoring
+
+* Taro 相关功能移到 m 项目中 ([5fb5f90](https://github.com/miaoxing/product/commit/5fb5f90ac5ce67cb21dc2ef7e5c20d561ad1b727))
+
+
+### BREAKING CHANGES
+
+* Taro 相关功能移到 m 项目中
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.1.0` to `1.1.1`
+* **miaoxing:** upgrade from `0.4.19` to `0.4.20`
+* **@mxjs/a-table:** upgrade from `2.3.0` to `2.4.0`
+* **@mxjs/a-clink:** upgrade from `3.0.7` to `3.0.8`
+* **@mxjs/a-page:** upgrade from `4.3.0` to `4.3.1`
+* **@mxjs/a-form:** upgrade from `5.1.0` to `5.2.0`
+* **@mxjs/a-date-range-picker:** upgrade from `3.1.3` to `3.1.4`
+* **@mxjs/api:** upgrade from `1.1.5` to `1.1.6`
+* **@mxjs/a-section:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-sku:** upgrade from `1.5.3` to `1.5.4`
+* **@mxjs/a-ueditor:** upgrade from `1.1.12` to `1.1.13`
+* **@mxjs/icons:** upgrade from `1.2.4` to `1.2.5`
+* **@mxjs/a-button:** upgrade from `5.2.0` to `5.2.1`
+* **@mxjs/a-color-picker:** upgrade from `1.1.4` to `1.1.5`
+* **@miaoxing/dev:** upgrade from `9.2.0` to `9.3.0`
+* **@mxjs/a-media:** upgrade from `3.0.2` to `3.0.3`
+* **@mxjs/test:** upgrade from `2.0.5` to `2.0.6`
+* **@mxjs/app:** upgrade from `0.8.4` to `0.8.5`
+* **@miaoxing/app:** upgrade from `0.10.7` to `0.10.8`
+* **@miaoxing/category:** upgrade from `0.5.42` to `0.5.43`
+* **@miaoxing/admin:** upgrade from `0.16.3` to `0.17.0`
+* **@miaoxing/nav:** upgrade from `0.1.60` to `0.1.61`
+* **@miaoxing/logistics:** upgrade from `0.6.10` to `0.6.11`
+* **@miaoxing/ueditor:** upgrade from `0.1.54` to `0.1.55`
+
 ## [0.5.10](https://github.com/miaoxing/product/compare/v0.5.9...v0.5.10) (2024-11-30)
 
 
