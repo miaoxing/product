@@ -1,3 +1,36 @@
+## [0.6.1](https://github.com/miaoxing/product/compare/v0.6.0...v0.6.1) (2024-12-31)
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.1.1` to `1.1.2`
+* **miaoxing:** upgrade from `0.4.20` to `0.4.21`
+* **@mxjs/a-table:** upgrade from `2.4.0` to `2.4.1`
+* **@mxjs/a-clink:** upgrade from `3.0.8` to `3.0.9`
+* **@mxjs/a-page:** upgrade from `4.3.1` to `4.3.2`
+* **@mxjs/a-form:** upgrade from `5.2.0` to `5.2.1`
+* **@mxjs/a-date-range-picker:** upgrade from `3.1.4` to `3.1.5`
+* **@mxjs/api:** upgrade from `1.1.6` to `1.1.7`
+* **@mxjs/a-section:** upgrade from `1.2.1` to `1.2.2`
+* **@mxjs/a-sku:** upgrade from `1.5.4` to `1.5.5`
+* **@mxjs/a-ueditor:** upgrade from `1.1.13` to `1.1.14`
+* **@mxjs/icons:** upgrade from `1.2.5` to `1.2.6`
+* **@mxjs/a-button:** upgrade from `5.2.1` to `5.2.2`
+* **@mxjs/a-color-picker:** upgrade from `1.1.5` to `1.1.6`
+* **@miaoxing/dev:** upgrade from `9.3.0` to `9.3.1`
+* **@mxjs/a-media:** upgrade from `3.0.3` to `3.0.4`
+* **@mxjs/test:** upgrade from `2.0.6` to `2.0.7`
+* **@mxjs/app:** upgrade from `0.8.5` to `0.8.6`
+* **@miaoxing/app:** upgrade from `0.10.8` to `0.10.9`
+* **@miaoxing/category:** upgrade from `0.5.43` to `0.5.44`
+* **@miaoxing/admin:** upgrade from `0.17.0` to `0.17.1`
+* **@miaoxing/nav:** upgrade from `0.1.61` to `0.1.62`
+* **@miaoxing/logistics:** upgrade from `0.6.11` to `0.6.12`
+* **@miaoxing/ueditor:** upgrade from `0.1.55` to `0.1.56`
+
 # [0.6.0](https://github.com/miaoxing/product/compare/v0.5.10...v0.6.0) (2024-12-30)
 
 
