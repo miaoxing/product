@@ -1,4 +1,4 @@
-import {CTableDeleteLink, Table, TableActions, TableProvider, TableStatusCheckbox, useTable} from '@mxjs/a-table';
+import {CTableDeleteLink, Table, TableActions, TableProvider, TableSwitch, useTable} from '@mxjs/a-table';
 import {CEditLink, CNewBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
 import {ProductMedia} from '@miaoxing/product/admin';
@@ -54,7 +54,7 @@ const Index = () => {
             {
               title: '上架',
               dataIndex: 'isListing',
-              render: (cell, row) => <TableStatusCheckbox row={row} name="isListing"/>,
+              render: (cell, row) => <TableSwitch row={row} name="isListing"/>,
             },
             {
               title: '创建时间',
