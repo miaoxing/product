@@ -42,7 +42,7 @@
     "lodash": "^4.17.21"
   },
   "resolutions": {
-    "nwsapi": "2.2.0"
+    "nwsapi": "2.2.13"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
